@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SYYH Signal — draft</title>
+  <link rel="stylesheet" href="../design/tokens.css">
+  <link rel="stylesheet" href="../design/components/bundle.css">
+  <script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="../design/components/bundle.js"></script>
+  <script src="../design/components/site/draft.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(window.SYYHDraft.App, { start: 'gate' }));
+  </script>
+</body>
+</html>

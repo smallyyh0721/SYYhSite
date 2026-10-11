@@ -1,0 +1,15 @@
+<!-- @dsCard group="World" height=340 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>IslandNode</title>
+<style>#root{display:grid;grid-template-columns:repeat(4,1fr);padding:40px 12px 12px;height:300px}#root>div{position:relative}#root .sy-island{position:absolute;left:50%;top:50%}#root .sy-island__art{width:170px}</style></head>
+<body><div id="root"></div>
+<script>
+  var S = window.SYYH, h = React.createElement;
+  var isl = [
+    { letter: 'A', name: 'Works', kana: 'サクヒン', channel: 'CH-01', tone: 'a' },
+    { letter: 'B', name: 'About', kana: 'ジコショウカイ', channel: 'CH-02', tone: 'b' },
+    { letter: 'C', name: 'Story', kana: 'モノガタリ', channel: 'CH-03', tone: 'c' },
+    { letter: 'D', name: 'Board', kana: 'ケイジバン', channel: 'CH-04', tone: 'd' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    isl.map(function (d, i) { return h('div', { key: d.letter }, h(S.IslandNode, Object.assign({ phase: -i * 1.3 }, d))); })));
+</script></body></html>

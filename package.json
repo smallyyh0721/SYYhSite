@@ -1,0 +1,9 @@
+{
+  "name": "syyh-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tokens": "node scripts/tokens-to-css.mjs design/tokens.json design/tokens.css",
+    "draft": "npx --yes serve@14.2.4 ."
+  }
+}

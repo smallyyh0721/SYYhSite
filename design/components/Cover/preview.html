@@ -1,0 +1,57 @@
+<!-- @dsCard height=320 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cover</title>
+<style>
+  html, body { margin: 0; background: var(--void); }
+  .cv { position: relative; width: 960px; height: 320px; overflow: hidden; background: var(--void); }
+  .cv svg { position: absolute; left: 0; top: 0; }
+  .slab { fill: var(--on-accent); }
+  .signal { fill: var(--signal); }
+  .pop { fill: var(--pop); }
+  .tube { fill: var(--tube); }
+  .hazard { fill: var(--hazard); }
+  .stripe { fill: var(--on-accent); }
+  .cv__text { position: absolute; left: 40px; bottom: 32px; max-width: 440px; }
+  .cv__name { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 112px; line-height: .95; color: var(--ink); text-transform: none; }
+  .cv__tag { margin: 16px 0 0; font-family: var(--font-body); font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+</style></head>
+<body>
+<div class="cv">
+  <!--
+    blocks: slab on-accent 480→960 × 320 (half the cover, the night sky, keeps lime visible on Paper); signal 160w (brand), tube 96w, pop 64w, hazard 80w; all full height 320.
+    arrangement: a strip of unequal bands leaning by slant (-12deg, ±34px over 320) bleeding off top and bottom, hazard band bleeding off the right edge.
+    pattern: hazard stripes (row: loud, bold, poster type → stripes) because the README marks edges with 45° hazard bands of hazard/on-accent at 12px; 12 stripes cut into the last band.
+    scales: band gaps space-6 (24px) and space-4 (16px), stripe pitch 24px (12px band + 12px gap), radius-0 everywhere (the system is square).
+  -->
+  <svg width="960" height="320" viewBox="0 0 960 320" aria-hidden="true">
+    <defs>
+      <clipPath id="hz"><polygon points="908,0 960,0 960,320 840,320"/></clipPath>
+    </defs>
+    <rect class="slab" x="480" y="0" width="480" height="320"/>
+    <polygon class="signal" points="552,0 712,0 644,320 484,320"/>
+    <polygon class="tube" points="736,0 832,0 764,320 668,320"/>
+    <polygon class="pop" points="848,0 892,0 824,320 780,320"/>
+    <g clip-path="url(#hz)">
+      <polygon class="hazard" points="840,0 960,0 960,320 772,320"/>
+      <g class="stripe">
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-264 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-240 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-216 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-192 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-168 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-144 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-120 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-96 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-72 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-48 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320" transform="translate(-24 0)"/>
+        <polygon points="836,0 848,0 1168,320 1156,320"/>
+      </g>
+    </g>
+  </svg>
+  <div class="cv__text">
+    <h1 class="cv__name">SYYH<br>Signal</h1>
+    <p class="cv__tag">Tune in, then jump from island to island.</p>
+  </div>
+</div>
+</body></html>

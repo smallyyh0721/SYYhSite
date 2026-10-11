@@ -1,0 +1,15 @@
+<!-- @dsCard group="Containers" height=420 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>WorkTile</title>
+<style>#root{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:28px}</style></head>
+<body><div id="root"></div>
+<script>
+  var S = window.SYYH, h = React.createElement;
+  var works = [
+    { no: 7, title: 'Neon Alley', year: 2026, kind: 'Key visual', sfx: 'ドンッ' },
+    { no: 6, title: 'Bangboo Parade', year: 2026, kind: 'AIGC series', sfx: 'ワイワイ', tone: 'b' },
+    { no: 5, title: 'Hollow Signal', year: 2025, kind: 'Motion', sfx: 'ザザッ', tone: 'c' },
+    { no: 4, title: 'Rooftop 04:00', year: 2025, kind: 'Illustration', sfx: 'シーン', tone: 'd' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    works.map(function (w) { return h(S.WorkTile, Object.assign({ key: w.no }, w)); })));
+</script></body></html>

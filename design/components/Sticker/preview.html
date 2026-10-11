@@ -1,0 +1,14 @@
+<!-- @dsCard group="Labels" height=80 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sticker</title>
+<style>#root{display:flex;gap:18px;align-items:center;padding:24px;flex-wrap:wrap}</style></head>
+<body><div id="root"></div>
+<script>
+  var S = window.SYYH, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(S.Sticker, { tone: 'a' }, 'CH-01 WORKS'),
+    h(S.Sticker, { tone: 'b', tilt: 'right' }, 'NEW'),
+    h(S.Sticker, { tone: 'c' }, 'LAB'),
+    h(S.Sticker, { tone: 'd', tilt: 'right' }, 'ONLINE ●'),
+    h(S.Sticker, { tone: 'ink', tilt: 'none' }, 'No.07')));
+</script></body></html>

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Actions" height=110 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Button</title>
+<style>#root{display:flex;gap:24px;align-items:center;padding:28px;flex-wrap:wrap}</style></head>
+<body><div id="root"></div>
+<script>
+  var S = window.SYYH, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(S.Button, null, 'TUNE IN ▶'),
+    h(S.Button, { tone: 'a' }, 'VIEW WORK'),
+    h(S.Button, { tone: 'b' }, 'SAY HI'),
+    h(S.Button, { variant: 'ghost' }, 'ENTER AS GUEST'),
+    h(S.Button, { disabled: true }, 'OFFLINE')));
+</script></body></html>

@@ -1,0 +1,93 @@
+/* SYYH Signal — generated from tokens.json */
+
+:root, [data-theme="night"] {
+  --void: #0a0a0e;
+  --surface: #15151c;
+  --surface-raised: #1f1f29;
+  --ink: #f3f1ea;
+  --ink-muted: #a3a2ad;
+  --line: var(--ink);
+  --line-soft: #4a4a5c;
+  --signal: #c8ff2e;
+  --hazard: #ffd60a;
+  --pop: #ff3d8b;
+  --tube: #34e1ff;
+  --on-accent: #0a0a0e;
+  --signal-text: #c8ff2e;
+  --danger: #ff6b4a;
+  --focus: #ffd60a;
+  --screentone: #f3f1ea1f;
+  --island-a: var(--hazard);
+  --island-b: var(--pop);
+  --island-c: var(--tube);
+  --island-d: var(--signal);
+  --shadow-pop: 6px 6px 0 #f3f1ea;
+  --shadow-glow: 0 0 28px #c8ff2e59;
+}
+
+[data-theme="paper"] {
+  --void: #efeadd;
+  --surface: #f8f5ec;
+  --surface-raised: #ffffff;
+  --ink: #111114;
+  --ink-muted: #55535c;
+  --line: var(--ink);
+  --line-soft: #a8a190;
+  --signal-text: #3b6300;
+  --danger: #b3261e;
+  --focus: #111114;
+  --screentone: #11111429;
+  --island-a: var(--hazard);
+  --island-b: var(--pop);
+  --island-c: var(--tube);
+  --island-d: var(--signal);
+  --shadow-pop: 6px 6px 0 #111114;
+  --shadow-glow: none;
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-0: 0px;
+  --radius-sm: 3px;
+  --radius-pill: 999px;
+  --stroke-panel: 3px;
+  --stroke-hair: 1px;
+  --slant: -12deg;
+  --tilt: -4deg;
+  --z-hud: 50;
+  --z-jump: 100;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-jp: "Dela Gothic One", "Zen Kaku Gothic New", sans-serif;
+  --font-body: "Zen Kaku Gothic New", "PingFang SC", "Hiragino Sans", "Microsoft YaHei", sans-serif;
+  --font-pixel: "DotGothic16", ui-monospace, monospace;
+}
+
+.hero { font-family: var(--font-display); font-size: 120px; line-height: 0.88; font-weight: 900; font-style: italic; letter-spacing: -0.01em; }
+
+.display-lg { font-family: var(--font-display); font-size: 72px; line-height: 0.92; font-weight: 900; font-style: italic; }
+
+.display-md { font-family: var(--font-display); font-size: 44px; line-height: 1; font-weight: 800; font-style: italic; }
+
+.title { font-family: var(--font-display); font-size: 28px; line-height: 1.1; font-weight: 800; font-style: italic; }
+
+.sfx { font-family: var(--font-jp); font-size: 64px; line-height: 1; font-weight: 400; }
+
+.kana { font-family: var(--font-jp); font-size: 18px; line-height: 1.2; font-weight: 400; }
+
+.body-lg { font-family: var(--font-body); font-size: 18px; line-height: 30px; font-weight: 400; }
+
+.body { font-family: var(--font-body); font-size: 15px; line-height: 26px; font-weight: 400; }
+
+.small { font-family: var(--font-body); font-size: 13px; line-height: 20px; font-weight: 500; }
+
+.hud { font-family: var(--font-pixel); font-size: 13px; line-height: 16px; font-weight: 400; letter-spacing: 0.08em; }
+
+.hud-sm { font-family: var(--font-pixel); font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.1em; }

@@ -1,0 +1,11 @@
+<!-- @dsCard group="Navigation" height=130 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>HudBar</title>
+<style>#root{display:flex;flex-direction:column;gap:16px;padding:16px 0}</style></head>
+<body><div id="root"></div>
+<script>
+  var S = window.SYYH, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(S.HudBar, { channel: 'CH-00', location: 'GATE' }),
+    h(S.HudBar, { channel: 'CH-02', location: 'ABOUT', tone: 'b', callsign: 'proxy_07', onHub: function () {} })));
+</script></body></html>
