@@ -1,0 +1,14 @@
+<!-- @dsCard group="Navigation" height=560 width=1280 subtitle="The entrance: click REPLAY to watch again" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>IntroSequence</title>
+<style>#root{position:relative;height:540px}</style></head>
+<body><div id="root"></div>
+<script>
+  var S = window.SYYH, h = React.createElement;
+  function Demo() {
+    var st = React.useState(0), run = st[0], set = st[1];
+    return h(S.IntroSequence, { key: run, title: 'SYYH', caption: '信号を受信中' },
+      h(S.Button, { variant: 'ghost', onClick: function () { set(run + 1); } }, 'REPLAY ▶'));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script></body></html>

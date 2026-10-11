@@ -5,6 +5,7 @@ A personal site you *tune into*: a CRT visitor gate, then a night sky of floatin
 - **Design system (live):** https://claude.ai/artifact/9UtGQ41vPAbwBCq8RLcFpV
 - **Brand book:** [`design/README.md`](design/README.md) · **Site map:** [`design/site-map.md`](design/site-map.md)
 - **Clickable draft:** [`prototype/index.html`](prototype/index.html)
+- **Continue locally:** [`docs/HANDOFF.md`](docs/HANDOFF.md) (the reference sites must be studied in a local browser)
 
 ## Layout
 

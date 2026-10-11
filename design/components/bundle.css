@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800;1,900&family=Dela+Gothic+One&family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800;1,900&family=Shippori+Mincho:wght@500&family=Dela+Gothic+One&family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap");
 
 /* SYYH Signal: component styles. Every value comes from tokens.css. */
 body { margin: 0; background: var(--void); color: var(--ink); font-family: var(--font-body); }
@@ -27,7 +27,7 @@ body { margin: 0; background: var(--void); color: var(--ink); font-family: var(-
 
 /* HUD bar */
 .sy-hud { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--space-4); padding: var(--space-2) var(--space-6);
-  background: var(--surface); border-bottom: var(--stroke-panel) solid var(--line); font-family: var(--font-pixel); font-size: 13px;
+  background: var(--void); border-bottom: 1px solid var(--line-hair); font-family: var(--font-pixel); font-size: 13px;
   letter-spacing: .08em; text-transform: uppercase; position: relative; z-index: var(--z-hud); }
 .sy-hud__left, .sy-hud__right { display: flex; align-items: center; gap: var(--space-3); }
 .sy-hud__right { justify-content: flex-end; }
@@ -75,52 +75,119 @@ body { margin: 0; background: var(--void); color: var(--ink); font-family: var(-
 .sy-work__meta h3 { margin: 0; }
 .sy-work__meta p { margin: var(--space-1) 0 0; }
 
-/* Island node */
-.sy-island { --sy-accent: var(--hazard); position: relative; display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
-  background: transparent; border: 0; padding: 0; color: var(--ink); cursor: pointer; transform: translate(-50%, -50%);
-  animation: sy-bob 5s ease-in-out infinite; animation-delay: var(--sy-phase, 0s); }
-.sy-island__label { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); transition: transform 120ms ease-out; }
-.sy-island__name { text-transform: uppercase; white-space: nowrap; }
-.sy-island__kana { color: var(--ink-muted); }
-.sy-island__art { width: 220px; height: auto; overflow: visible; transition: transform 120ms ease-out; }
-.sy-island__top { fill: var(--sy-accent); stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
-.sy-island__rock { fill: var(--surface-raised); stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
-.sy-island__hatch { fill: none; stroke: var(--line); stroke-width: 2; stroke-linecap: square; }
-.sy-island__shadow { fill: var(--screentone); }
-.sy-island__letter { font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 44px; fill: var(--on-accent); }
-.sy-island:hover .sy-island__art, .sy-island.is-active .sy-island__art { transform: translateY(-8px) scale(1.04); }
-.sy-island:hover .sy-island__label { transform: translateY(-4px); }
+/* Island node: line art. Strokes in ink, fills in void so lines behind are hidden; accent only on the beacon and when focused */
+.sy-island { --sy-accent: var(--hazard); position: relative; display: block; width: 240px; height: 240px; background: transparent; border: 0; padding: 0;
+  color: var(--ink); cursor: pointer; transform: translate(-50%, -50%); animation: sy-bob 5s ease-in-out infinite; animation-delay: var(--sy-phase, 0s); }
+.sy-island__art { width: 240px; height: 240px; overflow: visible; display: block; transition: transform 300ms cubic-bezier(.2, .7, .2, 1); }
+.sy-island__top, .sy-island__rock, .sy-island__box { fill: var(--void); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; transition: fill 300ms; }
+.sy-island__hatch, .sy-island__mast { fill: none; stroke: var(--ink); stroke-width: 1; stroke-linecap: square; }
+.sy-island__hatch--top { stroke: var(--line-hair); transition: stroke 300ms; }
+.sy-island__ring { fill: none; stroke: var(--line-hair); stroke-width: 1; stroke-dasharray: 3 5; }
+.sy-island__beacon { fill: var(--sy-accent); animation: sy-blink 1.6s steps(2) infinite; animation-delay: var(--sy-phase, 0s); }
+.sy-island.is-focused .sy-island__top { fill: var(--sy-accent); }
+.sy-island.is-focused .sy-island__hatch--top { stroke: var(--on-accent); }
+.sy-island.is-focused .sy-island__art { transform: translateY(-10px); }
+.sy-island__label { position: absolute; left: 62%; bottom: 78%; display: flex; align-items: flex-end; pointer-events: none; text-align: left; }
+.sy-island__leader { width: 80px; height: 60px; flex: none; overflow: visible; }
+.sy-island__leader polyline { fill: none; stroke: var(--line-hair); stroke-width: 1; stroke-dasharray: 140; stroke-dashoffset: 0; transition: stroke 300ms; }
+.sy-island.is-focused .sy-island__leader polyline { stroke: var(--ink); animation: sy-draw 500ms cubic-bezier(.7, 0, .2, 1) both; }
+.sy-island__card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1); margin-bottom: 44px; min-width: 180px; }
+.sy-island__name { text-transform: uppercase; white-space: nowrap; color: var(--ink-muted); transition: color 300ms; }
+.sy-island.is-focused .sy-island__name { color: var(--ink); }
+.sy-island__kana { color: var(--ink-muted); white-space: nowrap; }
+.sy-island__blurb, .sy-island__cta { max-width: 240px; opacity: 0; transform: translateY(6px); transition: opacity 300ms, transform 300ms; }
+.sy-island__blurb { color: var(--ink-muted); }
+.sy-island__cta { color: var(--signal-text); }
+.sy-island.is-focused .sy-island__blurb, .sy-island.is-focused .sy-island__cta { opacity: 1; transform: none; }
 @keyframes sy-bob { 0%, 100% { margin-top: 0; } 50% { margin-top: -6px; } }
+@keyframes sy-draw { from { stroke-dashoffset: 140; } to { stroke-dashoffset: 0; } }
 
-/* Speed lines (jump overlay) */
+/* Speed lines (enter overlay) */
 .sy-speed { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; z-index: var(--z-jump);
   fill: var(--sy-accent, var(--ink)); transform: scale(1.4); transition: opacity 120ms, transform 450ms cubic-bezier(.7, 0, .2, 1); }
 .sy-speed.is-active { opacity: .9; transform: scale(1); }
 
-/* Island map (hub world) */
-.sy-map { position: relative; overflow: hidden; width: 100%; height: 100%; min-height: 420px; background-color: var(--void);
-  background-image: radial-gradient(var(--screentone) 1.2px, transparent 1.4px); background-size: 6px 6px; }
-.sy-map__world { position: absolute; left: 0; top: 0; transform-origin: 0 0; transition: transform 450ms cubic-bezier(.7, 0, .2, 1), opacity 220ms; }
-.sy-map.is-lift .sy-map__world { transition-duration: 250ms; }
-.sy-map.is-dive .sy-map__world { transition-duration: 220ms; opacity: 0; }
-.sy-map__grid { position: absolute; inset: 0; border: var(--stroke-hair) solid var(--line-soft);
+/* Island map: a world travelled by moving the mouse */
+.sy-map { position: relative; overflow: hidden; width: 100%; height: 100%; min-height: 420px; background-color: var(--void); cursor: crosshair;
+  background-image: radial-gradient(var(--screentone) 1.2px, transparent 1.4px); background-size: 6px 6px; touch-action: none; }
+.sy-map__world, .sy-map__fg { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform; }
+.sy-map__fg { pointer-events: none; z-index: 2; }
+.sy-map__grid { position: absolute; inset: 0; border: var(--stroke-hair) solid var(--line-hair);
   background-image: linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 200px 200px; opacity: .35; }
+  background-size: 300px 300px; opacity: .3; }
+.sy-map__routes { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.sy-route { fill: none; stroke: var(--line-hair); stroke-width: 1; stroke-dasharray: 2 8; }
+.sy-route.is-hot { stroke: var(--sy-accent); stroke-width: 1.5; stroke-dasharray: 14 10; animation: sy-flow 1.2s linear infinite; }
+@keyframes sy-flow { to { stroke-dashoffset: -48; } }
+.sy-orbit circle { fill: none; stroke: var(--line-hair); stroke-width: 1; transition: stroke 300ms; }
+.sy-orbit .sy-orbit__dash { stroke-dasharray: 1 9; }
+.sy-orbit.is-on circle { stroke: var(--sy-accent); }
+.sy-orbit.is-on .sy-orbit__dash { animation: sy-flow 3s linear infinite; }
+.sy-orbit__coord { font-family: var(--font-pixel); font-size: 11px; letter-spacing: .1em; fill: var(--ink-muted); }
 .sy-map__slot { position: absolute; }
+.sy-map__hair { position: absolute; left: 0; top: 0; background: var(--line-hair); pointer-events: none; opacity: 0; transition: opacity 200ms; z-index: 3; }
+.sy-map__hair--x { width: 100%; height: 1px; }
+.sy-map__hair--y { width: 1px; height: 100%; }
+.sy-map__read { position: absolute; left: 0; top: 0; color: var(--ink-muted); pointer-events: none; opacity: 0; transition: opacity 200ms; z-index: 3; white-space: nowrap; }
+.sy-map.has-pointer .sy-map__hair, .sy-map.has-pointer .sy-map__read { opacity: 1; }
+.sy-map__tether { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 3; }
+.sy-map__tether line { stroke: transparent; stroke-width: 1; stroke-dasharray: 4 4; }
+.sy-map.has-pointer .sy-map__tether line.is-on { stroke: var(--sy-accent); }
 .sy-map__flash { position: absolute; inset: 0; background: var(--sy-accent); opacity: 0; pointer-events: none; z-index: var(--z-jump); }
-.sy-map.is-pan .sy-map__flash { animation: sy-flash 80ms linear 1; }
+.sy-map.is-dive .sy-map__flash { animation: sy-flash 90ms linear 1; }
+.sy-map.is-dive .sy-map__world { transition: opacity 500ms 150ms; opacity: 0; }
 @keyframes sy-flash { 0% { opacity: .85; } 100% { opacity: 0; } }
-.sy-map__prompt { position: absolute; left: 50%; bottom: var(--space-6); transform: translateX(-50%) skewX(var(--slant)); margin: 0;
-  background: var(--surface); border: 2px solid var(--line); padding: var(--space-2) var(--space-4); z-index: calc(var(--z-jump) + 1); white-space: nowrap; }
+.sy-map__prompt { position: absolute; left: 50%; bottom: var(--space-6); transform: translateX(-50%); margin: 0; color: var(--ink);
+  background: var(--void); border: 1px solid var(--line-hair); padding: var(--space-2) var(--space-4); z-index: calc(var(--z-jump) + 1); white-space: nowrap; }
 
-/* Gate console */
-.sy-gate { display: flex; flex-direction: column; gap: var(--space-6); max-width: 640px; padding: var(--space-8); background: var(--surface);
-  border: var(--stroke-panel) solid var(--line); position: relative; }
+/* Travel hint: line-drawn mouse with four arrows */
+.sy-hint { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  pointer-events: none; z-index: 4; background: var(--void); padding: var(--space-6) var(--space-8); border: 1px solid var(--line-hair); animation: sy-fade-in 400ms both; }
+.sy-hint__mouse { width: 96px; height: 96px; overflow: visible; }
+.sy-hint__mouse rect, .sy-hint__mouse line, .sy-hint__mouse path { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: square; }
+.sy-hint__mouse path { stroke: var(--signal-text); animation: sy-nudge 1.6s ease-in-out infinite; transform-origin: 60px 60px; }
+@keyframes sy-nudge { 50% { transform: scale(1.12); } }
+@keyframes sy-fade-in { from { opacity: 0; } }
+
+/* Intro sequence: line → frame → title stroke → guide → content */
+.sy-intro { position: absolute; inset: 0; overflow: hidden; background: var(--void); }
+.sy-intro__line { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--ink); transform: scaleX(0);
+  transition: transform 500ms cubic-bezier(.7, 0, .2, 1), top 500ms cubic-bezier(.7, 0, .2, 1), background 400ms; }
+.sy-intro__side { position: absolute; top: 8%; bottom: 8%; width: 1px; background: var(--line-hair); transform: scaleY(0); transition: transform 500ms cubic-bezier(.7, 0, .2, 1) 150ms; }
+.sy-intro__side--l { left: 4%; } .sy-intro__side--r { right: 4%; }
+.sy-intro__meta { position: absolute; color: var(--ink-muted); opacity: 0; transition: opacity 400ms 200ms; }
+.sy-intro__meta--tl { left: 4%; top: calc(8% - 22px); } .sy-intro__meta--tr { right: 4%; top: calc(8% - 22px); }
+.sy-intro__meta--bl { left: 4%; bottom: calc(8% - 22px); } .sy-intro__meta--br { right: 4%; bottom: calc(8% - 22px); }
+.sy-intro__vert { position: absolute; right: calc(4% + var(--space-4)); top: 14%; writing-mode: vertical-rl; letter-spacing: .4em; color: var(--ink-muted); opacity: 0; transition: opacity 600ms; }
+.sy-intro__stage { position: absolute; inset: 8% 4%; display: grid; place-items: center; }
+.sy-intro__title { width: min(640px, 80%); overflow: visible; transition: transform 500ms cubic-bezier(.7, 0, .2, 1); }
+.sy-intro.is-p3 .sy-intro__title { transform: translateY(-22%) scale(.8); }
+.sy-intro__title text { font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 168px; fill: transparent; stroke: var(--ink);
+  stroke-width: 1.5; stroke-dasharray: 900; stroke-dashoffset: 900; }
+.sy-intro__guide { position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%); opacity: 0; transition: opacity 400ms; }
+.sy-intro__guide .sy-hint { position: static; transform: none; animation: none; background: transparent; border: 0; }
+.sy-intro__content { position: absolute; inset: 8% calc(4% + 48px) 8% 4%; display: grid; place-items: center; padding: var(--space-6); overflow: auto; animation: sy-fade-in 500ms both; }
+.sy-intro.is-p0 .sy-intro__line--top, .sy-intro.is-p0 .sy-intro__line--bot { transform: scaleX(1); }
+.sy-intro:not(.is-p0) .sy-intro__line { transform: scaleX(1); background: var(--line-hair); }
+.sy-intro:not(.is-p0) .sy-intro__line--top { top: 8%; }
+.sy-intro:not(.is-p0) .sy-intro__line--bot { top: 92%; }
+.sy-intro:not(.is-p0) .sy-intro__side, .sy-intro:not(.is-p0) .sy-intro__meta { transform: none; opacity: 1; }
+.sy-intro.is-p2 .sy-intro__title text, .sy-intro.is-p3 .sy-intro__title text { animation: sy-title 1.4s cubic-bezier(.6, 0, .3, 1) forwards; }
+.sy-intro.is-p2 .sy-intro__vert, .sy-intro.is-p3 .sy-intro__vert, .sy-intro.is-p4 .sy-intro__vert { opacity: 1; }
+.sy-intro.is-p3 .sy-intro__guide { opacity: 1; }
+@keyframes sy-title { 70% { stroke-dashoffset: 0; fill: transparent; } 100% { stroke-dashoffset: 0; fill: var(--ink); } }
+
+/* Gate console: thin frame with corner brackets */
+.sy-gate { display: flex; flex-direction: column; gap: var(--space-6); max-width: 640px; width: 100%; padding: var(--space-8); background: var(--void);
+  border: 1px solid var(--line-hair); position: relative; box-sizing: border-box; }
+.sy-gate::before, .sy-gate::after { content: ""; position: absolute; width: 24px; height: 24px; border: 0 solid var(--ink); }
+.sy-gate::before { left: -1px; top: -1px; border-left-width: 2px; border-top-width: 2px; }
+.sy-gate::after { right: -1px; bottom: -1px; border-right-width: 2px; border-bottom-width: 2px; }
 .sy-gate__boot { color: var(--signal-text); }
-.sy-gate__title { margin: 0; font-size: clamp(56px, 9vw, 120px); text-shadow: var(--shadow-glow); }
+.sy-gate__title { margin: 0; font-size: clamp(56px, 9vw, 120px); }
 .sy-field { display: flex; flex-direction: column; gap: var(--space-2); }
-.sy-input { font-family: var(--font-pixel); font-size: 16px; letter-spacing: .08em; color: var(--ink); background: var(--surface-raised);
-  border: 2px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); }
+.sy-input { font-family: var(--font-pixel); font-size: 16px; letter-spacing: .08em; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--ink-muted); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); }
 .sy-input::placeholder { color: var(--ink-muted); }
 .sy-gate__actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
 .sy-caret { animation: sy-blink 1s steps(2) infinite; }
@@ -136,7 +203,8 @@ body { margin: 0; background: var(--void); color: var(--ink); font-family: var(-
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sy-island, .sy-live, .sy-caret { animation: none; }
-  .sy-map__world, .sy-speed { transition: opacity 200ms; }
-  .sy-map.is-pan .sy-map__flash { animation: none; }
+  .sy-island, .sy-island__beacon, .sy-live, .sy-caret, .sy-route.is-hot, .sy-orbit.is-on .sy-orbit__dash, .sy-hint__mouse path { animation: none; }
+  .sy-map.is-dive .sy-map__world, .sy-speed { transition: opacity 200ms; }
+  .sy-map.is-dive .sy-map__flash { animation: none; }
+  .sy-intro__title text { stroke-dashoffset: 0; fill: var(--ink); }
 }

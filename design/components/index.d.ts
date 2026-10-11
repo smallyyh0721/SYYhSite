@@ -71,16 +71,20 @@ export interface Island {
   kana?: string;
   channel: string;
   tone: Tone;
+  /** One line shown on the focused card. */
+  blurb?: string;
   /** Centre position in world pixels. */
   x: number;
   y: number;
 }
 
 export interface IslandNodeProps extends Omit<Island, 'id' | 'x' | 'y'> {
-  active?: boolean;
+  /** Accent-filled top, leader line and card shown. */
+  focused?: boolean;
   /** Idle-bob phase offset in seconds. */
   phase?: number;
   onClick?: () => void;
+  onFocus?: () => void;
 }
 
 export interface SpeedLinesProps {
@@ -93,12 +97,32 @@ export interface SpeedLinesProps {
 
 export interface IslandMapProps {
   islands: Island[];
-  /** Called after the jump animation finishes (about 920ms, or 200ms with reduced motion). */
-  onArrive?: (island: Island) => void;
+  /** Pairs of island ids joined by route lines. Default: a loop in array order. */
+  routes?: [string, string][];
+  /** Fires after the dive into the focused island (650ms, or 200ms with reduced motion). */
+  onEnter?: (island: Island) => void;
+  /** Fires when the island nearest the camera changes (null between islands). */
+  onFocus?: (island: Island | null) => void;
+  /** Decorative nodes on a 1.25× parallax layer, positioned in world pixels. */
+  foreground?: React.ReactNode;
+  /** Island the camera starts on (e.g. the one the visitor just left). */
+  startId?: string;
+  /** Show the "move your mouse" hint until the first move. Default true. */
+  hint?: boolean;
   worldWidth?: number;
   worldHeight?: number;
   prompt?: string;
   style?: React.CSSProperties;
+}
+
+export interface IntroSequenceProps {
+  /** Shown once the intro finishes (normally the gate). */
+  children?: React.ReactNode;
+  /** Title drawn in stroke. Default 'SYYH'. */
+  title?: string;
+  /** Vertical caption. Default '信号を受信中'. */
+  caption?: string;
+  onDone?: () => void;
 }
 
 export interface GateConsoleProps {

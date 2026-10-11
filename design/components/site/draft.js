@@ -4,10 +4,11 @@
   var S = window.SYYH, h = React.createElement, useState = React.useState;
 
   var ISLANDS = [
-    { id: 'a', letter: 'A', name: 'Works', kana: 'サクヒン', channel: 'CH-01', tone: 'a', x: 380, y: 330 },
-    { id: 'b', letter: 'B', name: 'About', kana: 'ジコショウカイ', channel: 'CH-02', tone: 'b', x: 1180, y: 280 },
-    { id: 'c', letter: 'C', name: 'Story', kana: 'モノガタリ', channel: 'CH-03', tone: 'c', x: 520, y: 760 },
-    { id: 'd', letter: 'D', name: 'Board', kana: 'ケイジバン', channel: 'CH-04', tone: 'd', x: 1220, y: 740 }];
+    { id: 'a', letter: 'A', name: 'Works', kana: 'サクヒン · 作品', channel: 'CH-01', tone: 'a', x: 560, y: 470, blurb: 'Key visuals, AIGC series and manga pages.' },
+    { id: 'b', letter: 'B', name: 'About', kana: 'ジコショウカイ · 自己紹介', channel: 'CH-02', tone: 'b', x: 1820, y: 400, blurb: 'Who is behind the signal.' },
+    { id: 'c', letter: 'C', name: 'Story', kana: 'モノガタリ · 物語', channel: 'CH-03', tone: 'c', x: 760, y: 1130, blurb: 'A scroll-driven episode about the floating city.' },
+    { id: 'd', letter: 'D', name: 'Board', kana: 'ケイジバン · 掲示板', channel: 'CH-04', tone: 'd', x: 1880, y: 1100, blurb: 'Contact, links and a guestbook.' }];
+  var ROUTES = [['a', 'b'], ['b', 'd'], ['d', 'c'], ['c', 'a'], ['a', 'd']];
   var WORKS = [
     { no: 7, title: 'Neon Alley', year: 2026, kind: 'Key visual', sfx: 'ドンッ' },
     { no: 6, title: 'Bangboo Parade', year: 2026, kind: 'AIGC series', sfx: 'ワイワイ', tone: 'b' },
@@ -24,9 +25,12 @@
     '.dr-arrive{animation:dr-wipe 420ms cubic-bezier(.7,0,.2,1) both}',
     '@keyframes dr-wipe{from{clip-path:polygon(0 0,0 0,-20% 100%,-20% 100%)}to{clip-path:polygon(0 0,120% 0,100% 100%,-20% 100%)}}',
     '.dr-wrap{padding:var(--space-12);display:flex;flex-direction:column;gap:var(--space-16)}',
-    '.dr-gate{position:absolute;inset:0;display:grid;place-items:center;padding:var(--space-4)}',
-    '.dr-gate__sfx{position:absolute;right:var(--space-12);top:var(--space-12);color:var(--pop);transform:rotate(8deg)}',
-    '.dr-strip{position:absolute;left:0;right:0;bottom:0;height:18px;border-top:3px solid var(--line)}',
+    '.dr-gate{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--space-12);align-items:center;width:100%;max-width:1100px}',
+    '.dr-kv{position:relative;aspect-ratio:3/4;max-height:62vh;justify-self:center;width:100%;border:1px solid var(--line-hair);display:grid;place-items:center}',
+    '.dr-kv::before{content:"";position:absolute;inset:12px;border:1px dashed var(--line-hair)}',
+    '.dr-kv span{position:relative;text-align:center;color:var(--ink-muted)}',
+    '.dr-fg{position:absolute;writing-mode:vertical-rl;letter-spacing:.5em;color:var(--ink-muted);opacity:.55;font-size:18px}',
+    '@media (max-width:820px){.dr-gate{grid-template-columns:1fr}.dr-kv{display:none}}',
     '.dr-hero{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--space-12);align-items:end}',
     '.dr-hero__media{position:relative;aspect-ratio:16/10;border:3px solid var(--line);box-shadow:var(--shadow-pop);background-color:var(--surface);display:grid;place-items:center}',
     '.dr-hero__media .sfx{font-size:clamp(56px,9vw,120px);color:var(--island-a);transform:rotate(var(--tilt));-webkit-text-stroke:3px var(--on-accent);paint-order:stroke}',
@@ -60,11 +64,18 @@
 
   // ---- places ---------------------------------------------------------------
   function GateScreen(p) {
-    return h('div', { className: 'dr-gate sy-scanlines' },
-      h('span', { className: 'dr-gate__sfx sfx', 'aria-hidden': true }, 'ザザ…'),
-      h(S.GateConsole, { onEnter: p.onEnter }),
-      h('div', { className: 'dr-strip sy-hazard', 'aria-hidden': true }));
+    return h(S.IntroSequence, { title: 'SYYH', caption: '信号を受信中' },
+      h('div', { className: 'dr-gate' },
+        h(S.GateConsole, { onEnter: p.onEnter }),
+        h('div', { className: 'dr-kv sy-tone-bg', 'aria-hidden': true },
+          h('span', null, h('span', { className: 'hud-sm', style: { display: 'block' } }, 'KEY VISUAL · 3:4'),
+            h('span', { className: 'caption-jp' }, 'キャラクター立ち絵')))));
   }
+
+  var FOREGROUND = [
+    h('span', { key: 1, className: 'dr-fg caption-jp', style: { left: 1180, top: 120 } }, '浮遊する島々'),
+    h('span', { key: 2, className: 'dr-fg caption-jp', style: { left: 220, top: 760 } }, '夜の放送局'),
+    h('span', { key: 3, className: 'dr-fg caption-jp', style: { left: 2260, top: 700 } }, '次の島へ')];
 
   function WorksIsland() {
     return h('div', { className: 'dr-wrap' },
@@ -146,18 +157,19 @@
   function App(p) {
     var ss = useState(p.start || 'gate'), screen = ss[0], setScreen = ss[1];
     var cs = useState(p.callsign || null), callsign = cs[0], setCallsign = cs[1];
+    var ls = useState(null), last = ls[0], setLast = ls[1];
     var isl = byId(screen), Page = isl && PAGES[isl.id];
     var hud = screen === 'gate' ? { channel: 'CH-00', location: 'GATE' }
-      : isl ? { channel: isl.channel, location: isl.name, tone: isl.tone, onHub: function () { setScreen('hub'); } }
+      : isl ? { channel: isl.channel, location: isl.name, tone: isl.tone, onHub: function () { setLast(isl.id); setScreen('hub'); } }
       : { channel: 'HUB', location: 'NIGHT SKY' };
     return h('div', { className: 'dr-app' },
       h(S.HudBar, Object.assign({ callsign: callsign }, hud)),
       h('div', { className: 'dr-stage' },
         screen === 'gate' ? h(GateScreen, { onEnter: function (c) { setCallsign(c); setScreen('hub'); } })
         : isl ? h('div', { key: isl.id, className: 'dr-scroll dr-arrive' }, h(Page))
-        : h(S.IslandMap, { islands: ISLANDS, onArrive: function (i) { setScreen(i.id); } })));
+        : h(S.IslandMap, { islands: ISLANDS, routes: ROUTES, foreground: FOREGROUND, startId: last, hint: !last, onEnter: function (i) { setScreen(i.id); } })));
   }
 
-  window.SYYHDraft = { App: App, ISLANDS: ISLANDS, WORKS: WORKS, GateScreen: GateScreen,
+  window.SYYHDraft = { App: App, ISLANDS: ISLANDS, ROUTES: ROUTES, WORKS: WORKS, GateScreen: GateScreen,
     WorksIsland: WorksIsland, AboutIsland: AboutIsland, StoryIsland: StoryIsland, BoardIsland: BoardIsland };
 })();
