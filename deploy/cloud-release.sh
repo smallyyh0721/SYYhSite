@@ -2,6 +2,7 @@
 set -euo pipefail
 # Run as ubuntu with passwordless sudo. No credentials are copied into this script.
 task_sha=${1:?Pass the full 40-character Git commit SHA}
+task_bundle=${2:-}
 [[ "$task_sha" =~ ^[0-9a-f]{40}$ ]] || { echo 'Invalid commit SHA'; exit 1; }
 task_root=/opt/website/syyh
 task_repo=$task_root/repository
@@ -9,11 +10,24 @@ task_remote=https://github.com/smallyyh0721/SYYhSite.git
 sudo -n install -d -o "$(id -un)" -g "$(id -gn)" "$task_root"
 mkdir -p "$task_root/releases" "$task_root/logs"
 if [[ ! -e "$task_repo" ]]; then
-  git clone --branch codex/draft-v1 "$task_remote" "$task_repo"
+  if [[ -n "$task_bundle" ]]; then
+    [[ -f "$task_bundle" ]] || { echo 'Git bundle not found'; exit 1; }
+    git clone --branch codex/draft-v1 "$task_bundle" "$task_repo"
+    git -C "$task_repo" remote set-url origin "$task_remote"
+  else
+    git -c http.connectTimeout=15 -c http.lowSpeedLimit=1024 -c http.lowSpeedTime=30 clone --branch codex/draft-v1 "$task_remote" "$task_repo"
+  fi
 fi
 [[ "$(git -C "$task_repo" remote get-url origin)" == "$task_remote" ]] || { echo 'Unexpected repository'; exit 1; }
 [[ -z "$(git -C "$task_repo" status --porcelain)" ]] || { echo 'Remote checkout has local changes; preserving them'; exit 1; }
-git -C "$task_repo" fetch origin "$task_sha"
+if ! git -C "$task_repo" cat-file -e "$task_sha^{commit}" 2>/dev/null; then
+  if [[ -n "$task_bundle" ]]; then
+    git -C "$task_repo" bundle verify "$task_bundle"
+    git -C "$task_repo" fetch "$task_bundle" refs/heads/codex/draft-v1
+  else
+    git -C "$task_repo" -c http.connectTimeout=15 -c http.lowSpeedLimit=1024 -c http.lowSpeedTime=30 fetch origin "$task_sha"
+  fi
+fi
 git -C "$task_repo" checkout --detach "$task_sha"
 [[ "$(git -C "$task_repo" rev-parse HEAD)" == "$task_sha" ]]
 task_env=$task_root/releases/$task_sha.env

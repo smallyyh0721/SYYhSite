@@ -13,6 +13,7 @@ dist/
 *.zip
 *.tar
 *.tar.gz
+*.bundle
 .grok/
 test-results/
 playwright-report/

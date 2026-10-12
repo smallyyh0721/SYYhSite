@@ -25,6 +25,8 @@ docker compose --env-file deploy/.env.example -f deploy/compose.yaml up -d --wai
 
 云端使用 `sudo -n docker`。基础镜像在本次实测可通过现有daemon拉取；不需要修改Docker mirror或传整份生产镜像。Git/cloud npm具体耗时记录在本阶段报告。
 
+若云端GitHub暂时超时，在已推送分支的本机执行 `git bundle create draft-v1.bundle codex/draft-v1`，记下SHA256，通过SCP传至云端，核对同一SHA256。用 `bash cloud-release.sh FULL_SHA /tmp/syyh-draft-v1.bundle` 从bundle恢复Git对象并保留GitHub origin。本机仍先验证同一提交的Linux镜像；云端照常从同一SHA构建，不传node_modules/数据库/密钥/整份镜像。已有cloud checkout不能含未提交修改；脚本会保留并停止。bundle传输耗时与构建耗时分开记录。
+
 ## 审核与备份
 
 在cloud checkout内，替换 `RELEASE_ENV` 为 `/opt/website/syyh/releases/<完整SHA>.env`：
