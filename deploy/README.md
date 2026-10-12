@@ -20,7 +20,7 @@ docker compose --env-file deploy/.env.example -f deploy/compose.yaml up -d --wai
 
 1. 本机构建、测试候选；提交并推送 `codex/draft-v1`，取得完整SHA。
 2. 通过已有服务器登录方式传 `cloud-release.sh` 或在SSH内运行其确定版本。私钥始终留在本机。
-3. `bash cloud-release.sh FULL_SHA` 会在 `/opt/website/syyh/repository` 拉同一版本、串行Linux构建、Compose运行，HTTP80。配置/日志在checkout外，云端卷 `syyh-draft-cloud-guestbook`。
+3. `bash cloud-release.sh FULL_SHA` 会在 `/opt/website/syyh/repository` 拉同一版本、按有限并发配置进行Linux构建、Compose运行，HTTP80。配置/日志在checkout外，云端卷 `syyh-draft-cloud-guestbook`。
 4. 检查公网主页、全部深链、GLB、API、404，进行真实浏览器复核。IP HTTP是本阶段draft预览；域名与TLS留待后续正式建设。
 
 云端使用 `sudo -n docker`。基础镜像在本次实测可通过现有daemon拉取；不需要修改Docker mirror或传整份生产镜像。Git/cloud npm具体耗时记录在本阶段报告。

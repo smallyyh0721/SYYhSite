@@ -128,7 +128,7 @@
       "phaseId": "P1",
       "title": "draft集成与阶段交付",
       "owner": "chatgpt",
-      "status": "in_progress",
+      "status": "accepted",
       "dependsOn": [
         "P1-03",
         "P1-04",

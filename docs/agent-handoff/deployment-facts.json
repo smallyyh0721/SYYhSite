@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updatedAt": "2026-10-12",
-  "scope": "P1-active-execution",
+  "scope": "P1-deployed-draft",
   "productionImplementationStarted": true,
   "serverSource": {
     "threadId": "01a12b8e-c6d1-7122-b027-1ec885456505",
@@ -31,7 +31,8 @@
     "composeVersion": "5.3.1",
     "containerCountAtRecheck": 0,
     "httpHttpsListeningAtRecheck": false,
-    "deploymentRootProposal": "/opt/website"
+    "deploymentRootProposal": "/opt/website",
+    "deploymentRoot": "/opt/website/syyh"
   },
   "local": {
     "os": "Windows 11 Pro",
@@ -62,29 +63,31 @@
   "network": {
     "dockerHubDirect": "timed-out-in-original-audit-not-retested",
     "configuredMirror": "https://mirror.ccs.tencentyun.com",
-    "mirrorStatus": "nginx:stable-alpine successfully pulled through configured daemon on 2026-10-12",
+    "mirrorStatus": "Fixed Node24 and Nginx base digests pulled successfully through existing daemon before build.",
     "gitFetchFromServerVerified": true,
-    "npmFetchFromServerVerified": false,
+    "npmFetchFromServerVerified": true,
     "privateRegistryPullVerified": false,
     "cloudFirewall80And443Verified": false,
     "dnsAndTlsVerified": false,
     "interpretation": "Direct-origin curl timeout does not establish failure of Docker pulls through the configured Tencent mirror. Configuring a mirror is not evidence it caused the direct-origin timeout.",
-    "githubLocalReadAndPushDryRunVerified": true
+    "githubLocalReadAndPushDryRunVerified": true,
+    "publicHttp80Verified": true,
+    "cloudGitCloneAtDeploy": "Timed out connecting to github.com:443; earlier ls-remote succeeded. Verified Git bundle fallback used."
   },
   "requirements": {
     "containers": "user-required",
     "deploymentTarget": "specified-server",
-    "publicDeployExecuted": false
+    "publicDeployExecuted": true
   },
   "recommendedDelivery": {
-    "status": "proposed-revised-after-user-bandwidth-and-mirror-feedback",
+    "status": "implemented-source-bundle-fallback-cloud-build",
     "initial": "Local Linux production build/test; Git fixed source/media/config inputs; Ubuntu builds from those same inputs; Compose and cloud acceptance.",
     "decisionBasis": "Measure concrete image pulls via existing mirror, Git/npm access, cold/warm build time and peak memory, and actual artifact size/upload throughput.",
     "later": "CI or local image build and verified registry delivery if cloud builds perform poorly; digest-based release.",
     "alternative": "save/scp/load for offline or emergency delivery, with explicit full-archive bandwidth cost.",
-    "uploadThroughputMeasured": false,
+    "uploadThroughputMeasured": true,
     "projectProductionImageSizeMeasured": true,
-    "serverBuildPerformanceMeasured": false
+    "serverBuildPerformanceMeasured": true
   },
   "checksPerformed": [
     "referenced-task-read",
@@ -97,14 +100,22 @@
     "local-Linux-production-build",
     "API-and-motion-tests",
     "browser-28-responsive-screens",
-    "approved-persistence-restart-and-independent-backup-read"
+    "approved-persistence-restart-and-independent-backup-read",
+    "Git-push",
+    "Git-bundle-upload-sha256-verified",
+    "cloud-production-build",
+    "cloud-Compose-healthy",
+    "cloud-HTTP-smoke-11-routes-404-GLB",
+    "cloud-22-assets-HTTP-check",
+    "cloud-API-pending-idempotency-and-restart-persistence"
   ],
   "checksNotPerformed": [
     "Docker-install",
-    "Git-push",
-    "cloud-deploy",
     "physical-touch-device",
-    "DNS-TLS"
+    "OS-reduced-motion-toggle",
+    "DNS-TLS",
+    "cloud-browser-visual-check-tool-timeout",
+    "historical-release-rollback"
   ],
   "phasePlan": {
     "P1": "Local Linux production build/test + explicitly authorized public cloud draft deployment",
@@ -112,5 +123,32 @@
     "P3": "Runtime media preparation and versioned assets",
     "P4": "Production Docker validation, Git/server build and cloud deployment within requested scope",
     "P5": "Patch regression and authorized updates"
+  },
+  "release": {
+    "sourceSha": "e590059ca96620aab024f4bcee27005633e3db08",
+    "repository": "https://github.com/smallyyh0721/SYYhSite",
+    "branch": "codex/draft-v1",
+    "url": "http://124.220.190.120/",
+    "sourceDelivery": "Git bundle after cloud GitHub connect timeout",
+    "bundleBytes": 15565955,
+    "bundleTransferSeconds": 2.227,
+    "bundleSha256": "4ad1f5597fdf92811e185466339037469ddd730d75dc94487a22e422eaeeaaaa",
+    "cloudBuildSeconds": 71,
+    "basePullIncludedInBuildTime": false,
+    "minimumObservedMemAvailableKiB": 2356704,
+    "imageSizes": {
+      "web": "99.9MB",
+      "api": "347MB"
+    },
+    "stableObservedRuntimeMiB": {
+      "web": 3.52,
+      "api": 24.29
+    },
+    "dataVolume": "syyh-draft-cloud-guestbook",
+    "runtimeRevisionLabelsVerified": true,
+    "containersHealthy": true,
+    "cloudBrowserVisualCheck": "unverified-tool-timeout",
+    "localBrowserVisualCheck": "passed-28-page-viewport-combinations",
+    "cloudHttpAssetsCheck": "passed-22-assets"
   }
 }

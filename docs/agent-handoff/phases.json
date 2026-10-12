@@ -21,7 +21,7 @@
       "id": "P1",
       "number": 1,
       "title": "draft第一版网站",
-      "status": "in_progress",
+      "status": "ready_for_review",
       "dependsOn": [],
       "deliverable": "draft-v1",
       "tasks": [
@@ -39,7 +39,8 @@
         "latest-user-scope"
       ],
       "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
-      "deploymentScope": "Local Linux Docker validation and public cloud draft deployment explicitly authorized on 2026-10-12"
+      "deploymentScope": "Local Linux Docker validation and public cloud draft deployment explicitly authorized on 2026-10-12",
+      "executionOutcome": "Local draft implemented, GitHub pushed, cloud Docker running; local browser and cloud HTTP/API/asset acceptance passed. Public browser tool AX/DOM/screenshot timed out; recorded limitation. Design feedback pending."
     },
     {
       "id": "P2",

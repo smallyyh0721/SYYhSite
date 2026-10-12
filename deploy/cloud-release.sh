@@ -44,7 +44,7 @@ task_log=$task_root/logs/$task_sha-memory-kib.log
 task_monitor=$!
 trap 'kill "$task_monitor" 2>/dev/null || true' EXIT
 cd "$task_repo"
-# Serial builds limit work on the 2-vCPU host; Linux dependencies are installed here.
+# Limit Compose concurrency; Bake may interleave targets. Next uses one worker.
 sudo -n env COMPOSE_PARALLEL_LIMIT=1 docker compose --progress plain --env-file "$task_env" -f deploy/compose.yaml build
 echo "Build elapsed seconds: $(( $(date +%s) - task_started ))"
 awk 'NR==1||$1<min{min=$1}END{print "Minimum observed MemAvailable KiB:",min}' "$task_log"

@@ -1,0 +1,12 @@
+{
+  "base": "http://124.220.190.120/api/messages",
+  "release": "e590059ca96620aab024f4bcee27005633e3db08",
+  "post": 201,
+  "pending": true,
+  "idempotentRetry": true,
+  "hiddenFromPublic": true,
+  "testId": 1,
+  "persistedPendingAfterApiRestart": true,
+  "testEntryRejected": true,
+  "finalPublicCount": 0
+}

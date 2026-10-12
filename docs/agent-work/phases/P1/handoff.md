@@ -1,6 +1,6 @@
 # 阶段1 draft 执行交接
 
-2026-10-12：本机实施与验收完成，GitHub推送及云端发布正在执行。用户明确授权本机开发、GitHub交付和云端Docker部署；P2–P5未启动。云端实际结果会追加到本文，未完成前不称部署通过。
+2026-10-12：本机实施、GitHub推送和云端Docker发布完成；P1处于ready_for_review，等待用户设计反馈。用户明确授权本阶段公开draft；P2–P5未启动。公网HTTP/API/资源复核通过，公网浏览器工具读取超时的限制单列如下。
 
 ## 交付内容
 
@@ -44,4 +44,15 @@ P2输入是本运行draft、以上证据及用户反馈；P2尚未启动。正�
 
 ## 发布记录
 
-待填：完整运行SHA、GitHub分支、云端构建耗时/最低观测可用内存、容器/镜像/公开URL、公网HTTP与浏览器验收结果。
+- 公开草稿：[http://124.220.190.120/](http://124.220.190.120/)。本机仍为http://127.0.0.1:8080/；目前IP HTTP/noindex，域名/TLS未配置。
+- GitHub：[codex/draft-v1](https://github.com/smallyyh0721/SYYhSite/tree/codex/draft-v1)。运行SHA：`e590059ca96620aab024f4bcee27005633e3db08`（同输入已在本机Linux容器构建、运行并HTTP复核）。后续交接文档提交不改本次运行SHA。
+- 云端GitHub读取曾在前置检查通过，但正式clone期间连接github.com:443超时，3分钟没有传输进度，已终止本次clone并由Git清理其部分checkout。npm正常。不修改现有mirror/证书/防火墙；不据此推断Docker Hub不能拉常用镜像。
+- 改传Git bundle：15,565,955B（约14.84MiB），本次SCP含连接开销2.227秒，实际约6.67MiB/s；速度仅代表本次网络。SHA256 `4ad1f5597fdf92811e185466339037469ddd730d75dc94487a22e422eaeeaaaa` 本机与云端核对一致。bundle恢复Git对象，origin仍为GitHub，checkout固定到运行SHA；未传整份镜像/Windows依赖/本机数据库。
+- 云端从该SHA构建，基础Node/Nginx已在前置检查拉取。应用首次依赖安装/生产构建共71秒（不含之前镜像pull、Git超时与容器健康等待）；pnpm安装33.5秒，Next build28.4秒。设置Compose并发限制和Next1worker/Node2GB堆上限；Bake仍可交错处理目标，不能把日志称为完全串行。
+- 每秒采样最低MemAvailable 2,356,704KiB≈2.25GiB，swap未使用；这是最低观测可用内存，非精确进程峰值。镜像Web99.9MB/API347MB；云端稳定时观测Web3.52MiB/API24.29MiB，CPU各0%。
+- `/opt/website/syyh/repository` detached HEAD=运行SHA，工作树干净；env/config与current-release在checkout外；生产卷`syyh-draft-cloud-guestbook`。两个容器OCI revision标签=运行SHA，均healthy；仅Web公开0.0.0.0:80，API3001不公开。
+- 本机向公网执行`smoke-http.mjs`：11内容路由200、真实404、API/GLB1skin/nosniff通过；另检查22个实际引用的JS/CSS及四岛WebP/海报均200，见[cloud-assets-check.json](cloud-assets-check.json)。80端口已从公网验证，未更改云安全组/系统防火墙。
+- 公网API真实POST=201 pending，同一key重试=200 duplicate/id一致，公开列表不含测试项；API容器重启后CLI仍读到pending id1，随后reject本次验收项，公开列表仍为空，见[cloud-api-check.json](cloud-api-check.json)。云端未放入已审核假留言。
+- 公网可视复核限制：内置浏览器导航首页/作品页后，AX、截图、DOM读取连续超时；恢复连接和新标签仍未能读取。不能声称云端浏览器交互/截图已通过。保存的screens来自本机生产容器；云端同SHA的HTML、JS/CSS/媒体/接口与容器事实已验证。后续优先由用户正常浏览器或工具恢复后补这项检查。
+
+首次发布已具备版本env/镜像tag、健康检查、日志轮转和不删卷的更新/回滚操作说明，见[运维](../../../../deploy/README.md)。没有旧版本回滚演练，证据不扩张到正式生产完备性。

@@ -133,8 +133,9 @@ def main():
             link_count += 1
             validate_target(source, target, errors)
     for asset in assets["assets"]:
-        if asset.get("sourcePath"):
-            validate_target(ROOT / "asset-manifest-root.txt", asset["sourcePath"], errors)
+        for field in ["sourcePath", "runtimePath", "posterPath"]:
+            if asset.get(field):
+                validate_target(ROOT / "asset-manifest-root.txt", asset[field], errors)
     if errors:
         raise ValueError(json.dumps(errors, ensure_ascii=False, indent=2))
 
@@ -181,7 +182,7 @@ def main():
                   "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
                  for p in sorted(files)]
     write_json(package_manifest, {"version": 2, "package": "syyh-agent-handoff-v2.zip",
-                                 "note": "Project design snapshot and plans, not a production website. External Blender skill remains referenced in place.",
+                                 "note": "Draft source, design and phase docs; not a Docker image release. Dependencies, databases, logs and credentials excluded. External Blender skill referenced in place.",
                                  "files": checksums})
     files.add(package_manifest)
     archive = ROOT / "syyh-agent-handoff-v2.zip"

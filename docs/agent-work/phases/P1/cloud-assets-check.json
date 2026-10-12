@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-10-12T09:21:04.028Z",
+  "base": "http://124.220.190.120/",
+  "checkedAssets": 22,
+  "allPassed": true,
+  "assets": [
+    {
+      "path": "/_next/static/css/e19c19203f1848a0.css",
+      "status": 200,
+      "bytes": 7963
+    },
+    {
+      "path": "/_next/static/css/e3e5a7befa365208.css",
+      "status": 200,
+      "bytes": 2780
+    },
+    {
+      "path": "/_next/static/chunks/webpack-9ae22c213df4bebb.js",
+      "status": 200,
+      "bytes": 3559
+    },
+    {
+      "path": "/_next/static/chunks/79dcb429-8f9fa0011e20e23a.js",
+      "status": 200,
+      "bytes": 203721
+    },
+    {
+      "path": "/_next/static/chunks/970-8a56d0d5dbbff686.js",
+      "status": 200,
+      "bytes": 242943
+    },
+    {
+      "path": "/_next/static/chunks/main-app-85a60d7d8f742445.js",
+      "status": 200,
+      "bytes": 514
+    },
+    {
+      "path": "/_next/static/chunks/614-2adc28b76ac9e5d7.js",
+      "status": 200,
+      "bytes": 7649
+    },
+    {
+      "path": "/_next/static/chunks/app/layout-97b49fc2c73d0891.js",
+      "status": 200,
+      "bytes": 3517
+    },
+    {
+      "path": "/_next/static/chunks/app/not-found-c79a9602f31d53af.js",
+      "status": 200,
+      "bytes": 187
+    },
+    {
+      "path": "/_next/static/chunks/04763798-24816ae9b4595124.js",
+      "status": 200,
+      "bytes": 51569
+    },
+    {
+      "path": "/_next/static/chunks/571-13c773118de3720d.js",
+      "status": 200,
+      "bytes": 22807
+    },
+    {
+      "path": "/_next/static/chunks/app/page-c6b8d3e28d9e998c.js",
+      "status": 200,
+      "bytes": 3984
+    },
+    {
+      "path": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "bytes": 112594
+    },
+    {
+      "path": "/_next/static/css/e389f78c29bfa679.css",
+      "status": 200,
+      "bytes": 10757
+    },
+    {
+      "path": "/_next/static/chunks/app/hub/page-9f3f2b46d1f51bec.js",
+      "status": 200,
+      "bytes": 10580
+    },
+    {
+      "path": "/_next/static/css/2215e62f47d9048f.css",
+      "status": 200,
+      "bytes": 2228
+    },
+    {
+      "path": "/_next/static/chunks/app/board/page-5bc33c8873c2740f.js",
+      "status": 200,
+      "bytes": 5791
+    },
+    {
+      "path": "/media/01-sky-city.webp",
+      "status": 200,
+      "bytes": 260500
+    },
+    {
+      "path": "/media/02-ancient-landform.webp",
+      "status": 200,
+      "bytes": 249292
+    },
+    {
+      "path": "/media/03-apocalypse.webp",
+      "status": 200,
+      "bytes": 226258
+    },
+    {
+      "path": "/media/04-anime-home.webp",
+      "status": 200,
+      "bytes": 338562
+    },
+    {
+      "path": "/media/avatar-poster.png",
+      "status": 200,
+      "bytes": 322204
+    }
+  ]
+}

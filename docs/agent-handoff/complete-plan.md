@@ -6,7 +6,7 @@
 
 ---
 
-阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 P1：in_progress。实际实施、验证及部署事实见 [P1交接](../agent-work/phases/P1/handoff.md)。历史设计正文与当前执行事实分开记录。
+阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 P1：ready_for_review。实际实施、验证及部署事实见 [P1交接](../agent-work/phases/P1/handoff.md)。历史设计正文与当前执行事实分开记录。
 
 
 ---

@@ -1,7 +1,7 @@
 {
   "version": 2,
   "package": "syyh-agent-handoff-v2.zip",
-  "note": "Project design snapshot and plans, not a production website. External Blender skill remains referenced in place.",
+  "note": "Draft source, design and phase docs; not a Docker image release. Dependencies, databases, logs and credentials excluded. External Blender skill referenced in place.",
   "files": [
     {
       "path": ".dockerignore",
@@ -15,8 +15,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 250,
-      "sha256": "72407ae092d891da9510f242e077f5e8e047dad446b79357e815138e775578a2"
+      "bytes": 259,
+      "sha256": "1b4289d151c9751fdeb960c3cd88eb3ed26b1d12abbaf704fa98156d4ca795ec"
     },
     {
       "path": "AGENTS.md",
@@ -100,8 +100,8 @@
     },
     {
       "path": "deploy/cloud-release.sh",
-      "bytes": 2180,
-      "sha256": "ffc635fc5b0a7360771fd625cf7024db365158fd1efd9ec025ce0c07d7fccc05"
+      "bytes": 2849,
+      "sha256": "48c166fec25ecc4c60afac00aa6479adc13b2ed3c317e6e61181dda29a3ef8ba"
     },
     {
       "path": "deploy/compose.yaml",
@@ -120,8 +120,8 @@
     },
     {
       "path": "deploy/README.md",
-      "bytes": 3767,
-      "sha256": "969e3e7c58a372f615d01f7aabe6845b6ccb987944f0d713662a8ce6a40ee411"
+      "bytes": 4332,
+      "sha256": "b9b6ff485b10a6d42dedaa9ec242ad0397560fa2cbd34eed2c1e2855294834a0"
     },
     {
       "path": "design/components/AboutPage/preview.html",
@@ -560,13 +560,13 @@
     },
     {
       "path": "docs/agent-handoff/asset-manifest.json",
-      "bytes": 9470,
-      "sha256": "e4c9a48cfab0ccaabd4082fd690d67297714643c3a3c09073d68e8783e92c1ab"
+      "bytes": 9491,
+      "sha256": "e0bb23d4342525656e6b1ff3e883e5e758c22cd46f30289a7bbea9bacbd1ec15"
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 100969,
-      "sha256": "bf2f1b0ba4c8ddf573c6c10e7eb6fde910ddee86dc235ec2daaba7e26c916f8b"
+      "bytes": 100974,
+      "sha256": "a6ea9484a4a0f4f2fccd5081df339682c51afe005b3de3e29fb4b9660a20f54d"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
@@ -575,8 +575,8 @@
     },
     {
       "path": "docs/agent-handoff/deployment-facts.json",
-      "bytes": 4598,
-      "sha256": "61330d4965c92397d317012cdb05d32847162ecd8798880a683f6d7223e937db"
+      "bytes": 6180,
+      "sha256": "3b83a2e15812513f6a1285566f0bd554780545bbfaf8783ccdd502b9d5794c69"
     },
     {
       "path": "docs/agent-handoff/index.html",
@@ -585,8 +585,8 @@
     },
     {
       "path": "docs/agent-handoff/phases.json",
-      "bytes": 3806,
-      "sha256": "5e7c18ba0b481b1979f93cda704be4d1cd716410c59734fc783a5ac61e4c6817"
+      "bytes": 4200,
+      "sha256": "8fa84fc2179daae1e8803fe96097103e654d8719b551ec0733636f4e4f2e9bf3"
     },
     {
       "path": "docs/agent-handoff/prompts/chatgpt-lead.md",
@@ -610,13 +610,13 @@
     },
     {
       "path": "docs/agent-handoff/tasks.json",
-      "bytes": 20431,
-      "sha256": "0df619cbbc11105a58b65555e4ee56f966a6aa48483996ca59ef82d68dd26555"
+      "bytes": 20428,
+      "sha256": "13939eaf3e16390d7b715b523c5c5148252c6ac0a4905bc9b7cd303600125d05"
     },
     {
       "path": "docs/agent-handoff/validation.json",
-      "bytes": 785,
-      "sha256": "fa8b4cc34aa3b0063e3225dd07490c40eb9b79d9b97f539fcf02a32af407c90e"
+      "bytes": 765,
+      "sha256": "01f660decfd85ed5420747da7752ce886c1a669bae1388f82eb03f5c54bb2a1a"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
@@ -624,9 +624,19 @@
       "sha256": "3dc09a71b3e93ac79c205c89f4285c8fd7e93924f12ccdd83ac7b8eeedb05cbf"
     },
     {
+      "path": "docs/agent-work/phases/P1/cloud-api-check.json",
+      "bytes": 310,
+      "sha256": "8ad420105bfbc427708dd096453941776b433063cdf7f86b1d0ddd8d03cc02a2"
+    },
+    {
+      "path": "docs/agent-work/phases/P1/cloud-assets-check.json",
+      "bytes": 2666,
+      "sha256": "9e5f7ddf73598b20433269a5cdb11f43904068caec73d38023519248f39854fe"
+    },
+    {
       "path": "docs/agent-work/phases/P1/handoff.md",
-      "bytes": 5102,
-      "sha256": "4c7d8b7942bd75cdb52fca13db5c9bad1ee947421dc18d552c4381e8ca1e7845"
+      "bytes": 8079,
+      "sha256": "77f81475094810cb7f62bba0e4a9cfd82ed3045e7a79c32956edb5c2ad43e934"
     },
     {
       "path": "docs/agent-work/phases/P1/layout-checks.json",
@@ -700,8 +710,8 @@
     },
     {
       "path": "docs/agent-work/reports/P1-03.md",
-      "bytes": 5512,
-      "sha256": "b90d8d52bafd3d68f68b870c7f6daa8a7b841b81ae9606549591abd77805ec48"
+      "bytes": 5581,
+      "sha256": "6c7067ec0bd16b15a0724f21a3bc5ab7c6fd9afcf60145fd778fa35f8fd61bb3"
     },
     {
       "path": "docs/agent-work/reports/P1-04.md",
@@ -720,8 +730,8 @@
     },
     {
       "path": "docs/agent-work/reports/P1-07.md",
-      "bytes": 391,
-      "sha256": "79364f37ad6a49a3898113bcd723430f1f9356ae9aa3ccf3c51b32c26764ad1e"
+      "bytes": 647,
+      "sha256": "148585a51ceaa618d846e6b195c2431959ac1db41e312d894ee41d66ba64d3a4"
     },
     {
       "path": "docs/design-proposal-v1.md",
@@ -825,13 +835,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 3090,
-      "sha256": "11cc7a74af61b5e89f2b9313d231ae38b4371a3795e570fba76f8022f6ae0e83"
+      "bytes": 3297,
+      "sha256": "b16ca44ec1afbc7025d4195b89527b7d7877a330aa962db800437e6c72576e5f"
     },
     {
       "path": "scripts/build-agent-handoff.py",
-      "bytes": 9788,
-      "sha256": "2a69a56fe07d4cb5473d9fd98b40fd9695f22e17db17917789184b638aab10a5"
+      "bytes": 9900,
+      "sha256": "76986a2779240372f2d4a19f7312cbec29926e2a6cd66b0f7a2ce65ceb9d3662"
     },
     {
       "path": "scripts/prepare-media.mjs",
