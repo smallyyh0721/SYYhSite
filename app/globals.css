@@ -20,7 +20,6 @@ body {
     "Microsoft YaHei",
     system-ui,
     sans-serif;
-  padding: 0 48px;
 }
 button,
 input,
@@ -171,18 +170,12 @@ hr {
   border-top: 1px solid var(--hairline);
 }
 @media (max-width: 900px) {
-  body {
-    padding: 0 24px;
-  }
   .display {
     overflow-wrap: anywhere;
     font-size: clamp(48px, 10vw, 88px);
   }
 }
 @media (max-width: 600px) {
-  body {
-    padding: 0 16px;
-  }
   .display {
     overflow-wrap: anywhere;
     font-size: clamp(42px, 12.7vw, 68px);

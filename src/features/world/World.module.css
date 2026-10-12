@@ -1,266 +1,44 @@
-.world {
-  position: relative;
-  min-height: 720px;
-  background: radial-gradient(
-    ellipse at 50% 45%,
-    var(--surface),
-    var(--sky) 75%
-  );
-  border: 1px solid var(--hairline);
-  overflow: hidden;
-  --map-x: 0px;
-  --map-y: 0px;
-  --map-scale: 0.92;
-  --map-scale-x: .92;
-  --map-scale-y: .56;
-}
-.stage {
-  position: absolute;
-  inset: 0 0 100px;
-  touch-action: none;
-  overflow: hidden;
-}
-.grid {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--hairline) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: 0.25;
-  transform: translate(calc(var(--map-x) * -0.2), calc(var(--map-y) * -0.2));
-}
-.crosshair {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font: 40px/1 monospace;
-  color: var(--primary);
-  transform: translate(-50%, -50%);
-  opacity: 0.35;
-}
-.island {
-  --x: 0px;
-  --y: 0px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 250px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--ink);
-  transform: translate(
-    calc(-50% + var(--x) * var(--map-scale-x) - var(--map-x)),
-    calc(-50% + var(--y) * var(--map-scale-y) - var(--map-y))
-  );
-  text-align: left;
-  cursor: default;
-}
-.islandArt {
-  width: 230px;
-  margin: auto;
-  filter: saturate(0.85);
-  transition: filter 0.3s;
-  animation: float 5s ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-.islandArt > div {
-  aspect-ratio: 3/3.4;
-  mask-image: linear-gradient(transparent, black 12%, black 86%, transparent);
-}
-.island:not(.active) {
-  opacity: 0.7;
-}
-.active {
-  cursor: pointer;
-  z-index: 2;
-}
-.active .islandArt {
-  filter: saturate(1.1)
-    drop-shadow(0 0 15px color-mix(in srgb, var(--primary), transparent 70%));
-}
-.tag {
-  display: flex;
-  flex-direction: column;
-  border-left: 2px solid var(--hairline);
-  padding: 4px 12px;
-  gap: 4px;
-  background: color-mix(in srgb, var(--sky), transparent 20%);
-  font-size: 12px;
-}
-.tag b {
-  font: 12px monospace;
-  letter-spacing: 1px;
-}
-.active .tag {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-.hud {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  min-height: 100px;
-  padding: 22px 28px;
-  background: var(--surface);
-  border-top: 1px solid var(--hairline);
-}
-.status {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-.status .eyebrow {
-  font-size: 10px;
-  margin-bottom: 6px;
-}
-.controls {
-  display: flex;
-  gap: 10px;
-}
-.controls button {
-  font-size: 11px;
-  padding: 10px 16px;
-}
-.map {
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  width: 120px;
-  color: var(--muted);
-  pointer-events: none;
-}
-.map svg {
-  width: 100%;
-}
-.map span {
-  font: 8px monospace;
-}
-.below {
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 12px;
-}
-.below nav {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.below a {
-  font: 11px monospace;
-  color: var(--ink);
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
-.transition {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--void);
-  color: var(--primary);
-  font:
-    italic 900 clamp(40px, 8vw, 90px) Impact,
-    sans-serif;
-  animation: reveal 0.65s both;
-}
-.leaving .island {
-  pointer-events: none;
-}
-@keyframes float {
-  50% {
-    translate: 0 -6px;
-  }
-}
-@keyframes reveal {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0);
-  }
-}
-@media (max-width: 900px) {
-  .world {
-    min-height: 660px;
-  }
-  .island {
-    width: 220px;
-  }
-  .islandArt {
-    width: 200px;
-  }
-  .hud {
-    padding: 18px;
-  }
-  .below {
-    flex-direction: column;
-    gap: 0;
-  }
-  .below nav {
-    gap: 24px;
-  }
-}
-@media (max-width: 600px) {
-  .world {
-    min-height: 620px;
-  }
-  .stage {
-    bottom: 155px;
-  }
-  .island {
-    width: 136px;
-  }
-  .islandArt {
-    width: 124px;
-  }
-  .tag {
-    font-size: 10px;
-    padding: 3px 7px;
-  }
-  .tag b {
-    font-size: 10px;
-  }
-  .hud {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    padding: 16px;
-    min-height: 155px;
-  }
-  .controls {
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .controls button {
-    padding: 10px;
-    font-size: 10px;
-  }
-  .map {
-    width: 75px;
-    right: 10px;
-    top: 10px;
-  }
-  .map span {
-    font-size: 6px;
-  }
-  .below nav {
-    gap: 6px 20px;
-  }
-  .status {
-    font-size: 13px;
-  }
-}
-.world[data-still="true"] .islandArt {
-  animation: none;
-}
+.world { position: relative; width: 100%; height: 100svh; min-height: 650px; overflow: hidden; isolation: isolate; background: var(--void); }
+.environment { position: absolute; inset: 0; z-index: -2; background: linear-gradient(0deg, rgba(1,6,15,.6), transparent 32%, rgba(1,6,15,.15)), url('/media/world-v3/environment-night.webp') center/cover; }
+:global([data-theme="day"]) .environment { background: linear-gradient(0deg, rgba(237,247,255,.8), transparent 35%), url('/media/world-v3/environment-day.webp') center/cover; }
+.srOnly { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.hint { position: absolute; top: 92px; left: 36px; color: var(--muted); font: 9px monospace; letter-spacing: 2px; z-index: 5; }
+.stage { position: absolute; inset: 106px 0 150px; }
+.island { position: absolute; width: min(27vw, 38svh); height: min(27vw, 38svh); transform: translate(-50%, -50%); transition: left .75s cubic-bezier(.22,.7,.15,1), top .75s cubic-bezier(.22,.7,.15,1), width .75s cubic-bezier(.22,.7,.15,1), height .75s cubic-bezier(.22,.7,.15,1); z-index: 2; }
+.island[data-slot="center"] { left: 49%; top: 45%; width: min(53vw, 67svh); height: min(53vw, 67svh); z-index: 4; }
+.island[data-slot="left"] { left: 13%; top: 42%; }
+.island[data-slot="upper"] { left: 84%; top: 24%; }
+.island[data-slot="lower"] { left: 86%; top: 83%; }
+.hit { display: block; border: 0; padding: 0; width: 100%; height: 100%; background: transparent; color: var(--ink); touch-action: manipulation; }
+.hit img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; filter: grayscale(1) brightness(.64); opacity: .85; transition: filter .35s ease, opacity .35s ease; animation: float 7s ease-in-out infinite; animation-delay: var(--delay); }
+.island[data-active="true"] img { filter: drop-shadow(0 16px 32px rgba(0,12,35,.2)); opacity: 1; }
+:global([data-theme="day"]) .island[data-active="false"] img { filter: grayscale(1) brightness(.8); opacity: .78; }
+.hit:focus-visible { outline: 2px dashed var(--primary); outline-offset: 4px; border-radius: 50%; }
+.label { position: absolute; left: 50%; top: 98%; transform: translateX(-50%); white-space: nowrap; font: italic 11px Georgia, serif; letter-spacing: 1px; color: var(--muted); pointer-events: none; transition: opacity .3s; }
+.island[data-active="true"] .label { opacity: 0; }
+.caption { position: absolute; left: 50%; bottom: 108px; transform: translateX(-50%); text-align: center; pointer-events: none; z-index: 6; }
+.channel { display: block; font: 11px monospace; letter-spacing: 3px; color: var(--muted); margin-bottom: 5px; }
+.caption h2 { font: 400 25px/1.3 "Microsoft YaHei", sans-serif; letter-spacing: 5px; margin-bottom: 12px; white-space: nowrap; }
+.enterHint { font: 10px monospace; letter-spacing: 2px; color: var(--primary); }
+.bottom { position: absolute; inset: auto 36px 20px; display: flex; align-items: end; justify-content: space-between; gap: 20px; z-index: 7; }
+.instruction { font: italic 9px Georgia, serif; letter-spacing: 1.5px; color: var(--muted); flex: 1; padding-bottom: 12px; }
+.channels { display: flex; gap: 20px; position: absolute; left: 50%; transform: translateX(-50%); }
+.channels button { border: 0; background: transparent; color: var(--muted); font: italic 13px Georgia, serif; min-width: 44px; min-height: 48px; padding: 8px; }
+.channels i { display: block; width: 23px; height: 1px; background: currentColor; margin: 9px auto 0; position: relative; }
+.channels i:after { content: ''; width: 4px; height: 4px; border-radius: 50%; background: currentColor; position: absolute; left: calc(50% - 2px); top: -1px; }
+.channels button[aria-pressed="true"] { color: var(--primary); }
+.utility { display: flex; gap: 16px; }
+.utility a, .utility button { display: inline-flex; align-items: center; min-height: 44px; border: 0; padding: 8px 0; background: transparent; color: var(--muted); font: 9px monospace; text-decoration: none; letter-spacing: 1px; }
+.accessibleNav { position: absolute; top: -200px; left: 20px; display: flex; gap: 20px; padding: 12px; z-index: 30; background: var(--void); border: 1px solid var(--primary); }
+.accessibleNav:focus-within { top: 90px; }
+.accessibleNav a { padding: 12px; font: 12px monospace; }
+.imageFallback { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; border: 1px dashed var(--border); background: var(--surface); font-size: 22px; }
+.imageFallback small { max-width: 160px; font-size: 11px; margin-top: 10px; }
+.transition { position: absolute; inset: 0; display: grid; place-items: center; background: var(--void); color: var(--primary); z-index: 15; font: 12px monospace; letter-spacing: 4px; animation: reveal .42s ease both; }
+.world[data-paused="true"] img { animation-play-state: paused; }
+.world[data-restoring="true"] .island { transition: none; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 1000px) { .instruction { max-width: 200px; font-size: 8px; line-height: 1.8; } .channels { gap: 10px; } .utility { gap: 10px; } }
+@media (max-width: 600px) { .world { min-height: 600px; } .hint { top: 82px; left: 22px; font-size: 8px; letter-spacing: 1px; } .stage { inset: 118px 0 190px; } .island { width: min(35vw, 26svh); height: min(35vw, 26svh); } .island[data-slot="center"] { left: 50%; top: 50%; width: min(72vw, 44svh); height: min(72vw, 44svh); } .island[data-slot="left"] { left: 19%; top: 9%; } .island[data-slot="upper"] { left: 81%; top: 8%; } .island[data-slot="lower"] { left: 82%; top: 100%; } .label { font-size: 8px; letter-spacing: .5px; top: 95%; } .caption { left: 37%; bottom: 132px; } .caption h2 { font-size: 20px; letter-spacing: 3px; margin-bottom: 8px; } .channel { font-size: 9px; letter-spacing: 2px; } .enterHint { font-size: 8px; letter-spacing: 1px; } .bottom { inset-inline: 22px; bottom: 16px; height: 88px; align-items: end; } .channels { top: 0; gap: 14px; } .instruction { font-size: 7px; letter-spacing: .5px; max-width: 125px; padding-bottom: 10px; } .utility { gap: 12px; } .utility a, .utility button { font-size: 8px; letter-spacing: 0; } .accessibleNav { gap: 0; left: 12px; right: 12px; justify-content: space-between; } .accessibleNav a { padding: 10px 5px; font-size: 10px; } }
+@media (max-height: 650px) and (min-width: 601px) { .world { min-height: 520px; } .stage { inset-block: 98px 128px; } .island[data-slot="center"] { width: min(47vw, 59svh); height: min(47vw, 59svh); } .caption { bottom: 83px; } .caption h2 { font-size: 20px; margin-bottom: 6px; } }

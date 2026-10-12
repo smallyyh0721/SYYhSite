@@ -1,7 +1,7 @@
 {
   "version": 2,
   "updatedAt": "2026-10-12",
-  "scope": "P1-execution-local-and-cloud",
+  "scope": "P2-approved-v3-draft-revision-and-cloud-update",
   "queueOwner": "chatgpt",
   "statusVocabulary": [
     "pending",
@@ -148,7 +148,7 @@
       "phaseId": "P2",
       "title": "反馈与问题分解",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "accepted",
       "dependsOn": [
         "P1-07"
       ],
@@ -165,14 +165,14 @@
       "phaseId": "P2",
       "title": "页面与普通组件修正",
       "owner": "grok",
-      "status": "pending",
+      "status": "accepted",
       "dependsOn": [
         "P2-01"
       ],
       "inputGates": [],
       "optional": false,
       "conditionalDependsOn": [],
-      "assignmentPath": null,
+      "assignmentPath": "docs/agent-work/assignments/P2-02.md",
       "reportPath": "docs/agent-work/reports/P2-02.md",
       "acceptance": "按任务修布局/中文/主题/手机/状态，记录实际自检；没有改动需求则说明已检查结果。",
       "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
@@ -182,7 +182,7 @@
       "phaseId": "P2",
       "title": "核心交互与性能修正",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "accepted",
       "dependsOn": [
         "P2-01"
       ],
@@ -199,7 +199,7 @@
       "phaseId": "P2",
       "title": "第一版范围和素材brief",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "accepted",
       "dependsOn": [
         "P2-02",
         "P2-03"
@@ -217,7 +217,7 @@
       "phaseId": "P2",
       "title": "修正版回归与交接",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "in_progress",
       "dependsOn": [
         "P2-04"
       ],

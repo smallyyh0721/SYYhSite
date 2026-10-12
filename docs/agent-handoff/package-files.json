@@ -20,8 +20,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 2686,
-      "sha256": "4e0bd6da13fdd05d52ffa0ff1be2702ef5662adac0a8d23471571a0cd2d9a7a1"
+      "bytes": 3071,
+      "sha256": "419750c4fb984f9324b492f947ce5c3bbf62020bd5cdafec50dc058985d8a4ac"
     },
     {
       "path": "app/about/page.tsx",
@@ -35,13 +35,13 @@
     },
     {
       "path": "app/draft/page.tsx",
-      "bytes": 1857,
-      "sha256": "4169c796238e7c9dfb4afefe499a8784c0a6453234dcefcd4d0a28c31508d0dc"
+      "bytes": 2695,
+      "sha256": "7952b5189e118d68291c58eca7c3decb886eb85d788554f8397f9cf7e10995b3"
     },
     {
       "path": "app/globals.css",
-      "bytes": 3482,
-      "sha256": "f1050690eef5c2445c40f4fe6e068e3924caa0940a604d1931c76b57d8dc50c9"
+      "bytes": 3395,
+      "sha256": "13430733d7dc9615f8b0481b59f52b8a5c9333a5a323813150ee447db234c150"
     },
     {
       "path": "app/hub/page.tsx",
@@ -92,6 +92,46 @@
       "path": "assets/source/avatar-proxy/v001/rig-map.json",
       "bytes": 303,
       "sha256": "c645d13acddda6eb94514932a4aeab875eb900b8c4ec552b98ca2f0307950f68"
+    },
+    {
+      "path": "assets/source/world-v3/v001/ancient.png",
+      "bytes": 2635670,
+      "sha256": "1f54b1e6e6789f48889f38e0807492d40e5a56bf161aaab576727c856b04d9f8"
+    },
+    {
+      "path": "assets/source/world-v3/v001/apocalypse.png",
+      "bytes": 2497634,
+      "sha256": "a6ece1cd04af4afcde7e7614c94d5faa999759fc40ec2e573cabbaaa1d1fb4cc"
+    },
+    {
+      "path": "assets/source/world-v3/v001/environment-day.png",
+      "bytes": 2051419,
+      "sha256": "ae30a73027f10f5573bf5fb4fc71c1bb635974f8679477af706e99eae79a87f0"
+    },
+    {
+      "path": "assets/source/world-v3/v001/environment-night.png",
+      "bytes": 2117394,
+      "sha256": "2ca63a643c6b899402ab1fb503f85234a0fdfb713857cc1eb27f094b561d40c9"
+    },
+    {
+      "path": "assets/source/world-v3/v001/home.png",
+      "bytes": 2387325,
+      "sha256": "7f487b7bdae6e845761818becf81bd8ea3cef716c07b66fc1108c2e5e8d82b38"
+    },
+    {
+      "path": "assets/source/world-v3/v001/manifest.json",
+      "bytes": 4587,
+      "sha256": "2f16b4df067f55803616fb156cf24077b1761197ddc38ae686f7230e427cd823"
+    },
+    {
+      "path": "assets/source/world-v3/v001/prompts.json",
+      "bytes": 9954,
+      "sha256": "af819263712566f452f9049ea6ca6dab859827fa0c656efd9824344b20e00134"
+    },
+    {
+      "path": "assets/source/world-v3/v001/sky.png",
+      "bytes": 2518568,
+      "sha256": "84f3b8f02047a706981f64c13300956d6c5fe4f8d315678c5e33d2511afaea6a"
     },
     {
       "path": "deploy/.env.example",
@@ -509,6 +549,46 @@
       "sha256": "acd9f1669fac64efae5b32dd4e6c4efe3b686b2f35918b373787f829db094d3b"
     },
     {
+      "path": "design/review-v3/01-entrance-storyboard.png",
+      "bytes": 2054033,
+      "sha256": "29f93875c96fc09c4342040649b082ffb7d8ed6ba35422668c438aa87bc9586d"
+    },
+    {
+      "path": "design/review-v3/02-world-sky-night.png",
+      "bytes": 2594279,
+      "sha256": "1b04c6b3c0d9f0a6fbb48c3e03ef7b1abb0a6277c5261cd30cfa4e837c087c54"
+    },
+    {
+      "path": "design/review-v3/03-world-ancient-night.png",
+      "bytes": 2570460,
+      "sha256": "a36827003bab3abc2253a77468529895c311cbd0b133c0b1cc1f8fa0d2a9c8f6"
+    },
+    {
+      "path": "design/review-v3/04-world-sky-day.png",
+      "bytes": 2714066,
+      "sha256": "dce3a94745e721a726ae5fe4e42325c3a87e3312d1537560674327570718733f"
+    },
+    {
+      "path": "design/review-v3/brief.md",
+      "bytes": 5282,
+      "sha256": "e8521b371ec7858dfc88348b6c70ef6fe5ca73c12ab7dcccb098b00baad0ec72"
+    },
+    {
+      "path": "design/review-v3/index.html",
+      "bytes": 3854,
+      "sha256": "dc9ba46d5d65b9f9730c445895f99420815a68d4316d0edcd7ac90c1175d4b79"
+    },
+    {
+      "path": "design/review-v3/prompts.json",
+      "bytes": 9835,
+      "sha256": "979381a34408facab4d9c39895d5bc15b15d014b2645d65c775b24ecd54d2547"
+    },
+    {
+      "path": "design/review-v3/validation.json",
+      "bytes": 1264,
+      "sha256": "47cfd53046a2932db9f1cee2021bae470e29fac73017c8840796097a462fa435"
+    },
+    {
       "path": "design/site-map.md",
       "bytes": 2096,
       "sha256": "1ae983881f785bbf2c24c7c427a97b1c773cf8a5cb956d6a593d91fc375d46be"
@@ -525,28 +605,28 @@
     },
     {
       "path": "docs/agent-handoff/01-design.md",
-      "bytes": 8481,
-      "sha256": "ce04884680ba6f3a25bfe20f2574d7bda2da1396fc8230c2c3a880c570953682"
+      "bytes": 8818,
+      "sha256": "875fada5e6b285aaccc90219a2265a13683b65103316c1f592bed52bdc6c0529"
     },
     {
       "path": "docs/agent-handoff/02-implementation.md",
-      "bytes": 15283,
-      "sha256": "2ee4438842be771b42b9edcff1cc6b6225c7c0e3d4a40ebd7c6a654f3917de86"
+      "bytes": 15620,
+      "sha256": "dacb33fb297cf6aff385d9b8b105b83c30f6cbe01deecfa77ffae435d6aeecd2"
     },
     {
       "path": "docs/agent-handoff/03-assets.md",
-      "bytes": 13878,
-      "sha256": "bff1a1efae54d87b08d426a3ee8add0e76ce3933bcdd5a2aef573cc6fa788b00"
+      "bytes": 14215,
+      "sha256": "43a840341bc876fc7d65492c279dff265ed2d8643b76b6e3e051dee1fb6071b9"
     },
     {
       "path": "docs/agent-handoff/04-collaboration.md",
-      "bytes": 7615,
-      "sha256": "1481a02621bc329ee822a9e6b200683a438337bec9e4dde12b8007204044a869"
+      "bytes": 7618,
+      "sha256": "54aee9371e7ec763db16023e3861002128df29e50a566790bf219373d0de9595"
     },
     {
       "path": "docs/agent-handoff/05-taskboard.md",
-      "bytes": 9491,
-      "sha256": "bdd58c18117f7f61373a2f14eb4d978f739720c567be89c2e68055d50afba449"
+      "bytes": 9494,
+      "sha256": "17693c5f7379aaae9a4885b0d5344902d2e5d90df8dae23d6931f98367e67ce4"
     },
     {
       "path": "docs/agent-handoff/06-development-deployment.md",
@@ -555,23 +635,23 @@
     },
     {
       "path": "docs/agent-handoff/07-phased-plan.md",
-      "bytes": 13058,
-      "sha256": "314b0327021659cde61a6303acc07a4f9ad1c021dcf68cfa1bc37c7c6552d413"
+      "bytes": 13061,
+      "sha256": "b032327232050a46c68adb12e2bf6384cad9bf8703c38f73fab926aaf5cc6380"
     },
     {
       "path": "docs/agent-handoff/asset-manifest.json",
-      "bytes": 9491,
-      "sha256": "e0bb23d4342525656e6b1ff3e883e5e758c22cd46f30289a7bbea9bacbd1ec15"
+      "bytes": 17221,
+      "sha256": "0566f2f841c5eaa08ed2298888bedfaf1f401c7054e8e7a1ad21b78e31e217c7"
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 100974,
-      "sha256": "a6ea9484a4a0f4f2fccd5081df339682c51afe005b3de3e29fb4b9660a20f54d"
+      "bytes": 102080,
+      "sha256": "a028e4d011b372863f2169720f93cf98bd7c64c3033a587acb7ba714becb4706"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
-      "bytes": 6088,
-      "sha256": "74d623afe9dcff0dca04c26a6917389c5155a334a3963ca557a2dbcc044fb8eb"
+      "bytes": 6609,
+      "sha256": "4274011e10346cdca837697ddb927feabb6017ad8d68853849e48a9dea28da16"
     },
     {
       "path": "docs/agent-handoff/deployment-facts.json",
@@ -585,8 +665,8 @@
     },
     {
       "path": "docs/agent-handoff/phases.json",
-      "bytes": 4200,
-      "sha256": "8fa84fc2179daae1e8803fe96097103e654d8719b551ec0733636f4e4f2e9bf3"
+      "bytes": 4196,
+      "sha256": "d18a7e35b7992f69fc8ee1433038938bee1c516323721e6516b9f8ba00b0663e"
     },
     {
       "path": "docs/agent-handoff/prompts/chatgpt-lead.md",
@@ -605,23 +685,83 @@
     },
     {
       "path": "docs/agent-handoff/README.md",
-      "bytes": 7109,
-      "sha256": "015409e89a0ac8016e0262ea3e9307b7821c1d6777c403bb0b652e4437f53b61"
+      "bytes": 7112,
+      "sha256": "845ce5176afb70f4ec5ba3e4daaf43aff10bf726b71621553e6014ebd8202be2"
     },
     {
       "path": "docs/agent-handoff/tasks.json",
-      "bytes": 20428,
-      "sha256": "13939eaf3e16390d7b715b523c5c5148252c6ac0a4905bc9b7cd303600125d05"
+      "bytes": 19898,
+      "sha256": "42c3dec0423c9c94d967d332934a70e52561f78c0fc07911962413a43697358f"
     },
     {
       "path": "docs/agent-handoff/validation.json",
-      "bytes": 765,
-      "sha256": "01f660decfd85ed5420747da7752ce886c1a669bae1388f82eb03f5c54bb2a1a"
+      "bytes": 785,
+      "sha256": "4e9bcd53dc5e363d9a7baf351f7b784d299bd77a2e9419e864bfd9b01372b5cb"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
       "bytes": 2366,
       "sha256": "3dc09a71b3e93ac79c205c89f4285c8fd7e93924f12ccdd83ac7b8eeedb05cbf"
+    },
+    {
+      "path": "docs/agent-work/assignments/P2-02.md",
+      "bytes": 1815,
+      "sha256": "ecbc57fb7fbae546653caabb007dace9426bc8eb243c7c408aef07dc4d47d80f"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/hello-stranger-day-390.png",
+      "bytes": 31657,
+      "sha256": "12f1fe6a2052be332b1c5e5bd4ffb6b8dcfeee4955ccd96e1a05f6dbf1707805"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/local-http.json",
+      "bytes": 1510,
+      "sha256": "0c60095f5c83523a978848c8e406ca64af4e7603e3cdebfbf7e7da76597d4cbc"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/welcome-day-390.png",
+      "bytes": 34849,
+      "sha256": "35996bd16875078e98b13e2b500b197fd1651affb298255de7da47ad00eebf98"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/welcome-final-390.png",
+      "bytes": 34707,
+      "sha256": "ab4d3b4511c852f2671aeb97473706ee015d4834666fca9463bf8b24389a81cd"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/welcome-night-1440.png",
+      "bytes": 118763,
+      "sha256": "8fd857f5aaf2de370544dc5107a073623feb58b978757f0b405a4f9d58eaded6"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/world-ancient-night-1440.png",
+      "bytes": 233545,
+      "sha256": "9ac800ad33206acb16097f5740f7c8475241c3e12a3e8ac56d7807bb7045a862"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/world-apocalypse-day-1440.png",
+      "bytes": 243346,
+      "sha256": "4cbc29a23d7d237ad6408be945b629f17cd8028c01eb95c03cb4b43418a7c41e"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/world-day-320.png",
+      "bytes": 43068,
+      "sha256": "0cbc36c89817b740e0d4ceb874cea5073933699da133cb69f0820f0ee87fa039"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/world-day-390.png",
+      "bytes": 58481,
+      "sha256": "d4ea55734283ea60aafde82ef6590da693584870f956dd67ae78c83a45c2e94a"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/world-day-768.png",
+      "bytes": 120311,
+      "sha256": "ebecd36442230ecbd258d0e4ac732a65f512009358c0d78e5ceb6f528fbe9209"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/world-sky-night-1440.png",
+      "bytes": 232542,
+      "sha256": "d7fec39b6e8e1f7441eab30f5c43608967fa17c68f880220573a78e4a396e05d"
     },
     {
       "path": "docs/agent-work/phases/P1/cloud-api-check.json",
@@ -699,6 +839,11 @@
       "sha256": "759f56f4e1360150fa6c6e5ee287d82a7d958ed582f912a9f048ca18e73a6bb3"
     },
     {
+      "path": "docs/agent-work/phases/P2/handoff.md",
+      "bytes": 2006,
+      "sha256": "8994fe15327c5b2d1025a327725fdc7dd390d8023190bc4c286d4adccc77601e"
+    },
+    {
       "path": "docs/agent-work/reports/P1-01.md",
       "bytes": 446,
       "sha256": "743e774b626dc39a0f0716d74689799674f91d4ae0b984c05202ec084d43005d"
@@ -732,6 +877,31 @@
       "path": "docs/agent-work/reports/P1-07.md",
       "bytes": 647,
       "sha256": "148585a51ceaa618d846e6b195c2431959ac1db41e312d894ee41d66ba64d3a4"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-01.md",
+      "bytes": 1252,
+      "sha256": "37979aff55d3b8585a19fb2c251be769195da4a7342f73b208f79d0922a0a13d"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-02.md",
+      "bytes": 5119,
+      "sha256": "7bc6b244c1d6ba9f568949d3a3a46571c9cbca018e81fcd3d7e104061d5a597c"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-03.md",
+      "bytes": 2019,
+      "sha256": "585c547a32e1ca3efbd1c7313f53655ec70ed0e926af29c46f744ba6215c25a1"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-04.md",
+      "bytes": 1806,
+      "sha256": "a4a78fef2647b3ab89a4b2a831f512c0d1d44c1bd6fdc57780071b2359d8aca1"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-05.md",
+      "bytes": 1928,
+      "sha256": "27e31b8fb032cc6ebf6454548a7804e560f1df197f9fc6b6d6feca5d4078d1f7"
     },
     {
       "path": "docs/design-proposal-v1.md",
@@ -834,14 +1004,44 @@
       "sha256": "2621549eab8dada94daaf27fb124f2668cc827c51c594b2c7e08d58768d06c85"
     },
     {
+      "path": "public/media/world-v3/ancient.webp",
+      "bytes": 506868,
+      "sha256": "3d777ae5fa2651e2b0c0e5f486ef26b60e71c71215606871bbc00cdb6ec28dfa"
+    },
+    {
+      "path": "public/media/world-v3/apocalypse.webp",
+      "bytes": 493350,
+      "sha256": "5c03fe5b01e82111a82ff52a368c95f7063735c201dbe916f00da25bbd0ceebb"
+    },
+    {
+      "path": "public/media/world-v3/environment-day.webp",
+      "bytes": 147960,
+      "sha256": "688e0843abdcdab05282f38aa40c931acf7d5d309c65c1550fe34fef58a6cfd6"
+    },
+    {
+      "path": "public/media/world-v3/environment-night.webp",
+      "bytes": 139262,
+      "sha256": "402eed6556392d3b0bc179c09c2ba5aec524800d915fa7887d0a1ec3c30c2046"
+    },
+    {
+      "path": "public/media/world-v3/home.webp",
+      "bytes": 506002,
+      "sha256": "51b45fceda1c054d0f79d114554f8f7b5c8df4fcf87da3ab1b18932ee8ea4f3e"
+    },
+    {
+      "path": "public/media/world-v3/sky.webp",
+      "bytes": 498730,
+      "sha256": "d2392d4c54803cecd718227a20da7876a2f4eb471e7ca2340eb5f5d1e18a5e54"
+    },
+    {
       "path": "README.md",
-      "bytes": 3297,
-      "sha256": "b16ca44ec1afbc7025d4195b89527b7d7877a330aa962db800437e6c72576e5f"
+      "bytes": 3507,
+      "sha256": "4200ac9a35a1d2c2b586b8737e1a0ac725a58387d64deb414f8d1cd4e9bd14c5"
     },
     {
       "path": "scripts/build-agent-handoff.py",
-      "bytes": 9900,
-      "sha256": "76986a2779240372f2d4a19f7312cbec29926e2a6cd66b0f7a2ce65ceb9d3662"
+      "bytes": 10102,
+      "sha256": "bc9119d1f0bd2f48a552bf7337f5d83807c85b2acea524be256065bb5261f3c1"
     },
     {
       "path": "scripts/prepare-media.mjs",
@@ -849,9 +1049,14 @@
       "sha256": "3b2054338b0b8cc3e11e2dc14e4695560a0e1352a3e47bd12096d9b48f4cdc1d"
     },
     {
+      "path": "scripts/prepare-world-media.mjs",
+      "bytes": 1980,
+      "sha256": "9d20c1024ffd1a56d909d738b71044740b3833bc95e9f80cd6e9efe187724bf6"
+    },
+    {
       "path": "scripts/smoke-http.mjs",
-      "bytes": 1696,
-      "sha256": "ca97d45933d7454b6c1883bb56b3e5a7fb4ee14da9b85627f6ec4474cc9c67a8"
+      "bytes": 2431,
+      "sha256": "827fa6016abc4678d24b936dc24ea76a013ba90cd404b85e28ef7cd15278eec7"
     },
     {
       "path": "scripts/sync-runtime-tokens.mjs",
@@ -895,13 +1100,13 @@
     },
     {
       "path": "src/components/Shell.module.css",
-      "bytes": 2353,
-      "sha256": "0805267b7104659fac0dfcfcfa3656c6b7a9e327338330c2142ce0241009969f"
+      "bytes": 3072,
+      "sha256": "5f8140de76400a85b5a3c3b620ae6ff7881f0e76b3a31c18a302b892ce7a73aa"
     },
     {
       "path": "src/components/Shell.tsx",
-      "bytes": 3793,
-      "sha256": "b419d93fc331aeb5c920eef91159db43acc6534b6ca83e5cbe7cfb4fee163a08"
+      "bytes": 3946,
+      "sha256": "d4c14f9f5a55a65048949dfb1f131aa08c0532908540d1f3e48a5c4e0ce09814"
     },
     {
       "path": "src/features/avatar/Avatar.tsx",
@@ -950,23 +1155,23 @@
     },
     {
       "path": "src/features/gate/Gate.module.css",
-      "bytes": 3050,
-      "sha256": "63df3a7ee08cf7f7b90268dff0fcc505d59f5d22a638c1bec77c02921829d299"
+      "bytes": 4005,
+      "sha256": "fb4b1f63771cb2ccb428acf5f08b48c8d991d1869359a73693935fb72fe62210"
     },
     {
       "path": "src/features/gate/Gate.tsx",
-      "bytes": 4816,
-      "sha256": "61f89eea2c5c88f55d15e42a75d8f68606843fe7aa50fcf44048619fa59f4fc0"
+      "bytes": 4011,
+      "sha256": "6489589ea4d6daca9c71009a6702364715cdbc47643f2e1ef8386c33df10ce5f"
     },
     {
       "path": "src/features/world/World.module.css",
-      "bytes": 4543,
-      "sha256": "b5ba248e45c07547a18b25dccfd57320ef47a343163b630fb8535d03cc8db3e3"
+      "bytes": 6724,
+      "sha256": "483869981935181f910cb3db9802be58ab07bc4e046437bdeb3fc555c3695260"
     },
     {
       "path": "src/features/world/World.tsx",
-      "bytes": 12052,
-      "sha256": "4c5b5dcbe52fa3afd3cbfd28f878d47c9d488f9880c1bf2690d82c630c99e044"
+      "bytes": 7220,
+      "sha256": "164318103c3d0b9f2705f871a6a8307d5d0d59e79399f1a3aa897032e6ab3ad2"
     },
     {
       "path": "src/lib/contracts.ts",
@@ -977,6 +1182,11 @@
       "path": "src/lib/motion.mjs",
       "bytes": 587,
       "sha256": "40691ad39f157a366fd55b2c58b3d4d0c17588906aa26afc9b50bf247a84de3e"
+    },
+    {
+      "path": "src/lib/world-focus.mjs",
+      "bytes": 282,
+      "sha256": "07d25968b1f45ba3be391f651231f7bd4cf436ad06fc460397a6338dae494933"
     },
     {
       "path": "src/state/Theme.tsx",
@@ -992,6 +1202,11 @@
       "path": "tests/motion.test.mjs",
       "bytes": 948,
       "sha256": "c9a278e4f4305b6f8e9bb3d26248c762fc6182a0e6c7f6032dbda736458106d1"
+    },
+    {
+      "path": "tests/world-focus.test.mjs",
+      "bytes": 682,
+      "sha256": "c3e1cf4fe109d7966a610a468d72e37309bca1e94940471948bfb09c233450c2"
     },
     {
       "path": "tsconfig.json",

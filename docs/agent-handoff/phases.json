@@ -2,8 +2,8 @@
   "version": 1,
   "updatedAt": "2026-10-12",
   "source": "user-specified-five-stage-plan",
-  "currentPhase": "P1",
-  "nextPlannedPhase": "P2",
+  "currentPhase": "P2",
+  "nextPlannedPhase": "P3",
   "workStarted": true,
   "statusVocabulary": [
     "pending",
@@ -21,7 +21,7 @@
       "id": "P1",
       "number": 1,
       "title": "draft第一版网站",
-      "status": "ready_for_review",
+      "status": "accepted",
       "dependsOn": [],
       "deliverable": "draft-v1",
       "tasks": [
@@ -46,7 +46,7 @@
       "id": "P2",
       "number": 2,
       "title": "第一版网站修正和完善",
-      "status": "pending",
+      "status": "in_progress",
       "dependsOn": [
         "P1"
       ],

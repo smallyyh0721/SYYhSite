@@ -1,7 +1,7 @@
 {
   "version": "handoff-v2",
   "updatedAt": "2026-10-12",
-  "scope": "design-and-agent-handoff-only",
+  "scope": "P2-approved-v3-draft-execution",
   "productionImplementationStarted": true,
   "requirements": [
     {
@@ -32,7 +32,7 @@
       "id": "visitor-avatar",
       "status": "user-required",
       "value": {
-        "location": "VISITOR ACCESS right panel",
+        "location": "VISITOR ACCESS background-integrated right side; no card",
         "true3D": true,
         "pointerFollow": "eyes/head/subtle-upper-body",
         "identity": "pending-design"
@@ -92,6 +92,16 @@
         "第一版正式网站建设",
         "第一版正式网站修正和补充"
       ]
+    },
+    {
+      "id": "entrance-v3",
+      "status": "user-approved",
+      "value": "WELCOME -> CONNECT -> HELLO STRANGER -> Hub; no entrance nickname"
+    },
+    {
+      "id": "island-interaction-v3",
+      "status": "user-approved",
+      "value": "Fullscreen 2.5D draft; immediate real-pointer image-range focus; one colored centered island and three gray; entire image click enters; stationary pointer ignores moving geometry; keyboard/touch paths"
     }
   ],
   "recommendations": [
@@ -210,18 +220,18 @@
       "skillReuse": "reference-in-place",
       "mcpAtInspection": "not-connected",
       "historicalEvidence": "D:/social_impact/mymovie/previs_walk_3s/v001/README.md",
-      "projectCharacterVerified": false
+      "projectCharacterVerified": true
     },
     "grok": {
       "path": "C:/Users/yonghao.yu/.grok/bin/grok.exe",
       "version": "1.0.46",
       "helpChecked": true,
-      "authenticationVerified": false,
-      "taskExecutionPerformed": false
+      "authenticationVerified": true,
+      "taskExecutionPerformed": true
     },
     "deploymentFactsPath": "docs/agent-handoff/deployment-facts.json"
   },
   "phasePlanPath": "docs/agent-handoff/07-phased-plan.md",
   "phaseStatePath": "docs/agent-handoff/phases.json",
-  "executionScope": "P1 draft implementation, GitHub delivery and cloud deployment authorized; later phases not started"
+  "executionScope": "P2 approved welcome/greeting/fullscreen immediate island hover and whole-image click; GitHub and cloud draft update; P3-P5 not started"
 }

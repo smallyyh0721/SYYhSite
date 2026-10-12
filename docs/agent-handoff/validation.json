@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-12T09:26:50.222670+00:00",
+  "checkedAt": "2026-10-12T15:25:05.766352+00:00",
   "scope": "handoff-documents-and-source-assets-only",
   "jsonParse": "passed",
   "taskDag": "passed",
@@ -8,16 +8,17 @@
   "phaseTaskConsistency": "passed",
   "queueStatuses": [
     "accepted",
+    "in_progress",
     "pending"
   ],
   "localReferenceCheck": "passed",
-  "referencesChecked": 179,
+  "referencesChecked": 188,
   "islandPngMetadataAndHashes": "passed",
   "brokenReferences": [],
   "websiteBuildRun": false,
   "browserInteractionTestsRun": false,
   "newBlenderAssetTestsRun": false,
-  "runtimeEvidence": "docs/agent-work/phases/P1/handoff.md",
+  "runtimeEvidence": "docs/agent-work/phases/P2/handoff.md",
   "limitations": [
     "This generator validates documentation and source references only. Runtime results are recorded separately in the phase handoff."
   ]

@@ -10,7 +10,7 @@
     "source-pending",
     "runtime-verified"
   ],
-  "notes": "Concept sources retained; P1 runtime derivatives and proxy verified. Formal assets remain P3 inputs.",
+  "notes": "P1 sources retained; approved v3 P2 runtime transparent draft images/environment integrated and verified. Formal avatar/layered dual lighting/full3D remain P3 inputs.",
   "assets": [
     {
       "id": "review-site",
@@ -291,6 +291,186 @@
       "productionPhase": "P1",
       "formalIntegrationPhase": "P4",
       "details": "Original mannequin, not final identity; Blender build.py + rig-map.json; genuine skin and eye/head/spine follow."
+    },
+    {
+      "id": "v3-draft-sky",
+      "kind": "transparent-island-draft",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/world-v3/v001/sky.png",
+      "runtimePath": "public/media/world-v3/sky.webp",
+      "promptSource": "assets/source/world-v3/v001/prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated project draft artwork; project references retained in prompt record",
+      "productionPhase": "P2-approved-draft-revision",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeVerified": true,
+      "verifiedInBrowser": true,
+      "runtimeMeasurements": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 498730,
+        "sha256": "d2392d4c54803cecd718227a20da7876a2f4eb471e7ca2340eb5f5d1e18a5e54"
+      },
+      "details": "Necessary v3 draft derivative; shared foreground outline for Day/Night, CSS grayscale and brightness; not final P3 asset.",
+      "measurements": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2518568
+      },
+      "sha256": "84f3b8f02047a706981f64c13300956d6c5fe4f8d315678c5e33d2511afaea6a"
+    },
+    {
+      "id": "v3-draft-ancient",
+      "kind": "transparent-island-draft",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/world-v3/v001/ancient.png",
+      "runtimePath": "public/media/world-v3/ancient.webp",
+      "promptSource": "assets/source/world-v3/v001/prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated project draft artwork; project references retained in prompt record",
+      "productionPhase": "P2-approved-draft-revision",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeVerified": true,
+      "verifiedInBrowser": true,
+      "runtimeMeasurements": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 506868,
+        "sha256": "3d777ae5fa2651e2b0c0e5f486ef26b60e71c71215606871bbc00cdb6ec28dfa"
+      },
+      "details": "Necessary v3 draft derivative; shared foreground outline for Day/Night, CSS grayscale and brightness; not final P3 asset.",
+      "measurements": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2635670
+      },
+      "sha256": "1f54b1e6e6789f48889f38e0807492d40e5a56bf161aaab576727c856b04d9f8"
+    },
+    {
+      "id": "v3-draft-apocalypse",
+      "kind": "transparent-island-draft",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/world-v3/v001/apocalypse.png",
+      "runtimePath": "public/media/world-v3/apocalypse.webp",
+      "promptSource": "assets/source/world-v3/v001/prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated project draft artwork; project references retained in prompt record",
+      "productionPhase": "P2-approved-draft-revision",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeVerified": true,
+      "verifiedInBrowser": true,
+      "runtimeMeasurements": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 493350,
+        "sha256": "5c03fe5b01e82111a82ff52a368c95f7063735c201dbe916f00da25bbd0ceebb"
+      },
+      "details": "Necessary v3 draft derivative; shared foreground outline for Day/Night, CSS grayscale and brightness; not final P3 asset.",
+      "measurements": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2497634
+      },
+      "sha256": "a6ece1cd04af4afcde7e7614c94d5faa999759fc40ec2e573cabbaaa1d1fb4cc"
+    },
+    {
+      "id": "v3-draft-home",
+      "kind": "transparent-island-draft",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/world-v3/v001/home.png",
+      "runtimePath": "public/media/world-v3/home.webp",
+      "promptSource": "assets/source/world-v3/v001/prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated project draft artwork; project references retained in prompt record",
+      "productionPhase": "P2-approved-draft-revision",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeVerified": true,
+      "verifiedInBrowser": true,
+      "runtimeMeasurements": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 506002,
+        "sha256": "51b45fceda1c054d0f79d114554f8f7b5c8df4fcf87da3ab1b18932ee8ea4f3e"
+      },
+      "details": "Necessary v3 draft derivative; shared foreground outline for Day/Night, CSS grayscale and brightness; not final P3 asset.",
+      "measurements": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2387325
+      },
+      "sha256": "7f487b7bdae6e845761818becf81bd8ea3cef716c07b66fc1108c2e5e8d82b38"
+    },
+    {
+      "id": "v3-draft-environment-night",
+      "kind": "environment-draft",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/world-v3/v001/environment-night.png",
+      "runtimePath": "public/media/world-v3/environment-night.webp",
+      "promptSource": "assets/source/world-v3/v001/prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated project draft artwork; project references retained in prompt record",
+      "productionPhase": "P2-approved-draft-revision",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeVerified": true,
+      "verifiedInBrowser": true,
+      "runtimeMeasurements": {
+        "width": 1600,
+        "height": 900,
+        "hasAlpha": false,
+        "bytes": 139262,
+        "sha256": "402eed6556392d3b0bc179c09c2ba5aec524800d915fa7887d0a1ec3c30c2046"
+      },
+      "details": "Necessary v3 draft derivative; shared foreground outline for Day/Night, CSS grayscale and brightness; not final P3 asset.",
+      "measurements": {
+        "width": 1672,
+        "height": 941,
+        "bytes": 2117394
+      },
+      "sha256": "2ca63a643c6b899402ab1fb503f85234a0fdfb713857cc1eb27f094b561d40c9"
+    },
+    {
+      "id": "v3-draft-environment-day",
+      "kind": "environment-draft",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/world-v3/v001/environment-day.png",
+      "runtimePath": "public/media/world-v3/environment-day.webp",
+      "promptSource": "assets/source/world-v3/v001/prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated project draft artwork; project references retained in prompt record",
+      "productionPhase": "P2-approved-draft-revision",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeVerified": true,
+      "verifiedInBrowser": true,
+      "runtimeMeasurements": {
+        "width": 1600,
+        "height": 900,
+        "hasAlpha": false,
+        "bytes": 147960,
+        "sha256": "688e0843abdcdab05282f38aa40c931acf7d5d309c65c1550fe34fef58a6cfd6"
+      },
+      "details": "Necessary v3 draft derivative; shared foreground outline for Day/Night, CSS grayscale and brightness; not final P3 asset.",
+      "measurements": {
+        "width": 1672,
+        "height": 941,
+        "bytes": 2051419
+      },
+      "sha256": "ae30a73027f10f5573bf5fb4fc71c1bb635974f8679477af706e99eae79a87f0"
     }
   ]
 }

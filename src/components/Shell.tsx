@@ -14,6 +14,7 @@ const links = [
 export default function Shell({ children }: { children: React.ReactNode }) {
   const { theme, setTheme } = useTheme();
   const path = usePathname();
+  const immersive = path === "/" || path === "/hub/" || path === "/hub";
   const main = useRef<HTMLElement>(null);
   const first = useRef(true);
   const previous = useRef(path);
@@ -48,7 +49,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       ?.focus({ preventScroll: true });
   }, [path]);
   return (
-    <>
+    <div className={immersive ? styles.immersive : styles.content}>
       <a className={styles.skip} href="#main">
         跳到内容
       </a>
@@ -107,11 +108,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       >
         {children}
       </main>
-      <footer className={styles.footer}>
+      {!immersive && <footer className={styles.footer}>
         <span>PERSONAL BROADCAST / EST. 2026</span>
         <Link href="/draft/">DRAFT V1 · 素材与完成状态 ↗</Link>
         <span>SYYH — SIGNAL RECEIVED</span>
-      </footer>
-    </>
+      </footer>}
+    </div>
   );
 }

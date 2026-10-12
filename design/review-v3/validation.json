@@ -1,0 +1,41 @@
+{
+  "scope": "static-concept-art-review",
+  "imageCount": 4,
+  "images": [
+    {
+      "path": "01-entrance-storyboard.png",
+      "width": 1672,
+      "height": 940,
+      "bytes": 2054033,
+      "sha256": "29f93875c96fc09c4342040649b082ffb7d8ed6ba35422668c438aa87bc9586d"
+    },
+    {
+      "path": "02-world-sky-night.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2594279,
+      "sha256": "1b04c6b3c0d9f0a6fbb48c3e03ef7b1abb0a6277c5261cd30cfa4e837c087c54"
+    },
+    {
+      "path": "03-world-ancient-night.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2570460,
+      "sha256": "a36827003bab3abc2253a77468529895c311cbd0b133c0b1cc1f8fa0d2a9c8f6"
+    },
+    {
+      "path": "04-world-sky-day.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2714066,
+      "sha256": "dce3a94745e721a726ae5fe4e42325c3a87e3312d1537560674327570718733f"
+    }
+  ],
+  "localReferences": "passed",
+  "visuallyInspected": "all-four-native-image-results",
+  "source": "ChatGPT built-in image_gen",
+  "websiteImplementationChanged": false,
+  "runtimeAnimationsTested": false,
+  "characterIdentity": "placeholder-not-final",
+  "referenceWebsiteVisualVisit": "browser-tool-timeout-text-read-success"
+}

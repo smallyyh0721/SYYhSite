@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "scope": "P2 runtime draft assets",
+  "assets": [
+    {
+      "id": "sky",
+      "sourcePath": "assets/source/world-v3/v001/sky.png",
+      "runtimePath": "public/media/world-v3/sky.webp",
+      "source": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2518568,
+        "sha256": "84f3b8f02047a706981f64c13300956d6c5fe4f8d315678c5e33d2511afaea6a"
+      },
+      "runtime": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 498730,
+        "sha256": "d2392d4c54803cecd718227a20da7876a2f4eb471e7ca2340eb5f5d1e18a5e54"
+      },
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "visualInspection": "native imagegen output inspected; complete island silhouettes / background-only environments",
+      "status": "draft"
+    },
+    {
+      "id": "ancient",
+      "sourcePath": "assets/source/world-v3/v001/ancient.png",
+      "runtimePath": "public/media/world-v3/ancient.webp",
+      "source": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2635670,
+        "sha256": "1f54b1e6e6789f48889f38e0807492d40e5a56bf161aaab576727c856b04d9f8"
+      },
+      "runtime": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 506868,
+        "sha256": "3d777ae5fa2651e2b0c0e5f486ef26b60e71c71215606871bbc00cdb6ec28dfa"
+      },
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "visualInspection": "native imagegen output inspected; complete island silhouettes / background-only environments",
+      "status": "draft"
+    },
+    {
+      "id": "apocalypse",
+      "sourcePath": "assets/source/world-v3/v001/apocalypse.png",
+      "runtimePath": "public/media/world-v3/apocalypse.webp",
+      "source": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2497634,
+        "sha256": "a6ece1cd04af4afcde7e7614c94d5faa999759fc40ec2e573cabbaaa1d1fb4cc"
+      },
+      "runtime": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 493350,
+        "sha256": "5c03fe5b01e82111a82ff52a368c95f7063735c201dbe916f00da25bbd0ceebb"
+      },
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "visualInspection": "native imagegen output inspected; complete island silhouettes / background-only environments",
+      "status": "draft"
+    },
+    {
+      "id": "home",
+      "sourcePath": "assets/source/world-v3/v001/home.png",
+      "runtimePath": "public/media/world-v3/home.webp",
+      "source": {
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2387325,
+        "sha256": "7f487b7bdae6e845761818becf81bd8ea3cef716c07b66fc1108c2e5e8d82b38"
+      },
+      "runtime": {
+        "width": 1200,
+        "height": 1200,
+        "hasAlpha": true,
+        "bytes": 506002,
+        "sha256": "51b45fceda1c054d0f79d114554f8f7b5c8df4fcf87da3ab1b18932ee8ea4f3e"
+      },
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "visualInspection": "native imagegen output inspected; complete island silhouettes / background-only environments",
+      "status": "draft"
+    },
+    {
+      "id": "environment-night",
+      "sourcePath": "assets/source/world-v3/v001/environment-night.png",
+      "runtimePath": "public/media/world-v3/environment-night.webp",
+      "source": {
+        "width": 1672,
+        "height": 941,
+        "bytes": 2117394,
+        "sha256": "2ca63a643c6b899402ab1fb503f85234a0fdfb713857cc1eb27f094b561d40c9"
+      },
+      "runtime": {
+        "width": 1600,
+        "height": 900,
+        "hasAlpha": false,
+        "bytes": 139262,
+        "sha256": "402eed6556392d3b0bc179c09c2ba5aec524800d915fa7887d0a1ec3c30c2046"
+      },
+      "alphaMin": null,
+      "alphaMax": null,
+      "visualInspection": "native imagegen output inspected; complete island silhouettes / background-only environments",
+      "status": "draft"
+    },
+    {
+      "id": "environment-day",
+      "sourcePath": "assets/source/world-v3/v001/environment-day.png",
+      "runtimePath": "public/media/world-v3/environment-day.webp",
+      "source": {
+        "width": 1672,
+        "height": 941,
+        "bytes": 2051419,
+        "sha256": "ae30a73027f10f5573bf5fb4fc71c1bb635974f8679477af706e99eae79a87f0"
+      },
+      "runtime": {
+        "width": 1600,
+        "height": 900,
+        "hasAlpha": false,
+        "bytes": 147960,
+        "sha256": "688e0843abdcdab05282f38aa40c931acf7d5d309c65c1550fe34fef58a6cfd6"
+      },
+      "alphaMin": null,
+      "alphaMax": null,
+      "visualInspection": "native imagegen output inspected; complete island silhouettes / background-only environments",
+      "status": "draft"
+    }
+  ]
+}

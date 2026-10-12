@@ -1,182 +1,26 @@
-.gate {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
-  min-height: 640px;
-  padding: 48px 38px 34px;
-  background: linear-gradient(90deg, transparent 72%, var(--surface) 72%);
-}
-.gate:before,
-.gate:after {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border-top: 2px solid var(--ink);
-  top: 0;
-}
-.gate:before {
-  left: 0;
-  border-left: 2px solid var(--ink);
-}
-.gate:after {
-  right: 0;
-  border-right: 2px solid var(--ink);
-}
-.copy {
-  position: relative;
-  z-index: 1;
-  align-self: center;
-}
-.copy h1 {
-  margin-bottom: 24px;
-}
-.lead {
-  font-size: 22px;
-  margin-bottom: 4px;
-}
-.copy form {
-  max-width: 514px;
-  margin-top: 38px;
-}
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  margin-top: 26px;
-}
-.actions button {
-  min-width: 265px;
-  clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
-}
-.actions a {
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
-}
-.note {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 36px;
-}
-.figure {
-  position: relative;
-  align-self: stretch;
-  min-height: 530px;
-  background: radial-gradient(var(--hairline) 0.65px, transparent 0.8px);
-  background-size: 8px 8px;
-}
-.orbit {
-  position: absolute;
-  width: 82%;
-  aspect-ratio: 1;
-  top: 14%;
-  left: 9%;
-  border: 1px solid var(--hairline);
-  border-radius: 50%;
-}
-.figureNumber {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  font: 10px monospace;
-  letter-spacing: 1px;
-  color: var(--muted);
-}
-.corner {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font: 11px monospace;
-  color: var(--primary);
-}
-.intro {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  background: var(--void);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.intro h2 {
-  font-size: clamp(76px, 12vw, 180px);
-  width: max-content;
-}
-.line {
-  height: 2px;
-  width: min(70vw, 900px);
-  background: var(--primary);
-  margin-bottom: 40px;
-}
-.skip {
-  position: absolute;
-  top: 28px;
-  right: 28px;
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--ink);
-  padding: 12px 18px;
-  min-height: 44px;
-  font: 12px monospace;
-}
-@media (max-width: 1000px) {
-  .gate {
-    padding: 32px 20px;
-    gap: 30px;
-  }
-  .figure {
-    min-height: 490px;
-  }
-  .actions {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .actions button {
-    min-width: 220px;
-  }
-}
-@media (max-width: 700px) {
-  .gate {
-    display: flex;
-    flex-direction: column;
-    padding: 28px 12px;
-    background: none;
-    gap: 24px;
-  }
-  .figure {
-    height: 360px;
-    min-height: 360px;
-    order: -1;
-    width: 100%;
-    max-width: 320px;
-    align-self: center;
-    background-color: var(--surface);
-  }
-  .copy form {
-    margin-top: 28px;
-  }
-  .copy .lead {
-    font-size: 19px;
-  }
-  .note {
-    margin-top: 22px;
-  }
-  .actions {
-    gap: 16px;
-  }
-  .actions button {
-    min-width: 210px;
-  }
-  .figureNumber {
-    font-size: 9px;
-  }
-  .gate h1 {
-    font-size: clamp(48px, 14vw, 80px);
-  }
-  .orbit {
-    top: 8%;
-  }
-}
+.gate { position: relative; height: 100svh; min-height: 620px; overflow: hidden; isolation: isolate; background: var(--void); }
+.environment { position: absolute; inset: 0; z-index: -3; background: linear-gradient(90deg, rgba(3,7,13,.88), rgba(3,7,13,.05)), url('/media/world-v3/environment-night.webp') center/cover; }
+:global([data-theme="day"]) .environment { background: linear-gradient(90deg, rgba(239,248,255,.9), rgba(239,248,255,.05)), url('/media/world-v3/environment-day.webp') center/cover; }
+.portal { position: absolute; width: min(58vw, 78vh); aspect-ratio: 1; border: 2px solid rgba(190,214,255,.4); border-radius: 50%; left: 46%; top: 9%; z-index: -2; box-shadow: 0 0 50px rgba(105,170,255,.14), inset 0 0 70px rgba(105,170,255,.1); background: radial-gradient(circle, rgba(142,199,255,.19), transparent 64%); }
+.portal:after { content: ''; position: absolute; inset: 15px; border: 1px dashed rgba(180,215,255,.25); border-radius: 50%; }
+:global([data-theme="day"]) .portal { border-color: rgba(26,91,162,.25); background: radial-gradient(circle, rgba(255,255,255,.75), transparent 65%); }
+.figure { position: absolute; inset: 12% -6% -12% 40%; z-index: -1; mask-image: linear-gradient(#000 65%, transparent 94%); transition: transform 1s ease; }
+[data-phase="greeting"] .figure { transform: scale(1.07) translateX(-1%); }
+.copy { position: relative; z-index: 2; width: min(67%, 1040px); padding: clamp(130px, 24svh, 240px) 0 100px clamp(24px, 5vw, 88px); }
+.title { font: italic 900 clamp(60px, 7.8vw, 138px)/.94 Impact, "Arial Narrow", Arial, sans-serif; letter-spacing: -.035em; margin: 0 0 30px; }
+.title span { display: block; }
+.accent { color: var(--primary); }
+.subline { color: var(--muted); font-size: 14px; letter-spacing: 2px; margin: 0 0 30px; }
+.connect { display: inline-flex; align-items: center; justify-content: space-between; gap: 80px; min-height: 60px; padding: 12px 36px; background: var(--primary); color: var(--on-primary); border: 0; font: italic 900 22px Arial, sans-serif; transform: skew(-12deg); }
+.connect:hover { filter: brightness(1.12); }
+.direct { display: block; width: fit-content; margin-top: 24px; padding-block: 8px; font: 11px monospace; color: var(--muted); }
+.linkTrack { height: 2px; width: min(370px, 85%); background: var(--hairline); margin: 36px 0 20px; }
+.linkTrack span { display: block; height: 100%; background: var(--primary); transform-origin: left; }
+.skip { border: 0; border-bottom: 1px solid var(--border); background: transparent; color: var(--ink); padding: 12px 0; font: 12px monospace; letter-spacing: 2px; }
+.bottom { position: absolute; inset: auto 36px 24px; display: flex; justify-content: space-between; gap: 16px; font: 10px monospace; letter-spacing: 2px; color: var(--muted); z-index: 3; }
+.bottom span { display: inline-flex; align-items: center; gap: 16px; }
+.bottom i { width: 28px; height: 2px; background: var(--primary); }
+.bottom a { padding-block: 12px; text-decoration: none; letter-spacing: 1px; }
+@media (max-width: 900px) { .copy { width: 75%; } .title { font-size: clamp(56px, 9vw, 96px); } .figure { left: 30%; right: -25%; opacity: .86; } }
+@media (max-width: 600px) { .gate { min-height: 600px; } .copy { padding: 132px 22px 250px; width: 100%; } .title { font-size: clamp(46px, 13vw, 78px); margin-bottom: 24px; } .subline { font-size: 12px; max-width: 260px; letter-spacing: 1px; } .figure { inset: 40% -29% -12% 18%; opacity: .76; } .portal { width: 88vw; left: 24%; top: 36%; } .environment { background-position: 62% center; } .connect { min-height: 52px; padding: 12px 26px; gap: 56px; font-size: 18px; } .bottom { inset-inline: 22px; bottom: 16px; font-size: 8px; letter-spacing: 1px; } .bottom span { gap: 8px; } .bottom i { width: 15px; } .bottom a { font-size: 9px; } .direct { margin-top: 12px; } }
+@media (max-height: 650px) and (min-width: 601px) { .gate { min-height: 520px; } .copy { padding-top: 120px; } .title { font-size: clamp(52px, 7vw, 88px); } .subline { margin-bottom: 18px; } }

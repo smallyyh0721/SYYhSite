@@ -2,11 +2,11 @@
 
 ## 当前完整交接 / 2026-10-12
 
-阶段1draft已完成本机开发与云端Docker部署：[公开草稿](http://124.220.190.120/)，运行SHA `e590059ca96620aab024f4bcee27005633e3db08`，GitHub分支`codex/draft-v1`。包含Next/React/TS、真实3D代理人物、四岛探索与真实留言服务。后续agent先读 [阶段1执行交接](docs/agent-work/phases/P1/handoff.md)、[完整交接包](docs/agent-handoff/README.md) 和 [AGENTS.md](AGENTS.md)。正式素材仍待后续阶段；公网浏览器工具读取超时的限制见交接，P2–P5未启动。
+阶段1draft已交付，用户已批准v3并启动阶段2入口/全屏四岛修正：[公开草稿](http://124.220.190.120/)，GitHub分支`codex/draft-v1`。新版本为WELCOME→CONNECT→HELLO STRANGER→全屏四岛：图范围即时悬停点亮居中、整图点击进入频道。入口真3D代理人物融入背景并看向鼠标，Day/Night贯穿全站；原真实留言服务继续保留。后续agent先读 [当前P2交接](docs/agent-work/phases/P2/handoff.md)、[完整交接包](docs/agent-handoff/README.md) 和 [AGENTS.md](AGENTS.md)。运行SHA及实际验证以交接为准。正式素材仍待P3，P3–P5未启动。
 
-[完整方案合订本](docs/agent-handoff/complete-plan.md) 已合并部署流程；后续按 [用户指定五阶段](docs/agent-handoff/07-phased-plan.md) 开展：draft → 修正完善 → 素材完善 → 正式建设 → 正式修补。本次P1明确包含GitHub交付和云端Docker部署；P2–P5未启动。
+[完整方案合订本](docs/agent-handoff/complete-plan.md) 已合并部署流程；后续按 [用户指定五阶段](docs/agent-handoff/07-phased-plan.md) 开展：draft → 修正完善 → 素材完善 → 正式建设 → 正式修补。本次P2继续交付GitHub和云端draft Docker更新，不开展未要求的正式素材/正式建设。
 
-设计图：[全站初稿](design/review-v1/index.html) · [日夜主题与四岛](design/review-v2/index.html)。入口右侧人物的现行需求是真3D人物跟随鼠标；旧线稿只是占位。下文保留早期项目介绍。
+设计图：[全站初稿](design/review-v1/index.html) · [日夜主题与四岛](design/review-v2/index.html) · [已批准v3入口/全屏世界](design/review-v3/index.html)。运行截图在 [P2验收记录](docs/agent-work/reports/P2-05.md)，正式人物仍待设计。下文保留早期项目介绍。
 
 部署目标已指定Ubuntu服务器，网站运行在Docker中；见 [本机开发与Docker部署流程](docs/agent-handoff/06-development-deployment.md)。当前优先本机Linux验证、Git固定版本、云端同输入构建并复核；镜像传输路线按带宽与构建实测结果选择。
 

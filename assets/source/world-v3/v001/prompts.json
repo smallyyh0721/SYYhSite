@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-12",
+  "mode": "built-in",
+  "scope": "approved v3 draft integration",
+  "assets": [
+    {
+      "id": "sky",
+      "generatedPath": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a12baa-98c6-7040-b0ef-161a20336426\\exec-fe3f737d-9065-44cc-9e01-c194ed615140.png",
+      "sourcePath": "assets/source/world-v3/v001/sky.png",
+      "runtimePath": "public/media/world-v3/sky.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Asset type: transparent foreground sprite for the SYYH fullscreen floating island website. Input image is the edit target / identity reference. Extract and carefully recreate the large central SKY CITY island from the reference: intricate ivory Gothic castle towers, blue roofs, terraced gardens, graceful bridges, golden window lights, waterfalls and jagged floating cliff. Preserve its silhouette and architectural identity. Ignore all surrounding islands. Render only this ONE complete island, elevated 3/4 perspective, premium detailed cinematic 3D concept art, neutral cool daylight with visible small warm practical lights so the same sprite works on blue daylight and dark space backgrounds. Entire silhouette including cliff bottom must fit inside the image with approximately 5% transparent margin; center object, square canvas. True transparent alpha background around and in holes through the object. Crisp readable island silhouette, minimal isolated nearby rubble, no large clouds hiding cliff edges. No sky, moon, stars, backdrop, floor, frame, labels, letters, numbers, UI, watermark, checkerboard painted into pixels. Remove all text and all environmental background while preserving the island identity.",
+      "provenance": "ChatGPT built-in imagegen",
+      "status": "P2 draft asset; formal P3 assets pending"
+    },
+    {
+      "id": "ancient",
+      "generatedPath": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a12baa-98c6-7040-b0ef-161a20336426\\exec-1b1c2fe8-315c-44b9-9077-9703003e61f6.png",
+      "sourcePath": "assets/source/world-v3/v001/ancient.png",
+      "runtimePath": "public/media/world-v3/ancient.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Asset type: transparent foreground sprite for the SYYH fullscreen floating island website. Input image is the edit target / identity reference. Extract and carefully recreate one single ANCIENT LANDFORM floating island, using the DAY half of the reference as the identity source: monumental broken stone ring, mossy stepped pale cliffs, turquoise water and cascading waterfalls. Keep original geography. Do not include both halves. Render only this ONE complete island, elevated 3/4 perspective, premium detailed cinematic 3D concept art, neutral cool daylight with visible small warm practical lights so the same sprite works on blue daylight and dark space backgrounds. Entire silhouette including cliff bottom must fit inside the image with approximately 5% transparent margin; center object, square canvas. True transparent alpha background around and in holes through the object. Crisp readable island silhouette, minimal isolated nearby rubble, no large clouds hiding cliff edges. No sky, moon, stars, backdrop, floor, frame, labels, letters, numbers, UI, watermark, checkerboard painted into pixels. Remove all text and all environmental background while preserving the island identity.",
+      "provenance": "ChatGPT built-in imagegen",
+      "status": "P2 draft asset; formal P3 assets pending"
+    },
+    {
+      "id": "apocalypse",
+      "generatedPath": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a12baa-98c6-7040-b0ef-161a20336426\\exec-929af2f4-b039-439f-9531-597a47b255c0.png",
+      "sourcePath": "assets/source/world-v3/v001/apocalypse.png",
+      "runtimePath": "public/media/world-v3/apocalypse.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Asset type: transparent foreground sprite for the SYYH fullscreen floating island website. Input image is the edit target / identity reference. Extract and carefully recreate one single APOCALYPSE floating island using the DAY half of the reference as the identity source: shattered planet crescent on the left, giant radio dish, ruined antenna tower and domed observatory, dark cracked stone with sparse warm orange glowing fissures. Keep all original landmarks. Do not include both halves. Render only this ONE complete island, elevated 3/4 perspective, premium detailed cinematic 3D concept art, neutral cool daylight with visible small warm practical lights so the same sprite works on blue daylight and dark space backgrounds. Entire silhouette including cliff bottom must fit inside the image with approximately 5% transparent margin; center object, square canvas. True transparent alpha background around and in holes through the object. Crisp readable island silhouette, minimal isolated nearby rubble, no large clouds hiding cliff edges. No sky, moon, stars, backdrop, floor, frame, labels, letters, numbers, UI, watermark, checkerboard painted into pixels. Remove all text and all environmental background while preserving the island identity.",
+      "provenance": "ChatGPT built-in imagegen",
+      "status": "P2 draft asset; formal P3 assets pending"
+    },
+    {
+      "id": "home",
+      "generatedPath": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a12baa-98c6-7040-b0ef-161a20336426\\exec-eac6d143-a9c0-4c50-be14-4a0855e92062.png",
+      "sourcePath": "assets/source/world-v3/v001/home.png",
+      "runtimePath": "public/media/world-v3/home.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Asset type: transparent foreground sprite for the SYYH fullscreen floating island website. Input image is the edit target / identity reference. Extract and carefully recreate one single ANIME HOME floating island using the DAY half of the reference as identity source: Japanese two-story creative house, open warm rooms with books and desktop screens, rooftop terrace, blooming pink cherry tree, vines, warm amber lights and jagged pale stone base. Do not include both halves. Render only this ONE complete island, elevated 3/4 perspective, premium detailed cinematic 3D concept art, neutral cool daylight with visible small warm practical lights so the same sprite works on blue daylight and dark space backgrounds. Entire silhouette including cliff bottom must fit inside the image with approximately 5% transparent margin; center object, square canvas. True transparent alpha background around and in holes through the object. Crisp readable island silhouette, minimal isolated nearby rubble, no large clouds hiding cliff edges. No sky, moon, stars, backdrop, floor, frame, labels, letters, numbers, UI, watermark, checkerboard painted into pixels. Remove all text and all environmental background while preserving the island identity.",
+      "provenance": "ChatGPT built-in imagegen",
+      "status": "P2 draft asset; formal P3 assets pending"
+    },
+    {
+      "id": "environment-night",
+      "generatedPath": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a12baa-98c6-7040-b0ef-161a20336426\\exec-f7da7dc0-fcbd-4a7c-989c-ab04bd8ba3d9.png",
+      "sourcePath": "assets/source/world-v3/v001/environment-night.png",
+      "runtimePath": "public/media/world-v3/environment-night.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: background-only panoramic environment plate for a fullscreen floating-island website. Input reference is the environment identity and composition. Remove ALL four floating islands, ALL buildings, rubble, large moon, ALL lettering, HUD, markers, numbers and UI. Retain only distant planet curved horizon and layered cloud sea across the bottom third, atmospheric volumetric clouds at outer corners, open negative space for separately composited floating islands in the middle. No foreground objects, no houses, no castles, no ruins, no character. High-end cinematic detailed 3D fantasy environment, horizontal 16:9 widescreen, seamless visual depth, restrained contrast so real HTML text is readable above. Night: nearly black navy space in the upper two thirds, sparse tiny stars, cool blue planet horizon glow, rich blue gray cloud sea below. No lime glow in center.",
+      "provenance": "ChatGPT built-in imagegen",
+      "status": "P2 draft asset; formal P3 assets pending"
+    },
+    {
+      "id": "environment-day",
+      "generatedPath": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a12baa-98c6-7040-b0ef-161a20336426\\exec-e3847fce-dc04-48dd-9b86-286677956156.png",
+      "sourcePath": "assets/source/world-v3/v001/environment-day.png",
+      "runtimePath": "public/media/world-v3/environment-day.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: background-only panoramic environment plate for a fullscreen floating-island website. Input reference is the environment identity and composition. Remove ALL four floating islands, ALL buildings, rubble, large moon, ALL lettering, HUD, markers, numbers and UI. Retain only distant planet curved horizon and layered cloud sea across the bottom third, atmospheric volumetric clouds at outer corners, open negative space for separately composited floating islands in the middle. No foreground objects, no houses, no castles, no ruins, no character. High-end cinematic detailed 3D fantasy environment, horizontal 16:9 widescreen, seamless visual depth, restrained contrast so real HTML text is readable above. Day: bright powder blue sky with pale distant haze in the upper two thirds, white cloud sea below, clear airy blue-white palette. Keep the same horizon angle and cloud placement as the reference environment. No stars, no black sky, no sunrise yellow.",
+      "provenance": "ChatGPT built-in imagegen",
+      "status": "P2 draft asset; formal P3 assets pending"
+    }
+  ]
+}
