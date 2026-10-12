@@ -1,0 +1,1 @@
+{"name":"@syyh/guestbook","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test ../../tests/guestbook.test.mjs"},"dependencies":{"fastify":"5.12.5"}}

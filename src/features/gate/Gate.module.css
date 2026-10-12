@@ -1,0 +1,182 @@
+.gate {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  min-height: 640px;
+  padding: 48px 38px 34px;
+  background: linear-gradient(90deg, transparent 72%, var(--surface) 72%);
+}
+.gate:before,
+.gate:after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-top: 2px solid var(--ink);
+  top: 0;
+}
+.gate:before {
+  left: 0;
+  border-left: 2px solid var(--ink);
+}
+.gate:after {
+  right: 0;
+  border-right: 2px solid var(--ink);
+}
+.copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+}
+.copy h1 {
+  margin-bottom: 24px;
+}
+.lead {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+.copy form {
+  max-width: 514px;
+  margin-top: 38px;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 26px;
+}
+.actions button {
+  min-width: 265px;
+  clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+}
+.actions a {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 36px;
+}
+.figure {
+  position: relative;
+  align-self: stretch;
+  min-height: 530px;
+  background: radial-gradient(var(--hairline) 0.65px, transparent 0.8px);
+  background-size: 8px 8px;
+}
+.orbit {
+  position: absolute;
+  width: 82%;
+  aspect-ratio: 1;
+  top: 14%;
+  left: 9%;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+}
+.figureNumber {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font: 10px monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font: 11px monospace;
+  color: var(--primary);
+}
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--void);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro h2 {
+  font-size: clamp(76px, 12vw, 180px);
+  width: max-content;
+}
+.line {
+  height: 2px;
+  width: min(70vw, 900px);
+  background: var(--primary);
+  margin-bottom: 40px;
+}
+.skip {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 12px 18px;
+  min-height: 44px;
+  font: 12px monospace;
+}
+@media (max-width: 1000px) {
+  .gate {
+    padding: 32px 20px;
+    gap: 30px;
+  }
+  .figure {
+    min-height: 490px;
+  }
+  .actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .actions button {
+    min-width: 220px;
+  }
+}
+@media (max-width: 700px) {
+  .gate {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 12px;
+    background: none;
+    gap: 24px;
+  }
+  .figure {
+    height: 360px;
+    min-height: 360px;
+    order: -1;
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+    background-color: var(--surface);
+  }
+  .copy form {
+    margin-top: 28px;
+  }
+  .copy .lead {
+    font-size: 19px;
+  }
+  .note {
+    margin-top: 22px;
+  }
+  .actions {
+    gap: 16px;
+  }
+  .actions button {
+    min-width: 210px;
+  }
+  .figureNumber {
+    font-size: 9px;
+  }
+  .gate h1 {
+    font-size: clamp(48px, 14vw, 80px);
+  }
+  .orbit {
+    top: 8%;
+  }
+}

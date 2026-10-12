@@ -1,0 +1,143 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 86px;
+  border-bottom: 1px solid var(--hairline);
+  margin: 0 auto;
+  max-width: 1344px;
+  padding: 16px 0;
+}
+.logo {
+  font:
+    italic 900 30px/1 Arial,
+    sans-serif;
+  letter-spacing: -2px;
+  text-decoration: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.logo span {
+  color: var(--primary);
+  font: 12px monospace;
+}
+.signal {
+  font: 10px monospace;
+  color: var(--muted);
+  letter-spacing: 2px;
+  flex: 1;
+}
+.header nav {
+  display: flex;
+  gap: 14px;
+}
+.header nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 10px 2px;
+  color: var(--muted);
+}
+.header nav a[aria-current] {
+  color: var(--primary);
+}
+.theme {
+  display: flex;
+  border: 1px solid var(--border);
+}
+.theme button {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 10px monospace;
+  padding: 0 12px;
+}
+.theme button[aria-pressed="true"] {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.main {
+  max-width: 1344px;
+  margin: auto;
+  min-height: calc(100svh - 158px);
+  padding: 36px 0 48px;
+}
+.footer {
+  max-width: 1344px;
+  margin: auto;
+  border-top: 1px solid var(--hairline);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font: 10px monospace;
+  letter-spacing: 1px;
+}
+.footer a {
+  color: var(--muted);
+}
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 100;
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 14px;
+}
+.skip:focus {
+  top: 10px;
+}
+@media (max-width: 1000px) {
+  .signal {
+    display: none;
+  }
+  .header nav {
+    margin-left: auto;
+  }
+  .header {
+    gap: 16px;
+  }
+  .footer span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    padding-block: 12px;
+    gap: 6px;
+  }
+  .logo {
+    font-size: 26px;
+  }
+  .header nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header nav a {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .theme {
+    margin-left: auto;
+  }
+  .theme button {
+    padding-inline: 10px;
+  }
+  .main {
+    padding-top: 20px;
+  }
+  .footer {
+    font-size: 9px;
+    flex-wrap: wrap;
+    padding: 18px 0;
+    gap: 12px;
+  }
+}

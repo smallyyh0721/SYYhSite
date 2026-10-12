@@ -1,0 +1,23 @@
+.window {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--sky);
+}
+.image {
+  display: block;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+:global([data-theme="night"]) .image {
+  transform: translateX(-50%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+}

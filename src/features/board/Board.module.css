@@ -1,0 +1,142 @@
+.layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 90px;
+  padding: 28px 38px;
+}
+.title {
+  font:
+    italic 900 clamp(28px, 4vw, 56px) Impact,
+    sans-serif;
+  letter-spacing: -1px;
+}
+.contact {
+  display: flex;
+  justify-content: space-between;
+  border-block-start: 1px solid var(--hairline);
+  padding: 20px 0;
+  color: var(--muted);
+  font: 12px monospace;
+  min-height: 60px;
+}
+.contact:last-of-type {
+  border-bottom: 1px solid var(--hairline);
+}
+.small {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 28px;
+  max-width: 340px;
+}
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.formHeader h2 {
+  font:
+    italic 900 26px Impact,
+    sans-serif;
+  margin: 0;
+}
+.formHeader span {
+  font: 10px monospace;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.layout form label {
+  margin-top: 18px;
+}
+.layout textarea {
+  resize: vertical;
+}
+.submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.submit span {
+  font: 11px monospace;
+  color: var(--muted);
+}
+.feedback {
+  color: var(--primary);
+  font-size: 12px;
+  min-height: 40px;
+  margin-top: 16px;
+}
+.honey {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.messages {
+  margin: 48px 38px 20px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 36px;
+}
+.empty {
+  border: 1px dashed var(--hairline);
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+.empty > span {
+  font:
+    italic 900 30px Impact,
+    sans-serif;
+}
+.empty p {
+  font-size: 14px;
+  margin: 14px 0 0;
+}
+.entry {
+  padding: 24px;
+  border-bottom: 1px solid var(--hairline);
+  overflow-wrap: anywhere;
+}
+.entry > div {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.entry time {
+  font: 11px monospace;
+  color: var(--muted);
+}
+.entry p {
+  margin: 14px 0 0;
+  white-space: pre-wrap;
+}
+@media (max-width: 900px) {
+  .layout {
+    gap: 36px;
+    padding-inline: 0;
+  }
+  .messages {
+    margin-inline: 0;
+  }
+}
+@media (max-width: 650px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .formHeader h2 {
+    font-size: 23px;
+  }
+  .formHeader span {
+    font-size: 9px;
+  }
+  .messages {
+    margin-top: 28px;
+  }
+  .empty {
+    padding-block: 32px;
+  }
+}

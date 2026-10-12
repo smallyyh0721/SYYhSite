@@ -1,5 +1,9 @@
 # Handoff: continue locally with Chrome
 
+> 当前执行：用户已启动阶段1，本机开发 + GitHub + 云端Docker draft。读 [P1执行交接](agent-work/phases/P1/handoff.md)；下列原prototype命令仅作历史记录。
+
+> 2026-10-12 更新：这是早期云端交接记录。当前完整设计与两位 agent 的实施入口为 [agent-handoff/README.md](agent-handoff/README.md)，参考研究增量见 [reference-notes.md](reference-notes.md)。入口右侧正式需求是真 3D 人物跟随鼠标；四岛完整 3D 仍未选定。以下旧步骤保留作历史资料，不覆盖现行交接。
+
 The cloud session that built this draft could not open any reference site (rikkazzz.com, ryuse1-studio.com, steffieharner.netlify.app, cyberfiction-five.vercel.app): its network blocks them. Everything here was designed from the owner's written description only. **The next step is to study the real sites and revise the design to match them.**
 
 ## Set up

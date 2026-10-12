@@ -1,0 +1,6 @@
+packages:
+  - services/guestbook
+injectWorkspacePackages: true
+onlyBuiltDependencies:
+  - sharp
+  - '@swc/core'

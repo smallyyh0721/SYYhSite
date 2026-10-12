@@ -1,0 +1,227 @@
+{
+  "version": "handoff-v2",
+  "updatedAt": "2026-10-12",
+  "scope": "design-and-agent-handoff-only",
+  "productionImplementationStarted": true,
+  "requirements": [
+    {
+      "id": "themes",
+      "status": "user-required",
+      "value": {
+        "options": [
+          "day",
+          "night"
+        ],
+        "default": "night",
+        "day": "blue-white",
+        "night": "existing-dark",
+        "persistence": "localStorage"
+      }
+    },
+    {
+      "id": "island-styles",
+      "status": "user-required",
+      "value": [
+        "sky-city",
+        "ancient-landform",
+        "apocalypse-planet",
+        "anime-home"
+      ]
+    },
+    {
+      "id": "visitor-avatar",
+      "status": "user-required",
+      "value": {
+        "location": "VISITOR ACCESS right panel",
+        "true3D": true,
+        "pointerFollow": "eyes/head/subtle-upper-body",
+        "identity": "pending-design"
+      }
+    },
+    {
+      "id": "images-owner",
+      "status": "user-required",
+      "value": "chatgpt"
+    },
+    {
+      "id": "team",
+      "status": "user-required",
+      "value": {
+        "chatgpt": [
+          "coordination",
+          "image-generation",
+          "blender",
+          "core-code",
+          "integration",
+          "verification"
+        ],
+        "grok": [
+          "research",
+          "asset-search",
+          "general-coding"
+        ]
+      }
+    },
+    {
+      "id": "design-before-build",
+      "status": "user-required",
+      "value": "Begin implementation under subsequent user authorization; initial-draft-complete does not silently resolve pending choices."
+    },
+    {
+      "id": "deployment-container",
+      "status": "user-required",
+      "value": "Docker production containers"
+    },
+    {
+      "id": "deployment-target",
+      "status": "user-specified",
+      "value": {
+        "address": "124.220.190.120",
+        "user": "ubuntu",
+        "platform": "linux/amd64",
+        "source": "D:/dev/yyh_server/server.md"
+      }
+    },
+    {
+      "id": "five-stage-plan",
+      "status": "user-required",
+      "value": [
+        "draft第一版网站",
+        "第一版网站修正和完善",
+        "素材的完善和补充",
+        "第一版正式网站建设",
+        "第一版正式网站修正和补充"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "stack",
+      "status": "proposed",
+      "value": "Next static export / React / TypeScript / CSS Modules / tokens / GSAP / R3F avatar / Fastify SQLite"
+    },
+    {
+      "id": "world-baseline",
+      "status": "proposed",
+      "value": "2.5D behind WorldAdapter; full3D branch only after selection"
+    },
+    {
+      "id": "avatar-behavior",
+      "status": "proposed",
+      "value": "fixed camera / bounded eyes-head follow / blink-breathe / smooth recenter"
+    },
+    {
+      "id": "story",
+      "status": "proposed",
+      "value": "keyframes and complete text first, scroll sequence optional"
+    },
+    {
+      "id": "guestbook",
+      "status": "proposed",
+      "value": "pure text / pending moderation / idempotent POST / CLI moderation"
+    },
+    {
+      "id": "container-delivery",
+      "status": "proposed",
+      "value": "Prefer local Linux test and fixed Git inputs, server build and revalidation; choose local/CI image delivery after measuring bandwidth, artifact size, cache/build memory/time. Direct-origin timeout does not reject Tencent mirror pulls; save/scp/load is an offline fallback."
+    }
+  ],
+  "openDecisions": [
+    {
+      "id": "avatar-identity",
+      "status": "pending-design",
+      "blocks": [
+        "P3-01",
+        "P3-02",
+        "final-avatar-in-P4-01"
+      ],
+      "doesNotBlock": [
+        "P1-02",
+        "P1-04",
+        "P1-05",
+        "P1-03",
+        "draft-fixes-in-P2"
+      ]
+    },
+    {
+      "id": "island-channel-binding",
+      "status": "pending-selection",
+      "value": null,
+      "blocks": [
+        "final-channel-binding"
+      ],
+      "doesNotBlock": [
+        "configurable-navigation"
+      ]
+    },
+    {
+      "id": "world-renderer",
+      "status": "pending-selection",
+      "value": null,
+      "alternatives": [
+        "2.5D",
+        "full3D"
+      ],
+      "blocks": [
+        "full3D-production"
+      ]
+    },
+    {
+      "id": "story-content",
+      "status": "pending-content",
+      "blocks": [
+        "final-story-assets-in-P3-04",
+        "selected-sequence-in-P4-01"
+      ],
+      "doesNotBlock": [
+        "P1-03-reading-structure"
+      ]
+    },
+    {
+      "id": "real-profile-works-links",
+      "status": "pending-user-content",
+      "blocks": [
+        "publishing-invented-placeholder-facts"
+      ],
+      "doesNotBlock": [
+        "schemas",
+        "honest-empty-states"
+      ]
+    },
+    {
+      "id": "domain-registry-public-release",
+      "status": "pending-user-instruction",
+      "blocks": [
+        "public-release"
+      ],
+      "doesNotBlock": [
+        "local-build",
+        "deployment-config"
+      ],
+      "value": "Server target specified; domain, registry reachability and public release remain pending."
+    }
+  ],
+  "environment": {
+    "inspectedAt": "2026-10-12",
+    "blender": {
+      "path": "C:/Program Files/Blender Foundation/Blender 4.5/blender.exe",
+      "version": "4.5.13 LTS",
+      "skillPath": "D:/social_impact/mymovie/.agents/skills/blender-codex/SKILL.md",
+      "skillReuse": "reference-in-place",
+      "mcpAtInspection": "not-connected",
+      "historicalEvidence": "D:/social_impact/mymovie/previs_walk_3s/v001/README.md",
+      "projectCharacterVerified": false
+    },
+    "grok": {
+      "path": "C:/Users/yonghao.yu/.grok/bin/grok.exe",
+      "version": "1.0.46",
+      "helpChecked": true,
+      "authenticationVerified": false,
+      "taskExecutionPerformed": false
+    },
+    "deploymentFactsPath": "docs/agent-handoff/deployment-facts.json"
+  },
+  "phasePlanPath": "docs/agent-handoff/07-phased-plan.md",
+  "phaseStatePath": "docs/agent-handoff/phases.json",
+  "executionScope": "P1 draft implementation, GitHub delivery and cloud deployment authorized; later phases not started"
+}

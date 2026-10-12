@@ -1,0 +1,590 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-12",
+  "scope": "P1-execution-local-and-cloud",
+  "queueOwner": "chatgpt",
+  "statusVocabulary": [
+    "pending",
+    "assigned",
+    "in_progress",
+    "ready_for_review",
+    "accepted",
+    "waiting_input",
+    "needs_fix",
+    "not_applicable"
+  ],
+  "rules": [
+    "Lead alone updates this queue; Grok writes per-task reports.",
+    "P1 draft uses reusable target stack, concept assets and a true3D proxy; P3 produces final assets; P4 integrates production scope.",
+    "Full3D islands and story sequence are conditional branches, never mandatory merely because Blender exists.",
+    "Cloud task P4-06 only executes in authorized deployment scope; P4-07 conditionally requires it.",
+    "P5-04 conditionally requires assigned fix tasks; unused optional categories may be marked not_applicable with a reason.",
+    "Old T00-T18 references are superseded by P1-P5 task IDs; do not execute two queues.",
+    "Do not auto-start the next phase unless the user's scope includes it."
+  ],
+  "tasks": [
+    {
+      "id": "P1-01",
+      "phaseId": "P1",
+      "title": "环境与工作基线",
+      "owner": "chatgpt",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P1-01.md",
+      "acceptance": "核实dirty/设计输入/WSL2与本机Docker，分配文件；记录未验证工具。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P1-02",
+      "phaseId": "P1",
+      "title": "draft工程与公共契约",
+      "owner": "chatgpt",
+      "status": "accepted",
+      "dependsOn": [
+        "P1-01"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P1-02.md",
+      "acceptance": "Next/TS/pnpm、schema、Day/Night、基本Dockerfile/Compose可复用；提供Grok接口样例。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P1-03",
+      "phaseId": "P1",
+      "title": "参考增量与普通UI/页面",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P1-03.md",
+      "reportPath": "docs/agent-work/reports/P1-03.md",
+      "acceptance": "必要参考增量，Button/Frame与Works/About/Story阅读/Board展示；fixture标记、移动/键盘可用。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P1-04",
+      "phaseId": "P1",
+      "title": "入口路由与Hub旅行",
+      "owner": "chatgpt",
+      "status": "accepted",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P1-04.md",
+      "acceptance": "真实URL/Intro/Gate/404、2.5D四岛、聚焦进入/返回/History、辅助链接与临时绑定隔离。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P1-05",
+      "phaseId": "P1",
+      "title": "3D代理人物与跟随",
+      "owner": "chatgpt",
+      "status": "accepted",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P1-05.md",
+      "acceptance": "Blender代理GLB、眼头/上身限幅跟随、待机/回正、日夜灯光、手机/海报降级。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P1-06",
+      "phaseId": "P1",
+      "title": "最小本地留言链路",
+      "owner": "chatgpt",
+      "status": "accepted",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P1-06.md",
+      "acceptance": "Fastify/SQLite基础验证、pending提交、approved读取、本地持久化和失败状态。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P1-07",
+      "phaseId": "P1",
+      "title": "draft集成与阶段交付",
+      "owner": "chatgpt",
+      "status": "in_progress",
+      "dependsOn": [
+        "P1-03",
+        "P1-04",
+        "P1-05",
+        "P1-06"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P1-07.md",
+      "acceptance": "draft-v1主流程/主题/屏宽检查、本机Linux构建/Compose/重启，截图、缺口与阶段交接。 本轮另要求GitHub推送、云端Docker部署与公网复核。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P2-01",
+      "phaseId": "P2",
+      "title": "反馈与问题分解",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P1-07"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-01.md",
+      "acceptance": "实际复现用户反馈，记录预期/实际/优先级/归属，不把方案推测写成缺陷。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P2-02",
+      "phaseId": "P2",
+      "title": "页面与普通组件修正",
+      "owner": "grok",
+      "status": "pending",
+      "dependsOn": [
+        "P2-01"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-02.md",
+      "acceptance": "按任务修布局/中文/主题/手机/状态，记录实际自检；没有改动需求则说明已检查结果。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P2-03",
+      "phaseId": "P2",
+      "title": "核心交互与性能修正",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P2-01"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-03.md",
+      "acceptance": "旅行/聚焦/History/人物手感、加载/错误/减少动态与适当性能修正，跑受影响检查。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P2-04",
+      "phaseId": "P2",
+      "title": "第一版范围和素材brief",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P2-02",
+        "P2-03"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-04.md",
+      "acceptance": "记录频道绑定/renderer/角色/Story/内容决定，冻结props/schema，列阶段3局部待输入与部署检查项。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P2-05",
+      "phaseId": "P2",
+      "title": "修正版回归与交接",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P2-04"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-05.md",
+      "acceptance": "draft-v1-reviewed截图、问题记录、关键回归、素材与接口基线；云端未测项仍pending。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-01",
+      "phaseId": "P3",
+      "title": "角色设定与图片生成",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "inputGates": [
+        "avatar-identity-design"
+      ],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-01.md",
+      "acceptance": "正式角色brief/母版/多视图/材质与构图；实际成图检查，保存提示词/参考。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-02",
+      "phaseId": "P3",
+      "title": "正式角色Blender与GLB",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P3-01",
+        "P1-05"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-02.md",
+      "acceptance": ".blend/脚本/材质/绑定/idle/GLB/rig-map/日夜海报，网页姿态与预算验证。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-03",
+      "phaseId": "P3",
+      "title": "四岛正式运行素材",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "inputGates": [
+        "selected-island-visual-scope"
+      ],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-03.md",
+      "acceptance": "一致轮廓日夜透明/分层图；仅选定时增加完整3D模型/LOD/锚点等，记录验证。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-04",
+      "phaseId": "P3",
+      "title": "Story与品牌图素材",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "inputGates": [
+        "selected-story-content-or-honest-empty-state"
+      ],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-04.md",
+      "acceptance": "所选关键帧/品牌/分享图；选序列时短章试制后完整渲染，保留源与manifest。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-05",
+      "phaseId": "P3",
+      "title": "辅助素材检索与本地化",
+      "owner": "grok",
+      "status": "pending",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-05.md",
+      "acceptance": "字体/必要纹理环境/可选音效来源许可、已接纳资源本地化和一般媒体处理。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-06",
+      "phaseId": "P3",
+      "title": "真实内容规范化",
+      "owner": "grok",
+      "status": "pending",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "inputGates": [
+        "user-content-or-honest-empty-state"
+      ],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-06.md",
+      "acceptance": "用户works/profile/links/story转schema，媒体credit/alt齐全，事实缺失不伪造。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P3-07",
+      "phaseId": "P3",
+      "title": "资产验收与阶段交接",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P3-02",
+        "P3-03",
+        "P3-04",
+        "P3-05",
+        "P3-06"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P3-07.md",
+      "acceptance": "assets-v1、源/运行文件清单、技术/视觉/网页预览、许可与缺口；正式角色不以代理替代。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-01",
+      "phaseId": "P4",
+      "title": "正式核心与素材集成",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P3-07"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-01.md",
+      "acceptance": "正式Avatar/Hub/主题/History、所选world3D或序列播放器/缓存、资源释放和降级。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-02",
+      "phaseId": "P4",
+      "title": "正式页面与内容集成",
+      "owner": "grok",
+      "status": "pending",
+      "dependsOn": [
+        "P3-07"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-02.md",
+      "acceptance": "按冻结接口替换开发内容/临时绑定，Works/About/联系/Story排版与媒体状态、无障碍自检。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-03",
+      "phaseId": "P4",
+      "title": "生产留言与数据能力",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P3-07"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-03.md",
+      "acceptance": "限流/幂等/审核CLI、迁移/日志/安全渲染、持久化/在线备份/独立恢复及前端状态。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-04",
+      "phaseId": "P4",
+      "title": "生产Docker与发布输入",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P3-07"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-04.md",
+      "acceptance": "最终Dockerfile/Compose、平台/base/lock/参数、配置/权限/健康检查/日志、release与回滚输入。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-05",
+      "phaseId": "P4",
+      "title": "正式候选完整验收",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P4-01",
+        "P4-02",
+        "P4-03",
+        "P4-04"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-05.md",
+      "acceptance": "v1.0.0-rc完整浏览器/类型/构建/API/媒体/性能/失败/数据检查，本机Linux生产容器通过。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-06",
+      "phaseId": "P4",
+      "title": "Ubuntu部署与云端复核",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P4-05"
+      ],
+      "inputGates": [
+        "cloud-deploy-in-authorized-scope"
+      ],
+      "optional": true,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-06.md",
+      "acceptance": "授权范围内mirror实际pull/Git/npm/构建资源实测、固定版本部署、健康/公网/数据/DNS/TLS与回滚复核。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P4-07",
+      "phaseId": "P4",
+      "title": "第一版正式交付",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P4-05"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [
+        {
+          "id": "P4-06",
+          "when": "cloud deployment requested"
+        }
+      ],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P4-07.md",
+      "acceptance": "版本/截图/证据/发布与备份回滚说明；部署在范围内则还需P4-06，不在范围内明确未上线。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P5-01",
+      "phaseId": "P5",
+      "title": "正式版反馈复现与范围",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P4-07"
+      ],
+      "inputGates": [
+        "user-specified-v1-fix-or-supplement"
+      ],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P5-01.md",
+      "acceptance": "建立当次问题/内容/素材补充清单，归属/优先级，记录运行版本与预期。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P5-02",
+      "phaseId": "P5",
+      "title": "普通页面与内容补丁",
+      "owner": "grok",
+      "status": "pending",
+      "dependsOn": [
+        "P5-01"
+      ],
+      "inputGates": [],
+      "optional": true,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P5-02.md",
+      "acceptance": "按分配修页面/组件/真实内容与辅助资源，实际自检；无此类任务时记录不适用。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P5-03",
+      "phaseId": "P5",
+      "title": "核心与素材补丁",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P5-01"
+      ],
+      "inputGates": [],
+      "optional": true,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P5-03.md",
+      "acceptance": "修核心/API/性能/模型/图像，保持身份/契约与数据；按范围更新源和manifest。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P5-04",
+      "phaseId": "P5",
+      "title": "补丁回归与发布输入",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P5-01"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [
+        {
+          "id": "P5-02",
+          "when": "general fixes assigned"
+        },
+        {
+          "id": "P5-03",
+          "when": "core or asset fixes assigned"
+        }
+      ],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P5-04.md",
+      "acceptance": "已选修复P5-02/P5-03完成后跑回归/构建，固定v1.0.x输入、备份/回滚与发布记录。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P5-05",
+      "phaseId": "P5",
+      "title": "补丁更新与阶段交接",
+      "owner": "chatgpt",
+      "status": "pending",
+      "dependsOn": [
+        "P5-04"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P5-05.md",
+      "acceptance": "按授权发布范围更新云端并复核，或交本地补丁；关闭问题、留证据，不开展未要求无限维护。",
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    }
+  ]
+}

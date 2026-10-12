@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-12",
+  "source": "user-specified-five-stage-plan",
+  "currentPhase": "P1",
+  "nextPlannedPhase": "P2",
+  "workStarted": true,
+  "statusVocabulary": [
+    "pending",
+    "in_progress",
+    "ready_for_review",
+    "accepted",
+    "waiting_input",
+    "needs_fix"
+  ],
+  "scopePolicy": "Starting a named phase covers that phase's authorized work; multi-phase authorization allows continuous work without redundant permission. Planning request does not start P1.",
+  "deploymentPolicy": "Docker target specified; actual cloud deployment follows requested phase scope. Mark undeployed local-only delivery explicitly.",
+  "phasePlanReference": "docs/agent-handoff/07-phased-plan.md",
+  "phases": [
+    {
+      "id": "P1",
+      "number": 1,
+      "title": "draft第一版网站",
+      "status": "in_progress",
+      "dependsOn": [],
+      "deliverable": "draft-v1",
+      "tasks": [
+        "P1-01",
+        "P1-02",
+        "P1-03",
+        "P1-04",
+        "P1-05",
+        "P1-06",
+        "P1-07"
+      ],
+      "handoffPath": "docs/agent-work/phases/P1/handoff.md",
+      "inputs": [
+        "existing-design-concepts",
+        "latest-user-scope"
+      ],
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
+      "deploymentScope": "Local Linux Docker validation and public cloud draft deployment explicitly authorized on 2026-10-12"
+    },
+    {
+      "id": "P2",
+      "number": 2,
+      "title": "第一版网站修正和完善",
+      "status": "pending",
+      "dependsOn": [
+        "P1"
+      ],
+      "deliverable": "draft-v1-reviewed",
+      "tasks": [
+        "P2-01",
+        "P2-02",
+        "P2-03",
+        "P2-04",
+        "P2-05"
+      ],
+      "handoffPath": "docs/agent-work/phases/P2/handoff.md",
+      "inputs": [
+        "P1-running-draft-and-evidence",
+        "existing-or-new-user-feedback"
+      ],
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+    },
+    {
+      "id": "P3",
+      "number": 3,
+      "title": "素材的完善和补充",
+      "status": "pending",
+      "dependsOn": [
+        "P2"
+      ],
+      "deliverable": "assets-v1",
+      "tasks": [
+        "P3-01",
+        "P3-02",
+        "P3-03",
+        "P3-04",
+        "P3-05",
+        "P3-06",
+        "P3-07"
+      ],
+      "handoffPath": "docs/agent-work/phases/P3/handoff.md",
+      "inputs": [
+        "P2-frozen-asset-briefs",
+        "selected-identity-and-visuals",
+        "user-content-or-honest-empty-state"
+      ],
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+    },
+    {
+      "id": "P4",
+      "number": 4,
+      "title": "第一版正式网站建设",
+      "status": "pending",
+      "dependsOn": [
+        "P3"
+      ],
+      "deliverable": "v1.0.0-rc / v1.0.0 within accepted release scope",
+      "tasks": [
+        "P4-01",
+        "P4-02",
+        "P4-03",
+        "P4-04",
+        "P4-05",
+        "P4-06",
+        "P4-07"
+      ],
+      "handoffPath": "docs/agent-work/phases/P4/handoff.md",
+      "inputs": [
+        "reviewed-draft",
+        "P3-runtime-assets-and-evidence",
+        "selected-v1-scope",
+        "deployment-scope-instruction"
+      ],
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+    },
+    {
+      "id": "P5",
+      "number": 5,
+      "title": "第一版正式网站修正和补充",
+      "status": "pending",
+      "dependsOn": [
+        "P4"
+      ],
+      "deliverable": "v1.0.x",
+      "tasks": [
+        "P5-01",
+        "P5-02",
+        "P5-03",
+        "P5-04",
+        "P5-05"
+      ],
+      "handoffPath": "docs/agent-work/phases/P5/handoff.md",
+      "inputs": [
+        "P4-version-and-evidence",
+        "specific-user-fix-or-supplement"
+      ],
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+    }
+  ]
+}

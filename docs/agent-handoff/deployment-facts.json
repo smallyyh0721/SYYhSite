@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-12",
+  "scope": "P1-active-execution",
+  "productionImplementationStarted": true,
+  "serverSource": {
+    "threadId": "01a12b8e-c6d1-7122-b027-1ec885456505",
+    "threadTitle": "整理服务器信息与登录指南",
+    "hostId": "local",
+    "file": "D:/dev/yyh_server/server.md",
+    "originalAuditAt": "2026-10-11T23:25:00+08:00",
+    "readOnlyRecheckAt": "2026-10-12T14:44:31+08:00"
+  },
+  "target": {
+    "address": "124.220.190.120",
+    "sshUser": "ubuntu",
+    "sshPort": 22,
+    "dockerCommandPrefix": [
+      "sudo",
+      "-n",
+      "docker"
+    ],
+    "os": "Ubuntu 24.04.4 LTS",
+    "architecture": "x86_64",
+    "imagePlatform": "linux/amd64",
+    "vCpu": 2,
+    "memoryMiB": 3723,
+    "availableMemoryMiBAtRecheck": 3133,
+    "rootDiskAvailableHuman": "51G",
+    "dockerVersion": "29.6.1",
+    "composeVersion": "5.3.1",
+    "containerCountAtRecheck": 0,
+    "httpHttpsListeningAtRecheck": false,
+    "deploymentRootProposal": "/opt/website"
+  },
+  "local": {
+    "os": "Windows 11 Pro",
+    "architecture": "x86_64",
+    "cpu": "Intel Core Ultra 5 125H",
+    "memoryApproxGiB": 32,
+    "wsl": {
+      "distribution": "Ubuntu",
+      "version": 2,
+      "stateAtCheck": "Stopped"
+    },
+    "dockerCliFoundInPath": false,
+    "dockerDesktopFoundAtCommonLocations": true,
+    "dockerRuntimeVerified": true,
+    "notes": "Actual user-local Docker Desktop CLI found; Linux container/build/Compose verified.",
+    "dockerCliPath": "C:/Users/yonghao.yu/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe",
+    "dockerServerPlatform": "linux/amd64",
+    "containerRunVerified": "node:24-bookworm-slim / v24.21.0",
+    "productionImageSize": {
+      "web": "99.9MB",
+      "api": "347MB"
+    },
+    "observedRuntimeMiB": {
+      "web": 14.48,
+      "api": 26.8
+    }
+  },
+  "network": {
+    "dockerHubDirect": "timed-out-in-original-audit-not-retested",
+    "configuredMirror": "https://mirror.ccs.tencentyun.com",
+    "mirrorStatus": "nginx:stable-alpine successfully pulled through configured daemon on 2026-10-12",
+    "gitFetchFromServerVerified": true,
+    "npmFetchFromServerVerified": false,
+    "privateRegistryPullVerified": false,
+    "cloudFirewall80And443Verified": false,
+    "dnsAndTlsVerified": false,
+    "interpretation": "Direct-origin curl timeout does not establish failure of Docker pulls through the configured Tencent mirror. Configuring a mirror is not evidence it caused the direct-origin timeout.",
+    "githubLocalReadAndPushDryRunVerified": true
+  },
+  "requirements": {
+    "containers": "user-required",
+    "deploymentTarget": "specified-server",
+    "publicDeployExecuted": false
+  },
+  "recommendedDelivery": {
+    "status": "proposed-revised-after-user-bandwidth-and-mirror-feedback",
+    "initial": "Local Linux production build/test; Git fixed source/media/config inputs; Ubuntu builds from those same inputs; Compose and cloud acceptance.",
+    "decisionBasis": "Measure concrete image pulls via existing mirror, Git/npm access, cold/warm build time and peak memory, and actual artifact size/upload throughput.",
+    "later": "CI or local image build and verified registry delivery if cloud builds perform poorly; digest-based release.",
+    "alternative": "save/scp/load for offline or emergency delivery, with explicit full-archive bandwidth cost.",
+    "uploadThroughputMeasured": false,
+    "projectProductionImageSizeMeasured": true,
+    "serverBuildPerformanceMeasured": false
+  },
+  "checksPerformed": [
+    "referenced-task-read",
+    "server.md-read",
+    "local-Windows-cpu-memory-inspection",
+    "wsl-distribution-version-list",
+    "local-Docker-PATH-common-path-check",
+    "SSH-system-Docker-containers-ports-read-only-recheck",
+    "local-container-run",
+    "local-Linux-production-build",
+    "API-and-motion-tests",
+    "browser-28-responsive-screens",
+    "approved-persistence-restart-and-independent-backup-read"
+  ],
+  "checksNotPerformed": [
+    "Docker-install",
+    "Git-push",
+    "cloud-deploy",
+    "physical-touch-device",
+    "DNS-TLS"
+  ],
+  "phasePlan": {
+    "P1": "Local Linux production build/test + explicitly authorized public cloud draft deployment",
+    "P2": "Draft fixes, frozen inputs and pending deployment checks",
+    "P3": "Runtime media preparation and versioned assets",
+    "P4": "Production Docker validation, Git/server build and cloud deployment within requested scope",
+    "P5": "Patch regression and authorized updates"
+  }
+}

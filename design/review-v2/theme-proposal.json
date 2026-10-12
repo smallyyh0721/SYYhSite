@@ -1,0 +1,39 @@
+{
+  "status": "design-proposal-only",
+  "default": "night",
+  "userChoices": ["day", "night"],
+  "persistence": "localStorage",
+  "initialSelection": "saved user choice, otherwise night",
+  "themes": {
+    "day": {
+      "void": "#EDF6FF",
+      "surface": "#FFFFFF",
+      "surface-raised": "#E3F0FF",
+      "ink": "#143453",
+      "ink-muted": "#526B84",
+      "line-hair": "#9DB8CF",
+      "control-border": "#5E7B96",
+      "primary": "#145EC4",
+      "on-primary": "#FFFFFF",
+      "focus": "#145EC4",
+      "sky": "#D9EDFF",
+      "fog": "#EDF6FF"
+    },
+    "night": {
+      "void": "#0A0A0E",
+      "surface": "#15151C",
+      "surface-raised": "#1F1F29",
+      "ink": "#F3F1EA",
+      "ink-muted": "#A3A2AD",
+      "line-hair": "#555560",
+      "control-border": "#A3A2AD",
+      "primary": "#C8FF2E",
+      "on-primary": "#0A0A0E",
+      "focus": "#FFD60A",
+      "sky": "#080D1B",
+      "fog": "#0A0A0E"
+    }
+  },
+  "paperReadingView": "About-local option, not a third global theme",
+  "notes": "Island materials keep their local identity; day/night changes environment and lights, not geometry. Proposed tokens are not yet merged into production design/tokens.json."
+}

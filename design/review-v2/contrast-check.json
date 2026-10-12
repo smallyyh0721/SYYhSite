@@ -1,0 +1,18 @@
+{
+  "day": {
+    "bodyOnPage": 11.68,
+    "mutedOnPage": 5.07,
+    "bodyOnSurface": 12.76,
+    "mutedOnSurface": 5.53,
+    "button": 6.13,
+    "controlBorder": 4.42
+  },
+  "night": {
+    "bodyOnPage": 17.49,
+    "mutedOnPage": 7.84,
+    "bodyOnSurface": 16.07,
+    "mutedOnSurface": 7.21,
+    "button": 16.75,
+    "controlBorder": 7.21
+  }
+}

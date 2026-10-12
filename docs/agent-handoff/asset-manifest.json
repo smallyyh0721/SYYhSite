@@ -1,0 +1,296 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-12",
+  "projectRoot": "D:/dev/yyh_server/SYYhSite",
+  "statusVocabulary": [
+    "concept-ready",
+    "layout-placeholder",
+    "pending-design",
+    "planned",
+    "source-pending",
+    "runtime-verified"
+  ],
+  "notes": "Concept sources retained; P1 runtime derivatives and proxy verified. Formal assets remain P3 inputs.",
+  "assets": [
+    {
+      "id": "review-site",
+      "kind": "design-gallery",
+      "owner": "chatgpt",
+      "status": "concept-ready",
+      "sourcePath": "design/review-v1/index.html",
+      "runtimePath": null,
+      "details": "11 viewport/storyboard PNGs and SVGs, not functioning production UI",
+      "licenseStatus": "project-design-source",
+      "verifiedInBrowser": false,
+      "productionPhase": "P0-existing-design",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "review-theme",
+      "kind": "theme-proposal",
+      "owner": "chatgpt",
+      "status": "concept-ready",
+      "sourcePath": "design/review-v2/theme-proposal.json",
+      "runtimePath": null,
+      "details": "Proposal retained; global Day/Night integrated in design/tokens.json and CSS.",
+      "licenseStatus": "project-design-source",
+      "productionPhase": "P0-existing-design",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "island-sky",
+      "title": "天空之城",
+      "kind": "island-concept",
+      "owner": "chatgpt",
+      "status": "concept-ready",
+      "sourcePath": "design/review-v2/islands/01-sky-city.png",
+      "runtimePath": "public/media/01-sky-city.webp",
+      "channelId": null,
+      "themePanels": [
+        "day-left",
+        "night-right"
+      ],
+      "modelPath": null,
+      "promptSource": "design/review-v2/image-prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated-original-concept; references retained in prompt record",
+      "runtimeVerified": true,
+      "measurements": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 2561282
+      },
+      "sha256": "a82331408ed723cd287bb4f888467c71c819deb148e8dc1623b2cd47851fe0a0",
+      "productionPhase": "P0-existing-design",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeUsage": "P1 concept derivative; formal layered artwork pending"
+    },
+    {
+      "id": "island-ancient",
+      "title": "远古地貌",
+      "kind": "island-concept",
+      "owner": "chatgpt",
+      "status": "concept-ready",
+      "sourcePath": "design/review-v2/islands/02-ancient-landform.png",
+      "runtimePath": "public/media/02-ancient-landform.webp",
+      "channelId": null,
+      "themePanels": [
+        "day-left",
+        "night-right"
+      ],
+      "modelPath": null,
+      "promptSource": "design/review-v2/image-prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated-original-concept; references retained in prompt record",
+      "runtimeVerified": true,
+      "measurements": {
+        "width": 1774,
+        "height": 887,
+        "bytes": 2755386
+      },
+      "sha256": "a8823fc6e7cb3156413f975fe839c167a060c95b722f5ed7861d66e705438227",
+      "productionPhase": "P0-existing-design",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeUsage": "P1 concept derivative; formal layered artwork pending"
+    },
+    {
+      "id": "island-apocalypse",
+      "title": "末日星球",
+      "kind": "island-concept",
+      "owner": "chatgpt",
+      "status": "concept-ready",
+      "sourcePath": "design/review-v2/islands/03-apocalypse-planet.png",
+      "runtimePath": "public/media/03-apocalypse.webp",
+      "channelId": null,
+      "themePanels": [
+        "day-left",
+        "night-right"
+      ],
+      "modelPath": null,
+      "promptSource": "design/review-v2/image-prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated-original-concept; references retained in prompt record",
+      "runtimeVerified": true,
+      "measurements": {
+        "width": 1774,
+        "height": 887,
+        "bytes": 2699753
+      },
+      "sha256": "42fc6e5ce1c42447491ae9594c93c1abb7f5066bee25c22981c2b61307a7d405",
+      "productionPhase": "P0-existing-design",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeUsage": "P1 concept derivative; formal layered artwork pending"
+    },
+    {
+      "id": "island-anime-home",
+      "title": "二次元宅岛",
+      "kind": "island-concept",
+      "owner": "chatgpt",
+      "status": "concept-ready",
+      "sourcePath": "design/review-v2/islands/04-anime-home.png",
+      "runtimePath": "public/media/04-anime-home.webp",
+      "channelId": null,
+      "themePanels": [
+        "day-left",
+        "night-right"
+      ],
+      "modelPath": null,
+      "promptSource": "design/review-v2/image-prompts.json",
+      "provenance": "ChatGPT built-in imagegen",
+      "licenseStatus": "generated-original-concept; references retained in prompt record",
+      "runtimeVerified": true,
+      "measurements": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 2930108
+      },
+      "sha256": "4951a5bba38be7b52922e49ac02982c6e89cce5b50115f19d4712af3443390ed",
+      "productionPhase": "P0-existing-design",
+      "formalIntegrationPhase": "P4",
+      "runtimeAssetCompletionPhase": "P3",
+      "runtimeUsage": "P1 concept derivative; formal layered artwork pending"
+    },
+    {
+      "id": "visitor-avatar",
+      "kind": "rigged-character",
+      "owner": "chatgpt",
+      "status": "pending-design",
+      "sourcePath": null,
+      "runtimePath": null,
+      "identity": null,
+      "requiredOutputs": [
+        "brief",
+        "concept-sheet",
+        ".blend",
+        "build/export scripts",
+        "GLB",
+        "rig-map.json",
+        "day/night posters",
+        "validation.json"
+      ],
+      "modelBudgetProposal": {
+        "triangles": [
+          30000,
+          60000
+        ],
+        "glbBytesMax": 4194304
+      },
+      "runtimeVerified": false,
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "story-keyframes",
+      "kind": "story-images",
+      "owner": "chatgpt",
+      "status": "pending-design",
+      "sourcePath": null,
+      "runtimePath": null,
+      "initialCountProposal": [
+        3,
+        6
+      ],
+      "runtimeVerified": false,
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "story-sequence",
+      "kind": "sequence",
+      "owner": "chatgpt",
+      "status": "planned",
+      "optional": true,
+      "sourcePath": null,
+      "runtimePath": null,
+      "dependsOn": "approved story and selected sequence scope",
+      "runtimeVerified": false,
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "user-content",
+      "kind": "works-profile-links",
+      "owner": "grok",
+      "status": "source-pending",
+      "sourcePath": null,
+      "runtimePath": null,
+      "sourceOwner": "user",
+      "allowInventedPersonalFacts": false,
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "fonts",
+      "kind": "font-search",
+      "owner": "grok",
+      "status": "planned",
+      "sourcePath": null,
+      "runtimePath": null,
+      "candidates": [
+        "Barlow Condensed",
+        "Noto Sans SC",
+        "DotGothic16"
+      ],
+      "licenseStatus": "must-verify-per-candidate",
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "environment-textures",
+      "kind": "auxiliary-search",
+      "owner": "grok",
+      "status": "planned",
+      "sourcePath": null,
+      "runtimePath": null,
+      "optional": true,
+      "licenseStatus": "must-verify-per-candidate",
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "audio",
+      "kind": "sound-search",
+      "owner": "grok",
+      "status": "planned",
+      "sourcePath": null,
+      "runtimePath": null,
+      "optional": true,
+      "playbackDefault": "off",
+      "licenseStatus": "must-verify-per-candidate",
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "brand-og",
+      "kind": "brand-assets",
+      "owner": "chatgpt",
+      "status": "planned",
+      "sourcePath": null,
+      "runtimePath": null,
+      "outputs": [
+        "SVG wordmark",
+        "favicon",
+        "1200x630 OG image"
+      ],
+      "productionPhase": "P3",
+      "formalIntegrationPhase": "P4"
+    },
+    {
+      "id": "visitor-avatar-proxy-v001",
+      "kind": "rigged-3d-proxy",
+      "owner": "chatgpt",
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/avatar-proxy/v001/avatar-proxy.blend",
+      "runtimePath": "public/media/avatar-proxy.glb",
+      "posterPath": "public/media/avatar-poster.png",
+      "licenseStatus": "project-original",
+      "verifiedInBrowser": true,
+      "productionPhase": "P1",
+      "formalIntegrationPhase": "P4",
+      "details": "Original mannequin, not final identity; Blender build.py + rig-map.json; genuine skin and eye/head/spine follow."
+    }
+  ]
+}

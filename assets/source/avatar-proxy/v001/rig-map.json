@@ -1,0 +1,17 @@
+{
+  "model": "/media/avatar-proxy.glb",
+  "bones": {
+    "spine": "Spine",
+    "head": "Head",
+    "eyes": [
+      "Eye.L",
+      "Eye.R"
+    ]
+  },
+  "kind": "original draft proxy, identity not final",
+  "limitsDegrees": {
+    "headYaw": 18,
+    "headPitch": 10,
+    "spineYaw": 4
+  }
+}

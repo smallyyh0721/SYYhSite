@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SYYH Signal — 设计审核 v1</title>
+<style>
+:root{color-scheme:dark;font-family:"Microsoft YaHei",Arial,sans-serif;background:#0a0a0e;color:#f3f1ea}*{box-sizing:border-box}body{margin:0;padding:32px;max-width:1520px;margin-inline:auto}h1{font-size:clamp(30px,5vw,64px);font-weight:900;font-style:italic;letter-spacing:-2px;margin:24px 0 12px}p{color:#a3a2ad;line-height:1.8;max-width:900px}nav{display:flex;flex-wrap:wrap;gap:12px 24px;border-block:1px solid #555560;padding:18px 0;margin:28px 0}a{color:#c8ff2e;text-underline-offset:5px}h2{font-size:24px;margin:0 0 10px}figure{margin:0 0 64px}img{display:block;width:100%;height:auto;border:1px solid #555560}figcaption{margin:12px 0;color:#a3a2ad;line-height:1.7}.note{font-family:Consolas,monospace;font-size:13px;letter-spacing:1px;color:#c8ff2e}footer{border-top:1px solid #555560;padding-top:24px}a:focus-visible{outline:3px solid #ffd60a;outline-offset:4px}@media(max-width:600px){body{padding:16px}figure{margin-bottom:40px}nav{gap:16px}}
+</style>
+<header><div class="note">DESIGN REVIEW / V1 / STATIC DRAWINGS</div><h1>SYYH / SIGNAL</h1><p>夜色广播 · 线稿浮岛 · 个人频道。此画廊只展示静态设计图，按钮、地图和表单尚未实现。图片可点击查看原尺寸；SVG 可继续编辑。审核通过后才搭建正式网站。</p></header>
+<nav aria-label="审核图目录"><a href="#gate">01 入口</a><a href="#hub">02 浮岛</a><a href="#works">03 作品</a><a href="#detail">04 详情</a><a href="#about">05 关于</a><a href="#paper">06 纸色</a><a href="#story">07 故事</a><a href="#board">08 留言</a><a href="#mobile">09 手机</a><a href="#intro">10 分镜</a></nav>
+<main>
+<figure id="gate"><h2>01 / VISITOR ACCESS</h2><a href="screens/01-gate.png"><img src="screens/01-gate.png" width="1440" height="900" alt="入口设计：大标题、可选昵称、游客进入按钮及原创耳机人物线稿"></a><figcaption>进入优先，无需注册；昵称仅保存在当前浏览器会话。人物为自有概念线稿，可替换成你的立绘。</figcaption></figure>
+<figure id="hub"><h2>02 / NIGHT SKY</h2><a href="screens/02-hub.png"><img src="screens/02-hub.png" width="1440" height="900" alt="夜空中四座线稿浮岛与广播路径"></a><figcaption>鼠标上下左右旅行，抵达后点击进入；只有聚焦频道使用强色。暂停视角与辅助导航帮助准确操作。</figcaption></figure>
+<figure id="works"><h2>03 / WORKS</h2><a href="screens/03-works.png"><img src="screens/03-works.png" width="1440" height="900" alt="作品页：大型作品画面和编号简介"></a><figcaption>大图先到达，文字随后。下方继续编号作品胶片；图中项目与街区插画均为审核示例。</figcaption></figure>
+<figure id="detail"><h2>04 / WORK DETAIL</h2><a href="screens/04-work-detail.png"><img src="screens/04-work-detail.png" width="1440" height="900" alt="作品详情：主图与项目信息"></a><figcaption>独立作品 URL，继续向下阅读过程和细节；返回时恢复原作品位置。</figcaption></figure>
+<figure id="about"><h2>05 / ABOUT — NIGHT</h2><a href="screens/05-about.png"><img src="screens/05-about.png" width="1440" height="900" alt="关于页：大字介绍、人物和个人资料"></a><figcaption>让作品背后的人被看见。真实自述、工具和经历待录入，不使用草稿的虚拟履历。</figcaption></figure>
+<figure id="paper"><h2>06 / ABOUT — PAPER</h2><a href="screens/06-about-paper.png"><img src="screens/06-about-paper.png" width="1440" height="900" alt="关于页的米白纸色阅读模式"></a><figcaption>可选纸色阅读视图；深色文字、舒适行长、图像保留原色。</figcaption></figure>
+<figure id="story"><h2>07 / STORY</h2><a href="screens/07-story.png"><img src="screens/07-story.png" width="1440" height="900" alt="滚动故事页：浮岛关键帧、漫画字幕与章节进度"></a><figcaption>滚动控制故事；SIGNAL → ASCENT → ARRIVAL。此图是关键帧方向，完整序列素材尚未准备。</figcaption></figure>
+<figure id="board"><h2>08 / BOARD</h2><a href="screens/08-board.png"><img src="screens/08-board.png" width="1440" height="900" alt="联系与留言页：联系条目、留言表单和空状态"></a><figcaption>真实链接待录入；留言经服务端存储及审核公开。没有虚构账号或示例访客留言。</figcaption></figure>
+<figure id="mobile"><h2>09 / MOBILE — 390 × 844</h2><a href="screens/09-mobile.png"><img src="screens/09-mobile.png" width="1266" height="976" alt="三个手机视口：入口、触摸浮岛和单列作品"></a><figcaption>手机保留 KV，通过拖动探索；作品自然竖排。实现阶段还会验证 320px 和横屏。</figcaption></figure>
+<figure id="intro"><h2>10 / INTRO STORYBOARD</h2><a href="screens/10-intro-storyboard.png"><img src="screens/10-intro-storyboard.png" width="1440" height="750" alt="入口的四段动画分镜：线、框、标题、移动指南"></a><figcaption>约 3.5 秒，随时跳过；再次访问默认跳过。减少动态模式直接到访客入口。</figcaption></figure>
+</main>
+<footer><p>审核重点：视觉风格、标题与中文比例、旅行方式、四频道内容、手机体验。请用图号指出调整项；全部确认后进入搭建。</p><p><a href="../../docs/design-proposal-v1.md">设计方案</a> · <a href="../../docs/implementation-plan-v1.md">架构与实施方案</a> · <a href="../../docs/reference-notes.md">参考研究与差距</a> · <a href="screens/00-overview.png">整套设计总览</a></p></footer>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SYYH Signal · 设计与 Agent 交接</title>
+  <style>
+    :root{color-scheme:light;--bg:#edf6ff;--paper:#fff;--ink:#143453;--muted:#526b84;--line:#9db8cf;--blue:#145ec4;--night:#0a0a0e}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","Noto Sans SC",Arial,sans-serif;line-height:1.8}a{color:var(--blue);text-underline-offset:4px}a:focus-visible{outline:3px solid #145ec4;outline-offset:5px}main{max-width:1240px;margin:auto;padding:0 40px 70px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:24px 0;font-size:12px;letter-spacing:2px}.top strong{font-size:17px;letter-spacing:1px}.hero{padding:54px 0 38px}.kicker{font-size:12px;letter-spacing:3px;color:var(--blue);font-weight:700}h1{font-size:clamp(40px,6vw,74px);line-height:1.15;margin:18px 0 24px;letter-spacing:-2px}h1 em{font-style:normal;color:var(--blue)}.intro{max-width:860px;color:var(--muted);font-size:17px}.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.pill{border:1px solid var(--line);padding:5px 13px;background:#fff;font-size:12px}.section{margin-top:46px}.section-head{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:22px}.section-head span{font:700 12px monospace;color:var(--blue)}h2{font-size:24px;margin:0}.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.doc{display:block;padding:22px;border:1px solid var(--line);background:var(--paper);text-decoration:none;min-height:150px}.doc:hover{border-color:var(--blue)}.doc b{display:block;color:var(--ink);font-size:18px}.doc small{display:block;font:12px monospace;letter-spacing:2px;margin-bottom:13px}.doc p{color:var(--muted);font-size:14px;margin:10px 0 0}.note{background:#e3f0ff;border-left:4px solid var(--blue);padding:16px 22px;margin:20px 0;color:var(--ink);font-size:14px}.visual{border:1px solid var(--line);background:#fff;padding:12px}.visual img{display:block;width:100%;height:auto}.caption{font-size:13px;color:var(--muted);margin:10px 3px 3px}.islands{display:grid;grid-template-columns:1fr 1fr;gap:18px}.island{border:1px solid #37374a;background:#15151c;color:#f3f1ea}.island img{display:block;width:100%;height:auto}.island .meta{padding:18px 22px}.island h3{margin:0;font-size:19px}.island p{color:#a3a2ad;font-size:13px;margin:5px 0}.island small{color:#c8ff2e;font:11px monospace;letter-spacing:2px}.team{display:grid;grid-template-columns:1fr 1fr;gap:18px}.team article{padding:24px;border:1px solid var(--line);background:#fff}.team h3{margin:0 0 8px}.team p{color:var(--muted);font-size:14px;margin:6px 0}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--blue);font-size:12px;letter-spacing:1px}td:first-child{font-weight:700;white-space:nowrap}.links{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-size:14px}footer{margin-top:55px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:12px}
+    @media(max-width:760px){main{padding:0 18px 40px}.top{gap:12px;font-size:10px;letter-spacing:0}.hero{padding-top:35px}h1{letter-spacing:-1px}.docs{grid-template-columns:1fr 1fr}.islands,.team{grid-template-columns:1fr}.doc{padding:17px;min-height:155px}.section{margin-top:34px}h2{font-size:21px}.intro{font-size:15px}th,td{padding:12px}}
+    @media(max-width:380px){.docs{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="top"><strong>SYYH / SIGNAL</strong><span>DESIGN HANDOFF · 2026.10.12</span></header>
+  <section class="hero">
+    <div class="kicker">FROM CONCEPT TO IMPLEMENTATION</div>
+    <h1>设计初稿完成。<br><em>下一步，有据可依。</em></h1>
+    <p class="intro">完整设计、架构、素材生产流程和两个 Agent 的任务契约。ChatGPT 统筹、生成图片、使用 Blender、实现核心代码并验证；Grok CLI 搜集素材与信息，完成一般编码。</p>
+    <div class="pills"><span class="pill">Day 蓝白 / Night 暗黑</span><span class="pill">四座原创悬浮岛</span><span class="pill">入口真实 3D 人物</span><span class="pill">P1 已执行 · 后续阶段未启动</span></div>
+    <div class="links"><a href="complete-plan.md">阅读完整合订方案 ↗</a><a href="README.md">Agent 从这里开始 ↗</a><a href="../../design/review-v1/index.html">全站设计图 ↗</a><a href="../../design/review-v2/index.html">主题与四岛画廊 ↗</a></div>
+  </section>
+  <section class="section">
+    <div class="section-head"><span>00 / FIVE PHASES</span><h2>按阶段启动，逐步交付</h2></div>
+    <div class="table-wrap"><table><thead><tr><th>阶段</th><th>重点</th><th>交付</th></tr></thead><tbody><tr><td>1 · draft第一版网站</td><td>可运行完整浏览流程，概念图与3D代理</td><td>draft-v1 / 本机Docker</td></tr><tr><td>2 · 第一版网站修正和完善</td><td>按反馈修正，冻结范围与素材需求</td><td>draft-v1-reviewed</td></tr><tr><td>3 · 素材的完善和补充</td><td>图片生成、Blender、真实内容与辅助资源</td><td>assets-v1</td></tr><tr><td>4 · 第一版正式网站建设</td><td>正式集成、生产能力与所授权部署</td><td>v1.0.0 / 运行记录</td></tr><tr><td>5 · 第一版正式网站修正和补充</td><td>实际问题修复、内容/素材补充与回归</td><td>v1.0.x</td></tr></tbody></table></div>
+    <div class="links"><a href="07-phased-plan.md">完整五阶段计划 ↗</a><a href="phases.json">阶段状态 JSON ↗</a></div>
+  </section>
+  <section class="section">
+    <div class="section-head"><span>01 / DOCUMENTS</span><h2>从设计到部署，完整接续</h2></div>
+    <div class="docs">
+      <a class="doc" href="01-design.md"><small>DESIGN</small><b>完整设计方案</b><p>页面、视觉、双主题、人物与四岛、旅行和跳转。</p></a>
+      <a class="doc" href="02-implementation.md"><small>ARCHITECTURE</small><b>完整实施方案</b><p>技术选型、接口、路由、3D控制、数据与部署。</p></a>
+      <a class="doc" href="03-assets.md"><small>ASSET PIPELINE</small><b>素材设计与生成</b><p>图片、Blender、GLB、来源检索、预算和验收。</p></a>
+      <a class="doc" href="04-collaboration.md"><small>TWO AGENTS</small><b>协作与工具流程</b><p>文件归属、任务交接、CLI命令、验证责任。</p></a>
+      <a class="doc" href="05-taskboard.md"><small>EXECUTION</small><b>五阶段31项任务</b><p>按阶段安排依赖、素材/部署任务、验收与交接。</p></a>
+      <a class="doc" href="06-development-deployment.md"><small>DOCKER DELIVERY</small><b>编程与云端部署流程</b><p>本机Linux验证、Git与云端构建、传输估算、镜像交付备选及回滚。</p></a>
+      <a class="doc" href="complete-plan.md"><small>COMPLETE EDITION</small><b>全部方案合订本</b><p>完整正文汇总，适合连续阅读与交给新 Agent。</p></a>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-head"><span>02 / SITE DESIGN</span><h2>全站布局与双主题</h2></div>
+    <div class="visual"><a href="../../design/review-v1/screens/00-overview.png"><img src="../../design/review-v1/screens/00-overview.png" alt="全站设计初稿：入口、地图、作品、自述、故事、留言" loading="lazy"></a><p class="caption">v1 负责布局与内容节奏；右侧人物线稿仅是占位，正式入口需骨骼绑定的 3D 人物。</p></div>
+    <div class="visual" style="margin-top:18px"><a href="../../design/review-v2/theme-comparison.png"><img src="../../design/review-v2/theme-comparison.png" alt="Day蓝白和Night暗黑主题对照" loading="lazy"></a><p class="caption">全站保存主题偏好；About Paper 作为局部阅读样式。图片中的主题控件是设计示意。</p></div>
+  </section>
+  <section class="section">
+    <div class="section-head"><span>03 / FLOATING ISLANDS</span><h2>四座岛，四种轮廓</h2></div>
+    <div class="islands">
+      <article class="island"><a href="../../design/review-v2/islands/01-sky-city.png"><img src="../../design/review-v2/islands/01-sky-city.png" alt="天空之城日夜概念图" loading="lazy"></a><div class="meta"><small>01 / SKY CITY</small><h3>天空之城</h3><p>城堡、桥、花园与瀑布；高耸纵向剪影。</p></div></article>
+      <article class="island"><a href="../../design/review-v2/islands/02-ancient-landform.png"><img src="../../design/review-v2/islands/02-ancient-landform.png" alt="远古地貌日夜概念图" loading="lazy"></a><div class="meta"><small>02 / ANCIENT LANDFORM</small><h3>远古地貌</h3><p>分层岩台、峡谷和破损石环；宽阔横向剪影。</p></div></article>
+      <article class="island"><a href="../../design/review-v2/islands/03-apocalypse-planet.png"><img src="../../design/review-v2/islands/03-apocalypse-planet.png" alt="末日星球日夜概念图" loading="lazy"></a><div class="meta"><small>03 / APOCALYPSE PLANET</small><h3>末日星球</h3><p>破碎星壳、废弃站与橙色裂隙；残片弧形剪影。</p></div></article>
+      <article class="island"><a href="../../design/review-v2/islands/04-anime-home.png"><img src="../../design/review-v2/islands/04-anime-home.png" alt="二次元宅岛日夜概念图" loading="lazy"></a><div class="meta"><small>04 / ANIME HOME</small><h3>二次元宅岛</h3><p>创作宅、桌面、漫画与温暖灯光；生活空间剪影。</p></div></article>
+    </div>
+    <div class="note">这些是已生成的概念图，尚非 GLB。四岛与四频道的对应尚未固定，Hub 是否完整 3D 也未定；入口人物必须真实 3D 的需求已明确。</div>
+  </section>
+  <section class="section">
+    <div class="section-head"><span>04 / OWNERSHIP</span><h2>分工与可执行入口</h2></div>
+    <div class="team"><article><h3>ChatGPT / Lead</h3><p>统筹与设计判断，全部图片生成，本机 Blender 模型/绑定/渲染，架构、路由、主题、人物/旅行控制、API与最终验证。</p><a href="prompts/chatgpt-lead.md">统筹启动提示词 ↗</a></article><article><h3>Grok CLI / Research + Coding</h3><p>参考研究、素材来源与许可、一般UI和页面展示、内容整理、任务自检。按限定文件和冻结接口提交。</p><a href="prompts/grok-research.md">研究提示词 ↗</a> · <a href="prompts/grok-coding.md">编码提示词 ↗</a></article></div>
+    <div class="links"><a href="decisions.json">决策状态 JSON ↗</a><a href="asset-manifest.json">素材清单 JSON ↗</a><a href="tasks.json">任务队列 JSON ↗</a><a href="deployment-facts.json">部署环境事实 JSON ↗</a></div>
+  </section>
+  <section class="section">
+    <div class="section-head"><span>05 / NEXT INPUTS</span><h2>未定项按依赖处理</h2></div>
+    <div class="table-wrap"><table><thead><tr><th>事项</th><th>影响</th><th>可以先做</th></tr></thead><tbody><tr><td>人物形象</td><td>正式角色设计与模型</td><td>代理模型、骨骼控制器、入口页面</td></tr><tr><td>频道绑定 / 世界渲染</td><td>最终配置 / 全3D分支</td><td>WorldAdapter、可配置2.5D、语义导航</td></tr><tr><td>真实作品与个人资料</td><td>最终内容</td><td>schema、页面结构、诚实空状态</td></tr><tr><td>Story故事</td><td>正式图帧与序列</td><td>静态章节和播放器接口</td></tr><tr><td>域名与镜像仓库</td><td>HTTPS / 在线镜像交付</td><td>已定Ubuntu目标，本机验证与离线发布包</td></tr></tbody></table></div>
+  </section>
+  <footer>设计正文保留规划基线。P1已实施真实3D代理、全站与留言服务，本机Linux Docker和浏览器验收已执行；云端状态与正式素材缺口以 <a href="../agent-work/phases/P1/handoff.md">P1实际交接</a> 为准。P2–P5未启动。</footer>
+</main>
+</body>
+</html>

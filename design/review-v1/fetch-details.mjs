@@ -1,0 +1,3 @@
+import fs from 'node:fs/promises';
+const targets = { 'rikka-app.js':'https://rikkazzz.com/app.js', 'rikka-styles.css':'https://rikkazzz.com/styles.css', 'ryuse1-gallery.html':'https://ryuse1-studio.com/gallery/', 'steffie-about.html':'https://steffieharner.netlify.app/about/','cyber-script.js':'https://cyberfiction-five.vercel.app/script.js'};
+console.log(await Promise.all(Object.entries(targets).map(async([name,url])=>{try{const r=await fetch(url,{signal:AbortSignal.timeout(20000)}); const body=await r.text();await fs.writeFile(new URL('./references/'+name,import.meta.url),body);return {name,status:r.status,bytes:body.length};}catch(e){return {name,error:e.message};}})));

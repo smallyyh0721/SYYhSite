@@ -1,0 +1,40 @@
+name: syyh-draft
+services:
+  web:
+    image: syyh-web:${RELEASE:-draft-v1}
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: web
+      args:
+        VCS_REF: ${VCS_REF:-unknown}
+    platform: linux/amd64
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 128m
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+  api:
+    image: syyh-api:${RELEASE:-draft-v1}
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: api
+      args:
+        VCS_REF: ${VCS_REF:-unknown}
+    platform: linux/amd64
+    volumes:
+      - guestbook:/data
+    restart: unless-stopped
+    mem_limit: 256m
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+volumes:
+  guestbook:
+    name: ${DATA_VOLUME:-syyh-draft-local-guestbook}
