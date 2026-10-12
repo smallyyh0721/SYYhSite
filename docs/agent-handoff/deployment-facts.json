@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updatedAt": "2026-10-12",
-  "scope": "P1-deployed-draft",
+  "scope": "P2-deployed-draft",
   "productionImplementationStarted": true,
   "serverSource": {
     "threadId": "01a12b8e-c6d1-7122-b027-1ec885456505",
@@ -32,7 +32,14 @@
     "containerCountAtRecheck": 0,
     "httpHttpsListeningAtRecheck": false,
     "deploymentRootProposal": "/opt/website",
-    "deploymentRoot": "/opt/website/syyh"
+    "deploymentRoot": "/opt/website/syyh",
+    "latestRecheck": {
+      "checkedAt": "2026-10-12T15:42:02.802Z",
+      "containersHealthy": 2,
+      "availableMemoryMiBBeforeBuild": 2964,
+      "rootDiskAvailableHuman": "50G",
+      "checkoutClean": true
+    }
   },
   "local": {
     "os": "Windows 11 Pro",
@@ -52,13 +59,15 @@
     "dockerServerPlatform": "linux/amd64",
     "containerRunVerified": "node:24-bookworm-slim / v24.21.0",
     "productionImageSize": {
-      "web": "99.9MB",
+      "web": "104MB",
       "api": "347MB"
     },
     "observedRuntimeMiB": {
       "web": 14.48,
       "api": 26.8
-    }
+    },
+    "currentReleaseSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
+    "currentReleaseLabelsVerified": true
   },
   "network": {
     "dockerHubDirect": "timed-out-in-original-audit-not-retested",
@@ -107,7 +116,13 @@
     "cloud-Compose-healthy",
     "cloud-HTTP-smoke-11-routes-404-GLB",
     "cloud-22-assets-HTTP-check",
-    "cloud-API-pending-idempotency-and-restart-persistence"
+    "cloud-API-pending-idempotency-and-restart-persistence",
+    "P2-local-production-browser-entry-and-immediate-hover-whole-image-click",
+    "P2-GitHub-push-and-42.6MB-bundle-SHA256",
+    "P2-cloud-30s-build-and-two-healthy-revision-labels",
+    "P2-cloud-HTTP-routes-API-GLB-six-WebP",
+    "P2-local-and-cloud-six-WebP-SHA256-match",
+    "P2-cloud-existing-guestbook-volume-retained"
   ],
   "checksNotPerformed": [
     "Docker-install",
@@ -119,36 +134,76 @@
   ],
   "phasePlan": {
     "P1": "Local Linux production build/test + explicitly authorized public cloud draft deployment",
-    "P2": "Draft fixes, frozen inputs and pending deployment checks",
-    "P3": "Runtime media preparation and versioned assets",
+    "P2": "Completed approved draft revision; fixed Git SHA local Linux test, cloud build and public HTTP/assets verification",
+    "P3": "Formal media/model/content refinement pending phase start",
     "P4": "Production Docker validation, Git/server build and cloud deployment within requested scope",
     "P5": "Patch regression and authorized updates"
   },
   "release": {
-    "sourceSha": "e590059ca96620aab024f4bcee27005633e3db08",
+    "sourceSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
+    "checkedAt": "2026-10-12T15:42:02.802Z",
     "repository": "https://github.com/smallyyh0721/SYYhSite",
     "branch": "codex/draft-v1",
     "url": "http://124.220.190.120/",
-    "sourceDelivery": "Git bundle after cloud GitHub connect timeout",
-    "bundleBytes": 15565955,
-    "bundleTransferSeconds": 2.227,
-    "bundleSha256": "4ad1f5597fdf92811e185466339037469ddd730d75dc94487a22e422eaeeaaaa",
-    "cloudBuildSeconds": 71,
+    "sourceDelivery": "Verified Git bundle of GitHub-pushed commit; cloud builds same fixed source/Dockerfile/lockfile, not transfer of the local image",
+    "bundleBytes": 42579247,
+    "bundleTransferSeconds": 4.625,
+    "bundleTransferScope": "SCP bundle plus 2KB LF-normalized release script; wall time includes SSH setup",
+    "bundleSha256": "7438504a7619aaeb03f9a6b0fe987d33953d4193c3cdef59d82e86c7bfff47e9",
+    "cloudBuildSeconds": 30,
+    "buildCache": "Existing base/dependency layers reused; changed app/src/public compiled on cloud",
     "basePullIncludedInBuildTime": false,
-    "minimumObservedMemAvailableKiB": 2356704,
+    "minimumObservedMemAvailableKiB": 2326872,
     "imageSizes": {
-      "web": "99.9MB",
+      "web": "104MB",
       "api": "347MB"
     },
     "stableObservedRuntimeMiB": {
-      "web": 3.52,
-      "api": 24.29
+      "web": 3.535,
+      "api": 23.86
     },
+    "runtimeMeasurementScope": "One post-release docker stats sample, not a load test",
     "dataVolume": "syyh-draft-cloud-guestbook",
     "runtimeRevisionLabelsVerified": true,
     "containersHealthy": true,
-    "cloudBrowserVisualCheck": "unverified-tool-timeout",
-    "localBrowserVisualCheck": "passed-28-page-viewport-combinations",
-    "cloudHttpAssetsCheck": "passed-22-assets"
-  }
+    "cloudBrowserVisualCheck": "unverified-tool-timeout-35s-kernel-reset",
+    "localBrowserVisualCheck": "passed-P2-entry-mouse-image-click-keyboard-avatar-and-4-responsive-widths",
+    "cloudHttpAssetsCheck": "passed-11-content-routes-404-API-GLB-6-WebP; 6-WebP-SHA256-match-manifest-and-local",
+    "evidencePaths": [
+      "docs/agent-work/evidence/P2/cloud-http.json",
+      "docs/agent-work/evidence/P2/asset-delivery.json",
+      "docs/agent-work/reports/P2-05.md"
+    ],
+    "previousReleaseSha": "e590059ca96620aab024f4bcee27005633e3db08",
+    "rollbackExecuted": false
+  },
+  "releaseHistory": [
+    {
+      "sourceSha": "e590059ca96620aab024f4bcee27005633e3db08",
+      "repository": "https://github.com/smallyyh0721/SYYhSite",
+      "branch": "codex/draft-v1",
+      "url": "http://124.220.190.120/",
+      "sourceDelivery": "Git bundle after cloud GitHub connect timeout",
+      "bundleBytes": 15565955,
+      "bundleTransferSeconds": 2.227,
+      "bundleSha256": "4ad1f5597fdf92811e185466339037469ddd730d75dc94487a22e422eaeeaaaa",
+      "cloudBuildSeconds": 71,
+      "basePullIncludedInBuildTime": false,
+      "minimumObservedMemAvailableKiB": 2356704,
+      "imageSizes": {
+        "web": "99.9MB",
+        "api": "347MB"
+      },
+      "stableObservedRuntimeMiB": {
+        "web": 3.52,
+        "api": 24.29
+      },
+      "dataVolume": "syyh-draft-cloud-guestbook",
+      "runtimeRevisionLabelsVerified": true,
+      "containersHealthy": true,
+      "cloudBrowserVisualCheck": "unverified-tool-timeout",
+      "localBrowserVisualCheck": "passed-28-page-viewport-combinations",
+      "cloudHttpAssetsCheck": "passed-22-assets"
+    }
+  ]
 }

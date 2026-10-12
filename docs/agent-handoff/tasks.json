@@ -217,7 +217,7 @@
       "phaseId": "P2",
       "title": "修正版回归与交接",
       "owner": "chatgpt",
-      "status": "in_progress",
+      "status": "accepted",
       "dependsOn": [
         "P2-04"
       ],

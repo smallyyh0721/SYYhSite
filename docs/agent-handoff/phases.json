@@ -46,7 +46,7 @@
       "id": "P2",
       "number": 2,
       "title": "第一版网站修正和完善",
-      "status": "in_progress",
+      "status": "ready_for_review",
       "dependsOn": [
         "P1"
       ],
@@ -63,7 +63,9 @@
         "P1-running-draft-and-evidence",
         "existing-or-new-user-feedback"
       ],
-      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
+      "deploymentScope": "Approved local Linux Docker validation and public Ubuntu Docker draft update",
+      "executionOutcome": "Approved v3 entrance/fullscreen island interactions implemented; local browser QA and cloud build/health/HTTP/asset SHA256 passed. App release 36d125f83134ba16b348f568fbf4741a371b7d1b. Public browser observation timed out. User runtime review pending; P3-P5 not started."
     },
     {
       "id": "P3",

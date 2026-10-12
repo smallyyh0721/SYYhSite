@@ -2,7 +2,7 @@
 
 ## 当前完整交接 / 2026-10-12
 
-阶段1draft已交付，用户已批准v3并启动阶段2入口/全屏四岛修正：[公开草稿](http://124.220.190.120/)，GitHub分支`codex/draft-v1`。新版本为WELCOME→CONNECT→HELLO STRANGER→全屏四岛：图范围即时悬停点亮居中、整图点击进入频道。入口真3D代理人物融入背景并看向鼠标，Day/Night贯穿全站；原真实留言服务继续保留。后续agent先读 [当前P2交接](docs/agent-work/phases/P2/handoff.md)、[完整交接包](docs/agent-handoff/README.md) 和 [AGENTS.md](AGENTS.md)。运行SHA及实际验证以交接为准。正式素材仍待P3，P3–P5未启动。
+阶段1draft已交付，阶段2新版入口/全屏四岛已完成并更新云端draft，等待浏览反馈：[公开草稿](http://124.220.190.120/)，GitHub分支`codex/draft-v1`。新版本为WELCOME→CONNECT→HELLO STRANGER→全屏四岛：图范围即时悬停点亮居中、整图点击进入频道。入口真3D代理人物融入背景并看向鼠标，Day/Night贯穿全站；原真实留言服务继续保留。后续agent先读 [当前P2交接](docs/agent-work/phases/P2/handoff.md)、[完整交接包](docs/agent-handoff/README.md) 和 [AGENTS.md](AGENTS.md)。当前应用运行SHA为`36d125f83134ba16b348f568fbf4741a371b7d1b`，验收与发布记录见P2交接；随后文档提交不改变这个运行版本。正式素材仍待P3，P3–P5未启动。
 
 [完整方案合订本](docs/agent-handoff/complete-plan.md) 已合并部署流程；后续按 [用户指定五阶段](docs/agent-handoff/07-phased-plan.md) 开展：draft → 修正完善 → 素材完善 → 正式建设 → 正式修补。本次P2继续交付GitHub和云端draft Docker更新，不开展未要求的正式素材/正式建设。
 

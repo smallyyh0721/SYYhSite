@@ -205,10 +205,11 @@
         "public-release"
       ],
       "doesNotBlock": [
+        "authorized-P1-P2-cloud-draft",
         "local-build",
         "deployment-config"
       ],
-      "value": "Server target specified; domain, registry reachability and public release remain pending."
+      "value": "Public IP HTTP draft is authorized and deployed. Formal domain, HTTPS and registry delivery remain pending; they do not block the approved draft."
     }
   ],
   "environment": {

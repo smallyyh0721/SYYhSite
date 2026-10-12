@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-10-12T15:40:11.491Z",
+  "checks": [
+    {
+      "origin": "http://127.0.0.1:8080",
+      "path": "/media/world-v3/sky.webp",
+      "bytes": 498730,
+      "sha256": "d2392d4c54803cecd718227a20da7876a2f4eb471e7ca2340eb5f5d1e18a5e54",
+      "status": "passed"
+    },
+    {
+      "origin": "http://127.0.0.1:8080",
+      "path": "/media/world-v3/ancient.webp",
+      "bytes": 506868,
+      "sha256": "3d777ae5fa2651e2b0c0e5f486ef26b60e71c71215606871bbc00cdb6ec28dfa",
+      "status": "passed"
+    },
+    {
+      "origin": "http://127.0.0.1:8080",
+      "path": "/media/world-v3/apocalypse.webp",
+      "bytes": 493350,
+      "sha256": "5c03fe5b01e82111a82ff52a368c95f7063735c201dbe916f00da25bbd0ceebb",
+      "status": "passed"
+    },
+    {
+      "origin": "http://127.0.0.1:8080",
+      "path": "/media/world-v3/home.webp",
+      "bytes": 506002,
+      "sha256": "51b45fceda1c054d0f79d114554f8f7b5c8df4fcf87da3ab1b18932ee8ea4f3e",
+      "status": "passed"
+    },
+    {
+      "origin": "http://127.0.0.1:8080",
+      "path": "/media/world-v3/environment-night.webp",
+      "bytes": 139262,
+      "sha256": "402eed6556392d3b0bc179c09c2ba5aec524800d915fa7887d0a1ec3c30c2046",
+      "status": "passed"
+    },
+    {
+      "origin": "http://127.0.0.1:8080",
+      "path": "/media/world-v3/environment-day.webp",
+      "bytes": 147960,
+      "sha256": "688e0843abdcdab05282f38aa40c931acf7d5d309c65c1550fe34fef58a6cfd6",
+      "status": "passed"
+    },
+    {
+      "origin": "http://124.220.190.120",
+      "path": "/media/world-v3/sky.webp",
+      "bytes": 498730,
+      "sha256": "d2392d4c54803cecd718227a20da7876a2f4eb471e7ca2340eb5f5d1e18a5e54",
+      "status": "passed"
+    },
+    {
+      "origin": "http://124.220.190.120",
+      "path": "/media/world-v3/ancient.webp",
+      "bytes": 506868,
+      "sha256": "3d777ae5fa2651e2b0c0e5f486ef26b60e71c71215606871bbc00cdb6ec28dfa",
+      "status": "passed"
+    },
+    {
+      "origin": "http://124.220.190.120",
+      "path": "/media/world-v3/apocalypse.webp",
+      "bytes": 493350,
+      "sha256": "5c03fe5b01e82111a82ff52a368c95f7063735c201dbe916f00da25bbd0ceebb",
+      "status": "passed"
+    },
+    {
+      "origin": "http://124.220.190.120",
+      "path": "/media/world-v3/home.webp",
+      "bytes": 506002,
+      "sha256": "51b45fceda1c054d0f79d114554f8f7b5c8df4fcf87da3ab1b18932ee8ea4f3e",
+      "status": "passed"
+    },
+    {
+      "origin": "http://124.220.190.120",
+      "path": "/media/world-v3/environment-night.webp",
+      "bytes": 139262,
+      "sha256": "402eed6556392d3b0bc179c09c2ba5aec524800d915fa7887d0a1ec3c30c2046",
+      "status": "passed"
+    },
+    {
+      "origin": "http://124.220.190.120",
+      "path": "/media/world-v3/environment-day.webp",
+      "bytes": 147960,
+      "sha256": "688e0843abdcdab05282f38aa40c931acf7d5d309c65c1550fe34fef58a6cfd6",
+      "status": "passed"
+    }
+  ]
+}

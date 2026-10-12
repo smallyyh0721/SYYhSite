@@ -605,38 +605,38 @@
     },
     {
       "path": "docs/agent-handoff/01-design.md",
-      "bytes": 8818,
-      "sha256": "875fada5e6b285aaccc90219a2265a13683b65103316c1f592bed52bdc6c0529"
+      "bytes": 8851,
+      "sha256": "3152c58e25683606924ca78b4c2a85bdff3edceed306658631adad4570e2a56e"
     },
     {
       "path": "docs/agent-handoff/02-implementation.md",
-      "bytes": 15620,
-      "sha256": "dacb33fb297cf6aff385d9b8b105b83c30f6cbe01deecfa77ffae435d6aeecd2"
+      "bytes": 15653,
+      "sha256": "d3bc6ee36e53b41af42bf276282e4f76f26b2a6e5f07fa07e9ed32cd92501cff"
     },
     {
       "path": "docs/agent-handoff/03-assets.md",
-      "bytes": 14215,
-      "sha256": "43a840341bc876fc7d65492c279dff265ed2d8643b76b6e3e051dee1fb6071b9"
+      "bytes": 14248,
+      "sha256": "c1b06e9511ca267ded83ae3fcd59a33f0dc862a88565f7a743287b2d93dd4ffe"
     },
     {
       "path": "docs/agent-handoff/04-collaboration.md",
-      "bytes": 7618,
-      "sha256": "54aee9371e7ec763db16023e3861002128df29e50a566790bf219373d0de9595"
+      "bytes": 7651,
+      "sha256": "a47e1acf2db3d9e6ebd76d43b4674e2395b8d36f33ed35d2039642d93ba39521"
     },
     {
       "path": "docs/agent-handoff/05-taskboard.md",
-      "bytes": 9494,
-      "sha256": "17693c5f7379aaae9a4885b0d5344902d2e5d90df8dae23d6931f98367e67ce4"
+      "bytes": 9527,
+      "sha256": "ae06413a18e7a86af2aca0b275cc9bce1d6a7ee956e05c077bbc535aeb8e6e17"
     },
     {
       "path": "docs/agent-handoff/06-development-deployment.md",
-      "bytes": 24296,
-      "sha256": "e3094927b2ef2d87b3c9782e6dcdfa764c94c795ab990be0e7203ca2d5e2c153"
+      "bytes": 24396,
+      "sha256": "630ca105140e222751bea45ad714632482110e231f3a7b7634a0fb9940c060bb"
     },
     {
       "path": "docs/agent-handoff/07-phased-plan.md",
-      "bytes": 13061,
-      "sha256": "b032327232050a46c68adb12e2bf6384cad9bf8703c38f73fab926aaf5cc6380"
+      "bytes": 13176,
+      "sha256": "415e3fa4f73a334d06deb4a61b8420eb0e8744708663872f7373ee9bc83891ed"
     },
     {
       "path": "docs/agent-handoff/asset-manifest.json",
@@ -645,18 +645,18 @@
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 102080,
-      "sha256": "a028e4d011b372863f2169720f93cf98bd7c64c3033a587acb7ba714becb4706"
+      "bytes": 102498,
+      "sha256": "8fe8d271db8c500ef2fff94ed07bf0014489eb70a1b1a665ed27e559fdef43eb"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
-      "bytes": 6609,
-      "sha256": "4274011e10346cdca837697ddb927feabb6017ad8d68853849e48a9dea28da16"
+      "bytes": 6705,
+      "sha256": "486217f6966d7f1a88313891dfcb4b2506a8d9ac06bd889068efd87875e1db0d"
     },
     {
       "path": "docs/agent-handoff/deployment-facts.json",
-      "bytes": 6180,
-      "sha256": "3b83a2e15812513f6a1285566f0bd554780545bbfaf8783ccdd502b9d5794c69"
+      "bytes": 8654,
+      "sha256": "fac2356db22f4a6707253f337bed48218f07aa5020a3ebe518102a7468117080"
     },
     {
       "path": "docs/agent-handoff/index.html",
@@ -665,8 +665,8 @@
     },
     {
       "path": "docs/agent-handoff/phases.json",
-      "bytes": 4196,
-      "sha256": "d18a7e35b7992f69fc8ee1433038938bee1c516323721e6516b9f8ba00b0663e"
+      "bytes": 4461,
+      "sha256": "c5c8a8077e08cbe4f7eeaf6c61bd3fdc2972288fd0a042858d95acaea6c63561"
     },
     {
       "path": "docs/agent-handoff/prompts/chatgpt-lead.md",
@@ -685,18 +685,18 @@
     },
     {
       "path": "docs/agent-handoff/README.md",
-      "bytes": 7112,
-      "sha256": "845ce5176afb70f4ec5ba3e4daaf43aff10bf726b71621553e6014ebd8202be2"
+      "bytes": 7145,
+      "sha256": "501265a68e3a7bfbe847e80367a5033cd979be18beca626d721fb38c12303925"
     },
     {
       "path": "docs/agent-handoff/tasks.json",
-      "bytes": 19898,
-      "sha256": "42c3dec0423c9c94d967d332934a70e52561f78c0fc07911962413a43697358f"
+      "bytes": 19895,
+      "sha256": "b0ba2647d96c52be8ec890e1139a4c2d30dd3a658e878094255b996044194faf"
     },
     {
       "path": "docs/agent-handoff/validation.json",
-      "bytes": 785,
-      "sha256": "4e9bcd53dc5e363d9a7baf351f7b784d299bd77a2e9419e864bfd9b01372b5cb"
+      "bytes": 765,
+      "sha256": "f83225d3519b54c842981ea9ccbaa97c7473ab6402a6f9543e220f609201fa51"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
@@ -709,6 +709,16 @@
       "sha256": "ecbc57fb7fbae546653caabb007dace9426bc8eb243c7c408aef07dc4d47d80f"
     },
     {
+      "path": "docs/agent-work/evidence/P2/asset-delivery.json",
+      "bytes": 2882,
+      "sha256": "d003a94abd5cbc51204bc43ce88eead9b11ee1db1c336493e59755d8e3dbf9a6"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/cloud-http.json",
+      "bytes": 1426,
+      "sha256": "5e0d68e21ac49ec0d75244722c2f7f6fd37579f54838bead3b2e7cdfebebed6d"
+    },
+    {
       "path": "docs/agent-work/evidence/P2/hello-stranger-day-390.png",
       "bytes": 31657,
       "sha256": "12f1fe6a2052be332b1c5e5bd4ffb6b8dcfeee4955ccd96e1a05f6dbf1707805"
@@ -717,6 +727,11 @@
       "path": "docs/agent-work/evidence/P2/local-http.json",
       "bytes": 1510,
       "sha256": "0c60095f5c83523a978848c8e406ca64af4e7603e3cdebfbf7e7da76597d4cbc"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2/release.json",
+      "bytes": 2008,
+      "sha256": "d393e3d953ecd29087c02aef6643223b7719425a2547aad2e98da2b3682263a2"
     },
     {
       "path": "docs/agent-work/evidence/P2/welcome-day-390.png",
@@ -840,8 +855,8 @@
     },
     {
       "path": "docs/agent-work/phases/P2/handoff.md",
-      "bytes": 2006,
-      "sha256": "8994fe15327c5b2d1025a327725fdc7dd390d8023190bc4c286d4adccc77601e"
+      "bytes": 3553,
+      "sha256": "d35e1214d0fbdf8b1cb0a05cbc1bc9de7b6fab339e115214e2c9c258c155835d"
     },
     {
       "path": "docs/agent-work/reports/P1-01.md",
@@ -900,8 +915,8 @@
     },
     {
       "path": "docs/agent-work/reports/P2-05.md",
-      "bytes": 1928,
-      "sha256": "27e31b8fb032cc6ebf6454548a7804e560f1df197f9fc6b6d6feca5d4078d1f7"
+      "bytes": 3624,
+      "sha256": "1dba51bfc1dc5de4a13e915d9167f425312a40d692996fc73b186e5d636ee55c"
     },
     {
       "path": "docs/design-proposal-v1.md",
@@ -1035,8 +1050,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3507,
-      "sha256": "4200ac9a35a1d2c2b586b8737e1a0ac725a58387d64deb414f8d1cd4e9bd14c5"
+      "bytes": 3641,
+      "sha256": "b7b9f5c1d8ba98508eb154344dbc98f902ac8796561adc9f75681abb65ca25a9"
     },
     {
       "path": "scripts/build-agent-handoff.py",
