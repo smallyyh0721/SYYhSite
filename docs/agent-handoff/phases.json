@@ -46,7 +46,7 @@
       "id": "P2",
       "number": 2,
       "title": "第一版网站修正和完善",
-      "status": "in_progress",
+      "status": "ready_for_review",
       "dependsOn": [
         "P1"
       ],
@@ -67,7 +67,7 @@
       ],
       "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
       "deploymentScope": "Approved local Linux Docker validation and public Ubuntu Docker draft update",
-      "executionOutcome": "Six requested revisions implemented and locally verified; fixed new SHA and cloud update pending. Previous public release remains36d125f until release succeeds."
+      "executionOutcome": "Six requested revisions complete and deployed at 6f45e735fabf1a92a486db3759bb1f33732a790b; local Linux Docker and both local/public 15-check Edge acceptance passed. Physical phone testing remains unverified. P3-P5 not started."
     },
     {
       "id": "P3",

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-13T02:14:13.367216+00:00",
+  "checkedAt": "2026-10-13T02:32:53.419936+00:00",
   "scope": "handoff-documents-and-source-assets-only",
   "jsonParse": "passed",
   "taskDag": "passed",
@@ -8,7 +8,6 @@
   "phaseTaskConsistency": "passed",
   "queueStatuses": [
     "accepted",
-    "in_progress",
     "pending"
   ],
   "localReferenceCheck": "passed",

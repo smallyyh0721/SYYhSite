@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-13T02:23:41.432640+00:00",
+  "currentRelease": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+  "checkoutSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+  "checkoutClean": true,
+  "availableMemoryKiB": 2985236,
+  "containers": [
+    {
+      "name": "syyh-draft-web-1",
+      "image": "syyh-web:6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "imageId": "sha256:a6e074fafa7c225d216240318ad040be000d82a48e47d1166df1560b309a2ebd",
+      "health": "healthy",
+      "revision": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "volumes": []
+    },
+    {
+      "name": "syyh-draft-api-1",
+      "image": "syyh-api:6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "imageId": "sha256:c5a338d122ac7c9474a7660c6733efcf3ad43ccd75d770f0cf4bfb099f2535ad",
+      "health": "healthy",
+      "revision": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "volumes": [
+        {
+          "name": "syyh-draft-cloud-guestbook",
+          "destination": "/data"
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "tags": [
+        "syyh-web:6f45e735fabf1a92a486db3759bb1f33732a790b"
+      ],
+      "id": "sha256:a6e074fafa7c225d216240318ad040be000d82a48e47d1166df1560b309a2ebd",
+      "bytes": 30644372,
+      "platform": "linux/amd64"
+    },
+    {
+      "tags": [
+        "syyh-api:6f45e735fabf1a92a486db3759bb1f33732a790b"
+      ],
+      "id": "sha256:c5a338d122ac7c9474a7660c6733efcf3ad43ccd75d770f0cf4bfb099f2535ad",
+      "bytes": 82436312,
+      "platform": "linux/amd64"
+    }
+  ],
+  "runtimeStats": [
+    "{\"BlockIO\":\"0B / 8.19kB\",\"CPUPerc\":\"0.04%\",\"Container\":\"syyh-draft-web-1\",\"ID\":\"71addc0bd395\",\"MemPerc\":\"3.09%\",\"MemUsage\":\"3.949MiB / 128MiB\",\"Name\":\"syyh-draft-web-1\",\"NetIO\":\"31kB / 2.26MB\",\"PIDs\":\"3\"}",
+    "{\"BlockIO\":\"4.1kB / 45.1kB\",\"CPUPerc\":\"0.01%\",\"Container\":\"syyh-draft-api-1\",\"ID\":\"cbb43cabf562\",\"MemPerc\":\"9.23%\",\"MemUsage\":\"23.63MiB / 256MiB\",\"Name\":\"syyh-draft-api-1\",\"NetIO\":\"2.97kB / 1.61kB\",\"PIDs\":\"11\"}"
+  ],
+  "rollbackImagesAvailable": [
+    "syyh-web:6f45e735fabf1a92a486db3759bb1f33732a790b 105MB",
+    "syyh-api:6f45e735fabf1a92a486db3759bb1f33732a790b 347MB",
+    "syyh-web:36d125f83134ba16b348f568fbf4741a371b7d1b 104MB",
+    "syyh-api:36d125f83134ba16b348f568fbf4741a371b7d1b 347MB",
+    "syyh-web:e590059ca96620aab024f4bcee27005633e3db08 99.9MB",
+    "syyh-api:e590059ca96620aab024f4bcee27005633e3db08 347MB"
+  ]
+}

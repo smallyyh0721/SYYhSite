@@ -1,0 +1,9 @@
+{
+  "measuredAt": "2026-10-13T10:21:00.2612896+08:00",
+  "bytes": 54786726,
+  "sha256": "34789cb3e0655be3237be75f52caa9dca12d6ba183d85753eb90a854ab19d817",
+  "artifact": "draft-p2-r2.bundle",
+  "destination": "/tmp/draft-p2-r2.bundle",
+  "seconds": 5.56,
+  "method": "SCP over SSH"
+}

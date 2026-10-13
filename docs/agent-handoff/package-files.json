@@ -20,8 +20,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3281,
-      "sha256": "d031b10286e2e754d5339a2b59be135fe173edcab99b2b54b52ee000819306e0"
+      "bytes": 3350,
+      "sha256": "5aa896bccb10f9b3a7dfe90722245ccc6d2e8f70e3dba4febed7c8569955f140"
     },
     {
       "path": "app/about/page.tsx",
@@ -610,38 +610,38 @@
     },
     {
       "path": "docs/agent-handoff/01-design.md",
-      "bytes": 8934,
-      "sha256": "4f5e5c454f6dcbf719c3b864aa242b8cf76ac9f983eb5d831f499263a53d54c4"
+      "bytes": 8983,
+      "sha256": "967878e1e2c0f67da2499339a97e6983a6070ac3aa9b078fb1504909644d1afb"
     },
     {
       "path": "docs/agent-handoff/02-implementation.md",
-      "bytes": 15736,
-      "sha256": "1ceae3da002bfc5558ad6488204aa9e9bdf284015dd52705c834f0c2562421b1"
+      "bytes": 15785,
+      "sha256": "7551594bf6ba61a1c13cf0f870ef73f66b635d0d0fe9cb0fe1dd043f1ed8e89f"
     },
     {
       "path": "docs/agent-handoff/03-assets.md",
-      "bytes": 14331,
-      "sha256": "62242f1f692bd40b6e58a09d3dddcf1ba71063080f8248a7e5bfef8a9ee17787"
+      "bytes": 14380,
+      "sha256": "620245536f19002cd342064b7289d670e0a111fbeb493b65d18db78357563b76"
     },
     {
       "path": "docs/agent-handoff/04-collaboration.md",
-      "bytes": 7734,
-      "sha256": "ba58906cbb12079bc6802aed2c24e0cfa53bf16c26577d2049bcf91423fa958e"
+      "bytes": 7783,
+      "sha256": "cbcaec6795de0f2de301234a17ab4ecfd045066e09dfb95aa274d2a0b999ccc7"
     },
     {
       "path": "docs/agent-handoff/05-taskboard.md",
-      "bytes": 9610,
-      "sha256": "fcf70d2a42b86bc481fdaf92dfa03c31a090beeecf3fb5f76c6e68b3cd2480da"
+      "bytes": 9659,
+      "sha256": "4ba71e50d2a49cdc6638dfa87cf3071341b65bcfe39f7b35c44b1f4212d07e7b"
     },
     {
       "path": "docs/agent-handoff/06-development-deployment.md",
-      "bytes": 24479,
-      "sha256": "9af7121112a4528047f822e910cadc6ca942e14c6b9f9c168043cbb3986157fe"
+      "bytes": 24528,
+      "sha256": "bda8cde2dd39f1be27f6ea9ffc7d398ed695a99691f90513a5c747cb82243683"
     },
     {
       "path": "docs/agent-handoff/07-phased-plan.md",
-      "bytes": 13259,
-      "sha256": "18ecc366e402c20b3b5ae841d28631597976bbefc5048c21bad4863ea81572ff"
+      "bytes": 13308,
+      "sha256": "14717ad13f985727270f40a821775075432d89a0147ca8e384ec667906514825"
     },
     {
       "path": "docs/agent-handoff/asset-manifest.json",
@@ -650,8 +650,8 @@
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 103147,
-      "sha256": "877e61bb758be4b1adadda13587567efe350b5a9de4a91af3fb0e78f60e4ab2e"
+      "bytes": 103588,
+      "sha256": "ea07fe09b93ba0d5e004a70d651e6d2c17ff0609b856bd68039b84d822337b8f"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
@@ -660,8 +660,8 @@
     },
     {
       "path": "docs/agent-handoff/deployment-facts.json",
-      "bytes": 8654,
-      "sha256": "fac2356db22f4a6707253f337bed48218f07aa5020a3ebe518102a7468117080"
+      "bytes": 11892,
+      "sha256": "498c95c11e65bebf316a36086c1863a1e9c43e88afd2191dc8dbda181a4184b1"
     },
     {
       "path": "docs/agent-handoff/index.html",
@@ -670,8 +670,8 @@
     },
     {
       "path": "docs/agent-handoff/phases.json",
-      "bytes": 4380,
-      "sha256": "04fb96be3f4a36b6b21ad4fb5cf8a16e5ba798e4d680d8db84684d1085c96b3e"
+      "bytes": 4451,
+      "sha256": "3635bac167d9feb9c49becbd19727da534a1eb3cfb58a652d5921cd2ab4537b0"
     },
     {
       "path": "docs/agent-handoff/prompts/chatgpt-lead.md",
@@ -690,18 +690,18 @@
     },
     {
       "path": "docs/agent-handoff/README.md",
-      "bytes": 7218,
-      "sha256": "b5def2e80c98aed4a0f72465eca34d33c8e9ac880a752e8a1dc5d2b32bd5e161"
+      "bytes": 7311,
+      "sha256": "1f0f6c83ad372adcb8a9feedfdadd56c688598e88801769ec90cadf834e87988"
     },
     {
       "path": "docs/agent-handoff/tasks.json",
-      "bytes": 21110,
-      "sha256": "e72c397736b2b5946419f014007a0f99ea363893521a40a471072487117aaf49"
+      "bytes": 21292,
+      "sha256": "39d381f549f6065ec2437a85809f4fa8ffe4667eb35fb707b5c1d4e827030e3a"
     },
     {
       "path": "docs/agent-handoff/validation.json",
-      "bytes": 785,
-      "sha256": "6d0de685530b4af86c7fb3e7b48c7901486a37909017c117a631396613e41f51"
+      "bytes": 765,
+      "sha256": "cd55bffeb9c7adb86e1254d04d583ffacd6589f65e4bd9b89ba99c608647f4a7"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
@@ -789,6 +789,111 @@
       "sha256": "d7fec39b6e8e1f7441eab30f5c43608967fa17c68f880220573a78e4a396e05d"
     },
     {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/checks.json",
+      "bytes": 6140,
+      "sha256": "a00829be53746a0b6c82fb26e75c48fad05a2070512805811551ca7a365324fa"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/diamond-day-1440.png",
+      "bytes": 1637594,
+      "sha256": "6e6585e9dca9f3eef291e985a841abb819df1bc7de29298b8b3cf6acf55248b8"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/diamond-night-1440.png",
+      "bytes": 1620347,
+      "sha256": "a3347b36c0ce80ba82cfd2e7b9662fd5f6805da9da2dcacc32275f6f09d6b16e"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/diamond-night-320.png",
+      "bytes": 312892,
+      "sha256": "9ccf835749c43e053809f125f86adf717c1a59f5c18c6800d14e5571a9abc1b8"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/diamond-night-390.png",
+      "bytes": 410917,
+      "sha256": "593af5a1343a432521b4be45026cac3ac052012bb03ea402aeecd5bd5f2175d8"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/diamond-night-768.png",
+      "bytes": 881114,
+      "sha256": "f4e8c481a71cc121fb048622a4f7e185e20a1f37628902fac625069c9c26d589"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/greeting-night-1440.png",
+      "bytes": 1311002,
+      "sha256": "0b70f5d2c7c341407134c99f860d0205135a06a06d4850df28568eea3f585159"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/http.json",
+      "bytes": 1815,
+      "sha256": "4fdf33b42cec707e82995b3b3c36a0cab285d757e6cd0f42a08752bdd08430b9"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/orbit-midflight-1440.png",
+      "bytes": 1536197,
+      "sha256": "813e8b502ec8aefefde242ea34ecedc80fd6d7e44c8f53ee4c79dc09384d79ee"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/runtime.json",
+      "bytes": 2501,
+      "sha256": "59d072a7fce7eb6323ea581d4bb86f02de308aae03106f671d6a9e761bc9c71d"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/selected-home-320.png",
+      "bytes": 307587,
+      "sha256": "f3a87469279a68a84a70d4b2c7b985d68a6c829f4d01c72095cf1a4faae25e6b"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/selected-home-390.png",
+      "bytes": 408153,
+      "sha256": "c960ab393116734f3c7b47d50f81963ac962f70e574b5d25418a00114fa31ec6"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/selected-home-768.png",
+      "bytes": 855775,
+      "sha256": "08696e8c931e9d13c56597a2b345971e9b1702478ba729300739354268807585"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/theme-ancient-1440.png",
+      "bytes": 83629,
+      "sha256": "c54467acd1d0a816376452ea25cef14aeecccf259f329af3c98f84e1fe1c4c99"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/theme-home-320.png",
+      "bytes": 31467,
+      "sha256": "096a7784dcd5266fab4a30469a1a120b882f33896615c474259f9fde6eb35635"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/theme-home-390.png",
+      "bytes": 44609,
+      "sha256": "f962e18d8d26465ecfe9c1f1b8dc10221029949886d814921c43e616ba1d5df4"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/theme-home-768.png",
+      "bytes": 50631,
+      "sha256": "41c90242a5a1bc187e208a4ed5262af1acb3695f19ab6620090d821018fdbb5c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/welcome-night-1440.png",
+      "bytes": 1125138,
+      "sha256": "50b36c192073cb6eead009b6b0120f5e47d528aafa5fdae3ebc3214e0ef04ad2"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/welcome-night-320.png",
+      "bytes": 212373,
+      "sha256": "ea0b5766dbf83c080b912e5e979099ca7c90f76f01cf011fc712f0fc8c1ae98b"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/welcome-night-390.png",
+      "bytes": 282016,
+      "sha256": "1a83905d867c9486411fdd90cad3fb0b344832a224a9e19afbdeca0420cb632a"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/cloud/welcome-night-768.png",
+      "bytes": 580712,
+      "sha256": "a0b12812bfdf0c0494ffb8fa6249ba72da626eb87f0e8399fe687e427a5ddbb6"
+    },
+    {
       "path": "docs/agent-work/evidence/P2-r2/local/checks.json",
       "bytes": 6139,
       "sha256": "bfb73908c1d4d6e2408af4d41df47fec4cf42f55f395a94443d97f981c5445f3"
@@ -832,6 +937,11 @@
       "path": "docs/agent-work/evidence/P2-r2/local/orbit-midflight-1440.png",
       "bytes": 1531197,
       "sha256": "333901d785074c59da2cf482244d6e8088dc55448f385722682cff6579f0c9e1"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/local/runtime.json",
+      "bytes": 1088,
+      "sha256": "dc04f24753e0219dff0108d05a73f950a36569960e4697f5e889b5465103f943"
     },
     {
       "path": "docs/agent-work/evidence/P2-r2/local/selected-home-320.png",
@@ -887,6 +997,16 @@
       "path": "docs/agent-work/evidence/P2-r2/local/welcome-night-768.png",
       "bytes": 584405,
       "sha256": "bfbf35824774b19d536f2a32dd326b583bb6f45e4fb21a8b3a391f7441302c1c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/release.json",
+      "bytes": 2539,
+      "sha256": "e4e1373ec1b677588162d83e025956c59aff0e62cac6e83b77d9528dd2638399"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r2/transfer.json",
+      "bytes": 293,
+      "sha256": "02e0d515fb7263c793e91dc1d7c404e65a4ef14ab51194a5900a77b7de543cd2"
     },
     {
       "path": "docs/agent-work/phases/P1/cloud-api-check.json",
@@ -965,8 +1085,8 @@
     },
     {
       "path": "docs/agent-work/phases/P2/handoff.md",
-      "bytes": 4172,
-      "sha256": "f9216e6ce8fb355f53aa45e9b393b097fb4fba56b7c75fe23d4729677981cde1"
+      "bytes": 6048,
+      "sha256": "3ec4aa774aa0915c0a6e33646119ef67931fcb276777a6564494c0ff6a1bec5d"
     },
     {
       "path": "docs/agent-work/reports/P1-01.md",
@@ -1035,8 +1155,8 @@
     },
     {
       "path": "docs/agent-work/reports/P2-07.md",
-      "bytes": 3676,
-      "sha256": "347016c1382914b1173d18a5bb670e64dd58d882f9e0ec56a9a3a08db438974c"
+      "bytes": 4583,
+      "sha256": "f03600384efeb2297d56c7d422dd6289594d5fdcb9c3f7356042b8ddbb28eaa9"
     },
     {
       "path": "docs/design-proposal-v1.md",
@@ -1170,8 +1290,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3612,
-      "sha256": "a32adf43fcdaaf1f4b67ae04933a1ae527a76933d50cc79605513e35cfd76be8"
+      "bytes": 3729,
+      "sha256": "40402bff9b8d1f9ea360cf645330bba79500f0e8ffc04e7fceb677e70abc6407"
     },
     {
       "path": "scripts/build-agent-handoff.py",

@@ -6,16 +6,16 @@
 
 ---
 
-阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 P2：in_progress。实际实施、验证及部署事实见 [当前阶段交接](../../docs/agent-work/phases/P2/handoff.md)；[P1交接](../agent-work/phases/P1/handoff.md)为历史基线。历史设计正文与当前执行事实分开记录。
+阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 P2：ready_for_review。实际实施、验证及部署事实见 [当前阶段交接](../../docs/agent-work/phases/P2/handoff.md)；[P1交接](../agent-work/phases/P1/handoff.md)为历史基线。历史设计正文与当前执行事实分开记录。
 
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## SYYH Signal · 完整设计与实施交接包
 
-版本：2026-10-12 / handoff-v2（五阶段整合版）。适用项目：`D:/dev/yyh_server/SYYhSite`。
+版本：2026-10-13 / handoff-v2（五阶段整合版，含P2迭代验收）。适用项目：`D:/dev/yyh_server/SYYhSite`。
 
 本包汇总设计方案、第一版实施及验收，供后续 ChatGPT 与 Grok CLI 接续工作。**用户已授权P1/P2实施与云端draft，当前执行以P2交接为准。** 正式人物与真实内容等未定项继续记录为缺口，不阻塞已授权的第一版修正。
 
@@ -32,12 +32,12 @@
 | [04-collaboration.md](04-collaboration.md) | 两个 agent 的职责、文件归属、任务交接和本机工具 |
 | [05-taskboard.md](05-taskboard.md) | 五阶段31项任务、依赖、完成定义与验收矩阵 |
 | [06-development-deployment.md](06-development-deployment.md) | 已指定Ubuntu服务器、本机Linux容器验证、Git/镜像交付、Compose与回滚 |
-| [deployment-facts.json](deployment-facts.json) | 2026-10-12本机与服务器只读检查事实，区分已验证与未验证 |
+| [deployment-facts.json](deployment-facts.json) | 最新本机/云端发布与验收事实，保留历史版本，区分已验证与未验证 |
 | [complete-plan.md](complete-plan.md) | 以上全部正文的单文件合订本，便于连续阅读与交接 |
 | [decisions.json](decisions.json) | 明确要求、建议方案及未定决定，便于 agent 读取 |
 | [asset-manifest.json](asset-manifest.json) | 已有资产与拟制作资产的状态、用途、责任人与路径 |
 | [tasks.json](tasks.json) | 33项执行队列，含本次P2-06/07增量；记录实际验收状态 |
-| [phases.json](phases.json) | 五阶段状态与输入/交接；P1已交付，P2迭代，P3–P5待执行 |
+| [phases.json](phases.json) | 五阶段状态与输入/交接；P1已交付，P2待浏览反馈，P3–P5待执行 |
 | [prompts/chatgpt-lead.md](prompts/chatgpt-lead.md) | ChatGPT 统筹 agent 启动提示词 |
 | [prompts/grok-research.md](prompts/grok-research.md) | Grok 首轮资料与素材研究提示词 |
 | [prompts/grok-coding.md](prompts/grok-coding.md) | Grok 一般编码任务提示词 |
@@ -90,7 +90,7 @@
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## 五阶段实施计划
 
@@ -219,7 +219,7 @@
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## 完整设计方案
 
@@ -307,7 +307,7 @@ SYYH Signal 是一个可以“调入”的个人频道：接通信号，认识�
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## 完整实施方案：架构、选型与接口
 
@@ -493,7 +493,7 @@ pnpm install 使用锁定依赖；静态导出路由与媒体校验通过后产�
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## 素材设计、生成与制作方案
 
@@ -635,7 +635,7 @@ ChatGPT最终给出各资产“已完成/已验证/待补/失败原因”及实�
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## ChatGPT × Grok CLI 协作方案
 
@@ -716,7 +716,7 @@ $taskPromptText = Get-Content -LiteralPath $taskPromptPath -Raw -Encoding utf8
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## 五阶段任务与验收清单
 
@@ -796,7 +796,7 @@ lead记录Git/素材/接口/配置版本、实际命令/结果、截图/预览�
 
 ---
 
-> 当前执行（2026-10-13）：用户要求六项修正并完成第一版，P2正在更新。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
 
 ## 本机编程、Docker 验证与 Ubuntu 部署流程
 

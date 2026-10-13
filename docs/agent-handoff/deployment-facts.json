@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12",
-  "scope": "P2-deployed-draft",
+  "updatedAt": "2026-10-13",
+  "scope": "P2-six-revisions-deployed-draft",
   "productionImplementationStarted": true,
   "serverSource": {
     "threadId": "01a12b8e-c6d1-7122-b027-1ec885456505",
@@ -34,10 +34,9 @@
     "deploymentRootProposal": "/opt/website",
     "deploymentRoot": "/opt/website/syyh",
     "latestRecheck": {
-      "checkedAt": "2026-10-12T15:42:02.802Z",
+      "checkedAt": "2026-10-13T02:23:41.432640+00:00",
       "containersHealthy": 2,
-      "availableMemoryMiBBeforeBuild": 2964,
-      "rootDiskAvailableHuman": "50G",
+      "availableMemoryKiBAfterRelease": 2985236,
       "checkoutClean": true
     }
   },
@@ -54,19 +53,19 @@
     "dockerCliFoundInPath": false,
     "dockerDesktopFoundAtCommonLocations": true,
     "dockerRuntimeVerified": true,
-    "notes": "Actual user-local Docker Desktop CLI found; Linux container/build/Compose verified.",
+    "notes": "User-local Docker Desktop started on 2026-10-13; Linux production build, Compose and exact-SHA labels verified.",
     "dockerCliPath": "C:/Users/yonghao.yu/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe",
     "dockerServerPlatform": "linux/amd64",
     "containerRunVerified": "node:24-bookworm-slim / v24.21.0",
     "productionImageSize": {
-      "web": "104MB",
+      "web": "105MB",
       "api": "347MB"
     },
     "observedRuntimeMiB": {
       "web": 14.48,
       "api": 26.8
     },
-    "currentReleaseSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
+    "currentReleaseSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
     "currentReleaseLabelsVerified": true
   },
   "network": {
@@ -81,7 +80,8 @@
     "interpretation": "Direct-origin curl timeout does not establish failure of Docker pulls through the configured Tencent mirror. Configuring a mirror is not evidence it caused the direct-origin timeout.",
     "githubLocalReadAndPushDryRunVerified": true,
     "publicHttp80Verified": true,
-    "cloudGitCloneAtDeploy": "Timed out connecting to github.com:443; earlier ls-remote succeeded. Verified Git bundle fallback used."
+    "cloudGitCloneAtDeploy": "Timed out connecting to github.com:443; earlier ls-remote succeeded. Verified Git bundle fallback used.",
+    "githubLocalActualPushVerified": true
   },
   "requirements": {
     "containers": "user-required",
@@ -122,60 +122,80 @@
     "P2-cloud-30s-build-and-two-healthy-revision-labels",
     "P2-cloud-HTTP-routes-API-GLB-six-WebP",
     "P2-local-and-cloud-six-WebP-SHA256-match",
-    "P2-cloud-existing-guestbook-volume-retained"
+    "P2-cloud-existing-guestbook-volume-retained",
+    "P2-r2-centered-avatar-free-welcome-and-greeting-only-avatar",
+    "P2-r2-delayed-curved-diamond-orbit-and-stationary-pointer",
+    "P2-r2-three-touch-sizes-first-select-second-enter",
+    "P2-r2-animated-background-pause-and-reduced-motion",
+    "P2-r2-four-filtered-theme-work-collections-and-Back",
+    "P2-r2-local-and-public-15-headless-Edge-checks",
+    "P2-r2-54.8MB-bundle-SHA256-and-32s-cloud-build",
+    "P2-r2-two-healthy-exact-revisions-and-existing-volume"
   ],
   "checksNotPerformed": [
     "Docker-install",
     "physical-touch-device",
     "OS-reduced-motion-toggle",
     "DNS-TLS",
-    "cloud-browser-visual-check-tool-timeout",
     "historical-release-rollback"
   ],
   "phasePlan": {
     "P1": "Local Linux production build/test + explicitly authorized public cloud draft deployment",
-    "P2": "Completed approved draft revision; fixed Git SHA local Linux test, cloud build and public HTTP/assets verification",
+    "P2": "Six requested revisions deployed at fixed SHA; local Linux Docker, public HTTP and public headless browser acceptance passed; awaiting user feedback",
     "P3": "Formal media/model/content refinement pending phase start",
     "P4": "Production Docker validation, Git/server build and cloud deployment within requested scope",
     "P5": "Patch regression and authorized updates"
   },
   "release": {
-    "sourceSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
-    "checkedAt": "2026-10-12T15:42:02.802Z",
+    "sourceSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+    "checkedAt": "2026-10-13T02:23:41.432640+00:00",
     "repository": "https://github.com/smallyyh0721/SYYhSite",
     "branch": "codex/draft-v1",
     "url": "http://124.220.190.120/",
-    "sourceDelivery": "Verified Git bundle of GitHub-pushed commit; cloud builds same fixed source/Dockerfile/lockfile, not transfer of the local image",
-    "bundleBytes": 42579247,
-    "bundleTransferSeconds": 4.625,
-    "bundleTransferScope": "SCP bundle plus 2KB LF-normalized release script; wall time includes SSH setup",
-    "bundleSha256": "7438504a7619aaeb03f9a6b0fe987d33953d4193c3cdef59d82e86c7bfff47e9",
-    "cloudBuildSeconds": 30,
-    "buildCache": "Existing base/dependency layers reused; changed app/src/public compiled on cloud",
+    "sourceDelivery": "Verified Git bundle of GitHub-pushed commit; local and cloud build the same fixed source/Dockerfile/lockfile separately",
+    "bundleBytes": 54786726,
+    "bundleTransferSeconds": 5.56,
+    "bundleTransferScope": "SCP bundle plus LF-normalized release script; wall time includes SSH setup",
+    "bundleSha256": "34789cb3e0655be3237be75f52caa9dca12d6ba183d85753eb90a854ab19d817",
+    "cloudBuildSeconds": 32,
+    "buildCache": "Existing base/dependency layers reused; changed app/src compiled on cloud",
     "basePullIncludedInBuildTime": false,
-    "minimumObservedMemAvailableKiB": 2326872,
+    "minimumObservedMemAvailableKiB": 2234392,
     "imageSizes": {
-      "web": "104MB",
+      "web": "105MB",
       "api": "347MB"
     },
+    "imageSizeScope": "docker image ls disk-usage display; image inspect compressed bytes recorded separately in runtime.json",
     "stableObservedRuntimeMiB": {
-      "web": 3.535,
-      "api": 23.86
+      "web": 3.949,
+      "api": 23.63
     },
     "runtimeMeasurementScope": "One post-release docker stats sample, not a load test",
     "dataVolume": "syyh-draft-cloud-guestbook",
     "runtimeRevisionLabelsVerified": true,
     "containersHealthy": true,
-    "cloudBrowserVisualCheck": "unverified-tool-timeout-35s-kernel-reset",
-    "localBrowserVisualCheck": "passed-P2-entry-mouse-image-click-keyboard-avatar-and-4-responsive-widths",
-    "cloudHttpAssetsCheck": "passed-11-content-routes-404-API-GLB-6-WebP; 6-WebP-SHA256-match-manifest-and-local",
+    "checkoutClean": true,
+    "cloudBrowserVisualCheck": "passed-15-independent-headless-Edge-checks-and-inspected-runtime-screenshots",
+    "localBrowserVisualCheck": "passed-15-independent-headless-Edge-checks-and-inspected-runtime-screenshots",
+    "browserScope": "Desktop 1440x900, emulated native touch 320x740/390x844/768x1024, emulated reduced-motion; not physical phone testing",
+    "cloudHttpAssetsCheck": "passed-15-content-routes-real-404-API-health-and-messages-GET-GLB-6-WebP",
     "evidencePaths": [
-      "docs/agent-work/evidence/P2/cloud-http.json",
-      "docs/agent-work/evidence/P2/asset-delivery.json",
-      "docs/agent-work/reports/P2-05.md"
+      "docs/agent-work/evidence/P2-r2/cloud/checks.json",
+      "docs/agent-work/evidence/P2-r2/cloud/http.json",
+      "docs/agent-work/evidence/P2-r2/cloud/runtime.json",
+      "docs/agent-work/evidence/P2-r2/local/checks.json",
+      "docs/agent-work/evidence/P2-r2/local/runtime.json",
+      "docs/agent-work/evidence/P2-r2/transfer.json",
+      "docs/agent-work/reports/P2-07.md"
     ],
-    "previousReleaseSha": "e590059ca96620aab024f4bcee27005633e3db08",
-    "rollbackExecuted": false
+    "previousReleaseSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
+    "rollbackExecuted": false,
+    "localPlatform": "linux/amd64",
+    "cloudPlatform": "linux/amd64",
+    "cloudImages": {
+      "web": "sha256:a6e074fafa7c225d216240318ad040be000d82a48e47d1166df1560b309a2ebd",
+      "api": "sha256:c5a338d122ac7c9474a7660c6733efcf3ad43ccd75d770f0cf4bfb099f2535ad"
+    }
   },
   "releaseHistory": [
     {
@@ -204,6 +224,44 @@
       "cloudBrowserVisualCheck": "unverified-tool-timeout",
       "localBrowserVisualCheck": "passed-28-page-viewport-combinations",
       "cloudHttpAssetsCheck": "passed-22-assets"
+    },
+    {
+      "sourceSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
+      "checkedAt": "2026-10-12T15:42:02.802Z",
+      "repository": "https://github.com/smallyyh0721/SYYhSite",
+      "branch": "codex/draft-v1",
+      "url": "http://124.220.190.120/",
+      "sourceDelivery": "Verified Git bundle of GitHub-pushed commit; cloud builds same fixed source/Dockerfile/lockfile, not transfer of the local image",
+      "bundleBytes": 42579247,
+      "bundleTransferSeconds": 4.625,
+      "bundleTransferScope": "SCP bundle plus 2KB LF-normalized release script; wall time includes SSH setup",
+      "bundleSha256": "7438504a7619aaeb03f9a6b0fe987d33953d4193c3cdef59d82e86c7bfff47e9",
+      "cloudBuildSeconds": 30,
+      "buildCache": "Existing base/dependency layers reused; changed app/src/public compiled on cloud",
+      "basePullIncludedInBuildTime": false,
+      "minimumObservedMemAvailableKiB": 2326872,
+      "imageSizes": {
+        "web": "104MB",
+        "api": "347MB"
+      },
+      "stableObservedRuntimeMiB": {
+        "web": 3.535,
+        "api": 23.86
+      },
+      "runtimeMeasurementScope": "One post-release docker stats sample, not a load test",
+      "dataVolume": "syyh-draft-cloud-guestbook",
+      "runtimeRevisionLabelsVerified": true,
+      "containersHealthy": true,
+      "cloudBrowserVisualCheck": "unverified-tool-timeout-35s-kernel-reset",
+      "localBrowserVisualCheck": "passed-P2-entry-mouse-image-click-keyboard-avatar-and-4-responsive-widths",
+      "cloudHttpAssetsCheck": "passed-11-content-routes-404-API-GLB-6-WebP; 6-WebP-SHA256-match-manifest-and-local",
+      "evidencePaths": [
+        "docs/agent-work/evidence/P2/cloud-http.json",
+        "docs/agent-work/evidence/P2/asset-delivery.json",
+        "docs/agent-work/reports/P2-05.md"
+      ],
+      "previousReleaseSha": "e590059ca96620aab024f4bcee27005633e3db08",
+      "rollbackExecuted": false
     }
   ]
 }

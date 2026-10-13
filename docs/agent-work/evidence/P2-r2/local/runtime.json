@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-13T10:27:13.9448335+08:00",
+  "sourceSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+  "platform": "linux/x86_64",
+  "imageSizes": [
+    "syyh-api:6f45e735fabf1a92a486db3759bb1f33732a790b 347MB",
+    "syyh-web:6f45e735fabf1a92a486db3759bb1f33732a790b 105MB"
+  ],
+  "containers": [
+    {
+      "name": "/syyh-draft-web-1",
+      "image": "syyh-web:6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "imageId": "sha256:7501a8492d9f12df3605f8dcb93e3fad3de68b3b1cd01bb6278a7cdaea278006",
+      "health": "healthy",
+      "revision": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "volumes": []
+    },
+    {
+      "name": "/syyh-draft-api-1",
+      "image": "syyh-api:6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "imageId": "sha256:75c610df63f118b736e9630ae68fa389aaa1f3144fa604cdbbaa2ba25f01aae5",
+      "health": "healthy",
+      "revision": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "volumes": [
+        {
+          "Name": "syyh-draft-local-guestbook",
+          "Destination": "/data"
+        }
+      ]
+    }
+  ]
+}

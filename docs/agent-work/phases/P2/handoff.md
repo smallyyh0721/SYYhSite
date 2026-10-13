@@ -1,6 +1,14 @@
-# P2当前增量 / 2026-10-13
+# P2当前交接 / 2026-10-13
 
-用户已要求六项改动并完成第一版；全部核心已实现，本机Docker与Edge桌面/模拟触摸验证通过，正在固定版本更新云端。当前旧云端仍为36d125f。最新行为与验收见[六项修正报告](../../reports/P2-07.md)，运行截图与检查在[evidence/P2-r2/local](../../evidence/P2-r2/local/)。WELCOME与CONNECT居中，人物只在连接招呼；260ms悬停、1.35s弧线菱形轨道；手机先选后进；动态背景；四岛进入主题作品；顶部菜单保留关于/故事/留言。P3–P5未启动。
+状态：六项修正已完成并部署，ready_for_review，等待用户浏览反馈。WELCOME与CONNECT居中，欢迎屏无人物，连接后的HELLO STRANGER才显示3D代理；260ms悬停、1.35s弧线菱形轨道；手机先选居中、第二次点击进入；云雾/星光动态背景可暂停；四島均进入独立主题作品，关于/故事/留言保留顶部菜单。Day/Night及留言服务保留。P3–P5未启动。
+
+公开预览 [http://124.220.190.120/](http://124.220.190.120/)，[GitHub分支](https://github.com/smallyyh0721/SYYhSite/tree/codex/draft-v1)，应用运行SHA `6f45e735fabf1a92a486db3759bb1f33732a790b`。本机Linux Docker验证后，Git推送、SHA256校验bundle交付、云端从相同SHA/Dockerfile/lockfile构建；最后的验收文档提交不改变应用运行SHA。
+
+实测：typecheck退出0、九项Node测试通过，本机与云端两容器healthy且revision一致。两端分别完成15项独立无头Edge交互检查，包括桌面与320/390/768浏览器模拟原生触摸；欢迎/招呼、短悬停取消、弧线运动、静止指针稳定、整图主题跳转、Back恢复、背景移动/暂停、Day持久化、减少动态/键盘均通过，无pageerror。公网15内容路由、404、API、GLB和六WebP通过。已查看公网桌面/手机截图，证据见 [公网验收](../../evidence/P2-r2/cloud/checks.json)、[公网截图目录](../../evidence/P2-r2/cloud/)、[本机验收](../../evidence/P2-r2/local/checks.json) 和 [完整修正报告](../../reports/P2-07.md)。
+
+交付测量：54,786,726B代码包与小型脚本SCP上传5.56秒，两端SHA256一致；云端增量构建32秒，最低可用内存2,234,392KiB，web105MB/API347MB。保留 `syyh-draft-cloud-guestbook`，checkout无dirty。详见 [发布事实](../../evidence/P2-r2/release.json) 与 [部署事实](../../../agent-handoff/deployment-facts.json)。
+
+待补素材与边界：最终人物、正式日夜分层与精细光照、用户真实作品/简介/故事/联系方式、品牌字体/音效、域名HTTPS继续记录为后续缺口；本版使用有标记的设计研究与3D代理。物理手机、系统级减少动态开关、强制WebGL失败、负载和实际回滚演练未执行。上一版 `36d125f83134ba16b348f568fbf4741a371b7d1b` 镜像/env仍保留，可按deploy/README.md同卷回滚；不得删除数据卷或上传私钥。继续时先核对最新用户反馈与dirty状态。
 
 ---
 
