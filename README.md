@@ -1,12 +1,12 @@
 # SYYH Signal
 
-## 当前完整交接 / 2026-10-12
+## 当前完整交接 / 2026-10-13
 
-阶段1draft已交付，阶段2新版入口/全屏四岛已完成并更新云端draft，等待浏览反馈：[公开草稿](http://124.220.190.120/)，GitHub分支`codex/draft-v1`。新版本为WELCOME→CONNECT→HELLO STRANGER→全屏四岛：图范围即时悬停点亮居中、整图点击进入频道。入口真3D代理人物融入背景并看向鼠标，Day/Night贯穿全站；原真实留言服务继续保留。后续agent先读 [当前P2交接](docs/agent-work/phases/P2/handoff.md)、[完整交接包](docs/agent-handoff/README.md) 和 [AGENTS.md](AGENTS.md)。当前应用运行SHA为`36d125f83134ba16b348f568fbf4741a371b7d1b`，验收与发布记录见P2交接；随后文档提交不改变这个运行版本。正式素材仍待P3，P3–P5未启动。
+正在完成用户六项修正后的第一版：[公开预览](http://124.220.190.120/)，GitHub分支`codex/draft-v1`。欢迎标题与CONNECT居中，人物只在HELLO STRANGER招呼屏出现；四岛沿菱形轨道，经260ms悬停与1.35s弧线运动进入中央前景；手机先选岛、再点进入；背景云层/星光动态；四岛分别进入主题作品页，关于/故事/留言保留顶部菜单。Day/Night贯穿全站，留言服务保留。后续agent先读 [当前P2交接](docs/agent-work/phases/P2/handoff.md)、[六项修正验收](docs/agent-work/reports/P2-07.md) 和 [AGENTS.md](AGENTS.md)。新版发布状态与准确运行SHA以交接为准；正式素材仍待P3，P3–P5未启动。
 
 [完整方案合订本](docs/agent-handoff/complete-plan.md) 已合并部署流程；后续按 [用户指定五阶段](docs/agent-handoff/07-phased-plan.md) 开展：draft → 修正完善 → 素材完善 → 正式建设 → 正式修补。本次P2继续交付GitHub和云端draft Docker更新，不开展未要求的正式素材/正式建设。
 
-设计图：[全站初稿](design/review-v1/index.html) · [日夜主题与四岛](design/review-v2/index.html) · [已批准v3入口/全屏世界](design/review-v3/index.html)。运行截图在 [P2验收记录](docs/agent-work/reports/P2-05.md)，正式人物仍待设计。下文保留早期项目介绍。
+历史设计图：[全站初稿](design/review-v1/index.html) · [日夜主题与四岛](design/review-v2/index.html) · [v3入口/全屏世界](design/review-v3/index.html)。最新六项修正的实际运行截图在 [P2-r2证据](docs/agent-work/evidence/P2-r2/local/)，正式人物仍待设计。下文保留早期项目介绍。
 
 部署目标已指定Ubuntu服务器，网站运行在Docker中；见 [本机开发与Docker部署流程](docs/agent-handoff/06-development-deployment.md)。当前优先本机Linux验证、Git固定版本、云端同输入构建并复核；镜像传输路线按带宽与构建实测结果选择。
 

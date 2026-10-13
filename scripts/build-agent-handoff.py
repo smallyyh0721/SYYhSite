@@ -70,7 +70,7 @@ def main():
     phases = read_json("phases.json")
     active = next(p for p in phases["phases"] if p["id"] == phases["currentPhase"])
     merged = ["# SYYH Signal · 完整设计、实施、素材与部署方案（五阶段合订本）",
-              "版本：2026-10-12 / handoff-v2。部署正文已合并；先读五阶段计划，再按当前阶段查设计/架构/素材/协作/任务与部署。分册修改后运行 `python scripts/build-agent-handoff.py`。",
+              f"版本：{phases['updatedAt']} / handoff-v2。部署正文已合并；先读五阶段计划，再按当前阶段查设计/架构/素材/协作/任务与部署。分册修改后运行 `python scripts/build-agent-handoff.py`。",
               f"阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 {active['id']}：{active['status']}。实际实施、验证及部署事实见 [当前阶段交接](../../{active['handoffPath']})；[P1交接](../agent-work/phases/P1/handoff.md)为历史基线。历史设计正文与当前执行事实分开记录。\n"]
     for name in PARTS:
         merged.append(demote_headings((HANDOFF / name).read_text(encoding="utf-8")))

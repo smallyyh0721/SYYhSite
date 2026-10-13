@@ -1,7 +1,8 @@
 import Link from "next/link";
 import ConceptImage from "@/components/ConceptImage";
-import { works } from "@/lib/contracts";
+import { workThemes, works } from "@/lib/contracts";
 import styles from "./Content.module.css";
+import themeStyles from "./ThemeWorks.module.css";
 
 export default function Works() {
   const featured = works[0];
@@ -23,6 +24,23 @@ export default function Works() {
           当前展示本站浮岛概念，个人真实作品将在后续补充。
         </p>
       </div>
+
+      <section className={themeStyles.entries} aria-labelledby="theme-entries-title">
+        <h2 id="theme-entries-title" className={themeStyles.entryTitle}>
+          四个主题作品
+        </h2>
+        <p className="muted">
+          每座岛进入自己的主题。这里只链到本站已有的设计研究。
+        </p>
+        <nav className={themeStyles.themes} aria-label="四个主题作品">
+          {workThemes.map((theme) => (
+            <Link key={theme.id} href={theme.href}>
+              <span>{theme.name}</span>
+              <small>{theme.title}</small>
+            </Link>
+          ))}
+        </nav>
+      </section>
 
       {featured ? (
         <section className="grid2" aria-labelledby="featured-title">

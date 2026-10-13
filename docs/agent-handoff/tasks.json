@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12",
-  "scope": "P2-approved-v3-draft-revision-and-cloud-update",
+  "updatedAt": "2026-10-13",
+  "scope": "P2-six-user-revisions-and-cloud-draft",
   "queueOwner": "chatgpt",
   "statusVocabulary": [
     "pending",
@@ -585,6 +585,40 @@
       "reportPath": "docs/agent-work/reports/P5-05.md",
       "acceptance": "按授权发布范围更新云端并复核，或交本地补丁；关闭问题、留证据，不开展未要求无限维护。",
       "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+    },
+    {
+      "id": "P2-06",
+      "phaseId": "P2",
+      "title": "四个主题作品展示",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P2-06.md",
+      "reportPath": "docs/agent-work/reports/P2-06.md",
+      "acceptance": "Lead review of themeId filtered static collections, ordinary work entries and truthful draft state",
+      "acceptanceReference": "docs/agent-work/reports/P2-07.md"
+    },
+    {
+      "id": "P2-07",
+      "phaseId": "P2",
+      "title": "六项修正集成、验证与云端发布",
+      "owner": "chatgpt",
+      "status": "in_progress",
+      "dependsOn": [
+        "P2-06"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-07.md",
+      "acceptance": "Centered avatar-free welcome; delayed curved diamond orbit; two-step touch; moving/pausable backdrop; independent theme works; local Docker and cloud acceptance",
+      "acceptanceReference": "docs/agent-work/reports/P2-07.md"
     }
   ]
 }

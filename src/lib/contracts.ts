@@ -1,5 +1,13 @@
 export type Theme = "night" | "day";
+export type WorkThemeId = "sky" | "ancient" | "apocalypse" | "home";
+export const workThemes = [
+  { id: "sky", title: "天空与建筑", name: "天空之城", subtitle: "SKY & ARCHITECTURE", description: "云端空间、建筑与奇想。", href: "/works/themes/sky/" },
+  { id: "ancient", title: "自然与地貌", name: "远古地貌", subtitle: "NATURE & LANDSCAPE", description: "大地、时间与自然的纹理。", href: "/works/themes/ancient/" },
+  { id: "apocalypse", title: "科幻与末日", name: "末日星球", subtitle: "SCI-FI & APOCALYPSE", description: "未来世界、废墟与重建的想象。", href: "/works/themes/apocalypse/" },
+  { id: "home", title: "二次元与日常", name: "二次元宅岛", subtitle: "ANIME & EVERYDAY", description: "角色、创作与小小的日常。", href: "/works/themes/home/" },
+] satisfies { id: WorkThemeId; title: string; name: string; subtitle: string; description: string; href: string }[];
 export type Work = {
+  themeId: WorkThemeId;
   slug: string;
   number: string;
   title: string;
@@ -11,6 +19,7 @@ export type Work = {
 };
 export const works: Work[] = [
   {
+    themeId: "sky",
     slug: "sky-city",
     number: "01",
     title: "天空之城",
@@ -22,6 +31,7 @@ export const works: Work[] = [
     draft: true,
   },
   {
+    themeId: "ancient",
     slug: "ancient-landform",
     number: "02",
     title: "远古地貌",
@@ -33,6 +43,7 @@ export const works: Work[] = [
     draft: true,
   },
   {
+    themeId: "apocalypse",
     slug: "apocalypse",
     number: "03",
     title: "末日星球",
@@ -44,6 +55,7 @@ export const works: Work[] = [
     draft: true,
   },
   {
+    themeId: "home",
     slug: "anime-home",
     number: "04",
     title: "二次元宅岛",
@@ -57,6 +69,7 @@ export const works: Work[] = [
 ];
 export type Island = {
   id: string;
+  themeId: WorkThemeId;
   name: string;
   channel: string;
   href: string;
@@ -65,13 +78,14 @@ export type Island = {
   y: number;
   number: string;
 };
-// Draft-only binding. Asset identity and destination remain separate.
+// Each island opens its own themed work collection. Content still carries draft provenance.
 export const islands: Island[] = [
   {
     id: "sky",
+    themeId: "sky",
     name: "天空之城",
-    channel: "WORKS",
-    href: "/works/",
+    channel: "SKY WORKS",
+    href: "/works/themes/sky/",
     image: works[0].image,
     x: -390,
     y: -180,
@@ -79,9 +93,10 @@ export const islands: Island[] = [
   },
   {
     id: "ancient",
+    themeId: "ancient",
     name: "远古地貌",
-    channel: "ABOUT",
-    href: "/about/",
+    channel: "NATURE WORKS",
+    href: "/works/themes/ancient/",
     image: works[1].image,
     x: 400,
     y: -190,
@@ -89,9 +104,10 @@ export const islands: Island[] = [
   },
   {
     id: "apocalypse",
+    themeId: "apocalypse",
     name: "末日星球",
-    channel: "STORY",
-    href: "/story/",
+    channel: "SCI-FI WORKS",
+    href: "/works/themes/apocalypse/",
     image: works[2].image,
     x: -380,
     y: 290,
@@ -99,9 +115,10 @@ export const islands: Island[] = [
   },
   {
     id: "home",
+    themeId: "home",
     name: "二次元宅岛",
-    channel: "BOARD",
-    href: "/board/",
+    channel: "ANIME WORKS",
+    href: "/works/themes/home/",
     image: works[3].image,
     x: 390,
     y: 290,

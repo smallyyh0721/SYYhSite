@@ -117,7 +117,8 @@
 @media (max-width: 600px) {
   .content { padding: 0 16px; }
   .immersive .header { padding: 12px 18px; min-height: 70px; }
-  .immersive .header nav { display: none; }
+  .immersive .header nav { display: flex; margin-left: 0; gap: 4px; }
+  .immersive .header nav a { min-width: 44px; justify-content: center; font-size: 12px; letter-spacing: 0; }
   .header {
     flex-wrap: wrap;
     padding-block: 12px;

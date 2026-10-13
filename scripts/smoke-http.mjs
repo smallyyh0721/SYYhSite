@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 const base=new URL(process.argv[2]||'http://127.0.0.1:8080/');
 const results=[];
 const worldAssets=[];
-for(const path of ['/','/hub/','/works/','/works/sky-city/','/works/ancient-landform/','/works/apocalypse/','/works/anime-home/','/about/','/story/','/board/','/draft/']){
+for(const path of ['/','/hub/','/works/','/works/themes/sky/','/works/themes/ancient/','/works/themes/apocalypse/','/works/themes/home/','/works/sky-city/','/works/ancient-landform/','/works/apocalypse/','/works/anime-home/','/about/','/story/','/board/','/draft/']){
  const response=await fetch(new URL(path,base),{signal:AbortSignal.timeout(15000)});assert.equal(response.status,200,path);assert.match(response.headers.get('content-type'),/text\/html/);const html=await response.text();assert.match(html,/<h1/);if(path==='/'){assert.match(html,/CONNECT/);assert.doesNotMatch(html,/<input|CALLSIGN/);}if(path==='/hub/'){assert.match(html,/data-focused-island="sky"/);assert.equal((html.match(/data-island="/g)||[]).length,4);}results.push({path,status:response.status});
 }
 const missing=await fetch(new URL('/this-channel-does-not-exist/',base));assert.equal(missing.status,404);assert.match(await missing.text(),/NO SIGNAL/);results.push({path:'/this-channel-does-not-exist/',status:404});

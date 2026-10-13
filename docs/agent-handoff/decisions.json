@@ -1,7 +1,7 @@
 {
   "version": "handoff-v2",
-  "updatedAt": "2026-10-12",
-  "scope": "P2-approved-v3-draft-execution",
+  "updatedAt": "2026-10-13",
+  "scope": "P2-six-user-requested-revisions",
   "productionImplementationStarted": true,
   "requirements": [
     {
@@ -32,7 +32,7 @@
       "id": "visitor-avatar",
       "status": "user-required",
       "value": {
-        "location": "VISITOR ACCESS background-integrated right side; no card",
+        "location": "Only in CONNECT -> HELLO STRANGER greeting; not mounted on centered welcome screen",
         "true3D": true,
         "pointerFollow": "eyes/head/subtle-upper-body",
         "identity": "pending-design"
@@ -95,13 +95,24 @@
     },
     {
       "id": "entrance-v3",
-      "status": "user-approved",
-      "value": "WELCOME -> CONNECT -> HELLO STRANGER -> Hub; no entrance nickname"
+      "status": "user-approved-updated-2026-10-13",
+      "value": "Centered WELCOME and CONNECT with no avatar; greeting then lazily displays true3D proxy and entersHub"
     },
     {
       "id": "island-interaction-v3",
-      "status": "user-approved",
-      "value": "Fullscreen 2.5D draft; immediate real-pointer image-range focus; one colored centered island and three gray; entire image click enters; stationary pointer ignores moving geometry; keyboard/touch paths"
+      "status": "user-approved-updated-2026-10-13",
+      "value": "Diamond orbit;260ms dwell;1.35s curved movement;static cursor ignores moved geometry;desktop whole-image click;touch first select center,second enter;moving backdrop with pause/reducedmotion"
+    },
+    {
+      "id": "island-theme-destinations",
+      "status": "user-required",
+      "value": {
+        "sky": "/works/themes/sky/",
+        "ancient": "/works/themes/ancient/",
+        "apocalypse": "/works/themes/apocalypse/",
+        "home": "/works/themes/home/",
+        "otherChannels": "About/Story/Board only via header"
+      }
     }
   ],
   "recommendations": [
@@ -155,11 +166,9 @@
     },
     {
       "id": "island-channel-binding",
-      "status": "pending-selection",
-      "value": null,
-      "blocks": [
-        "final-channel-binding"
-      ],
+      "status": "resolved-by-user-2026-10-13",
+      "value": "All four islands open their independent themed works;About/Story/Board stay in header",
+      "blocks": [],
       "doesNotBlock": [
         "configurable-navigation"
       ]
@@ -234,5 +243,5 @@
   },
   "phasePlanPath": "docs/agent-handoff/07-phased-plan.md",
   "phaseStatePath": "docs/agent-handoff/phases.json",
-  "executionScope": "P2 approved welcome/greeting/fullscreen immediate island hover and whole-image click; GitHub and cloud draft update; P3-P5 not started"
+  "executionScope": "Complete six requested changes to first-version draft;GitHub/localLinuxDocker/cloud update;formal asset stages unchanged"
 }

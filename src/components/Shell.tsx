@@ -15,6 +15,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   const { theme, setTheme } = useTheme();
   const path = usePathname();
   const immersive = path === "/" || path === "/hub/" || path === "/hub";
+  const workCollection = path === "/works/" || /^\/works\/themes\/[^/]+\/?$/.test(path);
   const main = useRef<HTMLElement>(null);
   const first = useRef(true);
   const previous = useRef(path);
@@ -25,12 +26,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     }
     const from = previous.current;
     previous.current = path;
-    if (path === "/works/" && /^\/works\/[^/]+/.test(from)) {
+    if (workCollection && /^\/works\/(?!themes\/)[^/]+/.test(from)) {
       try {
         const saved = JSON.parse(
           sessionStorage.getItem("syyh-works") || "null",
         );
-        if (saved && Number.isFinite(saved.scroll)) {
+        if (saved && (saved.path || "/works/") === path && Number.isFinite(saved.scroll)) {
           const frame = requestAnimationFrame(() =>
             requestAnimationFrame(() => {
               window.scrollTo({ top: saved.scroll, behavior: "instant" });
@@ -86,10 +87,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         id="main"
         className={styles.main}
         onClickCapture={(e) => {
-          if (path !== "/works/") return;
+          if (!workCollection) return;
           const anchor = (e.target as Element).closest<HTMLAnchorElement>("a");
           const href = anchor?.getAttribute("href");
-          if (anchor && href && /^\/works\/[^/]+/.test(href)) {
+          if (anchor && href && /^\/works\/(?!themes\/)[^/]+/.test(href)) {
             try {
               const matching = [
                 ...document.querySelectorAll<HTMLAnchorElement>("a"),
@@ -97,6 +98,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               sessionStorage.setItem(
                 "syyh-works",
                 JSON.stringify({
+                  path,
                   scroll: window.scrollY,
                   href,
                   index: matching.indexOf(anchor),
