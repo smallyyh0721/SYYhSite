@@ -1,4 +1,4 @@
-> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+> 最新交付（2026-10-13）：第一版最后调整已完成并部署，P2 ready_for_review，本机与公网验收通过。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
 
 
 # SYYH Signal · 完整设计与实施交接包
@@ -24,7 +24,7 @@
 | [complete-plan.md](complete-plan.md) | 以上全部正文的单文件合订本，便于连续阅读与交接 |
 | [decisions.json](decisions.json) | 明确要求、建议方案及未定决定，便于 agent 读取 |
 | [asset-manifest.json](asset-manifest.json) | 已有资产与拟制作资产的状态、用途、责任人与路径 |
-| [tasks.json](tasks.json) | 33项执行队列，含本次P2-06/07增量；记录实际验收状态 |
+| [tasks.json](tasks.json) | 35项执行队列，含P2-06…09增量；记录实际验收状态 |
 | [phases.json](phases.json) | 五阶段状态与输入/交接；P1已交付，P2待浏览反馈，P3–P5待执行 |
 | [prompts/chatgpt-lead.md](prompts/chatgpt-lead.md) | ChatGPT 统筹 agent 启动提示词 |
 | [prompts/grok-research.md](prompts/grok-research.md) | Grok 首轮资料与素材研究提示词 |

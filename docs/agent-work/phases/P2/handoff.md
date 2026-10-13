@@ -1,6 +1,12 @@
-# P2第一版最后调整 / 2026-10-13
+# P2第一版最终交接 / 2026-10-13
 
-用户已授权最后四项调整，正在完成本机验证与云端发布：CONNECT缓慢闪烁；About替换静态海报为鼠标跟随真3D代理；HELLO STRANGER代理取消鼠标跟随，下一版素材阶段按既有分镜做一次性伸手视频。背景运行文件本轮不改，仅分析效果不明显的原因并列下一版分层云雾/视频素材规格。四岛菱形/延迟弧线、移动端先选后进、四主题作品与顶部菜单沿用上一版。详细验证见[P2-09报告](../../reports/P2-09.md)，素材分析见[下一版方案](../../background-next-version.md)。
+状态：最后四项调整已完成并发布，ready_for_review。CONNECT按2.4秒周期呼吸闪烁，hover/键盘focus稳定；About为鼠标跟随头/眼/上身的真3D代理，触摸/减少动态不跟随，失焦回正，失败用海报；HELLO STRANGER取消鼠标跟随，保留待机代理，后续按既有伸手分镜换一次性视频。背景本轮仅分析，运行文件和媒体保持原样；视觉动态改进留待下一版分层云素材。四岛菱形/260ms悬停/1.35s弧线、手机先选后进、主题作品和顶部菜单均保留。P3–P5未启动。
+
+公开预览 [首页](http://124.220.190.120/) · [About人物](http://124.220.190.120/about/) · [GitHub](https://github.com/smallyyh0721/SYYhSite/tree/codex/draft-v1)。应用运行SHA `e18816aa8195d77c47b1c46c52e438d6050e373a`。最后的验收文档提交不改变该运行SHA。
+
+本机typecheck、九项Node测试及Linux Docker构建通过；本机/公网分别通过十项新增交互与十五项四岛回归，包含实际3D姿态、模拟触摸、减少动态、故意阻断GLB海报降级；无pageerror。公网HTTP/API/GLB/WebP、两个容器健康/revision与保留留言卷检查通过。云端发布完成，应用运行SHA `e18816aa8195d77c47b1c46c52e438d6050e373a`，已推送GitHub。增量Git bundle 27318641B，依赖云端已有6f45e73，上传3.5秒且两端SHA256一致；云端构建31秒，最低MemAvailable 2209232KiB，web105MB/API347MB。两容器healthy、revision一致、checkout干净，既有留言卷保留，旧6f45e73镜像/env可回滚但未演练。公网15内容路由、真实404、API健康/留言GET、GLB与六WebP通过。公网无头Edge再次通过十项最终交互及十五项四岛回归，无pageerror；实际截图和结果在evidence/P2-r3/cloud，运行/传输事实在evidence/P2-r3/release.json。最后的验收文档提交与上述应用运行SHA分开，不需重建网站。
+
+下一版先读 [背景与伸手视频素材方案](../../background-next-version.md)、[Grok分析](../../reports/P2-08.md) 和 [最终验收报告](../../reports/P2-09.md)；证据入口 [公网新增检查](../../evidence/P2-r3/cloud/final-checks.json)、[四岛回归](../../evidence/P2-r3/cloud/regression/checks.json)、[发布事实](../../evidence/P2-r3/release.json)。正式人物、真实内容、精细日夜分层、域名HTTPS仍待补；物理手机、强制WebGL context loss、负载/回滚未验证。既有 `syyh-draft-cloud-guestbook` 不得删除，私钥不得上传。继续前先看最新反馈与dirty状态。
 
 ---
 

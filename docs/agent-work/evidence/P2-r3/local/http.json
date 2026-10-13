@@ -1,0 +1,101 @@
+{
+  "base": "http://127.0.0.1:8080/",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/hub/",
+      "status": 200
+    },
+    {
+      "path": "/works/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/sky/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/ancient/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/apocalypse/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/home/",
+      "status": 200
+    },
+    {
+      "path": "/works/sky-city/",
+      "status": 200
+    },
+    {
+      "path": "/works/ancient-landform/",
+      "status": 200
+    },
+    {
+      "path": "/works/apocalypse/",
+      "status": 200
+    },
+    {
+      "path": "/works/anime-home/",
+      "status": 200
+    },
+    {
+      "path": "/about/",
+      "status": 200
+    },
+    {
+      "path": "/story/",
+      "status": 200
+    },
+    {
+      "path": "/board/",
+      "status": 200
+    },
+    {
+      "path": "/draft/",
+      "status": 200
+    },
+    {
+      "path": "/this-channel-does-not-exist/",
+      "status": 404
+    }
+  ],
+  "health": "ok",
+  "board": "ok",
+  "glb": {
+    "bytes": 727424,
+    "skins": 1
+  },
+  "worldAssets": [
+    {
+      "path": "/media/world-v3/sky.webp",
+      "bytes": 498730
+    },
+    {
+      "path": "/media/world-v3/ancient.webp",
+      "bytes": 506868
+    },
+    {
+      "path": "/media/world-v3/apocalypse.webp",
+      "bytes": 493350
+    },
+    {
+      "path": "/media/world-v3/home.webp",
+      "bytes": 506002
+    },
+    {
+      "path": "/media/world-v3/environment-night.webp",
+      "bytes": 139262
+    },
+    {
+      "path": "/media/world-v3/environment-day.webp",
+      "bytes": 147960
+    }
+  ]
+}

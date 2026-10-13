@@ -20,8 +20,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3552,
-      "sha256": "4edaf4036aa3bc16f8b06d2092c76f162a6a6eb255fdeb78f04ee6b957bcb922"
+      "bytes": 3528,
+      "sha256": "ce491b2dcfb22dee4199d19de94918d77bc96a1cfe8f33816b72ff5dd100f910"
     },
     {
       "path": "app/about/page.tsx",
@@ -610,38 +610,38 @@
     },
     {
       "path": "docs/agent-handoff/01-design.md",
-      "bytes": 8972,
-      "sha256": "96c0c2a9d40c0d13bdd4ae27de269189897db087f978d6e6bb4d98cdd3ec7dda"
+      "bytes": 9023,
+      "sha256": "c3f9d1fcf1d9fc45798fb69d95a4de743d94a56c6356c62570081fb3bc9ce08e"
     },
     {
       "path": "docs/agent-handoff/02-implementation.md",
-      "bytes": 15774,
-      "sha256": "bae47bcd44573d7921d90e4cef696f528ad7fbad28eda34b27d23d5a031a81f1"
+      "bytes": 15825,
+      "sha256": "2d25d4df3194af02c00c49e862d905778d68243f4ecdb2577b94b8d69b28043c"
     },
     {
       "path": "docs/agent-handoff/03-assets.md",
-      "bytes": 14369,
-      "sha256": "500489516b2d853054b5e9c48aa0fb35fbb83aec71ed696eef10ba968b84d08f"
+      "bytes": 14420,
+      "sha256": "aa7efebdef207e152b43f654ef4b061ea57147479334a474d40d757fee3600bc"
     },
     {
       "path": "docs/agent-handoff/04-collaboration.md",
-      "bytes": 7772,
-      "sha256": "b7563c6d32a6b9e6c3a94d71ba66ae8778d91d50cb069a2c2406ee461668e1f6"
+      "bytes": 7823,
+      "sha256": "d5ea9917c44f9316e1d2055dc55c46d9759d169de781df2eae86a0c289433c02"
     },
     {
       "path": "docs/agent-handoff/05-taskboard.md",
-      "bytes": 9648,
-      "sha256": "ccb7512fc52fa46d54c61d08cfb7159161639ecbb7d5485f04c0735d31820eeb"
+      "bytes": 9699,
+      "sha256": "22e2bb9a64a32cd235f0d6ddc9624e9fa61288ac086527af250c9c5e87bb466a"
     },
     {
       "path": "docs/agent-handoff/06-development-deployment.md",
-      "bytes": 24517,
-      "sha256": "eb3b1f2db46c915e66f89bec73ab7ba782764e1936aaf025e0dde798a82e5f27"
+      "bytes": 24568,
+      "sha256": "5a770d9b87fec1957d2dea1cd0c7dab8bf8898f3d72d22a0b89b7a63ece89487"
     },
     {
       "path": "docs/agent-handoff/07-phased-plan.md",
-      "bytes": 13297,
-      "sha256": "79aa8b75d24229b72e3feacf9fc7bdbe65981f9dccd49cf6a67a75e1a83a7d44"
+      "bytes": 13348,
+      "sha256": "0269247e2510134d2c436034f0ec53019e1e053f66f54e1101086fb472aff167"
     },
     {
       "path": "docs/agent-handoff/asset-manifest.json",
@@ -650,8 +650,8 @@
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 103503,
-      "sha256": "b9d8c1c9e9fad752a167ee6e05f0835e994637f9f2899b4efa99b6611cb4f5bd"
+      "bytes": 103912,
+      "sha256": "cf775fc8d33a206fdfb97524fac8ecd3601670904739d34f33bf76b183168335"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
@@ -660,8 +660,8 @@
     },
     {
       "path": "docs/agent-handoff/deployment-facts.json",
-      "bytes": 11892,
-      "sha256": "498c95c11e65bebf316a36086c1863a1e9c43e88afd2191dc8dbda181a4184b1"
+      "bytes": 15581,
+      "sha256": "0fa8c09a083c8174559fd0eb6fc4b3ae723db7617eb7d5341fecdebccd561286"
     },
     {
       "path": "docs/agent-handoff/index.html",
@@ -670,8 +670,8 @@
     },
     {
       "path": "docs/agent-handoff/phases.json",
-      "bytes": 4454,
-      "sha256": "cf8498d4aa86c58629b67ffc8475e89cd44925a05bf9920c447e64dd59065b88"
+      "bytes": 4482,
+      "sha256": "a973742763b633378e15dd2707fd2341f7ddff3d4b7c2a3da73eabe4f29c217c"
     },
     {
       "path": "docs/agent-handoff/prompts/chatgpt-lead.md",
@@ -690,18 +690,18 @@
     },
     {
       "path": "docs/agent-handoff/README.md",
-      "bytes": 7300,
-      "sha256": "f7812e138ece510904d636a1ca221831d97531bd266e5f807445ca324ee0cda8"
+      "bytes": 7347,
+      "sha256": "725b0a71305d783d06a2323129cc5db22c59c47b193165192b0c353ddc319b55"
     },
     {
       "path": "docs/agent-handoff/tasks.json",
-      "bytes": 22596,
-      "sha256": "9f85e553b426cb018374a68583a4dfd90265e881d565e0965efa19520a84817d"
+      "bytes": 22593,
+      "sha256": "a97e384ed33682a51bee8d93121316c7f93762a8abe682aed27e149f328ff6de"
     },
     {
       "path": "docs/agent-handoff/validation.json",
-      "bytes": 785,
-      "sha256": "f26f6df1d62d8bd971dae2cccff38b7d4f2db8278ae22176d4221cbb3fa9e1be"
+      "bytes": 765,
+      "sha256": "613233db51601920ca5c4bfa849f47f9edbc2ca9451e6b11a6d2380a4b9d0bfd"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
@@ -1019,6 +1019,156 @@
       "sha256": "02e0d515fb7263c793e91dc1d7c404e65a4ef14ab51194a5900a77b7de543cd2"
     },
     {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/about-look-left-1440.png",
+      "bytes": 131770,
+      "sha256": "e8ad408f303315c716a25ca7cbaa1cd31dde426e45a219e363aad55bc374498e"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/about-look-right-1440.png",
+      "bytes": 131201,
+      "sha256": "4f40fe533296a5747af430e430b1d627519e58e596becdb0d84a05e3f5f24556"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/about-paper-1440.png",
+      "bytes": 131953,
+      "sha256": "1798c6ab34d2a3fbc58610abd5e17df1f189a4817254d54577ee02bf492f5591"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/about-touch-320.png",
+      "bytes": 66929,
+      "sha256": "127b892fe6c10e2379043dc560c7776b2852d498e1499d72c6512e3ba592224e"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/about-touch-390.png",
+      "bytes": 86894,
+      "sha256": "27fbafc4282bd44c7ea41a40c5ccbef52a31c5921801afa35671907fa70cff20"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/connect-day-1440.png",
+      "bytes": 79869,
+      "sha256": "af761571a852c20b27f833b3416306eb53cb30a212b7c32d8a223d39d0f9ae4b"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/connect-night-1440.png",
+      "bytes": 1159929,
+      "sha256": "0e6f5ba67f1ed269e7581d4b043de83006cecc246a86038638b0132c9c0e2d49"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/final-checks.json",
+      "bytes": 1691,
+      "sha256": "6caf2524667f9c8516ec2ec603342192cfac233367862fd42d02a202806c9b9a"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/greeting-idle-1440.png",
+      "bytes": 1292428,
+      "sha256": "aeba37800b9f2fa2e091461c15c90ac950ee0cd94a3b51c7d17a1569acfcc24e"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/http.json",
+      "bytes": 1815,
+      "sha256": "4fdf33b42cec707e82995b3b3c36a0cab285d757e6cd0f42a08752bdd08430b9"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/checks.json",
+      "bytes": 6140,
+      "sha256": "942edb55db9d774c715517e0221f62465fe1bf724d006fa885bf204bfc4e09e2"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/diamond-day-1440.png",
+      "bytes": 1643605,
+      "sha256": "8a47d97fb6b3c9b03168244392076cb4d5345479b3bbe541406f06bf2c99a8aa"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/diamond-night-1440.png",
+      "bytes": 1614576,
+      "sha256": "081205c33281283775e925c6c7dcb09409b22a80be1d2a0400d651115df1b0ce"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/diamond-night-320.png",
+      "bytes": 315661,
+      "sha256": "7140eedac40c404dfc37d823185299b9337bc77801c4157155e2aa736828457a"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/diamond-night-390.png",
+      "bytes": 420491,
+      "sha256": "42728ba3bafed1d312e545ba8b699bc7ab5d0a1eb3093940754266f4aff73ebe"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/diamond-night-768.png",
+      "bytes": 877112,
+      "sha256": "d98334f851b2effea7bac5ac81c85aa54f63db7776debea1047b4d630ba0af13"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/greeting-night-1440.png",
+      "bytes": 1310483,
+      "sha256": "9795d5dab76b40adb7d891c5f9cc16912e112910a7180e0722207c5a1ef3ba88"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/orbit-midflight-1440.png",
+      "bytes": 1535849,
+      "sha256": "53fcf8b1ea9c5c9a9593323e9e47a4ef642e1f59891a57d1921dc27e811dc571"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/selected-home-320.png",
+      "bytes": 307539,
+      "sha256": "2d0edec312815d8fe2d2b0e14fa84a0d10e0a71660191afa77a683c47512973c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/selected-home-390.png",
+      "bytes": 407347,
+      "sha256": "e5753749e735b900ed18af55b44468aef11f9efb822ce5daba0f1314f00387bc"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/selected-home-768.png",
+      "bytes": 852867,
+      "sha256": "a870b660c42950afcd2ee3968b2106d83e4b374fa7f7c094872b49fe32493fc9"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/theme-ancient-1440.png",
+      "bytes": 83629,
+      "sha256": "c54467acd1d0a816376452ea25cef14aeecccf259f329af3c98f84e1fe1c4c99"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/theme-home-320.png",
+      "bytes": 31467,
+      "sha256": "096a7784dcd5266fab4a30469a1a120b882f33896615c474259f9fde6eb35635"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/theme-home-390.png",
+      "bytes": 44609,
+      "sha256": "f962e18d8d26465ecfe9c1f1b8dc10221029949886d814921c43e616ba1d5df4"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/theme-home-768.png",
+      "bytes": 50631,
+      "sha256": "41c90242a5a1bc187e208a4ed5262af1acb3695f19ab6620090d821018fdbb5c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/welcome-night-1440.png",
+      "bytes": 1137754,
+      "sha256": "c494abd3daebfc7e23c6fae0f9f745f17c6691103f6b1d36f9c355dcba69d136"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/welcome-night-320.png",
+      "bytes": 213884,
+      "sha256": "3412c93de0cff53e6922c24a4d22e82a5bdf15c99cbc53e909b4bae0d4672cde"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/welcome-night-390.png",
+      "bytes": 283547,
+      "sha256": "23424316e74028023086cff25bf79787f8d6e315208a056792d79482c41e4941"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/regression/welcome-night-768.png",
+      "bytes": 583832,
+      "sha256": "82ff7a2d756b92c5e713836e72b00a8568a9a6a2904bbdb4c65402209d8fe3af"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/cloud/runtime.json",
+      "bytes": 2103,
+      "sha256": "e94d6629d0576a33114e17e3b0f9877185abdbbb6c7cd847f83b8b51b4fcac08"
+    },
+    {
       "path": "docs/agent-work/evidence/P2-r3/local/about-look-left-1440.png",
       "bytes": 131821,
       "sha256": "72234f5a831c8bf31e71ba1114542ad0b438db16788c522796ec119e2ed06b0f"
@@ -1062,6 +1212,11 @@
       "path": "docs/agent-work/evidence/P2-r3/local/greeting-idle-1440.png",
       "bytes": 1293249,
       "sha256": "56d512dae71594985e42d01011bff0696d16ab342b87c4295bf435b9feff51a6"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/http.json",
+      "bytes": 1814,
+      "sha256": "0667debd237fabd3cddf1814dcc202931013c878e2c79b6651c436d31607f8cf"
     },
     {
       "path": "docs/agent-work/evidence/P2-r3/local/regression/checks.json",
@@ -1159,6 +1314,21 @@
       "sha256": "3bd09146d9d51b60cd2f2d1fa4be2fcfbd4f6c11c0c1e0447858a28f649e2e03"
     },
     {
+      "path": "docs/agent-work/evidence/P2-r3/local/runtime.json",
+      "bytes": 935,
+      "sha256": "08673884bb650936cb257aeecaab47becfc8279f19bea6fdc350e577ea6eac9a"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/release.json",
+      "bytes": 3023,
+      "sha256": "ec47c231c7dd5f4cc709a144f03902d7708e1aa37a50d8721bc3dda51067f91a"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/transfer.json",
+      "bytes": 385,
+      "sha256": "78ad8a30ec3adb5eed5cea33e96d017a2bacc26ac54ad0f000627e0d0777fdc0"
+    },
+    {
       "path": "docs/agent-work/phases/P1/cloud-api-check.json",
       "bytes": 310,
       "sha256": "8ad420105bfbc427708dd096453941776b433063cdf7f86b1d0ddd8d03cc02a2"
@@ -1235,8 +1405,8 @@
     },
     {
       "path": "docs/agent-work/phases/P2/handoff.md",
-      "bytes": 6731,
-      "sha256": "5f21898426606a506f31819c55239bfc2321d26be5cc81f9e4132b335e02f8e3"
+      "bytes": 8689,
+      "sha256": "145cc5c075997aa33b7b1d9ef6a4d2ee07d9b529799d74738467b385e787ffc6"
     },
     {
       "path": "docs/agent-work/reports/P1-01.md",
@@ -1315,8 +1485,8 @@
     },
     {
       "path": "docs/agent-work/reports/P2-09.md",
-      "bytes": 1632,
-      "sha256": "d257f3c71ade7d06cf6de9b7eed6b6e1834cc3ed578f2e8ac2e41a320e5d22cd"
+      "bytes": 3469,
+      "sha256": "1129b164e918a7f2580cd28c7b59cda20e4b2bb4092b5d2fabd02d79667dd27c"
     },
     {
       "path": "docs/design-proposal-v1.md",
@@ -1450,8 +1620,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4104,
-      "sha256": "3bda64675d9c73966871fa8ea34db66b08c4e8a85b3b9e528ce739599964974b"
+      "bytes": 4230,
+      "sha256": "b09d75e0504119fe0e954dc9c1eee7a231dbb96ebb2732b9460290712872912a"
     },
     {
       "path": "scripts/build-agent-handoff.py",
@@ -1460,8 +1630,8 @@
     },
     {
       "path": "scripts/check-final-draft.mjs",
-      "bytes": 6623,
-      "sha256": "b612778f59b06134d7da5470fb335c19ffd52ebf4f86ccdef19f6d579abc967e"
+      "bytes": 7040,
+      "sha256": "7a185ae611d74fa5884c5fcd31fdcf3dda5f3cac059de02ce43ccce92169f038"
     },
     {
       "path": "scripts/check-revised-world.mjs",

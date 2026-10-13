@@ -1,0 +1,57 @@
+{
+  "sourceSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+  "checkedAt": "2026-10-13T04:12:25.995816+00:00",
+  "repository": "https://github.com/smallyyh0721/SYYhSite",
+  "branch": "codex/draft-v1",
+  "url": "http://124.220.190.120/",
+  "sourceDelivery": "SHA256-verified incremental Git bundle of pushed commit; local/cloud separately build same fixed source/Dockerfile/lockfile",
+  "bundleKind": "incremental Git bundle",
+  "bundlePrerequisiteSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+  "bundleBytes": 27318641,
+  "bundleTransferSeconds": 3.5,
+  "bundleTransferScope": "SCP bundle and LF release script; wall time includes SSH setup",
+  "bundleSha256": "1dbb146225bbdf0601d09a5d75b58b9e30abc7fd079b359ac4f9c7f1b03c9d8c",
+  "cloudBuildSeconds": 31,
+  "buildCache": "Existing base/dependencies reused; changed app/src rebuilt",
+  "basePullIncludedInBuildTime": false,
+  "minimumObservedMemAvailableKiB": 2209232,
+  "imageSizes": {
+    "web": "105MB",
+    "api": "347MB"
+  },
+  "stableObservedRuntimeMiB": {
+    "web": 3.488,
+    "api": 24.2
+  },
+  "runtimeMeasurementScope": "One post-release stats sample, not load testing",
+  "dataVolume": "syyh-draft-cloud-guestbook",
+  "runtimeRevisionLabelsVerified": true,
+  "containersHealthy": true,
+  "checkoutClean": true,
+  "localPlatform": "linux/amd64",
+  "cloudPlatform": "linux/amd64",
+  "cloudImages": {
+    "web": "sha256:c6a1ad3a3c3106af747713287e834efaac9501858a2467bf0f1dbc5a634110b0",
+    "api": "sha256:1bca3962cb41ab6a6ac18f2919e19368157fead51596d18a9ce9448c99ef70af"
+  },
+  "localBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
+  "cloudBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
+  "browserScope": "Isolated headless Microsoft Edge; actual mouse inputs and emulated touch, reduced motion and GLB fetch failure. Not physical devices or forced WebGL context loss.",
+  "cloudHttpAssetsCheck": "15 content routes, 404, API health/messages GET, GLB and 6 WebP passed",
+  "backgroundScope": "Runtime/media unchanged; current transform/pause functionality verified, perceptible cloud motion explicitly deferred to next assets. Analysis in background-next-version.md.",
+  "greetingVideoScope": "Pointer gaze disabled now; reaching video is a future asset, not generated/integrated",
+  "evidencePaths": [
+    "docs/agent-work/evidence/P2-r3/cloud/final-checks.json",
+    "docs/agent-work/evidence/P2-r3/cloud/regression/checks.json",
+    "docs/agent-work/evidence/P2-r3/cloud/http.json",
+    "docs/agent-work/evidence/P2-r3/cloud/runtime.json",
+    "docs/agent-work/evidence/P2-r3/local/final-checks.json",
+    "docs/agent-work/evidence/P2-r3/local/regression/checks.json",
+    "docs/agent-work/evidence/P2-r3/local/runtime.json",
+    "docs/agent-work/evidence/P2-r3/transfer.json",
+    "docs/agent-work/reports/P2-09.md",
+    "docs/agent-work/background-next-version.md"
+  ],
+  "previousReleaseSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+  "rollbackExecuted": false
+}

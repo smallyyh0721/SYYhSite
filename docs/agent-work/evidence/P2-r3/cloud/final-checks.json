@@ -1,0 +1,71 @@
+{
+  "origin": "http://124.220.190.120",
+  "checkedAt": "2026-10-13T04:18:58.271Z",
+  "browser": "Installed Microsoft Edge / isolated headless contexts",
+  "touch": "Browser emulation; not physical phones",
+  "checks": [
+    {
+      "name": "CONNECT actually pulses; hover and focus stay steady",
+      "detail": {
+        "opacitySamples": [
+          0.999904,
+          0.97997,
+          0.92388,
+          0.845278,
+          0.777523,
+          0.743537,
+          0.744844,
+          0.781651
+        ]
+      }
+    },
+    {
+      "name": "CONNECT pulse also enabled in Day",
+      "detail": true
+    },
+    {
+      "name": "HELLO STRANGER avatar ignores pointer; still reaches Hub",
+      "detail": {
+        "assetCache": "Warmed via About; cold entry/loading poster verified separately by world regression"
+      }
+    },
+    {
+      "name": "About real 3D head and eyes follow across both axes",
+      "detail": {
+        "right": [
+          0.654,
+          -0.409
+        ],
+        "left": [
+          -0.663,
+          0.414
+        ]
+      }
+    },
+    {
+      "name": "About returns gaze to center on blur; paper mode retains model",
+      "detail": true
+    },
+    {
+      "name": "About touch 320 fits and does not simulate mouse gaze",
+      "detail": true
+    },
+    {
+      "name": "About touch 390 fits and does not simulate mouse gaze",
+      "detail": true
+    },
+    {
+      "name": "Reduced motion disables CONNECT pulse and About movement",
+      "detail": true
+    },
+    {
+      "name": "About model fetch failure shows readable poster fallback",
+      "detail": true
+    },
+    {
+      "name": "No page errors",
+      "detail": true
+    }
+  ],
+  "errors": []
+}

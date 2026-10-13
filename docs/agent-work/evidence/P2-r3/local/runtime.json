@@ -1,0 +1,28 @@
+{
+  "platform": "linux/amd64",
+  "sourceSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+  "containers": [
+    {
+      "image": "syyh-web:e18816aa8195d77c47b1c46c52e438d6050e373a",
+      "health": "healthy",
+      "name": "/syyh-draft-web-1",
+      "revision": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+      "imageId": "sha256:00425f30c185e12c991441297437296b1ca798816a06acbd62feaedc20bd2ebf",
+      "volumes": []
+    },
+    {
+      "image": "syyh-api:e18816aa8195d77c47b1c46c52e438d6050e373a",
+      "health": "healthy",
+      "name": "/syyh-draft-api-1",
+      "revision": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+      "imageId": "sha256:aa4fdfe1925cc8bb23449615d61d432fa9600aa8051a5e3fc7c84f37406a106d",
+      "volumes": [
+        {
+          "Name": "syyh-draft-local-guestbook",
+          "Destination": "/data"
+        }
+      ]
+    }
+  ],
+  "checkedAt": "2026-10-13T12:12:18.2155841+08:00"
+}

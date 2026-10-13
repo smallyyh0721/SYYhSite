@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updatedAt": "2026-10-13",
-  "scope": "P2-six-revisions-deployed-draft",
+  "scope": "P2-final-first-draft-deployed",
   "productionImplementationStarted": true,
   "serverSource": {
     "threadId": "01a12b8e-c6d1-7122-b027-1ec885456505",
@@ -34,9 +34,9 @@
     "deploymentRootProposal": "/opt/website",
     "deploymentRoot": "/opt/website/syyh",
     "latestRecheck": {
-      "checkedAt": "2026-10-13T02:23:41.432640+00:00",
+      "checkedAt": "2026-10-13T04:12:25.995816+00:00",
       "containersHealthy": 2,
-      "availableMemoryKiBAfterRelease": 2985236,
+      "availableMemoryKiBAfterRelease": 2983904,
       "checkoutClean": true
     }
   },
@@ -65,8 +65,9 @@
       "web": 14.48,
       "api": 26.8
     },
-    "currentReleaseSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
-    "currentReleaseLabelsVerified": true
+    "currentReleaseSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+    "currentReleaseLabelsVerified": true,
+    "runtimeObservationNote": "observedRuntimeMiB is a historical P1 sample; latest labels/health are in P2-r3/local/runtime.json"
   },
   "network": {
     "dockerHubDirect": "timed-out-in-original-audit-not-retested",
@@ -130,7 +131,13 @@
     "P2-r2-four-filtered-theme-work-collections-and-Back",
     "P2-r2-local-and-public-15-headless-Edge-checks",
     "P2-r2-54.8MB-bundle-SHA256-and-32s-cloud-build",
-    "P2-r2-two-healthy-exact-revisions-and-existing-volume"
+    "P2-r2-two-healthy-exact-revisions-and-existing-volume",
+    "P2-r3-CONNECT-pulse-hover-keyboard-Day-reduced-motion",
+    "P2-r3-About-live-3D-pointer-gaze-and-blur-reset",
+    "P2-r3-greeting-no-pointer-gaze",
+    "P2-r3-GLB-fetch-failure-poster",
+    "P2-r3-local-and-public-10-new-plus-15-regression-checks",
+    "P2-r3-SHA256-incremental-bundle-and-fixed-SHA-cloud-release"
   ],
   "checksNotPerformed": [
     "Docker-install",
@@ -141,61 +148,67 @@
   ],
   "phasePlan": {
     "P1": "Local Linux production build/test + explicitly authorized public cloud draft deployment",
-    "P2": "Six requested revisions deployed at fixed SHA; local Linux Docker, public HTTP and public headless browser acceptance passed; awaiting user feedback",
+    "P2": "Final first-draft adjustment deployed; local/public checks passed; background analysis complete and future media deferred, awaiting user feedback",
     "P3": "Formal media/model/content refinement pending phase start",
     "P4": "Production Docker validation, Git/server build and cloud deployment within requested scope",
     "P5": "Patch regression and authorized updates"
   },
   "release": {
-    "sourceSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
-    "checkedAt": "2026-10-13T02:23:41.432640+00:00",
+    "sourceSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+    "checkedAt": "2026-10-13T04:12:25.995816+00:00",
     "repository": "https://github.com/smallyyh0721/SYYhSite",
     "branch": "codex/draft-v1",
     "url": "http://124.220.190.120/",
-    "sourceDelivery": "Verified Git bundle of GitHub-pushed commit; local and cloud build the same fixed source/Dockerfile/lockfile separately",
-    "bundleBytes": 54786726,
-    "bundleTransferSeconds": 5.56,
-    "bundleTransferScope": "SCP bundle plus LF-normalized release script; wall time includes SSH setup",
-    "bundleSha256": "34789cb3e0655be3237be75f52caa9dca12d6ba183d85753eb90a854ab19d817",
-    "cloudBuildSeconds": 32,
-    "buildCache": "Existing base/dependency layers reused; changed app/src compiled on cloud",
+    "sourceDelivery": "SHA256-verified incremental Git bundle of pushed commit; local/cloud separately build same fixed source/Dockerfile/lockfile",
+    "bundleKind": "incremental Git bundle",
+    "bundlePrerequisiteSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+    "bundleBytes": 27318641,
+    "bundleTransferSeconds": 3.5,
+    "bundleTransferScope": "SCP bundle and LF release script; wall time includes SSH setup",
+    "bundleSha256": "1dbb146225bbdf0601d09a5d75b58b9e30abc7fd079b359ac4f9c7f1b03c9d8c",
+    "cloudBuildSeconds": 31,
+    "buildCache": "Existing base/dependencies reused; changed app/src rebuilt",
     "basePullIncludedInBuildTime": false,
-    "minimumObservedMemAvailableKiB": 2234392,
+    "minimumObservedMemAvailableKiB": 2209232,
     "imageSizes": {
       "web": "105MB",
       "api": "347MB"
     },
-    "imageSizeScope": "docker image ls disk-usage display; image inspect compressed bytes recorded separately in runtime.json",
     "stableObservedRuntimeMiB": {
-      "web": 3.949,
-      "api": 23.63
+      "web": 3.488,
+      "api": 24.2
     },
-    "runtimeMeasurementScope": "One post-release docker stats sample, not a load test",
+    "runtimeMeasurementScope": "One post-release stats sample, not load testing",
     "dataVolume": "syyh-draft-cloud-guestbook",
     "runtimeRevisionLabelsVerified": true,
     "containersHealthy": true,
     "checkoutClean": true,
-    "cloudBrowserVisualCheck": "passed-15-independent-headless-Edge-checks-and-inspected-runtime-screenshots",
-    "localBrowserVisualCheck": "passed-15-independent-headless-Edge-checks-and-inspected-runtime-screenshots",
-    "browserScope": "Desktop 1440x900, emulated native touch 320x740/390x844/768x1024, emulated reduced-motion; not physical phone testing",
-    "cloudHttpAssetsCheck": "passed-15-content-routes-real-404-API-health-and-messages-GET-GLB-6-WebP",
-    "evidencePaths": [
-      "docs/agent-work/evidence/P2-r2/cloud/checks.json",
-      "docs/agent-work/evidence/P2-r2/cloud/http.json",
-      "docs/agent-work/evidence/P2-r2/cloud/runtime.json",
-      "docs/agent-work/evidence/P2-r2/local/checks.json",
-      "docs/agent-work/evidence/P2-r2/local/runtime.json",
-      "docs/agent-work/evidence/P2-r2/transfer.json",
-      "docs/agent-work/reports/P2-07.md"
-    ],
-    "previousReleaseSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
-    "rollbackExecuted": false,
     "localPlatform": "linux/amd64",
     "cloudPlatform": "linux/amd64",
     "cloudImages": {
-      "web": "sha256:a6e074fafa7c225d216240318ad040be000d82a48e47d1166df1560b309a2ebd",
-      "api": "sha256:c5a338d122ac7c9474a7660c6733efcf3ad43ccd75d770f0cf4bfb099f2535ad"
-    }
+      "web": "sha256:c6a1ad3a3c3106af747713287e834efaac9501858a2467bf0f1dbc5a634110b0",
+      "api": "sha256:1bca3962cb41ab6a6ac18f2919e19368157fead51596d18a9ce9448c99ef70af"
+    },
+    "localBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
+    "cloudBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
+    "browserScope": "Isolated headless Microsoft Edge; actual mouse inputs and emulated touch, reduced motion and GLB fetch failure. Not physical devices or forced WebGL context loss.",
+    "cloudHttpAssetsCheck": "15 content routes, 404, API health/messages GET, GLB and 6 WebP passed",
+    "backgroundScope": "Runtime/media unchanged; current transform/pause functionality verified, perceptible cloud motion explicitly deferred to next assets. Analysis in background-next-version.md.",
+    "greetingVideoScope": "Pointer gaze disabled now; reaching video is a future asset, not generated/integrated",
+    "evidencePaths": [
+      "docs/agent-work/evidence/P2-r3/cloud/final-checks.json",
+      "docs/agent-work/evidence/P2-r3/cloud/regression/checks.json",
+      "docs/agent-work/evidence/P2-r3/cloud/http.json",
+      "docs/agent-work/evidence/P2-r3/cloud/runtime.json",
+      "docs/agent-work/evidence/P2-r3/local/final-checks.json",
+      "docs/agent-work/evidence/P2-r3/local/regression/checks.json",
+      "docs/agent-work/evidence/P2-r3/local/runtime.json",
+      "docs/agent-work/evidence/P2-r3/transfer.json",
+      "docs/agent-work/reports/P2-09.md",
+      "docs/agent-work/background-next-version.md"
+    ],
+    "previousReleaseSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+    "rollbackExecuted": false
   },
   "releaseHistory": [
     {
@@ -262,6 +275,57 @@
       ],
       "previousReleaseSha": "e590059ca96620aab024f4bcee27005633e3db08",
       "rollbackExecuted": false
+    },
+    {
+      "sourceSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "checkedAt": "2026-10-13T02:23:41.432640+00:00",
+      "repository": "https://github.com/smallyyh0721/SYYhSite",
+      "branch": "codex/draft-v1",
+      "url": "http://124.220.190.120/",
+      "sourceDelivery": "Verified Git bundle of GitHub-pushed commit; local and cloud build the same fixed source/Dockerfile/lockfile separately",
+      "bundleBytes": 54786726,
+      "bundleTransferSeconds": 5.56,
+      "bundleTransferScope": "SCP bundle plus LF-normalized release script; wall time includes SSH setup",
+      "bundleSha256": "34789cb3e0655be3237be75f52caa9dca12d6ba183d85753eb90a854ab19d817",
+      "cloudBuildSeconds": 32,
+      "buildCache": "Existing base/dependency layers reused; changed app/src compiled on cloud",
+      "basePullIncludedInBuildTime": false,
+      "minimumObservedMemAvailableKiB": 2234392,
+      "imageSizes": {
+        "web": "105MB",
+        "api": "347MB"
+      },
+      "imageSizeScope": "docker image ls disk-usage display; image inspect compressed bytes recorded separately in runtime.json",
+      "stableObservedRuntimeMiB": {
+        "web": 3.949,
+        "api": 23.63
+      },
+      "runtimeMeasurementScope": "One post-release docker stats sample, not a load test",
+      "dataVolume": "syyh-draft-cloud-guestbook",
+      "runtimeRevisionLabelsVerified": true,
+      "containersHealthy": true,
+      "checkoutClean": true,
+      "cloudBrowserVisualCheck": "passed-15-independent-headless-Edge-checks-and-inspected-runtime-screenshots",
+      "localBrowserVisualCheck": "passed-15-independent-headless-Edge-checks-and-inspected-runtime-screenshots",
+      "browserScope": "Desktop 1440x900, emulated native touch 320x740/390x844/768x1024, emulated reduced-motion; not physical phone testing",
+      "cloudHttpAssetsCheck": "passed-15-content-routes-real-404-API-health-and-messages-GET-GLB-6-WebP",
+      "evidencePaths": [
+        "docs/agent-work/evidence/P2-r2/cloud/checks.json",
+        "docs/agent-work/evidence/P2-r2/cloud/http.json",
+        "docs/agent-work/evidence/P2-r2/cloud/runtime.json",
+        "docs/agent-work/evidence/P2-r2/local/checks.json",
+        "docs/agent-work/evidence/P2-r2/local/runtime.json",
+        "docs/agent-work/evidence/P2-r2/transfer.json",
+        "docs/agent-work/reports/P2-07.md"
+      ],
+      "previousReleaseSha": "36d125f83134ba16b348f568fbf4741a371b7d1b",
+      "rollbackExecuted": false,
+      "localPlatform": "linux/amd64",
+      "cloudPlatform": "linux/amd64",
+      "cloudImages": {
+        "web": "sha256:a6e074fafa7c225d216240318ad040be000d82a48e47d1166df1560b309a2ebd",
+        "api": "sha256:c5a338d122ac7c9474a7660c6733efcf3ad43ccd75d770f0cf4bfb099f2535ad"
+      }
     }
   ]
 }

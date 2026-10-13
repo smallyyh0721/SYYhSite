@@ -46,7 +46,7 @@
       "id": "P2",
       "number": 2,
       "title": "第一版网站修正和完善",
-      "status": "in_progress",
+      "status": "ready_for_review",
       "dependsOn": [
         "P1"
       ],
@@ -69,7 +69,7 @@
       ],
       "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
       "deploymentScope": "Approved local Linux Docker validation and public Ubuntu Docker draft update",
-      "executionOutcome": "Final draft adjustment authorized: CONNECT pulse, About pointer-tracked 3D, greeting without pointer tracking. Background analysis only; future media not started. Local and cloud verification pending."
+      "executionOutcome": "Final first draft deployed at e18816aa8195d77c47b1c46c52e438d6050e373a; local/public 10 new + 15 regression checks passed. Background analysis only; future reaching video/layered backgrounds not produced. P3-P5 not started."
     },
     {
       "id": "P3",

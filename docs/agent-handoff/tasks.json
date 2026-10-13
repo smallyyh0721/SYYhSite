@@ -649,7 +649,7 @@
       "reportPath": "docs/agent-work/reports/P2-09.md",
       "acceptance": "CONNECT pulse; About real 3D pointer gaze; greeting without gaze; unchanged background with next-version plan; local Linux Docker and cloud validation",
       "phaseId": "P2",
-      "status": "in_progress",
+      "status": "accepted",
       "inputGates": [],
       "optional": false,
       "conditionalDependsOn": [],

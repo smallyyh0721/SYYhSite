@@ -37,6 +37,10 @@ try {
   await page.mouse.move(10, 10);
   assert.notEqual(await connect.evaluate(n => getComputedStyle(n).animationName), 'none');
   await capture(page, 'connect-day-1440'); record('CONNECT pulse also enabled in Day');
+  // Warm assets to measure the rig within the short greeting. Cold entrance and
+  // its loading poster/automatic Hub transition are covered by world regression.
+  await page.goto(origin + '/about/', { waitUntil: 'networkidle' }); await ready(page);
+  await page.goto(origin + '/', { waitUntil: 'networkidle' });
   await connect.click(); await ready(page);
   assert.equal(await page.locator('[data-avatar-mode="idle"]').count(), 1);
   await page.mouse.move(1380, 180); await page.waitForTimeout(220);
@@ -45,7 +49,7 @@ try {
   assert.deepEqual(await pose(page), [0, 0]);
   await capture(page, 'greeting-idle-1440');
   await page.waitForURL('**/hub/', { timeout: 15000 });
-  record('HELLO STRANGER avatar ignores pointer; still reaches Hub');
+  record('HELLO STRANGER avatar ignores pointer; still reaches Hub', { assetCache: 'Warmed via About; cold entry/loading poster verified separately by world regression' });
   await page.goto(origin + '/about/', { waitUntil: 'networkidle' }); await ready(page);
   assert.equal(await page.locator('[data-avatar-mode="pointer"]').count(), 1);
   await page.mouse.move(1296, 250);

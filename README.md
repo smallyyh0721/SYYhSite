@@ -2,7 +2,7 @@
 
 ## 当前完整交接 / 2026-10-13
 
-第一版最后调整正在验证/发布：CONNECT呼吸闪烁，About真3D人物鼠标跟随，HELLO STRANGER取消跟随并计划后续伸手视频。背景本轮只分析，下一版补素材再改进。以 [最新报告](docs/agent-work/reports/P2-09.md) 和 [下一版素材方案](docs/agent-work/background-next-version.md) 为准。下段保留上轮发布事实。
+第一版最后调整已完成并部署（应用SHA `e18816aa8195d77c47b1c46c52e438d6050e373a`，本机与公网各十项新增交互、十五项四岛回归通过）：CONNECT呼吸闪烁，About真3D人物鼠标跟随，HELLO STRANGER取消跟随并计划后续伸手视频。背景本轮只分析，下一版补素材再改进。以 [最新报告](docs/agent-work/reports/P2-09.md) 和 [下一版素材方案](docs/agent-work/background-next-version.md) 为准。下段保留上轮发布事实。
 
 已完成并部署用户六项修正后的第一版：[公开预览](http://124.220.190.120/)，GitHub分支`codex/draft-v1`。欢迎标题与CONNECT居中，人物只在HELLO STRANGER招呼屏出现；四岛沿菱形轨道，经260ms悬停与1.35s弧线运动进入中央前景；手机先选岛、再点进入；背景云层/星光动态；四岛分别进入主题作品页，关于/故事/留言保留顶部菜单。Day/Night贯穿全站，留言服务保留。后续agent先读 [当前P2交接](docs/agent-work/phases/P2/handoff.md)、[六项修正验收](docs/agent-work/reports/P2-07.md) 和 [AGENTS.md](AGENTS.md)。应用运行SHA `6f45e735fabf1a92a486db3759bb1f33732a790b`，本机与公网各15项浏览器交互检查通过；最后的验收文档提交不改变此运行SHA。正式素材仍待P3，P3–P5未启动。
 

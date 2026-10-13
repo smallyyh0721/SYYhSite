@@ -1,0 +1,11 @@
+{
+  "measuredAt": "2026-10-13T11:57:36.3223686+08:00",
+  "seconds": 3.5,
+  "sha256": "1dbb146225bbdf0601d09a5d75b58b9e30abc7fd079b359ac4f9c7f1b03c9d8c",
+  "artifact": "draft-p2-r3.bundle",
+  "remoteDigestMatched": true,
+  "prerequisite": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+  "bundleKind": "incremental Git bundle",
+  "bytes": 27318641,
+  "method": "SCP over SSH"
+}
