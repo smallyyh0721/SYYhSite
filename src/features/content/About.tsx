@@ -1,10 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import styles from "./Content.module.css";
+const Avatar = dynamic(() => import("@/features/avatar/Avatar"), {
+  ssr: false,
+  loading: () => <img src="/media/avatar-poster.png" alt="代理人物" style={{ width: "100%", height: "100%", objectFit: "contain" }} />,
+});
 
 export default function About() {
   const [paper, setPaper] = useState(false);
+  const pointer = useRef({ x: 0, y: 0 });
+  useEffect(() => {
+    const reset = () => { pointer.current = { x: 0, y: 0 }; };
+    const move = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      pointer.current = {
+        x: Math.max(-1, Math.min(1, (event.clientX / innerWidth - .5) * 2)),
+        y: Math.max(-1, Math.min(1, (event.clientY / innerHeight - .5) * 2)),
+      };
+    };
+    const leave = (event: PointerEvent) => { if (!event.relatedTarget) reset(); };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerout", leave);
+    window.addEventListener("blur", reset);
+    return () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerout", leave);
+      window.removeEventListener("blur", reset);
+    };
+  }, []);
   return (
     <article
       className={`${styles.page} ${paper ? styles.paper : ""}`}
@@ -47,15 +72,9 @@ export default function About() {
           </div>
         </div>
         <figure className={styles.poster}>
-          <img
-            src="/media/avatar-poster.png"
-            alt="入口人物概念海报，非正式最终角色"
-            width={420}
-            height={560}
-            decoding="async"
-          />
+          <div className={styles.avatarStage}><Avatar pointer={pointer} pointerTracking /></div>
           <figcaption className="muted">
-            CONCEPT POSTER / 概念海报 · 非正式角色
+            3D PROXY / 人物草稿 · 正式形象待设计
           </figcaption>
         </figure>
       </section>

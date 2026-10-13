@@ -20,8 +20,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3350,
-      "sha256": "5aa896bccb10f9b3a7dfe90722245ccc6d2e8f70e3dba4febed7c8569955f140"
+      "bytes": 3552,
+      "sha256": "4edaf4036aa3bc16f8b06d2092c76f162a6a6eb255fdeb78f04ee6b957bcb922"
     },
     {
       "path": "app/about/page.tsx",
@@ -35,8 +35,8 @@
     },
     {
       "path": "app/draft/page.tsx",
-      "bytes": 2887,
-      "sha256": "37080e56682f6ba77860f5588d863ab311969a1f85c2eab004dc5f2e44f93242"
+      "bytes": 3134,
+      "sha256": "9640ad8143d4dbf3e71bdb52bed9f6ef887f15a3f2ea0e3b03fedbf5959bc90d"
     },
     {
       "path": "app/globals.css",
@@ -610,38 +610,38 @@
     },
     {
       "path": "docs/agent-handoff/01-design.md",
-      "bytes": 8983,
-      "sha256": "967878e1e2c0f67da2499339a97e6983a6070ac3aa9b078fb1504909644d1afb"
+      "bytes": 8972,
+      "sha256": "96c0c2a9d40c0d13bdd4ae27de269189897db087f978d6e6bb4d98cdd3ec7dda"
     },
     {
       "path": "docs/agent-handoff/02-implementation.md",
-      "bytes": 15785,
-      "sha256": "7551594bf6ba61a1c13cf0f870ef73f66b635d0d0fe9cb0fe1dd043f1ed8e89f"
+      "bytes": 15774,
+      "sha256": "bae47bcd44573d7921d90e4cef696f528ad7fbad28eda34b27d23d5a031a81f1"
     },
     {
       "path": "docs/agent-handoff/03-assets.md",
-      "bytes": 14380,
-      "sha256": "620245536f19002cd342064b7289d670e0a111fbeb493b65d18db78357563b76"
+      "bytes": 14369,
+      "sha256": "500489516b2d853054b5e9c48aa0fb35fbb83aec71ed696eef10ba968b84d08f"
     },
     {
       "path": "docs/agent-handoff/04-collaboration.md",
-      "bytes": 7783,
-      "sha256": "cbcaec6795de0f2de301234a17ab4ecfd045066e09dfb95aa274d2a0b999ccc7"
+      "bytes": 7772,
+      "sha256": "b7563c6d32a6b9e6c3a94d71ba66ae8778d91d50cb069a2c2406ee461668e1f6"
     },
     {
       "path": "docs/agent-handoff/05-taskboard.md",
-      "bytes": 9659,
-      "sha256": "4ba71e50d2a49cdc6638dfa87cf3071341b65bcfe39f7b35c44b1f4212d07e7b"
+      "bytes": 9648,
+      "sha256": "ccb7512fc52fa46d54c61d08cfb7159161639ecbb7d5485f04c0735d31820eeb"
     },
     {
       "path": "docs/agent-handoff/06-development-deployment.md",
-      "bytes": 24528,
-      "sha256": "bda8cde2dd39f1be27f6ea9ffc7d398ed695a99691f90513a5c747cb82243683"
+      "bytes": 24517,
+      "sha256": "eb3b1f2db46c915e66f89bec73ab7ba782764e1936aaf025e0dde798a82e5f27"
     },
     {
       "path": "docs/agent-handoff/07-phased-plan.md",
-      "bytes": 13308,
-      "sha256": "14717ad13f985727270f40a821775075432d89a0147ca8e384ec667906514825"
+      "bytes": 13297,
+      "sha256": "79aa8b75d24229b72e3feacf9fc7bdbe65981f9dccd49cf6a67a75e1a83a7d44"
     },
     {
       "path": "docs/agent-handoff/asset-manifest.json",
@@ -650,13 +650,13 @@
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 103588,
-      "sha256": "ea07fe09b93ba0d5e004a70d651e6d2c17ff0609b856bd68039b84d822337b8f"
+      "bytes": 103503,
+      "sha256": "b9d8c1c9e9fad752a167ee6e05f0835e994637f9f2899b4efa99b6611cb4f5bd"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
-      "bytes": 7181,
-      "sha256": "c4787860b610b96b9422aaaae7b20bedebc8b7b56509de92e67f738ee8446c87"
+      "bytes": 7947,
+      "sha256": "20727ff3b28c9c91990afaf3ae24fdc9254972cf7343888cf58560bf74e0585d"
     },
     {
       "path": "docs/agent-handoff/deployment-facts.json",
@@ -670,8 +670,8 @@
     },
     {
       "path": "docs/agent-handoff/phases.json",
-      "bytes": 4451,
-      "sha256": "3635bac167d9feb9c49becbd19727da534a1eb3cfb58a652d5921cd2ab4537b0"
+      "bytes": 4454,
+      "sha256": "cf8498d4aa86c58629b67ffc8475e89cd44925a05bf9920c447e64dd59065b88"
     },
     {
       "path": "docs/agent-handoff/prompts/chatgpt-lead.md",
@@ -690,18 +690,18 @@
     },
     {
       "path": "docs/agent-handoff/README.md",
-      "bytes": 7311,
-      "sha256": "1f0f6c83ad372adcb8a9feedfdadd56c688598e88801769ec90cadf834e87988"
+      "bytes": 7300,
+      "sha256": "f7812e138ece510904d636a1ca221831d97531bd266e5f807445ca324ee0cda8"
     },
     {
       "path": "docs/agent-handoff/tasks.json",
-      "bytes": 21292,
-      "sha256": "39d381f549f6065ec2437a85809f4fa8ffe4667eb35fb707b5c1d4e827030e3a"
+      "bytes": 22596,
+      "sha256": "9f85e553b426cb018374a68583a4dfd90265e881d565e0965efa19520a84817d"
     },
     {
       "path": "docs/agent-handoff/validation.json",
-      "bytes": 765,
-      "sha256": "cd55bffeb9c7adb86e1254d04d583ffacd6589f65e4bd9b89ba99c608647f4a7"
+      "bytes": 785,
+      "sha256": "f26f6df1d62d8bd971dae2cccff38b7d4f2db8278ae22176d4221cbb3fa9e1be"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
@@ -717,6 +717,16 @@
       "path": "docs/agent-work/assignments/P2-06.md",
       "bytes": 2075,
       "sha256": "851964373874e8d4a60aa856673de7c6c3ae960c5970b58ae60629127430a943"
+    },
+    {
+      "path": "docs/agent-work/assignments/P2-08.md",
+      "bytes": 2813,
+      "sha256": "3c8956707e2990a8c25002158e2b128aaa71a55d3df3c2cb4edcfb4842eb0257"
+    },
+    {
+      "path": "docs/agent-work/background-next-version.md",
+      "bytes": 9560,
+      "sha256": "2cd97d67a34358aab01ee6264580d1a67a1272ae6c34a1563553f3059143865a"
     },
     {
       "path": "docs/agent-work/evidence/P2/asset-delivery.json",
@@ -1009,6 +1019,146 @@
       "sha256": "02e0d515fb7263c793e91dc1d7c404e65a4ef14ab51194a5900a77b7de543cd2"
     },
     {
+      "path": "docs/agent-work/evidence/P2-r3/local/about-look-left-1440.png",
+      "bytes": 131821,
+      "sha256": "72234f5a831c8bf31e71ba1114542ad0b438db16788c522796ec119e2ed06b0f"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/about-look-right-1440.png",
+      "bytes": 131348,
+      "sha256": "327ea2df4195010d389b30a2db66693ea7cfa097ba9c220c8c2aa24d5571c5e5"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/about-paper-1440.png",
+      "bytes": 132170,
+      "sha256": "fc99ae4220739ba4633b38d570d05a8d81be77cdeffa44b3e1b4386768ed99c3"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/about-touch-320.png",
+      "bytes": 66930,
+      "sha256": "2d18347f209b38dbee61250cfed125663929777487e1b272229e69571d315631"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/about-touch-390.png",
+      "bytes": 86889,
+      "sha256": "52d54bb166fc3ac50326f1699d97e1ba418a8a7e2f81d813e749b5e98197dd5d"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/connect-day-1440.png",
+      "bytes": 1290153,
+      "sha256": "d89c1c7f311f60500fbb0eee508ca086d626c1c9ab2a0dbe37b5970e1e53fa73"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/connect-night-1440.png",
+      "bytes": 1153652,
+      "sha256": "628e5194e049076e9c19545276c7d1bd93d1fe8073f960daece3f12098e5a29f"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/final-checks.json",
+      "bytes": 1578,
+      "sha256": "4adab7fd6dc913d6df6a6d0004d9a232a46c89f4ab4bb26b3ef5c07481778b68"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/greeting-idle-1440.png",
+      "bytes": 1293249,
+      "sha256": "56d512dae71594985e42d01011bff0696d16ab342b87c4295bf435b9feff51a6"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/checks.json",
+      "bytes": 6139,
+      "sha256": "9f77bc017a2d49acc6dd59b0c45c72bf097276deee17260785ac9a38324122ef"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/diamond-day-1440.png",
+      "bytes": 1649913,
+      "sha256": "2edcf327cc713b2487be14248a4492fee4da75a1996837edd8507d66a9864f51"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/diamond-night-1440.png",
+      "bytes": 1617058,
+      "sha256": "0203d9662802da0ee5244e6815de22e2d26ece0998ee3c24764ef45994e95255"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/diamond-night-320.png",
+      "bytes": 312816,
+      "sha256": "d5ca2df164aeba328869ef648d91406695850887577e0a3e788f76d4905a08bd"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/diamond-night-390.png",
+      "bytes": 417265,
+      "sha256": "98b9648585e92d56cead0eb709c28c08ad9a84fb754e6fc615c7abee3923e000"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/diamond-night-768.png",
+      "bytes": 890814,
+      "sha256": "7e7cd3df0e74988586508e48a8fe121f6607454f172e7722610506e9cc4a0d20"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/greeting-night-1440.png",
+      "bytes": 1199340,
+      "sha256": "2f326f21f7ac7afb71bd938ef90720e301bc6b292395b5d3d7060c611ad69199"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/orbit-midflight-1440.png",
+      "bytes": 1531303,
+      "sha256": "0972b3becc97eaf751df253b197c6dcc070cfee194cfedf719e062f2f6950228"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/selected-home-320.png",
+      "bytes": 309438,
+      "sha256": "8b4d8a788b19eb65f24bb86d6e7f311bf2296e439f660e03b544753a80ffee0c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/selected-home-390.png",
+      "bytes": 408290,
+      "sha256": "9242840c2a63143a1eaad12cd39210e5c8b82391ee59b9598894be3c2ad608b7"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/selected-home-768.png",
+      "bytes": 854433,
+      "sha256": "c5ed88ce82e5331dedf9a1db15fa39af8f3eb4a0aeb20467a580399dc0ad7057"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/theme-ancient-1440.png",
+      "bytes": 83629,
+      "sha256": "c54467acd1d0a816376452ea25cef14aeecccf259f329af3c98f84e1fe1c4c99"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/theme-home-320.png",
+      "bytes": 31467,
+      "sha256": "096a7784dcd5266fab4a30469a1a120b882f33896615c474259f9fde6eb35635"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/theme-home-390.png",
+      "bytes": 132998,
+      "sha256": "2626c0dddd093320571edd61e0065020be224e480d212890e46c325fdde4344c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/theme-home-768.png",
+      "bytes": 50631,
+      "sha256": "41c90242a5a1bc187e208a4ed5262af1acb3695f19ab6620090d821018fdbb5c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/welcome-night-1440.png",
+      "bytes": 1135959,
+      "sha256": "f2d872c3a13e87d30f79af40f37dab435e65efe072cc6156bc1f36d47131302c"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/welcome-night-320.png",
+      "bytes": 220544,
+      "sha256": "e21aeb7ca0a63a6cbe88e0cf17579f9f4d39a66410d06e609c6974a4787feb34"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/welcome-night-390.png",
+      "bytes": 290183,
+      "sha256": "dbe058fe64a93dc8ab36dc9e35ca873fc4cd0837f2b564f52c6d5e9e00153f43"
+    },
+    {
+      "path": "docs/agent-work/evidence/P2-r3/local/regression/welcome-night-768.png",
+      "bytes": 593787,
+      "sha256": "3bd09146d9d51b60cd2f2d1fa4be2fcfbd4f6c11c0c1e0447858a28f649e2e03"
+    },
+    {
       "path": "docs/agent-work/phases/P1/cloud-api-check.json",
       "bytes": 310,
       "sha256": "8ad420105bfbc427708dd096453941776b433063cdf7f86b1d0ddd8d03cc02a2"
@@ -1085,8 +1235,8 @@
     },
     {
       "path": "docs/agent-work/phases/P2/handoff.md",
-      "bytes": 6048,
-      "sha256": "3ec4aa774aa0915c0a6e33646119ef67931fcb276777a6564494c0ff6a1bec5d"
+      "bytes": 6731,
+      "sha256": "5f21898426606a506f31819c55239bfc2321d26be5cc81f9e4132b335e02f8e3"
     },
     {
       "path": "docs/agent-work/reports/P1-01.md",
@@ -1157,6 +1307,16 @@
       "path": "docs/agent-work/reports/P2-07.md",
       "bytes": 4583,
       "sha256": "f03600384efeb2297d56c7d422dd6289594d5fdcb9c3f7356042b8ddbb28eaa9"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-08.md",
+      "bytes": 11745,
+      "sha256": "971ecf65280068a02845cd5428227d7629add3caec81d529c66675bcfd06bc4e"
+    },
+    {
+      "path": "docs/agent-work/reports/P2-09.md",
+      "bytes": 1632,
+      "sha256": "d257f3c71ade7d06cf6de9b7eed6b6e1834cc3ed578f2e8ac2e41a320e5d22cd"
     },
     {
       "path": "docs/design-proposal-v1.md",
@@ -1290,13 +1450,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 3729,
-      "sha256": "40402bff9b8d1f9ea360cf645330bba79500f0e8ffc04e7fceb677e70abc6407"
+      "bytes": 4104,
+      "sha256": "3bda64675d9c73966871fa8ea34db66b08c4e8a85b3b9e528ce739599964974b"
     },
     {
       "path": "scripts/build-agent-handoff.py",
       "bytes": 10114,
       "sha256": "d933cc107210731d5ccdc386ce480a83953ea9d392da10f8033e6551359f668b"
+    },
+    {
+      "path": "scripts/check-final-draft.mjs",
+      "bytes": 6623,
+      "sha256": "b612778f59b06134d7da5470fb335c19ffd52ebf4f86ccdef19f6d579abc967e"
     },
     {
       "path": "scripts/check-revised-world.mjs",
@@ -1370,8 +1535,8 @@
     },
     {
       "path": "src/features/avatar/Avatar.tsx",
-      "bytes": 7491,
-      "sha256": "b34d490cd3f4a6872c729e60f80bbf108caf0180762e886abc28e1a138a85fb6"
+      "bytes": 7730,
+      "sha256": "ae47209885ce994d56dbe46dd74ff89acd6d5af305e07f15014af9d6d6ad85f8"
     },
     {
       "path": "src/features/board/Board.module.css",
@@ -1385,13 +1550,13 @@
     },
     {
       "path": "src/features/content/About.tsx",
-      "bytes": 2818,
-      "sha256": "3a80533cf8a42b6e02ea2cd9e8d6f1913120ad79e8101b1059e276c37755dcd8"
+      "bytes": 3816,
+      "sha256": "2ee967b9b8fc06382489dbb8ad8cfcc5a2c26e874300ba1a7b2f4a9dda02c18b"
     },
     {
       "path": "src/features/content/Content.module.css",
-      "bytes": 6396,
-      "sha256": "9c9a605c844ac9b6df1ff45b7faf456c06a4d094f8924ffedc99f27c733d874d"
+      "bytes": 6554,
+      "sha256": "9b01e7b4c98c2bde1ba84f2806d4a18b5e90ea638b4a5d53f07af5fcfc6d3847"
     },
     {
       "path": "src/features/content/Story.tsx",
@@ -1425,13 +1590,13 @@
     },
     {
       "path": "src/features/gate/Gate.module.css",
-      "bytes": 5064,
-      "sha256": "4b034c8c8476a81f614bc076a0de1faa2353b6f271b474d3c75e124883c3860b"
+      "bytes": 5483,
+      "sha256": "31360519157b9f78c0398ef41995cd279c5aa39df30be053f521ae89f577b676"
     },
     {
       "path": "src/features/gate/Gate.tsx",
-      "bytes": 4074,
-      "sha256": "fb0e4907d9d11ce98754a8e2ce26be2bba04d6c06d23fa1f6c87c5feaa312e62"
+      "bytes": 3704,
+      "sha256": "5844f05e341df8ac59bfcb8aafaaf242b7a5c32c436cc53f3c575ab6500abaad"
     },
     {
       "path": "src/features/world/DynamicBackdrop.module.css",

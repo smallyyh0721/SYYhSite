@@ -133,7 +133,7 @@ class Boundary extends Component<
     return this.state.failed ? null : this.props.children;
   }
 }
-export default function Avatar({ pointer }: { pointer: RefObject<Pointer> }) {
+export default function Avatar({ pointer, pointerTracking = false }: { pointer: RefObject<Pointer>; pointerTracking?: boolean }) {
   const { theme } = useTheme();
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -170,7 +170,9 @@ export default function Avatar({ pointer }: { pointer: RefObject<Pointer> }) {
         height: "100%",
         pointerEvents: "none",
       }}
-      aria-label="3D代理人物：随鼠标转动头部，正式形象待设计"
+      aria-label={pointerTracking ? "3D代理人物：随鼠标转动头部，正式形象待设计" : "3D代理人物，正式形象待设计"}
+      data-avatar-mode={pointerTracking ? "pointer" : "idle"}
+      data-avatar-ready={ready && !failed}
       role="img"
     >
       {(!ready || failed) && (
@@ -223,7 +225,7 @@ export default function Avatar({ pointer }: { pointer: RefObject<Pointer> }) {
             <Model
               pointer={pointer}
               still={still}
-              follow={follow}
+              follow={pointerTracking && follow}
               onReady={callbacks.ready}
               onFail={callbacks.fail}
             />

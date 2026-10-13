@@ -39,16 +39,11 @@ export default function Gate() {
     return () => { ctx.revert(); reduced.removeEventListener("change", onChange); };
   }, [connecting]);
   return (
-    <section ref={root} className={styles.gate} data-phase={connecting ? "greeting" : "welcome"}
-      onPointerMove={(e) => {
-        if (e.pointerType === "touch") return;
-        const box = e.currentTarget.getBoundingClientRect();
-        pointer.current = { x: Math.max(-1, Math.min(1, ((e.clientX - box.left) / box.width - 0.5) * 2)), y: Math.max(-1, Math.min(1, ((e.clientY - box.top) / box.height - 0.5) * 2)) };
-      }} onPointerLeave={() => { pointer.current = { x: 0, y: 0 }; }}>
+    <section ref={root} className={styles.gate} data-phase={connecting ? "greeting" : "welcome"}>
       <div className={styles.environment} aria-hidden="true" />
       {connecting && <>
         <div className={styles.portal} aria-hidden="true" />
-        <div className={styles.figure}><Avatar pointer={pointer} /></div>
+        <div className={styles.figure}><Avatar pointer={pointer} pointerTracking={false} /></div>
       </>}
       {connecting ? (
         <div ref={greeting} className={styles.copy} role="status" aria-live="polite">

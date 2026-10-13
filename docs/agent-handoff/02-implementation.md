@@ -1,4 +1,5 @@
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 # 完整实施方案：架构、选型与接口
 

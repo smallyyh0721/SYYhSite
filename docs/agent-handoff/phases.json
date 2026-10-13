@@ -46,7 +46,7 @@
       "id": "P2",
       "number": 2,
       "title": "第一版网站修正和完善",
-      "status": "ready_for_review",
+      "status": "in_progress",
       "dependsOn": [
         "P1"
       ],
@@ -58,7 +58,9 @@
         "P2-04",
         "P2-05",
         "P2-06",
-        "P2-07"
+        "P2-07",
+        "P2-08",
+        "P2-09"
       ],
       "handoffPath": "docs/agent-work/phases/P2/handoff.md",
       "inputs": [
@@ -67,7 +69,7 @@
       ],
       "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
       "deploymentScope": "Approved local Linux Docker validation and public Ubuntu Docker draft update",
-      "executionOutcome": "Six requested revisions complete and deployed at 6f45e735fabf1a92a486db3759bb1f33732a790b; local Linux Docker and both local/public 15-check Edge acceptance passed. Physical phone testing remains unverified. P3-P5 not started."
+      "executionOutcome": "Final draft adjustment authorized: CONNECT pulse, About pointer-tracked 3D, greeting without pointer tracking. Background analysis only; future media not started. Local and cloud verification pending."
     },
     {
       "id": "P3",

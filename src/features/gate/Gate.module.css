@@ -17,8 +17,11 @@
 .title span { display: block; }
 .accent { color: var(--primary); }
 .subline { color: var(--muted); font-size: 14px; letter-spacing: 2px; margin: 0 0 30px; }
-.connect { display: inline-flex; align-items: center; justify-content: space-between; gap: 80px; min-height: 60px; padding: 12px 36px; background: var(--primary); color: var(--on-primary); border: 0; font: italic 900 22px Arial, sans-serif; transform: skew(-12deg); }
+.connect { display: inline-flex; align-items: center; justify-content: space-between; gap: 80px; min-height: 60px; padding: 12px 36px; background: var(--primary); color: var(--on-primary); border: 0; font: italic 900 22px Arial, sans-serif; transform: skew(-12deg); animation: connectPulse 2.4s ease-in-out infinite; }
 .connect:hover { filter: brightness(1.12); }
+.connect:hover, .connect:focus-visible { animation: none; opacity: 1; }
+@keyframes connectPulse { 0%, 100% { opacity: 1; box-shadow: 0 0 6px color-mix(in srgb, var(--primary) 12%, transparent); } 50% { opacity: .74; box-shadow: 0 0 30px color-mix(in srgb, var(--primary) 55%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .connect { animation: none; } }
 .direct { display: block; width: fit-content; margin-top: 24px; padding-block: 8px; font: 11px monospace; color: var(--muted); }
 .linkTrack { height: 2px; width: min(370px, 85%); background: var(--hairline); margin: 36px 0 20px; }
 .linkTrack span { display: block; height: 100%; background: var(--primary); transform-origin: left; }

@@ -67,6 +67,15 @@
     monospace;
   letter-spacing: 1px;
 }
+.avatarStage {
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 55svh, 560px);
+}
+.avatarStage img {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
 .heroCopy {
   display: flex;
   flex-direction: column;

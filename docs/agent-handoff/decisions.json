@@ -1,7 +1,7 @@
 {
   "version": "handoff-v2",
   "updatedAt": "2026-10-13",
-  "scope": "P2-six-user-requested-revisions",
+  "scope": "P2-final-draft-adjustments",
   "productionImplementationStarted": true,
   "requirements": [
     {
@@ -32,10 +32,11 @@
       "id": "visitor-avatar",
       "status": "user-required",
       "value": {
-        "location": "Only in CONNECT -> HELLO STRANGER greeting; not mounted on centered welcome screen",
+        "location": "About: real 3D pointer gaze. Welcome: no avatar. CONNECT -> HELLO STRANGER: idle proxy now, prerecorded reaching clip in next asset version.",
         "true3D": true,
-        "pointerFollow": "eyes/head/subtle-upper-body",
-        "identity": "pending-design"
+        "pointerFollow": "Only About, eyes/head/subtle-upper-body; disabled for greeting and coarse pointer/reduced motion",
+        "identity": "pending-design",
+        "greetingVideo": "planned-for-next-assets; no pointer following; reference design/review-v3/01-entrance-storyboard.png lower frame"
       }
     },
     {
@@ -112,6 +113,16 @@
         "apocalypse": "/works/themes/apocalypse/",
         "home": "/works/themes/home/",
         "otherChannels": "About/Story/Board only via header"
+      }
+    },
+    {
+      "id": "final-draft-adjustments-2026-10-13",
+      "status": "user-required",
+      "value": {
+        "connect": "Slow attention pulse, stable hover/focus, respects reduced motion",
+        "background": "Analyze visible effect and next-version assets only; preserve current runtime background",
+        "about": "Replace static poster with real 3D proxy and pointer gaze",
+        "helloStranger": "Disable pointer gaze now; one-shot reaching video follows asset completion"
       }
     }
   ],

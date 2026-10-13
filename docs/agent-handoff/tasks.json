@@ -620,6 +620,40 @@
       "acceptance": "Centered avatar-free welcome; delayed curved diamond orbit; two-step touch; moving/pausable backdrop; independent theme works; local Docker and cloud acceptance",
       "acceptanceReference": "docs/agent-work/reports/P2-07.md",
       "executionOutcome": "Released 6f45e735fabf1a92a486db3759bb1f33732a790b; local/public Docker, HTTP, desktop and emulated native-touch checks passed; phase ready for user review."
+    },
+    {
+      "id": "P2-08",
+      "title": "动态背景与招呼视频下一版素材分析",
+      "owner": "grok",
+      "dependsOn": [
+        "P2-07"
+      ],
+      "assignmentPath": "docs/agent-work/assignments/P2-08.md",
+      "reportPath": "docs/agent-work/reports/P2-08.md",
+      "acceptance": "Lead review of code-based background analysis, next-version layered assets and prerecorded reaching greeting brief; no background/media implementation this round",
+      "phaseId": "P2",
+      "status": "accepted",
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "acceptanceReference": "docs/agent-work/reports/P2-09.md"
+    },
+    {
+      "id": "P2-09",
+      "title": "第一版最后交互修正、验证与发布",
+      "owner": "chatgpt",
+      "dependsOn": [
+        "P2-08"
+      ],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-09.md",
+      "acceptance": "CONNECT pulse; About real 3D pointer gaze; greeting without gaze; unchanged background with next-version plan; local Linux Docker and cloud validation",
+      "phaseId": "P2",
+      "status": "in_progress",
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "acceptanceReference": "docs/agent-work/reports/P2-09.md"
     }
   ]
 }

@@ -1,0 +1,281 @@
+{
+  "origin": "http://127.0.0.1:8080",
+  "checkedAt": "2026-10-13T03:38:32.027Z",
+  "browser": "Installed Microsoft Edge / isolated headless contexts",
+  "touch": "browser-emulated native touch; not a physical device",
+  "checks": [
+    {
+      "name": "centered welcome; no avatar",
+      "detail": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "canvas": 0,
+        "navLinks": [
+          {
+            "text": "探索",
+            "visible": true
+          },
+          {
+            "text": "作品",
+            "visible": true
+          },
+          {
+            "text": "关于",
+            "visible": true
+          },
+          {
+            "text": "故事",
+            "visible": true
+          },
+          {
+            "text": "留言",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "avatar appears only after CONNECT",
+      "detail": true
+    },
+    {
+      "name": "four positions form a diamond",
+      "detail": [
+        {
+          "slot": "front",
+          "x": 720,
+          "y": 450
+        },
+        {
+          "slot": "left",
+          "x": 230.390625,
+          "y": 324
+        },
+        {
+          "slot": "back",
+          "x": 720,
+          "y": 198
+        },
+        {
+          "slot": "right",
+          "x": 1209.59375,
+          "y": 324
+        }
+      ]
+    },
+    {
+      "name": "initial Sky roundtrip retains the next orbital animation",
+      "detail": true
+    },
+    {
+      "name": "short hover cancels without switching",
+      "detail": true
+    },
+    {
+      "name": "delayed curved motion; stationary pointer stays stable",
+      "detail": true
+    },
+    {
+      "name": "island enters its own filtered work collection",
+      "detail": true
+    },
+    {
+      "name": "Back restores selected island",
+      "detail": true
+    },
+    {
+      "name": "background actually moves and pause freezes it",
+      "detail": true
+    },
+    {
+      "name": "Day remains after reload",
+      "detail": true
+    },
+    {
+      "name": "touch first-select / second-enter 320",
+      "detail": {
+        "welcomeLayout": {
+          "viewport": 320,
+          "scrollWidth": 320,
+          "canvas": 0,
+          "navLinks": [
+            {
+              "text": "探索",
+              "visible": true
+            },
+            {
+              "text": "作品",
+              "visible": true
+            },
+            {
+              "text": "关于",
+              "visible": true
+            },
+            {
+              "text": "故事",
+              "visible": true
+            },
+            {
+              "text": "留言",
+              "visible": true
+            }
+          ]
+        },
+        "initialLayout": {
+          "viewport": 320,
+          "scrollWidth": 320,
+          "canvas": 0,
+          "navLinks": [
+            {
+              "text": "探索",
+              "visible": true
+            },
+            {
+              "text": "作品",
+              "visible": true
+            },
+            {
+              "text": "关于",
+              "visible": true
+            },
+            {
+              "text": "故事",
+              "visible": true
+            },
+            {
+              "text": "留言",
+              "visible": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "touch first-select / second-enter 390",
+      "detail": {
+        "welcomeLayout": {
+          "viewport": 390,
+          "scrollWidth": 390,
+          "canvas": 0,
+          "navLinks": [
+            {
+              "text": "探索",
+              "visible": true
+            },
+            {
+              "text": "作品",
+              "visible": true
+            },
+            {
+              "text": "关于",
+              "visible": true
+            },
+            {
+              "text": "故事",
+              "visible": true
+            },
+            {
+              "text": "留言",
+              "visible": true
+            }
+          ]
+        },
+        "initialLayout": {
+          "viewport": 390,
+          "scrollWidth": 390,
+          "canvas": 0,
+          "navLinks": [
+            {
+              "text": "探索",
+              "visible": true
+            },
+            {
+              "text": "作品",
+              "visible": true
+            },
+            {
+              "text": "关于",
+              "visible": true
+            },
+            {
+              "text": "故事",
+              "visible": true
+            },
+            {
+              "text": "留言",
+              "visible": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "touch first-select / second-enter 768",
+      "detail": {
+        "welcomeLayout": {
+          "viewport": 768,
+          "scrollWidth": 768,
+          "canvas": 0,
+          "navLinks": [
+            {
+              "text": "探索",
+              "visible": true
+            },
+            {
+              "text": "作品",
+              "visible": true
+            },
+            {
+              "text": "关于",
+              "visible": true
+            },
+            {
+              "text": "故事",
+              "visible": true
+            },
+            {
+              "text": "留言",
+              "visible": true
+            }
+          ]
+        },
+        "initialLayout": {
+          "viewport": 768,
+          "scrollWidth": 768,
+          "canvas": 0,
+          "navLinks": [
+            {
+              "text": "探索",
+              "visible": true
+            },
+            {
+              "text": "作品",
+              "visible": true
+            },
+            {
+              "text": "关于",
+              "visible": true
+            },
+            {
+              "text": "故事",
+              "visible": true
+            },
+            {
+              "text": "留言",
+              "visible": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "reduced-motion and keyboard direct entry",
+      "detail": true
+    },
+    {
+      "name": "no browser page errors",
+      "detail": true
+    }
+  ],
+  "errors": []
+}

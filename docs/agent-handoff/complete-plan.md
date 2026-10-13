@@ -6,12 +6,13 @@
 
 ---
 
-阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 P2：ready_for_review。实际实施、验证及部署事实见 [当前阶段交接](../../docs/agent-work/phases/P2/handoff.md)；[P1交接](../agent-work/phases/P1/handoff.md)为历史基线。历史设计正文与当前执行事实分开记录。
+阶段1 draft → 阶段2 修正完善 → 阶段3 素材完善 → 阶段4 正式建设 → 阶段5 正式修补。当前 P2：in_progress。实际实施、验证及部署事实见 [当前阶段交接](../../docs/agent-work/phases/P2/handoff.md)；[P1交接](../agent-work/phases/P1/handoff.md)为历史基线。历史设计正文与当前执行事实分开记录。
 
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## SYYH Signal · 完整设计与实施交接包
 
@@ -90,7 +91,8 @@
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## 五阶段实施计划
 
@@ -219,7 +221,8 @@
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## 完整设计方案
 
@@ -307,7 +310,8 @@ SYYH Signal 是一个可以“调入”的个人频道：接通信号，认识�
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## 完整实施方案：架构、选型与接口
 
@@ -493,7 +497,8 @@ pnpm install 使用锁定依赖；静态导出路由与媒体校验通过后产�
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## 素材设计、生成与制作方案
 
@@ -635,7 +640,8 @@ ChatGPT最终给出各资产“已完成/已验证/待补/失败原因”及实�
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## ChatGPT × Grok CLI 协作方案
 
@@ -716,7 +722,8 @@ $taskPromptText = Get-Content -LiteralPath $taskPromptPath -Raw -Encoding utf8
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## 五阶段任务与验收清单
 
@@ -796,7 +803,8 @@ lead记录Git/素材/接口/配置版本、实际命令/结果、截图/预览�
 
 ---
 
-> 当前交付（2026-10-13）：用户要求的六项修正已完成并部署，P2为ready_for_review，本机与公网浏览器验收通过。欢迎屏居中且无人物，连接招呼才出现人物；菱形弧线延迟运动、移动端两次点按、动态背景、四个主题作品。当前事实与发布状态见[P2交接](../agent-work/phases/P2/handoff.md)和[P2-07报告](../agent-work/reports/P2-07.md)。旧v3即时悬停/一次触摸及四频道绑定已被替代。P3–P5未启动。
+> 最新执行（2026-10-13）：第一版最后调整正在验证/发布。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+
 
 ## 本机编程、Docker 验证与 Ubuntu 部署流程
 
