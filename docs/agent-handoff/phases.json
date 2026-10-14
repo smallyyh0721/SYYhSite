@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-14",
   "source": "user-specified-five-stage-plan",
   "currentPhase": "P2",
   "nextPlannedPhase": "P3",
@@ -60,7 +60,9 @@
         "P2-06",
         "P2-07",
         "P2-08",
-        "P2-09"
+        "P2-09",
+        "P2-10",
+        "P2-11"
       ],
       "handoffPath": "docs/agent-work/phases/P2/handoff.md",
       "inputs": [

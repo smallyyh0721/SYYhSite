@@ -1,0 +1,57 @@
+{
+  "reviewDate": "2026-10-13",
+  "currentDefaultModel": "grok-4.7",
+  "currentDefaultReasoningEffort": "high",
+  "effectiveHome": "D:/dev/grok",
+  "currentConfigSource": "D:/dev/grok/config.toml; model and effort only, credentials excluded",
+  "sessions": [
+    {
+      "taskId": "P1-03",
+      "sessionId": "01a12f18-8451-7cf2-b2b8-07a2f524cbfc",
+      "model": "grok-4.6",
+      "reasoningEffort": "high",
+      "eventModelIds": [
+        "grok-4.6"
+      ],
+      "createdAt": "2026-10-12T07:51:38.333304200Z",
+      "updatedAt": "2026-10-12T08:08:31.346922600Z",
+      "source": "GROK_HOME project session summary.json and events.jsonl"
+    },
+    {
+      "taskId": "P2-02",
+      "sessionId": "01a12fb4-c007-7311-9113-c567047f00b1",
+      "model": "grok-4.7",
+      "reasoningEffort": "high",
+      "eventModelIds": [
+        "grok-4.7"
+      ],
+      "createdAt": "2026-10-12T10:42:17.264520300Z",
+      "updatedAt": "2026-10-12T10:45:44.634797700Z",
+      "source": "GROK_HOME project session summary.json and events.jsonl"
+    },
+    {
+      "taskId": "P2-06",
+      "sessionId": "01a132ea-577e-7083-8b80-7c5deead6911",
+      "model": "grok-4.7",
+      "reasoningEffort": "high",
+      "eventModelIds": [
+        "grok-4.7"
+      ],
+      "createdAt": "2026-10-13T01:39:41.085468300Z",
+      "updatedAt": "2026-10-13T01:51:18.380093600Z",
+      "source": "GROK_HOME project session summary.json and events.jsonl"
+    },
+    {
+      "taskId": "P2-08",
+      "sessionId": "01a1334a-a484-7032-8048-97bbce386bae",
+      "model": "grok-4.7",
+      "reasoningEffort": "high",
+      "eventModelIds": [
+        "grok-4.7"
+      ],
+      "createdAt": "2026-10-13T03:24:52.258495300Z",
+      "updatedAt": "2026-10-13T03:31:13.174551100Z",
+      "source": "GROK_HOME project session summary.json and events.jsonl"
+    }
+  ]
+}

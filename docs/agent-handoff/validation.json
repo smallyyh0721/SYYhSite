@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-10-13T04:20:51.502706+00:00",
+  "checkedAt": "2026-10-14T01:04:15.187429+00:00",
   "scope": "handoff-documents-and-source-assets-only",
   "jsonParse": "passed",
   "taskDag": "passed",
-  "taskCount": 35,
+  "taskCount": 37,
   "phaseCount": 5,
   "phaseTaskConsistency": "passed",
   "queueStatuses": [
@@ -11,7 +11,7 @@
     "pending"
   ],
   "localReferenceCheck": "passed",
-  "referencesChecked": 222,
+  "referencesChecked": 242,
   "islandPngMetadataAndHashes": "passed",
   "brokenReferences": [],
   "websiteBuildRun": false,

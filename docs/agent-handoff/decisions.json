@@ -1,6 +1,6 @@
 {
   "version": "handoff-v2",
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-14",
   "scope": "P2-final-draft-adjustments",
   "productionImplementationStarted": true,
   "requirements": [
@@ -50,16 +50,20 @@
       "value": {
         "chatgpt": [
           "coordination",
+          "architecture-and-shared-contracts",
           "image-generation",
           "blender",
-          "core-code",
-          "integration",
-          "verification"
+          "independent-acceptance",
+          "structured-feedback",
+          "release",
+          "necessary-takeover"
         ],
         "grok": [
-          "research",
-          "asset-search",
-          "general-coding"
+          "research-and-asset-license",
+          "complete-feature-implementation",
+          "explicitly-assigned-core-implementation",
+          "self-checks-and-reproducible-evidence",
+          "feedback-driven-repair"
         ]
       }
     },
@@ -123,6 +127,32 @@
         "background": "Analyze visible effect and next-version assets only; preserve current runtime background",
         "about": "Replace static poster with real 3D proxy and pointer gaze",
         "helloStranger": "Disable pointer gaze now; one-shot reaching video follows asset completion"
+      }
+    },
+    {
+      "id": "implementation-delegation-2026-10-13",
+      "status": "user-required",
+      "value": {
+        "grok": "More complete feature implementations including expressly assigned existing core modules; self-checks and reproducible evidence",
+        "codex": "Requirements, architecture/interfaces, image/Blender production, independent acceptance, structured feedback and release",
+        "repairLoop": "Grok first repairs concrete findings, normally up to two rounds; Codex takeover records cause and final difference",
+        "phaseScope": "No automatic P3-P5 start"
+      }
+    },
+    {
+      "id": "grok-adaptive-module-delegation-2026-10-14",
+      "status": "user-required",
+      "value": {
+        "rulesPath": "docs/agent-work/grok-collaboration-rules.md",
+        "scorecardPath": "docs/agent-work/grok-scorecard.json",
+        "entryPoints": [
+          "AGENTS.md",
+          "agent.md"
+        ],
+        "unit": "Complete module or feature, not a function or paragraph",
+        "adaptation": "Increase/decrease module allocation according to evidence-based programming-score trends; missing dimensions are unmeasured, not zero",
+        "takeover": "Codex takes over when Grok cannot respond or continue, preserves existing work and avoids concurrent writes",
+        "globalSkill": "Evaluate after demonstrated accuracy, understanding, efficiency and smooth CLI/communication; current project trial only"
       }
     }
   ],

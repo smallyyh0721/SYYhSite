@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-14",
   "scope": "P2-six-user-revisions-and-cloud-draft",
   "queueOwner": "chatgpt",
   "statusVocabulary": [
@@ -365,7 +365,7 @@
       "id": "P4-01",
       "phaseId": "P4",
       "title": "正式核心与素材集成",
-      "owner": "chatgpt",
+      "owner": "grok",
       "status": "pending",
       "dependsOn": [
         "P3-07"
@@ -376,7 +376,9 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-01.md",
       "acceptance": "正式Avatar/Hub/主题/History、所选world3D或序列播放器/缓存、资源释放和降级。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务",
+      "reviewer": "chatgpt",
+      "delegationPolicy": "Grok implements assigned feature/control/media integration; Codex freezes shared interfaces, produces images/Blender assets, reviews and accepts. Shared schema/data/release changes stay lead-owned."
     },
     {
       "id": "P4-02",
@@ -530,7 +532,7 @@
       "id": "P5-03",
       "phaseId": "P5",
       "title": "核心与素材补丁",
-      "owner": "chatgpt",
+      "owner": "grok",
       "status": "pending",
       "dependsOn": [
         "P5-01"
@@ -541,7 +543,9 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P5-03.md",
       "acceptance": "修核心/API/性能/模型/图像，保持身份/契约与数据；按范围更新源和manifest。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务",
+      "reviewer": "chatgpt",
+      "delegationPolicy": "Grok implements assigned feature/control/media integration; Codex freezes shared interfaces, produces images/Blender assets, reviews and accepts. Shared schema/data/release changes stay lead-owned."
     },
     {
       "id": "P5-04",
@@ -654,6 +658,40 @@
       "optional": false,
       "conditionalDependsOn": [],
       "acceptanceReference": "docs/agent-work/reports/P2-09.md"
+    },
+    {
+      "id": "P2-10",
+      "phaseId": "P2",
+      "title": "协作复盘与Grok反馈确认",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [
+        "P2-09"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P2-10.md",
+      "reportPath": "docs/agent-work/reports/P2-10.md",
+      "acceptance": "Lead review of concrete F01-F06 response, broader delegation boundaries and future task verification; no website changes",
+      "acceptanceReference": "docs/agent-work/collaboration-review.md"
+    },
+    {
+      "id": "P2-11",
+      "phaseId": "P2",
+      "title": "Grok模块委派、评分与接管规则记录",
+      "owner": "chatgpt",
+      "status": "accepted",
+      "dependsOn": [
+        "P2-10"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": null,
+      "reportPath": "docs/agent-work/reports/P2-11.md",
+      "acceptance": "Project rules reachable via AGENTS/agent.md; evidence-based scores, adaptive module allocation, takeover and conditional global skill criteria; no website changes",
+      "acceptanceReference": "docs/agent-work/grok-collaboration-rules.md"
     }
   ]
 }

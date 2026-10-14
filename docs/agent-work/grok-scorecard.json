@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-14",
+  "scale": "Codex evidence-based reviewer ratings 0-5, not measured code-accuracy percent",
+  "weights": {
+    "correctness": 35,
+    "understanding": 30,
+    "efficiency": 15,
+    "cliWorkflow": 10,
+    "communication": 10
+  },
+  "delegation": {
+    "level": 2,
+    "name": "standard",
+    "modulesPerBatch": 2,
+    "concurrentCliDefault": 1,
+    "rollingWindow": 3,
+    "meaningfulDelta": 3,
+    "raiseMinimum": 85,
+    "reduceBelow": 75,
+    "availability": "No active task; recent feedback CLI exited successfully",
+    "lastDecision": "Keep initial standard level: only one provisional coding-module baseline; no valid rolling trend yet"
+  },
+  "globalSkill": {
+    "status": "project-trial",
+    "qualified": false,
+    "requiredProgrammingModules": 5,
+    "requiredFeatureKinds": 3
+  },
+  "records": [
+    {
+      "taskId": "P2-06",
+      "kind": "programming-module",
+      "module": "Theme work collections and Works entries",
+      "model": "grok-4.7",
+      "reasoningEffort": "high",
+      "reviewedAt": "2026-10-14",
+      "retrospective": true,
+      "ratings": {
+        "correctness": 5,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 92.94,
+      "trendEligible": true,
+      "scoreStatus": "provisional retrospective baseline; no efficiency measurement",
+      "firstSubmissionAccepted": null,
+      "repairRounds": null,
+      "evidence": [
+        "reports/P2-06.md",
+        "reports/P2-07.md",
+        "evidence/P2-r2/local/checks.json"
+      ],
+      "rationale": "Theme filtering/links integrated and independently verified; product wording received small lead edits. Title/button ambiguity and unavailable evidence directory were lead causes, excluded from penalties. Efficiency and exact first-pass boundaries were not measured."
+    },
+    {
+      "taskId": "P2-10",
+      "kind": "communication-review",
+      "module": "Collaboration feedback confirmation and one repair round",
+      "model": "grok-4.7",
+      "reasoningEffort": "high",
+      "reviewedAt": "2026-10-14",
+      "retrospective": true,
+      "ratings": {
+        "correctness": null,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 4
+      },
+      "coverageWeight": 50,
+      "score": 84.0,
+      "trendEligible": false,
+      "scoreStatus": "communication-only, not programming evidence",
+      "firstSubmissionAccepted": false,
+      "repairRounds": 1,
+      "evidence": [
+        "reports/P2-10.md",
+        "feedback/P2-10-round-1.md"
+      ],
+      "rationale": "Correctly read globals and distinguished HEAD/runtime SHA; one feedback round removed unnecessary stop conditions and clarified historical report corrections. No website code or efficiency measurement."
+    }
+  ],
+  "takeovers": []
+}

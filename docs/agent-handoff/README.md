@@ -24,7 +24,7 @@
 | [complete-plan.md](complete-plan.md) | 以上全部正文的单文件合订本，便于连续阅读与交接 |
 | [decisions.json](decisions.json) | 明确要求、建议方案及未定决定，便于 agent 读取 |
 | [asset-manifest.json](asset-manifest.json) | 已有资产与拟制作资产的状态、用途、责任人与路径 |
-| [tasks.json](tasks.json) | 35项执行队列，含P2-06…09增量；记录实际验收状态 |
+| [tasks.json](tasks.json) | 37项执行队列，含P2-06…11增量；记录实际验收状态 |
 | [phases.json](phases.json) | 五阶段状态与输入/交接；P1已交付，P2待浏览反馈，P3–P5待执行 |
 | [prompts/chatgpt-lead.md](prompts/chatgpt-lead.md) | ChatGPT 统筹 agent 启动提示词 |
 | [prompts/grok-research.md](prompts/grok-research.md) | Grok 首轮资料与素材研究提示词 |
@@ -75,3 +75,7 @@
 本轮检查：Blender 可执行文件为 4.5.13 LTS；Grok CLI 为 1.0.46；已读本机 Blender skill 及早期验证 README。当前 Blender MCP 状态检查未连通，**不代表建模能力不存在**，也不是重新安装要求。下次建模先检查实际工程与插件连接。本轮未运行网站构建、浏览器验收或新模型验收。
 
 部署补充：已读取引用服务器任务和 `D:/dev/yyh_server/server.md`，再次SSH只读确认云端Docker/Compose与空容器状态。本机WSL2 Ubuntu已存在，但Docker运行能力尚未验证；完整流程和边界见06。未安装或部署。
+
+2026-10-13协作复盘：[实际模型与任务反馈](../agent-work/collaboration-review.md)；[新协作规则](04-collaboration.md)；[任务/反馈模板](prompts/task-assignment-template.md)。后续更多完整实现交Grok，Codex验收与反馈。
+
+2026-10-14：[模块委派/评分/接管规则](../agent-work/grok-collaboration-rules.md) · [持续评分台账](../agent-work/grok-scorecard.md)。AGENTS.md/agent.md接入同一份操作规则；全局skill待项目证据达标后评估。

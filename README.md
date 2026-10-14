@@ -44,3 +44,7 @@ npm run draft   # then open http://localhost:3000/prototype/
 ```
 
 This paragraph describes the historical prototype. The current runnable draft is implemented in app/src; use the Docker and pnpm commands above and read the P1 handoff for deployment status.
+
+2026-10-13协作复盘：[实际分工/模型与反馈](docs/agent-work/collaboration-review.md) · [扩大委派后的工作规则](docs/agent-handoff/04-collaboration.md)。网站运行版本未改变。
+
+2026-10-14：[Grok协作规则](docs/agent-work/grok-collaboration-rules.md) · [评分与任务量台账](docs/agent-work/grok-scorecard.md)。自动agent入口为AGENTS.md，agent.md兼容入口同指这些规则。

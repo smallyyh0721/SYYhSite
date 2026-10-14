@@ -1,79 +1,65 @@
-> 最新交付（2026-10-13）：第一版最后调整已完成并部署，P2 ready_for_review，本机与公网验收通过。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
+# Codex × Grok CLI 协作方案
 
+2026-10-14操作规则：以[模块委派、评分与接管规则](../agent-work/grok-collaboration-rules.md)和[评分台账](../agent-work/grok-scorecard.md)为准；按表现调整模块任务量，Grok无法响应/继续时Codex接管。下文保留分工和实际模型复盘。
 
-# ChatGPT × Grok CLI 协作方案
+更新：2026-10-13。用户要求框架完成后更多实现交Grok，Codex验收并给可复用反馈。本章替代此前Grok只做普通展示、核心代码一律Codex实现的固定分工。
 
-Docker与服务器工作沿用相同分工：ChatGPT维护Dockerfile/Compose、生产镜像验证、版本与回滚、SSH部署和最终复核；Grok负责研究与已分配的一般模块。部署流程见 [06-development-deployment.md](06-development-deployment.md)。本轮未启动这两位agent执行实施。
+当前P2网站已部署，运行SHA `e18816aa8195d77c47b1c46c52e438d6050e373a`，ready_for_review。此次仅复盘协作，不改线上、不启动P3–P5。见[P2交接](../agent-work/phases/P2/handoff.md)与[复盘反馈](../agent-work/collaboration-review.md)。
 
-按 [五阶段计划](07-phased-plan.md) 分配工作：P1/P2先draft与修正，P3集中素材，P4正式集成和所授权部署，P5具体补丁。当前阶段未启动。用户只启动一个阶段时不自动执行后续阶段；授权连续阶段则按其范围推进。
+## 实际工作与模型
 
-## 两个主要 agent
+Codex完成架构/共享契约、路由/主题/History、入口/四岛/人物交互、图片/Blender代理、留言API/SQLite、Docker/Git/云端发布及独立生产/浏览器验收。
 
-| 工作 | ChatGPT / lead | Grok CLI |
+| Grok任务 | 实际成果 | 实际模型 | 推理 |
+|---|---|---|---|
+| P1-03 | Works、WorkDetail、About、Story及CSS | grok-4.6 | high |
+| P2-02 | draft状态文案 | grok-4.7 | high |
+| P2-06 | 四主题作品组件、入口及文案 | grok-4.7 | high |
+| P2-08 | 背景原因、素材与伸手视频方案 | grok-4.7 | high |
+
+来自实际会话summary/events。有效GROK_HOME是 `D:/dev/grok`，其config默认grok-4.7/high；不要误读用户目录~/.grok的配置。证据见[模型记录](../agent-work/evidence/collaboration-review-2026-10-13.json)。本机help支持--model、--reasoning-effort、--resume、--no-subagents。默认沿用用户有效配置，每次报告记录实际参数；需复现时显式传参，不擅自修改全局配置。当前没有模型能力不足的证据。
+
+## 扩大后的职责
+
+| 工作 | Grok主要负责 | Codex负责 |
 |---|---|---|
-| 统筹与设计 | 决策状态、任务拆分、接口冻结、视觉定稿 | 研究记录与建议，不自动覆盖已定需求 |
-| 图片 | 全部图片生成、修改与实际成图检查 | 搜索参考/可用辅助素材，不接图片生成 |
-| Blender | 连接检查、模型、绑定、渲染、GLB、网页检验 | 资料/许可/建模参考搜集，必要的非核心处理脚本 |
-| 核心代码 | 架构、路由/History、theme、旅行、人物控制、播放器缓存、API/DB | 按冻结契约开发普通展示组件与页面内容 |
-| 验证 | 集成、浏览器、性能、降级、数据持久化和最终验收 | 对自己任务做类型/样例/必要行为自检并记录 |
-| 交付 | 合并/接受任务、完整预览、构建与上线配置 | 文件清单、命令/输出、来源和遗留问题 |
+| 功能 | 页面/组件、响应式、可访问性、内容、素材接入、播放器、限定修复 | 需求/设计、架构/接口、独立验收 |
+| 已建核心 | 明确任务授权下的World/Avatar/状态逻辑、路由包装与自检 | 冻结约束、差异审查、跨模块集成 |
+| 测试/工具 | 可复跑脚本、manifest校验、截图与实际报告 | 覆盖范围、关键流程复核、证据判断 |
+| 研究/素材 | 来源/许可、技术方案与预算 | 图片生成、Blender模型/动作/渲染、视觉定稿 |
+| 共享基础/发布 | 依赖/schema/配置变更建议 | 共享契约/全局状态、锁文件、数据库迁移/数据操作、Git/Docker/云端发布 |
 
-ChatGPT对最终结果负责；Grok的“完成”表示等待lead复核，不能自动当成合格。可在两份任务互不依赖时并行开展，核心接口有变化则先记录并交接。
+新增编码默认先评估由Grok完整实现。World、Avatar、app路由不再按目录永久排除；assignment具体授权文件与行为。跨模块和共享基础由Codex统筹，小修不增加多余审批。
 
-## 文件归属与并发
+素材准备好后的候选：分层背景renderer及暂停/后台/reduce；GreetingVideo的poster/ended/skip/超时/失败；作品/故事展示；素材与行为校验。这里只规划，尚未启动。素材生产继续Codex负责。
 
-ChatGPT专属共享文件：根package.json、pnpm-lock.yaml、workspace配置、next/ts配置、tokens及generator、app路由、src/state、src/lib/contracts、核心world/avatar/sequence、API/DB/deploy。Grok不为一个页面自行修改这些文件或加依赖，需要时在交接中列出建议，由lead执行。
+## 交付闭环
 
-Grok任务限定文件集，例如 `src/features/works/**` 与其局部CSS；UI与About可独立成任务。禁止两个agent同时改同一个文件。任务开始前记录owner、allowlist、接口版本；完成后释放归属。
+1. Codex建立assignment：task-id、基线SHA、目标、allowlist、依赖/接口、正反例、检查脚本和证据目录。
+2. Grok核对dirty，简短复述目标/约束/拟改文件；区分用户目标、源码快照、已验收事实。明确任务自主实施；仅关键缺口向lead澄清，继续独立工作。
+3. Grok完成代码、自检与ready_for_review报告：基线/完成时SHA、session/model/effort、文件、可复跑命令、关键流程/主题/宽度矩阵、截图、失败/未验证。
+4. Codex审diff并做必要独立验收。typecheck不替代交互，dev不替代生产，transform变化不替代肉眼可见动态，断言总数不替代流程覆盖。
+5. 合格则更新队列/按授权交付；有问题给结构化反馈，Grok先自行修正并复测受影响行为。
 
-优先在同一仓库以不重叠文件合作，便于现有本机工具使用。需要完全隔离时由lead建立合适Git worktree并明确路径/基线；当前不是新增worktree要求。先检查已有dirty文件，保留用户修改；不执行reset/clean、覆盖原型或批量删除历史资产。提交/推送/发布根据当次用户指令，不凭任务模板推定授权。
+用[任务书与反馈模板](prompts/task-assignment-template.md)建立后续任务。既有API handler/展示接入也可在冻结接口下明确委派；schema迁移和线上数据操作继续Codex负责。
 
-## 任务状态
+一个文件同时仅一个owner。任务开放自己的组件/CSS、必要路由包装、报告和 `docs/agent-work/evidence/<task-id>/`；需要脚本则授权具体路径，避免临时证据不可复跑。共享CSS影响范围写清，新模块优先局部CSS。事实文案等核心依赖完成后核对，独立组件可先实现。
 
-`pending → assigned → in_progress → ready_for_review → accepted`；确实等待用户素材为 `waiting_input`，失败为 `needs_fix`。初始化队列见 [tasks.json](tasks.json)，本轮没有任务进入实施状态。
+## 反馈方式
 
-**lead单独维护公共tasks.json。** Grok在 `docs/agent-work/reports/<task-id>.md` 提交状态与报告，避免并发改队列。每次分配写 `docs/agent-work/assignments/<task-id>.md`，至少包含：目标、owner、依赖、输入、允许修改的绝对/项目相对路径、禁止改动的共享接口、验收条件、当前contract版本。
+每条反馈写ID/严重程度、需求原文、观察/位置、复现证据、期望、建议和修复验收。区分bug/遗漏、任务书歧义、未授权部分、并发快照和新需求，不把lead问题归为Grok能力。
 
-报告格式：实际完成内容；文件列表；实际运行命令和结果；输入事实/来源；视觉或运行证据路径；未完成/失败；接口或依赖变更建议。没有运行就写未运行，不能写“理论上通过”。lead接收后审差异、跑必要集成测试、更新tasks与资产状态。修复只重跑受影响验证。
+缺少证据目录仅影响该目录写入，不否定已运行检查、不阻塞独立实现；基线可从HEAD/dirty自行记录，真实接口或语义冲突才阻塞相关部分。通常最多两轮Grok修正；同类错误重复、共享基础必须调整或交付被阻塞时Codex接手，记录原因与最终差异。相关经验进入[反馈记录](../agent-work/collaboration-review.md)，新assignment只引用相关反馈ID。公共tasks/phases/decisions由Codex维护，Grok只写授权产物和报告。
 
-## 本机工具
+## 调用
 
-| 工具 | 已检查状态 / 用法 |
-|---|---|
-| Grok | `C:/Users/yonghao.yu/.grok/bin/grok.exe`，1.0.46；已读取 `--help` 与 `agent --help` |
-| Grok单任务 | 顶层 `--cwd`、`-p/--single`、`--output-format`、`--no-subagents` 在本机帮助中存在；非交互prompt用顶层 `-p`，不虚构 `grok agent --prompt` |
-| Blender | `C:/Program Files/Blender Foundation/Blender 4.5/blender.exe`，4.5.13 LTS；不在PATH仍可用绝对路径 |
-| Blender skill | `D:/social_impact/mymovie/.agents/skills/blender-codex/SKILL.md`，原地读取；技术验证目录为previs_test / previs_walk_3s / previs_walk_15s |
-| Blender MCP | 工具已暴露；本轮addon状态检查未连通。建模启动时检查运行中的Blender插件与当前工程 |
-
-本轮只确认CLI可执行和help，不代表Grok登录、搜索网络或编码任务已经实际验收。运行时若认证或网络失败，记录实际错误，保留其他可继续任务；不重新安装已可用工具来代替诊断。
-
-### 启动Grok研究任务
-
-用户发起后续实施/研究时，可使用以下PowerShell命令。提示词文件是UTF-8，多行作为一个参数传入，无需拼shell字符串：
-
-阶段内先由lead写明当前phase/task-id的研究assignment，再启动下述命令；用户明确要求独立研究时按其范围执行。研究模板不能自动接管五个阶段或提前做所有素材。
+当前已核验配置的示例：
 
 ```powershell
-$taskPromptPath = 'D:\dev\yyh_server\SYYhSite\docs\agent-handoff\prompts\grok-research.md'
-$taskPromptText = Get-Content -LiteralPath $taskPromptPath -Raw -Encoding utf8
-& 'C:\Users\yonghao.yu\.grok\bin\grok.exe' --cwd 'D:\dev\yyh_server\SYYhSite' --no-subagents -p $taskPromptText
+$taskPromptText = Get-Content -LiteralPath 'docs/agent-work/assignments/<task-id>.md' -Raw -Encoding utf8
+& 'C:/Users/yonghao.yu/.grok/bin/grok.exe' --cwd 'D:/dev/yyh_server/SYYhSite' --model grok-4.7 --reasoning-effort high --permission-mode auto --no-subagents -p $taskPromptText
 ```
 
-一般编码同理换 `grok-coding.md`，但必须先存在lead的任务assignment，不能让Grok自行接管全部代码。交互模式可直接启动 `grok --cwd ...` 并输入同一提示词。单次模式的输出是任务结果，不应假设它会持续守候新任务；后续通过新调用或已确认的resume方式接续。
+返修使用实际session ID加--resume，不猜最近会话，不带--restore-code覆盖已有代码。模型/effort从有效配置和实际会话核验，认证不进入报告。
 
-不固定Grok模型ID或reasoning选项，沿用用户配置；不读取或输出认证凭据。模型/CLI能力以当前help为准。两个主agent是本项目协作安排，本包未实际启动任何额外agent。
-
-## Grok按阶段研究内容
-
-1. P1-03/P2：访问四参考站，按1440/390截图与实际可操作内容记录入口、旅行、作品、阅读和滚动；失败如实记录，不拿HTTP200当动画验收。
-2. 对照现有 `docs/reference-notes.md` 补研究缺口，不再次无条件照搬旧“云端全被阻止”状态。
-3. P3-05：从作者/官方源搜字体、必要HDRI/纹理/短音效，输出可用候选与许可原文地址；未分配P3时不自动开展大批正式素材任务。
-4. 查本机所选前端/模型压缩工具兼容文档，给出依赖建议；不为研究任务安装全套生产依赖。
-5. P3-06及后续内容补丁：用户真实资料只做结构化整理；缺少就列缺口，不网上拼凑用户身份。
-
-## 变更与风险处理
-
-主题、四岛绑定、人物、world renderer等决定分别记录。已确认的选择不重复请求；未定资产只影响其正式制作，其他任务继续。用户新指令优先，lead同步docs/decisions与对应任务，不让Grok继续按旧接口返工。
-
-发现重大设计/数据/资源问题由Grok交给lead，lead修正方案或具体实现并提供可审查结果。核心行为不靠“先做完后再猜”：未聚焦点击、主题闪烁、History返回、骨骼叠加、留言审核隔离、资源生命周期均在早期验证。
+Blender前原地读 `D:/social_impact/mymovie/.agents/skills/blender-codex/SKILL.md` 并检查工程/连接。部署继续按[部署流程](06-development-deployment.md)与用户授权；委派扩大不自动启动下一阶段。
