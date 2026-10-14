@@ -26,6 +26,7 @@
 
 | 文件 | 用途 |
 |---|---|
+| [当前方案、素材缺口与下一版安全计划](../agent-work/current-baseline-next-version.md) | 2026-10-14实际代码/公网核对；下一版素材升级、安全加固、优先级与验收 |
 | [07-phased-plan.md](07-phased-plan.md) | 用户指定的五阶段：draft、修正、素材、正式建设、正式修补 |
 | [01-design.md](01-design.md) | 全站设计、页面、日夜主题、四岛、交互与待定项 |
 | [02-implementation.md](02-implementation.md) | 架构、技术选型、模块与接口、数据、性能及部署 |

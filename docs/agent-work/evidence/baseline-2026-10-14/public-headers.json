@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-10-14T01:09:27.004Z",
+  "scope": "Read-only public GET headers; no write endpoints, port scan or vulnerability exploitation",
+  "origin": "http://124.220.190.120",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html",
+        "cache-control": "no-cache",
+        "x-content-type-options": null,
+        "x-frame-options": null,
+        "referrer-policy": null,
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/health",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "application/octet-stream, text/plain",
+        "cache-control": null,
+        "x-content-type-options": null,
+        "x-frame-options": null,
+        "referrer-policy": null,
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/hub/",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html",
+        "cache-control": "no-cache",
+        "x-content-type-options": null,
+        "x-frame-options": null,
+        "referrer-policy": null,
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/this-page-does-not-exist/",
+      "status": 404,
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html",
+        "cache-control": null,
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/media/world-v3/environment-night.webp",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "image/webp",
+        "cache-control": "max-age=3600",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html",
+        "cache-control": "no-cache",
+        "x-content-type-options": null,
+        "x-frame-options": null,
+        "referrer-policy": null,
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": null,
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    },
+    {
+      "path": "/_next/static/chunks/79dcb429-8f9fa0011e20e23a.js",
+      "status": 200,
+      "headers": {
+        "server": "nginx",
+        "content-type": "application/javascript",
+        "cache-control": "max-age=31536000, public, immutable",
+        "x-content-type-options": null,
+        "x-frame-options": null,
+        "referrer-policy": null,
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "permissions-policy": null,
+        "strict-transport-security": null
+      }
+    }
+  ]
+}

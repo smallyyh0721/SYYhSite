@@ -1,0 +1,6 @@
+e18816aa8195d77c47b1c46c52e438d6050e373a
+syyh-draft-web-1 syyh-web:e18816aa8195d77c47b1c46c52e438d6050e373a Up 21 hours (healthy) 0.0.0.0:80->80/tcp
+syyh-draft-api-1 syyh-api:e18816aa8195d77c47b1c46c52e438d6050e373a Up 21 hours (healthy) 3001/tcp
+/syyh-draft-web-1 user= readOnly=false capDrop=null securityOpt=null
+/syyh-draft-api-1 user=node readOnly=false capDrop=null securityOpt=null
+nginx version: nginx/1.30.5

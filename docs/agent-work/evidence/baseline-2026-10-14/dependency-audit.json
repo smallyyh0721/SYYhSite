@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-14T01:09:29.635Z",
+  "scope": "pnpm production dependency audit, includes framework build dependencies; not a deployed image scan",
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 125,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 125
+  },
+  "advisories": []
+}

@@ -655,8 +655,8 @@
     },
     {
       "path": "docs/agent-handoff/complete-plan.md",
-      "bytes": 103157,
-      "sha256": "5dda060ac379bf77ec3327bc8169c4730f58cb9ec0cb393436a1ce2b64e110f9"
+      "bytes": 103362,
+      "sha256": "4a0265be0f88d8269ee1f7480a784cab8b3668d7e4803e9828124145d0542a4f"
     },
     {
       "path": "docs/agent-handoff/decisions.json",
@@ -700,8 +700,8 @@
     },
     {
       "path": "docs/agent-handoff/README.md",
-      "bytes": 7929,
-      "sha256": "4b3d9e579da99d15ad6e277223f4356a60e030014ca9435fc4cbe29d1d790517"
+      "bytes": 8134,
+      "sha256": "ed7d40a27cc2269d2d710b31c2e8798b5bf9ff7cb9364d436741850a9e29116f"
     },
     {
       "path": "docs/agent-handoff/tasks.json",
@@ -711,7 +711,7 @@
     {
       "path": "docs/agent-handoff/validation.json",
       "bytes": 765,
-      "sha256": "81a5726bee27257bac65d00ce44daee25a98d8c99087229cdf4437f10a411e6f"
+      "sha256": "f9b7d0cf289547e564e673b2a1eab77838038ebd3779bfefc0ba6001017e86fb"
     },
     {
       "path": "docs/agent-work/assignments/P1-03.md",
@@ -747,6 +747,31 @@
       "path": "docs/agent-work/collaboration-review.md",
       "bytes": 4736,
       "sha256": "bc49ec262bc98cb5e939b243d2d97e94880e4f8934d654402f77cccf6eeebdb6"
+    },
+    {
+      "path": "docs/agent-work/current-baseline-next-version.md",
+      "bytes": 17543,
+      "sha256": "b8ce52d6c65cc79183829f6ecc85d8e322df76128da6c9d5b27183e5dbfec53d"
+    },
+    {
+      "path": "docs/agent-work/evidence/baseline-2026-10-14/dependency-audit.json",
+      "bytes": 434,
+      "sha256": "c3b76ed0d43bf4cec4af6b62149dbaf19864215e3ab9eeb29c9075cbc0996c9c"
+    },
+    {
+      "path": "docs/agent-work/evidence/baseline-2026-10-14/inspect-public.mjs",
+      "bytes": 1721,
+      "sha256": "580828f8b6b72155aafb5f44b81a343405196ffa4028a2e173d69eaf7266b845"
+    },
+    {
+      "path": "docs/agent-work/evidence/baseline-2026-10-14/public-headers.json",
+      "bytes": 4198,
+      "sha256": "2cb99bcadf840e975b8610d32620b70e30541c264a165d2390f68b742a16b091"
+    },
+    {
+      "path": "docs/agent-work/evidence/baseline-2026-10-14/runtime-summary.txt",
+      "bytes": 423,
+      "sha256": "63f5ed3e45833ffba8049be22f7648d14f54bb14eb260e95b981193b0031c40a"
     },
     {
       "path": "docs/agent-work/evidence/collaboration-review-2026-10-13.json",
