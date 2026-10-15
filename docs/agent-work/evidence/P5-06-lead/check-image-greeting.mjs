@@ -34,6 +34,10 @@ try{
    const result=await page.evaluate(()=>({frames:window.__frames,entries:window.__hubEntries,reason:sessionStorage.getItem('syyh-greeting-reason')}));
    assert.deepEqual(result.frames,['cold','smile','reach']);assert.equal(result.entries,1);assert.equal(result.reason,'ended');
    checks.push({theme,width,height,result,ok:true});console.log('PASS original image sequence',theme,width,height);
+  }catch(error){
+   const state=await page.evaluate(()=>({url:location.href,reason:sessionStorage.getItem('syyh-greeting-reason'),stage:document.querySelector('[data-greeting]')?.outerHTML.slice(0,2000),frames:window.__frames,images:[...document.images].map(i=>({src:i.currentSrc,loaded:i.complete,width:i.naturalWidth})),resources:performance.getEntriesByType('resource').filter(e=>e.name.includes('greeting-image')).map(e=>({url:e.name,duration:e.duration,bytes:e.transferSize}))})).catch(()=>null);
+   await writeFile(out+'/failure.json',JSON.stringify({theme,width,height,error:String(error),state},null,2));
+   throw error;
   }finally{await context.close()}
  }
  assert.deepEqual(errors,[]);assert.deepEqual(forbidden,[]);

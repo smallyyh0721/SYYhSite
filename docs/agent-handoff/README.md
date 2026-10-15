@@ -1,11 +1,16 @@
-> 最新交付（2026-10-13）：第一版最后调整已完成并部署，P2 ready_for_review，本机与公网验收通过。CONNECT呼吸闪烁；About真3D人物鼠标跟随；HELLO STRANGER禁用跟随，后续换伸手视频。背景本轮仅分析，补素材后的下一版才改进。以[P2当前交接](../agent-work/phases/P2/handoff.md)、[P2-09报告](../agent-work/reports/P2-09.md)、[下一版素材方案](../agent-work/background-next-version.md)为准。此前六项菱形/触摸/主题作品保留，P3–P5未启动。
-
-
 # SYYH Signal · 完整设计与实施交接包
 
-版本：2026-10-13 / handoff-v2（五阶段整合版，含P2迭代验收）。适用项目：`D:/dev/yyh_server/SYYhSite`。
+最新发布：2026-10-15用户已明确授权将当前版本发布正式环境。[正式站](http://124.220.190.120/)运行`9f9764d7970999e6749ec0780e0b5b6794ef89f9`，欢迎为原画动态图片。Linux候选/公网各24网站+6欢迎+3安全检查通过，34公网素材hash匹配，现有留言卷/数据保留且已备份。见[发布报告](../agent-work/reports/P4-06.md)与[部署事实](deployment-facts.json)。下方本地审核／未发布说明为此前历史。
 
-本包汇总设计方案、第一版实施及验收，供后续 ChatGPT 与 Grok CLI 接续工作。**用户已授权P1/P2实施与云端draft，当前执行以P2交接为准。** 正式人物与真实内容等未定项继续记录为缺口，不阻塞已授权的第一版修正。
+2026-10-15最新修正：用户要求欢迎招呼放弃3D，使用已通过人物原画的动态图片。仅P5-06模块已获授权，当前实施/生产验收见[P5交接](../agent-work/phases/P5/handoff.md)。以下P4欢迎v037是历史工程记录，不代表用户接受其视觉效果；About本次保持现状，未发布公网。
+
+当前交付（2026-10-15）：第二版所选P3/P4工作已完成并可审核。COSv003、日夜四岛/独立云层、v034真实人物和v037欢迎动画、正式画廊/全站视觉已接入；31素材严格检查及Windows/Linux各31回归通过。以[P4当前交接](../agent-work/phases/P4/handoff.md)、[完成报告](../agent-work/reports/v2-integration-complete.md)、[可编辑审核反馈](../agent-work/v2-integration-review.md)为准。
+
+[本地生产审核站](http://localhost:8896/)；开发站8895与原素材预览8894保留。公开站仍是P2运行SHA e18816aa8195d77c47b1c46c52e438d6050e373a，未commit/push/public更新。P3/P4 ready_for_review，未自行启动P5。真实作品、个人/故事/联系方式及未选品牌/字体继续留白。
+
+用户概念预览全部通过，包括“COS通过，按v003制作并接入”；正式模型/动作源可编辑，当前机器状态见tasks/phases/asset-manifest。Grok完成P4-08…12完整代码模块，Codex完成图像/Blender、集成、独立验收；当前没有活跃CLI，下一批最多2完整模块、默认1个CLI。
+
+下方分册包含2026-10-12/13原五阶段方案及P1/P2历史基线，后续执行不能将旧“未启动/素材待制作”当当前状态。执行队列现为44项，仅新增明确请求的P5-06欢迎修正，不启动未授权发布或其他P5类别。
 
 ## 阅读顺序
 
@@ -14,6 +19,7 @@
 | 文件 | 用途 |
 |---|---|
 | [当前方案、素材缺口与下一版安全计划](../agent-work/current-baseline-next-version.md) | 2026-10-14实际代码/公网核对；下一版素材升级、安全加固、优先级与验收 |
+| [第二版素材清单、四岛review与作品布局](../agent-work/v2-asset-gap-checklist.md) | 本轮最新美术方向、完整占位缺口、岛名候选、RyuSe1观察与新版布局 |
 | [07-phased-plan.md](07-phased-plan.md) | 用户指定的五阶段：draft、修正、素材、正式建设、正式修补 |
 | [01-design.md](01-design.md) | 全站设计、页面、日夜主题、四岛、交互与待定项 |
 | [02-implementation.md](02-implementation.md) | 架构、技术选型、模块与接口、数据、性能及部署 |
@@ -25,8 +31,8 @@
 | [complete-plan.md](complete-plan.md) | 以上全部正文的单文件合订本，便于连续阅读与交接 |
 | [decisions.json](decisions.json) | 明确要求、建议方案及未定决定，便于 agent 读取 |
 | [asset-manifest.json](asset-manifest.json) | 已有资产与拟制作资产的状态、用途、责任人与路径 |
-| [tasks.json](tasks.json) | 37项执行队列，含P2-06…11增量；记录实际验收状态 |
-| [phases.json](phases.json) | 五阶段状态与输入/交接；P1已交付，P2待浏览反馈，P3–P5待执行 |
+| [tasks.json](tasks.json) | 44项执行队列，含P2/P3/P4增量及P5-06；以实际状态为准 |
+| [phases.json](phases.json) | 五阶段状态与输入/交接；当前仅P5-06修正完成待视觉审核，其他P5未启动 |
 | [prompts/chatgpt-lead.md](prompts/chatgpt-lead.md) | ChatGPT 统筹 agent 启动提示词 |
 | [prompts/grok-research.md](prompts/grok-research.md) | Grok 首轮资料与素材研究提示词 |
 | [prompts/grok-coding.md](prompts/grok-coding.md) | Grok 一般编码任务提示词 |

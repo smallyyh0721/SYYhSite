@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14",
-  "scope": "P2-six-user-revisions-and-cloud-draft",
+  "updatedAt": "2026-10-15",
+  "scope": "Selected second-version site and P5-06 original-art greeting published to existing production HTTP environment",
   "queueOwner": "chatgpt",
   "statusVocabulary": [
     "pending",
@@ -234,7 +234,7 @@
       "phaseId": "P3",
       "title": "角色设定与图片生成",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P2-05"
       ],
@@ -244,16 +244,19 @@
       "optional": false,
       "conditionalDependsOn": [],
       "assignmentPath": null,
-      "reportPath": "docs/agent-work/reports/P3-01.md",
+      "reportPath": "docs/agent-work/reports/P3-preview-v001.md",
       "acceptance": "正式角色brief/母版/多视图/材质与构图；实际成图检查，保存提示词/参考。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "previewStatus": "ready_for_user_review",
+      "previewPath": "design/v2-material-preview/v001/index.html",
+      "executionOutcome": "Approved adult concept plus GPT face/hair/beach source records completed."
     },
     {
       "id": "P3-02",
       "phaseId": "P3",
       "title": "正式角色Blender与GLB",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3-01",
         "P1-05"
@@ -264,14 +267,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P3-02.md",
       "acceptance": ".blend/脚本/材质/绑定/idle/GLB/rig-map/日夜海报，网页姿态与预算验证。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "Native v034 editable character/about sources, 163 bones, Blink/Smile, compressed real GLB and matched posters; actual browser and nine rig tests passed."
     },
     {
       "id": "P3-03",
       "phaseId": "P3",
       "title": "四岛正式运行素材",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P2-05"
       ],
@@ -281,16 +285,19 @@
       "optional": false,
       "conditionalDependsOn": [],
       "assignmentPath": null,
-      "reportPath": "docs/agent-work/reports/P3-03.md",
+      "reportPath": "docs/agent-work/reports/P3-preview-v001.md",
       "acceptance": "一致轮廓日夜透明/分层图；仅选定时增加完整3D模型/LOD/锚点等，记录验证。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "previewStatus": "ready_for_user_review",
+      "previewPath": "design/v2-material-preview/v001/index.html",
+      "executionOutcome": "All four approved concepts including COSv003 installed as8 day/night transparent assets;16-image runtime with layered environments verified."
     },
     {
       "id": "P3-04",
       "phaseId": "P3",
       "title": "Story与品牌图素材",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P2-05"
       ],
@@ -302,14 +309,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P3-04.md",
       "acceptance": "所选关键帧/品牌/分享图；选序列时短章试制后完整渲染，保留源与manifest。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "Selected scope keeps missing real Story/brand/font material honestly blank/draft; no invented artwork or facts."
     },
     {
       "id": "P3-05",
       "phaseId": "P3",
       "title": "辅助素材检索与本地化",
-      "owner": "grok",
-      "status": "pending",
+      "owner": "chatgpt",
+      "status": "ready_for_review",
       "dependsOn": [
         "P2-05"
       ],
@@ -319,14 +327,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P3-05.md",
       "acceptance": "字体/必要纹理环境/可选音效来源许可、已接纳资源本地化和一般媒体处理。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "Codex accepted CC0 core/hair references; all new creative raster assets GPT generated. Unchosen font/SFX assets not invented."
     },
     {
       "id": "P3-06",
       "phaseId": "P3",
       "title": "真实内容规范化",
       "owner": "grok",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P2-05"
       ],
@@ -338,14 +347,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P3-06.md",
       "acceptance": "用户works/profile/links/story转schema，媒体credit/alt齐全，事实缺失不伪造。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "Her/ZZZ/FFF/COS naming normalized; absent real works/profile/story/contact remain explicit placeholders."
     },
     {
       "id": "P3-07",
       "phaseId": "P3",
       "title": "资产验收与阶段交接",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3-02",
         "P3-03",
@@ -359,14 +369,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P3-07.md",
       "acceptance": "assets-v1、源/运行文件清单、技术/视觉/网页预览、许可与缺口；正式角色不以代理替代。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "31 final media assets passed strict validation; editable sources, provenance/CC0 licenses, manifests and90.7MB source archive delivered."
     },
     {
       "id": "P4-01",
       "phaseId": "P4",
       "title": "正式核心与素材集成",
       "owner": "grok",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3-07"
       ],
@@ -376,16 +387,17 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-01.md",
       "acceptance": "正式Avatar/Hub/主题/History、所选world3D或序列播放器/缓存、资源释放和降级。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务",
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
       "reviewer": "chatgpt",
-      "delegationPolicy": "Grok implements assigned feature/control/media integration; Codex freezes shared interfaces, produces images/Blender assets, reviews and accepts. Shared schema/data/release changes stay lead-owned."
+      "delegationPolicy": "Grok implements assigned feature/control/media integration; Codex freezes shared interfaces, produces images/Blender assets, reviews and accepts. Shared schema/data/release changes stay lead-owned.",
+      "executionOutcome": "Grok09/11 core consumers + Codex v034/v037 actual assets integrated; world, motion, themes, URLs and degradation verified."
     },
     {
       "id": "P4-02",
       "phaseId": "P4",
       "title": "正式页面与内容集成",
       "owner": "grok",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3-07"
       ],
@@ -395,14 +407,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-02.md",
       "acceptance": "按冻结接口替换开发内容/临时绑定，Works/About/联系/Story排版与媒体状态、无障碍自检。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "Grok08/10 gallery/fullsite layout and honest content states integrated; Windows/Linux browser acceptance passed."
     },
     {
       "id": "P4-03",
       "phaseId": "P4",
       "title": "生产留言与数据能力",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3-07"
       ],
@@ -412,14 +425,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-03.md",
       "acceptance": "限流/幂等/审核CLI、迁移/日志/安全渲染、持久化/在线备份/独立恢复及前端状态。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "Existing SQLite moderation/idempotency preserved; unit API tests and isolated Linux UI->Nginx->API->SQLite201 pending passed; no public/user DB writes."
     },
     {
       "id": "P4-04",
       "phaseId": "P4",
       "title": "生产Docker与发布输入",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3-07"
       ],
@@ -429,14 +443,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-04.md",
       "acceptance": "最终Dockerfile/Compose、平台/base/lock/参数、配置/权限/健康检查/日志、release与回滚输入。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "17-route Windows export and real linux/amd64 Nginx/API build/run verified with original lock/base digests; source archive hash matched. Public registry/domain not selected."
     },
     {
       "id": "P4-05",
       "phaseId": "P4",
       "title": "正式候选完整验收",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P4-01",
         "P4-02",
@@ -449,14 +464,15 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-05.md",
       "acceptance": "v1.0.0-rc完整浏览器/类型/构建/API/媒体/性能/失败/数据检查，本机Linux生产容器通过。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "31 media +31 Windows site +31 Linux site;4 real WebM fallback and1 isolated pending submission passed. Edge/headless and emulated touch, not Safari/real-device claims."
     },
     {
       "id": "P4-06",
       "phaseId": "P4",
       "title": "Ubuntu部署与云端复核",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "accepted",
       "dependsOn": [
         "P4-05"
       ],
@@ -468,14 +484,16 @@
       "assignmentPath": null,
       "reportPath": "docs/agent-work/reports/P4-06.md",
       "acceptance": "授权范围内mirror实际pull/Git/npm/构建资源实测、固定版本部署、健康/公网/数据/DNS/TLS与回滚复核。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/P4-06.md",
+      "executionOutcome": "Published fixed runtime SHA9f9764d7970999e6749ec0780e0b5b6794ef89f9 after explicit user release request; isolated Linux candidate and public read-only verification passed, data backup/volume preserved; no new DNS/TLS scope.",
+      "previousExecutionOutcome": "Not executed for this local review delivery. Public P2 draft SHA and database preserved; private Linux candidate validated. Requires subsequent public-release scope."
     },
     {
       "id": "P4-07",
       "phaseId": "P4",
       "title": "第一版正式交付",
       "owner": "chatgpt",
-      "status": "pending",
+      "status": "accepted",
       "dependsOn": [
         "P4-05"
       ],
@@ -488,9 +506,11 @@
         }
       ],
       "assignmentPath": null,
-      "reportPath": "docs/agent-work/reports/P4-07.md",
+      "reportPath": "docs/agent-work/reports/P4-06.md",
       "acceptance": "版本/截图/证据/发布与备份回滚说明；部署在范围内则还需P4-06，不在范围内明确未上线。",
-      "acceptanceReference": "docs/agent-handoff/05-taskboard.md#执行任务"
+      "acceptanceReference": "docs/agent-work/reports/P4-06.md",
+      "executionOutcome": "Published fixed runtime SHA9f9764d7970999e6749ec0780e0b5b6794ef89f9 after explicit user release request; isolated Linux candidate and public read-only verification passed, data backup/volume preserved; no new DNS/TLS scope.",
+      "previousExecutionOutcome": "Selected local second-version implementation complete and ready for visual review; handoff, editable feedback and source package delivered."
     },
     {
       "id": "P5-01",
@@ -692,6 +712,114 @@
       "reportPath": "docs/agent-work/reports/P2-11.md",
       "acceptance": "Project rules reachable via AGENTS/agent.md; evidence-based scores, adaptive module allocation, takeover and conditional global skill criteria; no website changes",
       "acceptanceReference": "docs/agent-work/grok-collaboration-rules.md"
+    },
+    {
+      "id": "P3-08",
+      "phaseId": "P3",
+      "title": "第二版素材review与作品布局预览",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [
+        "P2-09"
+      ],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P3-08.md",
+      "reportPath": "docs/agent-work/reports/P3-08.md",
+      "acceptance": "Independent static preview module; live 8 assets, renamed filters, dialog keyboard/touch, themes and 320/390/1440 validated",
+      "acceptanceReference": "docs/agent-work/reports/v2-integration-complete.md",
+      "executionOutcome": "All8 concepts/layout accepted by user including COSv003; formal media integration subsequently completed."
+    },
+    {
+      "id": "P4-08",
+      "phaseId": "P4",
+      "title": "正式网站画廊与大图浏览",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P4-08.md",
+      "reportPath": "docs/agent-work/reports/P4-08.md",
+      "acceptance": "Complete module, actual-state browser validation and Codex independent review",
+      "acceptanceReference": "docs/agent-work/v2-build-plan.md"
+    },
+    {
+      "id": "P4-09",
+      "phaseId": "P4",
+      "title": "四岛分层世界与一次性招呼播放器",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P4-09.md",
+      "reportPath": "docs/agent-work/reports/P4-09.md",
+      "acceptance": "Complete module, actual-state browser validation and Codex independent review",
+      "acceptanceReference": "docs/agent-work/v2-build-plan.md"
+    },
+    {
+      "id": "P4-10",
+      "phaseId": "P4",
+      "title": "全站圆润视觉与真实留白",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P4-10.md",
+      "reportPath": "docs/agent-work/reports/P4-10.md",
+      "acceptance": "Complete module, actual-state browser validation and Codex independent review",
+      "acceptanceReference": "docs/agent-work/v2-build-plan.md"
+    },
+    {
+      "id": "P4-11",
+      "phaseId": "P4",
+      "title": "正式人物实时展示与真实降级",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P4-11.md",
+      "reportPath": "docs/agent-work/reports/P4-11.md",
+      "acceptance": "Engineering consumer accepted; real v034 source/GLB and matched v037 media independently verified; final visual review available.",
+      "acceptanceReference": "docs/agent-work/evidence/P4-11/acceptance.md"
+    },
+    {
+      "id": "P4-12",
+      "phaseId": "P4",
+      "title": "真实媒体校验与生产回归工具",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P4-12.md",
+      "reportPath": "docs/agent-work/reports/P4-12.md",
+      "acceptanceReference": "docs/agent-work/evidence/P4-12/acceptance.md"
+    },
+    {
+      "id": "P5-06",
+      "phaseId": "P5",
+      "title": "欢迎招呼改用已通过人物原画动态展示",
+      "owner": "grok",
+      "status": "accepted",
+      "dependsOn": [],
+      "inputGates": [],
+      "optional": false,
+      "conditionalDependsOn": [],
+      "assignmentPath": "docs/agent-work/assignments/P5-06.md",
+      "reportPath": "docs/agent-work/reports/P5-06.md",
+      "acceptance": "Original approved artwork; single image sequence, skip/reduce/hidden/failure; local8896 independently verified. User visual review pending.",
+      "acceptanceReference": "docs/agent-work/evidence/P5-06-lead/acceptance.md",
+      "executionOutcome": "Published with v2 runtime SHA9f9764d7970999e6749ec0780e0b5b6794ef89f9; public6 greeting+3 safety checks passed"
     }
   ]
 }

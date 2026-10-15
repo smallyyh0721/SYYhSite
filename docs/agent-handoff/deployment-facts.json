@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-13",
-  "scope": "P2-final-first-draft-deployed",
+  "updatedAt": "2026-10-15",
+  "scope": "v2-public-release-with-P5-06-original-art-greeting",
   "productionImplementationStarted": true,
   "serverSource": {
     "threadId": "01a12b8e-c6d1-7122-b027-1ec885456505",
@@ -149,66 +149,70 @@
   "phasePlan": {
     "P1": "Local Linux production build/test + explicitly authorized public cloud draft deployment",
     "P2": "Final first-draft adjustment deployed; local/public checks passed; background analysis complete and future media deferred, awaiting user feedback",
-    "P3": "Formal media/model/content refinement pending phase start",
-    "P4": "Production Docker validation, Git/server build and cloud deployment within requested scope",
-    "P5": "Patch regression and authorized updates"
+    "P3": "Selected approved v2 assets integrated; editable historical source retained locally",
+    "P4": "Current selected v2 site published to existing production HTTP address; exact Linux candidate images promoted",
+    "P5": "Explicit P5-06 image-greeting correction published; other P5 categories not automatically executed"
   },
   "release": {
-    "sourceSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
-    "checkedAt": "2026-10-13T04:12:25.995816+00:00",
+    "sourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+    "previousReleaseSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+    "checkedAt": "2026-10-15T02:40:25.923Z",
     "repository": "https://github.com/smallyyh0721/SYYhSite",
     "branch": "codex/draft-v1",
     "url": "http://124.220.190.120/",
-    "sourceDelivery": "SHA256-verified incremental Git bundle of pushed commit; local/cloud separately build same fixed source/Dockerfile/lockfile",
+    "sourceDelivery": "GitHub-pushed fixed source, SHA256-verified incremental Git bundle, remote Linux/amd64 build; isolated candidate tested, exact same images promoted with --no-build",
     "bundleKind": "incremental Git bundle",
-    "bundlePrerequisiteSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
-    "bundleBytes": 27318641,
-    "bundleTransferSeconds": 3.5,
-    "bundleTransferScope": "SCP bundle and LF release script; wall time includes SSH setup",
-    "bundleSha256": "1dbb146225bbdf0601d09a5d75b58b9e30abc7fd079b359ac4f9c7f1b03c9d8c",
-    "cloudBuildSeconds": 31,
-    "buildCache": "Existing base/dependencies reused; changed app/src rebuilt",
-    "basePullIncludedInBuildTime": false,
-    "minimumObservedMemAvailableKiB": 2209232,
-    "imageSizes": {
-      "web": "105MB",
-      "api": "347MB"
+    "bundlePrerequisiteSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+    "bundleBytes": 25670302,
+    "bundleTransferSeconds": 4.0982881,
+    "bundleSha256": "bb9238a4593e376042d62917990fa38d66b38339166beb976e44101c1da61388",
+    "cloudPlatform": "linux/amd64",
+    "cloudImages": {
+      "web": "sha256:139bdf23a7535c30aed909822b183bd81c1cc37bbe41aecb2d21e7df862fd10a",
+      "api": "sha256:69a48434123ac54b06d610c6f3cb3679aa52e64e667208bd7e6116a52806c565"
     },
-    "stableObservedRuntimeMiB": {
-      "web": 3.488,
-      "api": 24.2
-    },
-    "runtimeMeasurementScope": "One post-release stats sample, not load testing",
-    "dataVolume": "syyh-draft-cloud-guestbook",
     "runtimeRevisionLabelsVerified": true,
     "containersHealthy": true,
     "checkoutClean": true,
-    "localPlatform": "linux/amd64",
-    "cloudPlatform": "linux/amd64",
-    "cloudImages": {
-      "web": "sha256:c6a1ad3a3c3106af747713287e834efaac9501858a2467bf0f1dbc5a634110b0",
-      "api": "sha256:1bca3962cb41ab6a6ac18f2919e19368157fead51596d18a9ce9448c99ef70af"
+    "dataVolume": "syyh-draft-cloud-guestbook",
+    "guestbookPreserved": {
+      "integrityBefore": "ok",
+      "integrityAfter": "ok",
+      "rowAndStatusDigestUnchanged": true,
+      "publicTestWrites": 0
     },
-    "localBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
-    "cloudBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
-    "browserScope": "Isolated headless Microsoft Edge; actual mouse inputs and emulated touch, reduced motion and GLB fetch failure. Not physical devices or forced WebGL context loss.",
-    "cloudHttpAssetsCheck": "15 content routes, 404, API health/messages GET, GLB and 6 WebP passed",
-    "backgroundScope": "Runtime/media unchanged; current transform/pause functionality verified, perceptible cloud motion explicitly deferred to next assets. Analysis in background-next-version.md.",
-    "greetingVideoScope": "Pointer gaze disabled now; reaching video is a future asset, not generated/integrated",
+    "backupPath": "/opt/website/syyh/backups/backup-v2-9f9764d7970999e6749ec0780e0b5b6794ef89f9-20261015T021345Z.sqlite",
+    "candidateChecks": {
+      "site": 24,
+      "greeting": 6,
+      "safety": 3
+    },
+    "publicChecks": {
+      "site": 24,
+      "greeting": 6,
+      "safety": 3,
+      "httpRoutes": 16,
+      "gitMatchedMediaFiles": 34
+    },
+    "greetingRenderer": "animated-images; approved original artwork, no GLB/video in welcome",
+    "aboutRenderer": "existing v034 live3D, unchanged in P5-06",
+    "rollbackAvailable": {
+      "sourceSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+      "imagesAndEnvRetained": true,
+      "sameDataVolume": true
+    },
+    "rollbackExecuted": false,
+    "browserScope": "Windows headless Edge via private Linux tunnel and public HTTP; desktop + emulated mobile. Not physical devices/Safari/Firefox.",
+    "localDockerLimitation": "Desktop engine unavailable; actual Linux build and candidate validation ran remotely",
+    "initialVerificationIssue": "Concurrent public audit: one15s HTTP timeout and one image-start wait timeout after5/6 cases. Preserved initial failed greeting report; isolated one-time rerun and complete HTTP/media audit passed.",
     "evidencePaths": [
-      "docs/agent-work/evidence/P2-r3/cloud/final-checks.json",
-      "docs/agent-work/evidence/P2-r3/cloud/regression/checks.json",
-      "docs/agent-work/evidence/P2-r3/cloud/http.json",
-      "docs/agent-work/evidence/P2-r3/cloud/runtime.json",
-      "docs/agent-work/evidence/P2-r3/local/final-checks.json",
-      "docs/agent-work/evidence/P2-r3/local/regression/checks.json",
-      "docs/agent-work/evidence/P2-r3/local/runtime.json",
-      "docs/agent-work/evidence/P2-r3/transfer.json",
-      "docs/agent-work/reports/P2-09.md",
-      "docs/agent-work/background-next-version.md"
-    ],
-    "previousReleaseSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
-    "rollbackExecuted": false
+      "docs/agent-work/evidence/v2-release-20261015/public/site/checks.json",
+      "docs/agent-work/evidence/v2-release-20261015/public/greeting-r1/checks.json",
+      "docs/agent-work/evidence/v2-release-20261015/public/safety/checks.json",
+      "docs/agent-work/evidence/v2-release-20261015/public/http.json",
+      "docs/agent-work/evidence/v2-release-20261015/public/greeting/checks.json",
+      "docs/agent-work/reports/P4-06.md"
+    ]
   },
   "releaseHistory": [
     {
@@ -326,6 +330,88 @@
         "web": "sha256:a6e074fafa7c225d216240318ad040be000d82a48e47d1166df1560b309a2ebd",
         "api": "sha256:c5a338d122ac7c9474a7660c6733efcf3ad43ccd75d770f0cf4bfb099f2535ad"
       }
+    },
+    {
+      "sourceSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+      "checkedAt": "2026-10-13T04:12:25.995816+00:00",
+      "repository": "https://github.com/smallyyh0721/SYYhSite",
+      "branch": "codex/draft-v1",
+      "url": "http://124.220.190.120/",
+      "sourceDelivery": "SHA256-verified incremental Git bundle of pushed commit; local/cloud separately build same fixed source/Dockerfile/lockfile",
+      "bundleKind": "incremental Git bundle",
+      "bundlePrerequisiteSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "bundleBytes": 27318641,
+      "bundleTransferSeconds": 3.5,
+      "bundleTransferScope": "SCP bundle and LF release script; wall time includes SSH setup",
+      "bundleSha256": "1dbb146225bbdf0601d09a5d75b58b9e30abc7fd079b359ac4f9c7f1b03c9d8c",
+      "cloudBuildSeconds": 31,
+      "buildCache": "Existing base/dependencies reused; changed app/src rebuilt",
+      "basePullIncludedInBuildTime": false,
+      "minimumObservedMemAvailableKiB": 2209232,
+      "imageSizes": {
+        "web": "105MB",
+        "api": "347MB"
+      },
+      "stableObservedRuntimeMiB": {
+        "web": 3.488,
+        "api": 24.2
+      },
+      "runtimeMeasurementScope": "One post-release stats sample, not load testing",
+      "dataVolume": "syyh-draft-cloud-guestbook",
+      "runtimeRevisionLabelsVerified": true,
+      "containersHealthy": true,
+      "checkoutClean": true,
+      "localPlatform": "linux/amd64",
+      "cloudPlatform": "linux/amd64",
+      "cloudImages": {
+        "web": "sha256:c6a1ad3a3c3106af747713287e834efaac9501858a2467bf0f1dbc5a634110b0",
+        "api": "sha256:1bca3962cb41ab6a6ac18f2919e19368157fead51596d18a9ce9448c99ef70af"
+      },
+      "localBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
+      "cloudBrowserVisualCheck": "passed-10-final-adjustment-checks-plus-15-world-regression-checks",
+      "browserScope": "Isolated headless Microsoft Edge; actual mouse inputs and emulated touch, reduced motion and GLB fetch failure. Not physical devices or forced WebGL context loss.",
+      "cloudHttpAssetsCheck": "15 content routes, 404, API health/messages GET, GLB and 6 WebP passed",
+      "backgroundScope": "Runtime/media unchanged; current transform/pause functionality verified, perceptible cloud motion explicitly deferred to next assets. Analysis in background-next-version.md.",
+      "greetingVideoScope": "Pointer gaze disabled now; reaching video is a future asset, not generated/integrated",
+      "evidencePaths": [
+        "docs/agent-work/evidence/P2-r3/cloud/final-checks.json",
+        "docs/agent-work/evidence/P2-r3/cloud/regression/checks.json",
+        "docs/agent-work/evidence/P2-r3/cloud/http.json",
+        "docs/agent-work/evidence/P2-r3/cloud/runtime.json",
+        "docs/agent-work/evidence/P2-r3/local/final-checks.json",
+        "docs/agent-work/evidence/P2-r3/local/regression/checks.json",
+        "docs/agent-work/evidence/P2-r3/local/runtime.json",
+        "docs/agent-work/evidence/P2-r3/transfer.json",
+        "docs/agent-work/reports/P2-09.md",
+        "docs/agent-work/background-next-version.md"
+      ],
+      "previousReleaseSha": "6f45e735fabf1a92a486db3759bb1f33732a790b",
+      "rollbackExecuted": false
     }
-  ]
+  ],
+  "v2Validation": {
+    "publicUpdateExecuted": true,
+    "gitHead": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+    "gitState": "Runtime source committed and pushed; original editable source/user material documents preserved in working tree",
+    "localWindows": "http://localhost:8896/",
+    "linuxViaPrivateTunnel": "http://localhost:8897/",
+    "remoteBinding": "127.0.0.1:18896",
+    "sourceArchiveSha256": "63f5059df47c59a5729c0e16a923dc3819920e64575ba08cd85c1c2d8ed72279",
+    "webImage": "syyh-web:v2-review-20261015",
+    "webImageIdObserved": "sha256:91e74803285b1f93af599eddf61e9521ccf07739cfdf92266b436bd2afc46c31",
+    "imageRevisionLabel": "worktree-v2-review-20261015",
+    "isolatedVolume": "syyh-v2-verify-data-20261015",
+    "privatePendingTestEntries": 1,
+    "originalCloudVolumeTouched": false,
+    "localDockerLimitation": "Desktop engine unavailable; Linux validation performed remotely in isolated candidate",
+    "evidence": [
+      "docs/agent-work/evidence/P4-12/lead-final-linux-v037/checks.json",
+      "docs/agent-work/evidence/P4-12/lead-webm-v037/checks.json",
+      "docs/agent-work/evidence/P4-12/lead-private-board/checks.json",
+      "docs/agent-work/logs/v2-final-linux-runtime.txt"
+    ],
+    "previousPublicSha": "e18816aa8195d77c47b1c46c52e438d6050e373a",
+    "currentPublicSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+    "latestProductionEvidence": "docs/agent-work/evidence/v2-release-20261015/public"
+  }
 }

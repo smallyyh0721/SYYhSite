@@ -1,0 +1,285 @@
+{
+  "origin": "http://124.220.190.120",
+  "release": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+  "at": "2026-10-15T02:28:50.812Z",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/hub/",
+      "status": 200
+    },
+    {
+      "path": "/works/",
+      "status": 200
+    },
+    {
+      "path": "/about/",
+      "status": 200
+    },
+    {
+      "path": "/story/",
+      "status": 200
+    },
+    {
+      "path": "/board/",
+      "status": 200
+    },
+    {
+      "path": "/draft/",
+      "status": 200
+    },
+    {
+      "path": "/works/sky-city/",
+      "status": 200
+    },
+    {
+      "path": "/works/ancient-landform/",
+      "status": 200
+    },
+    {
+      "path": "/works/apocalypse/",
+      "status": 200
+    },
+    {
+      "path": "/works/anime-home/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/sky/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/ancient/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/apocalypse/",
+      "status": 200
+    },
+    {
+      "path": "/works/themes/home/",
+      "status": 200
+    },
+    {
+      "path": "/no-such-v2-release/",
+      "status": 404
+    }
+  ],
+  "api": {
+    "health": "ok",
+    "messagesStatus": 200,
+    "methods": [
+      "GET"
+    ]
+  },
+  "assets": [
+    {
+      "path": "/media/v2/avatar/about-day.webp",
+      "status": 200,
+      "bytes": 71112,
+      "sha256": "c0165f9301f6b229d3cec931aba273a7c6de79dc5dea345c6430225dd70b91f3"
+    },
+    {
+      "path": "/media/v2/avatar/about-night.webp",
+      "status": 200,
+      "bytes": 70300,
+      "sha256": "1ce99e55927184bb538630503088858a5296865305549f5331b798e07b8ab3c8"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-day-portrait.mp4",
+      "status": 200,
+      "bytes": 186258,
+      "sha256": "6a8efb650062037e6b92123c08b9292826d33807d42287f683629395a4b199fa"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-day-portrait.webm",
+      "status": 200,
+      "bytes": 188621,
+      "sha256": "3ca37f531ab2ee978619f334e61e54c052f307821a29c01261e4c98768e34cf5"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-day-portrait.webp",
+      "status": 200,
+      "bytes": 46650,
+      "sha256": "aa0f72e323472130953d9ee79edd2af1e36e8c5c68db8450480b755ee9cb4efb"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-day.mp4",
+      "status": 200,
+      "bytes": 216821,
+      "sha256": "d45e55d53a4812bed3b46f7d10133d5ca6fb5ffa39a71f84a9b8428f5ae6fb9c"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-day.webm",
+      "status": 200,
+      "bytes": 208472,
+      "sha256": "14ac2e02100365e5a9c99356b9dc8a4616c3df620d0add002030d49b956919e7"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-day.webp",
+      "status": 200,
+      "bytes": 94308,
+      "sha256": "fcc0957f4101195a74ae3f51028bbb5426953a2f950bd41b58636b3d4bba8155"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-night-portrait.mp4",
+      "status": 200,
+      "bytes": 173164,
+      "sha256": "d9b496cf7bea61fdd94ba04347108160ddcb8f8d6059ee5d8d34c577c0e94647"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-night-portrait.webm",
+      "status": 200,
+      "bytes": 153535,
+      "sha256": "3f4d2f75bddbc509728c74825a87df4a7ce109d6a3c9054854e2074bd3ae27b4"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-night-portrait.webp",
+      "status": 200,
+      "bytes": 44672,
+      "sha256": "98e8acdf23829bf33c52ee817e52f4acf605f21dbe2699539b34b47b8616b59a"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-night.mp4",
+      "status": 200,
+      "bytes": 224091,
+      "sha256": "ffb9c05ec2913be358dfa3872a89f9baa7aa53632b8d022020cba93b88ab0706"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-night.webm",
+      "status": 200,
+      "bytes": 227145,
+      "sha256": "d2f31869a53a24b19363b79cddff0da93bad90ba53d766a868a09ca77236275b"
+    },
+    {
+      "path": "/media/v2/avatar/greeting-night.webp",
+      "status": 200,
+      "bytes": 115334,
+      "sha256": "f2504acf635be2021bb81236df691962d2dd208037c1e6df62bb6a913d99f12b"
+    },
+    {
+      "path": "/media/v2/avatar/visitor.glb",
+      "status": 200,
+      "bytes": 4236232,
+      "sha256": "936b08fae61562d895cf0523b37d8213b5e10ed2851adcbb96a37f684d847adf"
+    },
+    {
+      "path": "/media/v2/environment/cloud-far-day.webp",
+      "status": 200,
+      "bytes": 71438,
+      "sha256": "2e245de05c699395cb813dd55f8d0e9f9b76f04dcbb6b7b0ee8aaa18352df67a"
+    },
+    {
+      "path": "/media/v2/environment/cloud-far-night.webp",
+      "status": 200,
+      "bytes": 58208,
+      "sha256": "e2d7c611ed21fb2bc57c8d28418a1b686e3a6d05d5ccef6c0dabb2bc16972115"
+    },
+    {
+      "path": "/media/v2/environment/cloud-near-day.webp",
+      "status": 200,
+      "bytes": 114414,
+      "sha256": "8fa937ed52bd5cadcce72ad80609fe49a5bf4e764494ca9eb5e56cc5e28a9e43"
+    },
+    {
+      "path": "/media/v2/environment/cloud-near-night.webp",
+      "status": 200,
+      "bytes": 97886,
+      "sha256": "a734da07561ee3b1d343f9c693ebbcdfbe30e27eab0ed2563384b107b8c9fd80"
+    },
+    {
+      "path": "/media/v2/environment/day-portrait.webp",
+      "status": 200,
+      "bytes": 133564,
+      "sha256": "70bcb1d0add7333a77ae5abbd2a23f192edae8ad849b1af7fb5dbb98c8dfa217"
+    },
+    {
+      "path": "/media/v2/environment/day.webp",
+      "status": 200,
+      "bytes": 137552,
+      "sha256": "03ccfa959edf0a8691c29157e94e99dfb6bd75e43b54c824bcfa903bc03ab91d"
+    },
+    {
+      "path": "/media/v2/environment/night-portrait.webp",
+      "status": 200,
+      "bytes": 142930,
+      "sha256": "440c3e623fa6313812040a2788910699bdad814a9c1c6a8fffc8d5bb6d6cbf14"
+    },
+    {
+      "path": "/media/v2/environment/night.webp",
+      "status": 200,
+      "bytes": 127566,
+      "sha256": "cfb1d0a7a3f34dc253343dbefc5885b6d5d00b5a46a598a772ad4b2ccf752fa5"
+    },
+    {
+      "path": "/media/v2/greeting-image/character-v001.webp",
+      "status": 200,
+      "bytes": 379854,
+      "sha256": "79a80303019e1659752cd68dca96923d42f04ae1fd0fa5497b729ead896b5336"
+    },
+    {
+      "path": "/media/v2/greeting-image/storyboard-v001.webp",
+      "status": 200,
+      "bytes": 396782,
+      "sha256": "232046b817338c3e2bbba56184b3bc18611b0a045ea13d6cce3b63d7e9b57837"
+    },
+    {
+      "path": "/media/v2/islands/ancient-day.webp",
+      "status": 200,
+      "bytes": 545804,
+      "sha256": "f8472fc125d3283a10569867604b6125f99d495f8254580720ae17b86a9488e0"
+    },
+    {
+      "path": "/media/v2/islands/ancient-night.webp",
+      "status": 200,
+      "bytes": 422992,
+      "sha256": "928bab8bff96110e757b6c273f7fffdc5485974e0ea3a87d2335c12857f04edd"
+    },
+    {
+      "path": "/media/v2/islands/apocalypse-day.webp",
+      "status": 200,
+      "bytes": 580936,
+      "sha256": "b5b418c1a1b3d0540d4f86e17e1ac7f63eb50da69b490492823a5bc2ed3ded7b"
+    },
+    {
+      "path": "/media/v2/islands/apocalypse-night.webp",
+      "status": 200,
+      "bytes": 416780,
+      "sha256": "72c7208546f2a4d5602b8256359047808c9a17bf3ad5f7cc04911fa2de63ea6c"
+    },
+    {
+      "path": "/media/v2/islands/home-day.webp",
+      "status": 200,
+      "bytes": 488356,
+      "sha256": "ace5236465470a2010c3593828327b7ec47f6333685cc30897e751926bacf945"
+    },
+    {
+      "path": "/media/v2/islands/home-night.webp",
+      "status": 200,
+      "bytes": 362576,
+      "sha256": "40977206fa26eb0f8acf3269e07b7622c0c9a4f1e55f7de310e55736e3e4dd92"
+    },
+    {
+      "path": "/media/v2/islands/sky-day.webp",
+      "status": 200,
+      "bytes": 560028,
+      "sha256": "ab9c2f1664d74db7b93f198d2f445ce1cf37a1b2215e5ffa513e398c85baef94"
+    },
+    {
+      "path": "/media/v2/islands/sky-night.webp",
+      "status": 200,
+      "bytes": 390900,
+      "sha256": "8f311963c47be8646dec7d4b3c4535bb7ae835917846d3a738bf8b9c6ead9f6a"
+    },
+    {
+      "path": "/media/v2/manifest.json",
+      "status": 200,
+      "bytes": 11033,
+      "sha256": "864ff42ccfe9f62c200f3985cf32403d2982b636669f6d36f7dee1eb382ac175"
+    }
+  ],
+  "ok": true
+}

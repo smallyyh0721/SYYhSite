@@ -1,0 +1,666 @@
+{
+  "tool": "check-v2-site",
+  "generatedAt": "2026-10-15T02:13:33.412Z",
+  "origin": "http://localhost:8898",
+  "allowPending": false,
+  "greetingScope": "Historical video scenarios excluded; current image sequence and failures verified separately by P5-06-lead scripts.",
+  "summary": {
+    "pass": 24,
+    "fail": 0,
+    "pending": 0,
+    "noted": 0
+  },
+  "selfTest": {
+    "kind": "fixture",
+    "status": "pass",
+    "checks": [
+      {
+        "name": "unreachable api stays pending",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "expect": "pending",
+          "got": "pending",
+          "scene": "api-unreadable"
+        }
+      },
+      {
+        "name": "generic 500 stays pending",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "expect": "pending",
+          "got": "pending",
+          "scene": "api-unreadable"
+        }
+      },
+      {
+        "name": "json 500 is a service failure",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "expect": "fail",
+          "got": "fail",
+          "scene": "api-error"
+        }
+      },
+      {
+        "name": "contract match passes",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "expect": "pass",
+          "got": "pass",
+          "scene": "api-read"
+        }
+      },
+      {
+        "name": "wrong 200 is a service failure",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "expect": "fail",
+          "got": "fail",
+          "scene": "api-error"
+        }
+      },
+      {
+        "name": "late client-ready is not treated as already interactive",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "clientDone": false
+        }
+      },
+      {
+        "name": "setTheme waits when night is already set",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "themeDone": false
+        }
+      },
+      {
+        "name": "theme src with naturalWidth 0 is not accepted",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "imageDone": false,
+          "earlyWidth": 0
+        }
+      },
+      {
+        "name": "delayed image decode becomes readable",
+        "kind": "fixture",
+        "status": "pass",
+        "detail": {
+          "width": 1
+        }
+      }
+    ]
+  },
+  "acceptance": "pass",
+  "checks": [
+    {
+      "name": "served runtime images decode",
+      "scenario": "setup",
+      "status": "pass",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/media/v2/islands/sky-day.webp",
+          "bytes": 560028,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/sky-night.webp",
+          "bytes": 390900,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/ancient-day.webp",
+          "bytes": 545804,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/ancient-night.webp",
+          "bytes": 422992,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/apocalypse-day.webp",
+          "bytes": 580936,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/apocalypse-night.webp",
+          "bytes": 416780,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/home-day.webp",
+          "bytes": 488356,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/islands/home-night.webp",
+          "bytes": 362576,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/media/v2/environment/day.webp",
+          "bytes": 137552,
+          "width": 1672,
+          "height": 940
+        },
+        {
+          "path": "/media/v2/environment/night.webp",
+          "bytes": 127566,
+          "width": 1672,
+          "height": 940
+        },
+        {
+          "path": "/media/v2/environment/day-portrait.webp",
+          "bytes": 133564,
+          "width": 941,
+          "height": 1672
+        },
+        {
+          "path": "/media/v2/environment/night-portrait.webp",
+          "bytes": 142930,
+          "width": 941,
+          "height": 1672
+        },
+        {
+          "path": "/media/v2/environment/cloud-far-day.webp",
+          "bytes": 71438,
+          "width": 1536,
+          "height": 768
+        },
+        {
+          "path": "/media/v2/environment/cloud-far-night.webp",
+          "bytes": 58208,
+          "width": 1536,
+          "height": 768
+        },
+        {
+          "path": "/media/v2/environment/cloud-near-day.webp",
+          "bytes": 114414,
+          "width": 1536,
+          "height": 768
+        },
+        {
+          "path": "/media/v2/environment/cloud-near-night.webp",
+          "bytes": 97886,
+          "width": 1536,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "name": "official media presence",
+      "scenario": "setup",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "ready": [
+          "/media/v2/avatar/about-day.webp",
+          "/media/v2/avatar/about-night.webp",
+          "/media/v2/avatar/visitor.glb",
+          "/media/v2/greeting-image/storyboard-v001.webp",
+          "/media/v2/greeting-image/character-v001.webp"
+        ]
+      }
+    },
+    {
+      "name": "read-only api",
+      "scenario": "setup",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "scene": "api-read",
+        "health": 200,
+        "entries": 0
+      }
+    },
+    {
+      "name": "welcome has no canvas and centers CONNECT",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "center": 720,
+        "sky": {
+          "src": "http://localhost:8898/media/v2/environment/night.webp",
+          "width": 1672
+        }
+      }
+    },
+    {
+      "name": "welcome day plate",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "src": "http://localhost:8898/media/v2/environment/day.webp",
+        "width": 1672
+      }
+    },
+    {
+      "name": "hub night islands load, keyboard, and four themes",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "sources": [
+          {
+            "id": "sky",
+            "art": "/media/v2/islands/sky-night.webp",
+            "width": 1254
+          },
+          {
+            "id": "ancient",
+            "art": "/media/v2/islands/ancient-night.webp",
+            "width": 1254
+          },
+          {
+            "id": "apocalypse",
+            "art": "/media/v2/islands/apocalypse-night.webp",
+            "width": 1254
+          },
+          {
+            "id": "home",
+            "art": "/media/v2/islands/home-night.webp",
+            "width": 1254
+          }
+        ],
+        "entered": [
+          {
+            "id": "sky",
+            "url": "http://localhost:8898/works/themes/sky/",
+            "title": "Her"
+          },
+          {
+            "id": "ancient",
+            "url": "http://localhost:8898/works/themes/ancient/",
+            "title": "ZZZ"
+          },
+          {
+            "id": "apocalypse",
+            "url": "http://localhost:8898/works/themes/apocalypse/",
+            "title": "FFF"
+          },
+          {
+            "id": "home",
+            "url": "http://localhost:8898/works/themes/home/",
+            "title": "COS"
+          }
+        ]
+      }
+    },
+    {
+      "name": "hub day islands",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "art": "/media/v2/islands/home-day.webp"
+      }
+    },
+    {
+      "name": "gallery filter, real url, back and forward, contain",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "filtered": 3,
+        "shown": {
+          "src": "http://localhost:8898/media/v2/islands/home-night.webp",
+          "width": 1254,
+          "fit": "contain"
+        },
+        "detail": {
+          "src": "http://localhost:8898/media/v2/islands/sky-night.webp",
+          "width": 1254,
+          "fit": "contain"
+        },
+        "forward": "http://localhost:8898/works/sky-city/"
+      }
+    },
+    {
+      "name": "about paper and theme do not reload the model",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "after": {
+          "view": "live",
+          "ready": "true",
+          "loaded": "true",
+          "morphs": "blink:ok,smile:ok",
+          "bones": "163",
+          "model": "/media/v2/avatar/visitor.glb",
+          "theme": "night"
+        },
+        "requests": 1
+      }
+    },
+    {
+      "name": "about real model ready",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "view": "live",
+        "ready": "true",
+        "loaded": "true",
+        "morphs": "blink:ok,smile:ok",
+        "bones": "163",
+        "mode": "pointer",
+        "model": "/media/v2/avatar/visitor.glb",
+        "canvas": true
+      }
+    },
+    {
+      "name": "story keeps real blanks",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "blanks": 3,
+        "missingFrames": 3,
+        "chapters": 3
+      }
+    },
+    {
+      "name": "board reads and does not post",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "state": "empty",
+        "contact": 3,
+        "apiReachable": true
+      }
+    },
+    {
+      "name": "not found page",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "href": "/hub/"
+      }
+    },
+    {
+      "name": "desktop width stays inside the viewport",
+      "scenario": "real",
+      "status": "pass",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        },
+        {
+          "path": "/hub/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        },
+        {
+          "path": "/works/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        },
+        {
+          "path": "/about/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        },
+        {
+          "path": "/story/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        },
+        {
+          "path": "/board/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        },
+        {
+          "path": "/no-such-p4-12/",
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        }
+      ]
+    },
+    {
+      "name": "CONNECT stays centered at 390",
+      "scenario": "width-390",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "center": 195
+      }
+    },
+    {
+      "name": "mobile hub needs two taps",
+      "scenario": "width-390",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "url": "http://localhost:8898/works/themes/sky/"
+      }
+    },
+    {
+      "name": "narrow pages fit 390",
+      "scenario": "width-390",
+      "status": "pass",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/hub/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "path": "/works/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "path": "/about/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "path": "/story/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "path": "/board/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "path": "/works/sky-city/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "path": "/no-such-p4-12/",
+          "scrollWidth": 390,
+          "clientWidth": 390
+        }
+      ]
+    },
+    {
+      "name": "CONNECT stays centered at 320",
+      "scenario": "width-320",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "center": 160
+      }
+    },
+    {
+      "name": "narrow pages fit 320",
+      "scenario": "width-320",
+      "status": "pass",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/hub/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "path": "/works/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "path": "/about/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "path": "/story/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "path": "/board/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "path": "/works/sky-city/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "path": "/no-such-p4-12/",
+          "scrollWidth": 320,
+          "clientWidth": 320
+        }
+      ]
+    },
+    {
+      "name": "about coarse pointer keeps the loaded model",
+      "scenario": "coarse",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "view": "live",
+        "ready": "true",
+        "loaded": "true",
+        "morphs": "blink:ok,smile:ok",
+        "bones": "163",
+        "mode": "coarse",
+        "model": "/media/v2/avatar/visitor.glb",
+        "canvas": true,
+        "coarse": true
+      }
+    },
+    {
+      "name": "fault intercept degrades about without a substitute image",
+      "scenario": "fault-intercept",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "view": "empty",
+        "ready": "false",
+        "label": "人物画面还没放进来"
+      }
+    },
+    {
+      "name": "no page errors",
+      "scenario": "report",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "count": 0
+      }
+    },
+    {
+      "name": "no unexpected http failures",
+      "scenario": "report",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "noted": [
+          {
+            "scenario": "real",
+            "status": 404,
+            "url": "http://localhost:8898/no-such-p4-12/",
+            "note": "expected missing route"
+          },
+          {
+            "scenario": "real",
+            "status": 404,
+            "url": "http://localhost:8898/no-such-p4-12/",
+            "note": "expected missing route"
+          },
+          {
+            "scenario": "width-390",
+            "status": 404,
+            "url": "http://localhost:8898/no-such-p4-12/",
+            "note": "expected missing route"
+          },
+          {
+            "scenario": "width-320",
+            "status": 404,
+            "url": "http://localhost:8898/no-such-p4-12/",
+            "note": "expected missing route"
+          },
+          {
+            "scenario": "fault-intercept",
+            "status": 404,
+            "url": "http://localhost:8898/media/v2/avatar/about-night.webp",
+            "note": "official media pending or fault intercept"
+          },
+          {
+            "scenario": "fault-intercept",
+            "status": 404,
+            "url": "http://localhost:8898/media/v2/avatar/about-night.webp",
+            "note": "official media pending or fault intercept"
+          },
+          {
+            "scenario": "fault-intercept",
+            "status": 404,
+            "url": "http://localhost:8898/media/v2/avatar/about-night.webp",
+            "note": "official media pending or fault intercept"
+          },
+          {
+            "scenario": "fault-intercept",
+            "status": 404,
+            "url": "http://localhost:8898/media/v2/avatar/visitor.glb",
+            "note": "official media pending or fault intercept"
+          }
+        ]
+      }
+    },
+    {
+      "name": "api writes stayed at zero",
+      "scenario": "report",
+      "status": "pass",
+      "ok": true,
+      "detail": {
+        "writes": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "writes": []
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-15",
   "projectRoot": "D:/dev/yyh_server/SYYhSite",
   "statusVocabulary": [
     "concept-ready",
@@ -10,7 +10,7 @@
     "source-pending",
     "runtime-verified"
   ],
-  "notes": "P1 sources retained; approved v3 P2 runtime transparent draft images/environment integrated and verified. Formal avatar/layered dual lighting/full3D remain P3 inputs.",
+  "notes": "P4 native/model/film entries retained as historical. Latest P5-06 welcome uses approved original artwork with CSS image animation; About unchanged.",
   "assets": [
     {
       "id": "review-site",
@@ -157,10 +157,10 @@
       "id": "visitor-avatar",
       "kind": "rigged-character",
       "owner": "chatgpt",
-      "status": "pending-design",
-      "sourcePath": null,
-      "runtimePath": null,
-      "identity": null,
+      "status": "runtime-verified",
+      "sourcePath": "assets/source/avatar-v2/v034/visitor-source.blend",
+      "runtimePath": "public/media/v2/avatar/visitor.glb",
+      "identity": "approved adult black long straight hair / dark swimsuit / sheer robe",
       "requiredOutputs": [
         "brief",
         "concept-sheet",
@@ -178,9 +178,17 @@
         ],
         "glbBytesMax": 4194304
       },
-      "runtimeVerified": false,
+      "runtimeVerified": true,
       "productionPhase": "P3",
-      "formalIntegrationPhase": "P4"
+      "formalIntegrationPhase": "P4",
+      "rigMap": "assets/source/avatar-v2/v034/rig-map.json",
+      "currentVerification": "docs/agent-work/evidence/P4-12/lead-final-v037-assets-r1.json",
+      "measurements": {
+        "meshInstanceTriangles": 216064,
+        "bodyBaseVertices": 77170,
+        "glbBytes": 4236232
+      },
+      "budgetReview": "Initial proposal30-60k triangles/4MiB was not a user-selected contract; measured geometry above. GLB exceeds initial4MiB proposal by41928B. Actual source/runtime verified; no measured mobile FPS claim."
     },
     {
       "id": "story-keyframes",
@@ -472,5 +480,48 @@
       },
       "sha256": "ae30a73027f10f5573bf5fb4fc71c1bb635974f8679477af706e99eae79a87f0"
     }
-  ]
+  ],
+  "v2Runtime": {
+    "status": "runtime-verified; available for final visual review",
+    "conceptsAccepted": true,
+    "islandNames": [
+      "Her",
+      "ZZZ",
+      "FFF",
+      "COS"
+    ],
+    "staticManifest": "public/media/v2/manifest.json",
+    "nativeCharacter": "assets/source/avatar-v2/v034/visitor-source.blend",
+    "nativeAnimation": "assets/source/avatar-v2/v037/greeting-source.blend",
+    "characterRuntimeManifest": "assets/source/avatar-v2/v034/runtime-manifest.json",
+    "animationRuntimeManifest": "assets/source/avatar-v2/v037/runtime-manifest.json",
+    "sourcePackageManifest": "docs/agent-work/logs/artifacts/v2-editable-source-manifest.json",
+    "runtimeMediaFiles": 31,
+    "strictVerification": "docs/agent-work/evidence/P4-12/lead-final-v037-assets-r1.json",
+    "unprovidedContent": [
+      "real works",
+      "profile facts",
+      "story",
+      "contact links",
+      "final brand/font"
+    ],
+    "currentGreetingImage": {
+      "status": "runtime-verified; user visual review pending",
+      "renderer": "animated-images",
+      "sourceManifest": "assets/source/greeting-image/v001/manifest.json",
+      "runtimePaths": [
+        "/media/v2/greeting-image/storyboard-v001.webp",
+        "/media/v2/greeting-image/character-v001.webp"
+      ],
+      "replacesWelcome": "v037 3D rendered films; historical files retained",
+      "verification": "docs/agent-work/evidence/P5-06-lead/acceptance.md",
+      "preview": "http://124.220.190.120/",
+      "localPreview": "http://localhost:8896/"
+    },
+    "publication": {
+      "sourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+      "url": "http://124.220.190.120/",
+      "verifiedPublicFiles": 34
+    }
+  }
 }

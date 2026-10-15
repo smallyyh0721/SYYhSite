@@ -1,6 +1,12 @@
 # SYYH Signal agent 入口
 
+- 2026-10-15最新：用户已明确授权发布，第二版及P5-06原画欢迎已上线http://124.220.190.120/，运行SHA9f9764d7970999e6749ec0780e0b5b6794ef89f9。Linux候选/公网各24网站+6欢迎+3安全检查通过，34公网素材hash匹配Git；原留言卷与数据保持、已备份。当前发布事实见docs/agent-work/reports/P4-06.md和deployment-facts.json；下方“未发布”是历史。运行代码已commit/push，美术源与用户填写稿dirty原样保留，不reset/clean或重复部署旧SHA。
+
+- 2026-10-15欢迎修正：欢迎招呼放弃3D/影片，使用已通过人物原画做动态图片。P5-06以docs/agent-work/phases/P5/handoff.md为准；v037欢迎影片是历史，不能重新接回欢迎流程。About保持现状，其余P5不自动执行；用户随后授权的公网发布已按上方最新记录完成。
+
 - 每次委派、验收、返修或接管Grok前，先读 [协作操作规则](docs/agent-work/grok-collaboration-rules.md) 与 [评分台账](docs/agent-work/grok-scorecard.md)。按完整模块/功能交付，按最近完整模块评分趋势增减任务量；Grok无法响应/继续时由Codex接管并保留已有产物。验收后更新grok-scorecard.json/md，外因与lead问题单独归因；达标后才评估全局skill。
+
+- 2026-10-15最新状态：第二版所选P3/P4素材、原生人物v034、半身欢迎动画v037和网站集成已完成，可在localhost8896审核。31素材严格检查、Windows/Linux各31站点回归、4种WebM后备、独立测试库pending提交通过。先读docs/agent-work/phases/P4/handoff.md与v2-integration-review.md；旧P2“后续制作”是历史。公网仍为下方P2 SHA，未commit/push/public更新；不自行启动P5。Grok P4-08…12已结束，当前每批最多2完整模块、默认1CLI；不重复恢复旧句柄。保留全部dirty/用户填写稿，缺失事实和真实作品继续占位。
 
 先读 `docs/agent-handoff/README.md`、当前阶段交接、`04-collaboration.md` 与具体assignment；按任务读取分册，需要时查complete-plan与07-phased-plan。用户最新明确指令优先；该包是2026-10-12五阶段整合基线，旧docs/HANDOFF.md与prototype是历史资料。
 

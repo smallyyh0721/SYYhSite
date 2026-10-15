@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-15",
   "source": "user-specified-five-stage-plan",
-  "currentPhase": "P2",
-  "nextPlannedPhase": "P3",
+  "currentPhase": "P5",
+  "nextPlannedPhase": null,
   "workStarted": true,
   "statusVocabulary": [
     "pending",
@@ -77,7 +77,7 @@
       "id": "P3",
       "number": 3,
       "title": "素材的完善和补充",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P2"
       ],
@@ -89,7 +89,8 @@
         "P3-04",
         "P3-05",
         "P3-06",
-        "P3-07"
+        "P3-07",
+        "P3-08"
       ],
       "handoffPath": "docs/agent-work/phases/P3/handoff.md",
       "inputs": [
@@ -97,13 +98,16 @@
         "selected-identity-and-visuals",
         "user-content-or-honest-empty-state"
       ],
-      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
+      "executionOutcome": "Selected second-version assets/native model/animation and local runtime integration complete; actual media and Windows/private Linux31 regressions pass; public P2 unchanged.",
+      "previewPath": "design/v2-material-preview/v001/index.html",
+      "reviewInput": "design/v2-material-preview/v001/review-cos-v003.md"
     },
     {
       "id": "P4",
       "number": 4,
       "title": "第一版正式网站建设",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P3"
       ],
@@ -115,7 +119,12 @@
         "P4-04",
         "P4-05",
         "P4-06",
-        "P4-07"
+        "P4-07",
+        "P4-08",
+        "P4-09",
+        "P4-10",
+        "P4-11",
+        "P4-12"
       ],
       "handoffPath": "docs/agent-work/phases/P4/handoff.md",
       "inputs": [
@@ -124,13 +133,14 @@
         "selected-v1-scope",
         "deployment-scope-instruction"
       ],
-      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
+      "executionOutcome": "Selected v2 scope published; fixed source and exact Linux image promotion, guestbook preserved."
     },
     {
       "id": "P5",
       "number": 5,
       "title": "第一版正式网站修正和补充",
-      "status": "pending",
+      "status": "ready_for_review",
       "dependsOn": [
         "P4"
       ],
@@ -140,14 +150,22 @@
         "P5-02",
         "P5-03",
         "P5-04",
-        "P5-05"
+        "P5-05",
+        "P5-06"
       ],
       "handoffPath": "docs/agent-work/phases/P5/handoff.md",
       "inputs": [
         "P4-version-and-evidence",
         "specific-user-fix-or-supplement"
       ],
-      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md"
+      "acceptanceReference": "docs/agent-handoff/07-phased-plan.md",
+      "executionOutcome": "Only requested P5-06 correction completed and published; other P5 categories not started."
     }
-  ]
+  ],
+  "publication": {
+    "sourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+    "url": "http://124.220.190.120/",
+    "status": "deployed-and-verified",
+    "reportPath": "docs/agent-work/reports/P4-06.md"
+  }
 }

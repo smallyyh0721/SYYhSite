@@ -1,0 +1,20 @@
+{
+  "origin": "http://124.220.190.120",
+  "at": "2026-10-15T02:39:44.240Z",
+  "checks": [
+    {
+      "name": "Live reduce stops motion; hidden still does not expire; one Hub entry",
+      "ok": true
+    },
+    {
+      "name": "Both approved image URLs failing still enter Hub once",
+      "ok": true
+    },
+    {
+      "name": "Skip works while artwork is loading",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "ok": true
+}
