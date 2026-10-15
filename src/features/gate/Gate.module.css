@@ -1,37 +1,192 @@
-.gate { position: relative; height: 100svh; min-height: 620px; overflow: hidden; isolation: isolate; background: var(--void); }
-.environment { position: absolute; inset: 0; z-index: -3; background: linear-gradient(90deg, rgba(3,7,13,.88), rgba(3,7,13,.05)), url('/media/world-v3/environment-night.webp') center/cover; }
-:global([data-theme="day"]) .environment { background: linear-gradient(90deg, rgba(239,248,255,.9), rgba(239,248,255,.05)), url('/media/world-v3/environment-day.webp') center/cover; }
-.portal { position: absolute; width: min(58vw, 78vh); aspect-ratio: 1; border: 2px solid rgba(190,214,255,.4); border-radius: 50%; left: 46%; top: 9%; z-index: -2; box-shadow: 0 0 50px rgba(105,170,255,.14), inset 0 0 70px rgba(105,170,255,.1); background: radial-gradient(circle, rgba(142,199,255,.19), transparent 64%); }
-.portal:after { content: ''; position: absolute; inset: 15px; border: 1px dashed rgba(180,215,255,.25); border-radius: 50%; }
-:global([data-theme="day"]) .portal { border-color: rgba(26,91,162,.25); background: radial-gradient(circle, rgba(255,255,255,.75), transparent 65%); }
-.figure { position: absolute; inset: 12% -6% -12% 40%; z-index: -1; mask-image: linear-gradient(#000 65%, transparent 94%); transition: transform 1s ease; }
-[data-phase="greeting"] .figure { transform: scale(1.07) translateX(-1%); }
-.copy { position: relative; z-index: 2; width: min(67%, 1040px); padding: clamp(130px, 24svh, 240px) 0 100px clamp(24px, 5vw, 88px); }
-.welcome { width: 100%; height: 100%; padding: 116px 24px 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.welcome .title { font-size: clamp(58px, 8.3vw, 132px); }
-.welcome .subline { max-width: none; }
-.welcome .connect { min-width: 280px; }
-[data-phase="welcome"] .environment { background-image: linear-gradient(0deg, rgba(3,7,13,.35), rgba(3,7,13,.65)), url('/media/world-v3/environment-night.webp'); }
-:global([data-theme="day"]) .gate[data-phase="welcome"] .environment { background-image: linear-gradient(0deg, rgba(239,248,255,.2), rgba(239,248,255,.6)), url('/media/world-v3/environment-day.webp'); }
-.title { font: italic 900 clamp(60px, 7.8vw, 138px)/.94 Impact, "Arial Narrow", Arial, sans-serif; letter-spacing: -.035em; margin: 0 0 30px; }
-.title span { display: block; }
-.accent { color: var(--primary); }
-.subline { color: var(--muted); font-size: 14px; letter-spacing: 2px; margin: 0 0 30px; }
-.connect { display: inline-flex; align-items: center; justify-content: space-between; gap: 80px; min-height: 60px; padding: 12px 36px; background: var(--primary); color: var(--on-primary); border: 0; font: italic 900 22px Arial, sans-serif; transform: skew(-12deg); animation: connectPulse 2.4s ease-in-out infinite; }
-.connect:hover { filter: brightness(1.12); }
-.connect:hover, .connect:focus-visible { animation: none; opacity: 1; }
-@keyframes connectPulse { 0%, 100% { opacity: 1; box-shadow: 0 0 6px color-mix(in srgb, var(--primary) 12%, transparent); } 50% { opacity: .74; box-shadow: 0 0 30px color-mix(in srgb, var(--primary) 55%, transparent); } }
-@media (prefers-reduced-motion: reduce) { .connect { animation: none; } }
-.direct { display: block; width: fit-content; margin-top: 24px; padding-block: 8px; font: 11px monospace; color: var(--muted); }
-.linkTrack { height: 2px; width: min(370px, 85%); background: var(--hairline); margin: 36px 0 20px; }
-.linkTrack span { display: block; height: 100%; background: var(--primary); transform-origin: left; }
-.skip { border: 0; border-bottom: 1px solid var(--border); background: transparent; color: var(--ink); padding: 12px 0; font: 12px monospace; letter-spacing: 2px; }
-.bottom { position: absolute; inset: auto 36px 24px; display: flex; justify-content: space-between; gap: 16px; font: 10px monospace; letter-spacing: 2px; color: var(--muted); z-index: 3; }
-.bottom span { display: inline-flex; align-items: center; gap: 16px; }
-.bottom i { width: 28px; height: 2px; background: var(--primary); }
-.bottom a { padding-block: 12px; text-decoration: none; letter-spacing: 1px; }
-@media (max-width: 900px) { .copy { width: 75%; } .title { font-size: clamp(56px, 9vw, 96px); } .figure { left: 30%; right: -25%; opacity: .86; } }
-@media (max-width: 600px) { .gate { min-height: 600px; } .copy { padding: 132px 22px 250px; width: 100%; } .title { font-size: clamp(46px, 13vw, 78px); margin-bottom: 24px; } .subline { font-size: 12px; max-width: 260px; letter-spacing: 1px; } .figure { inset: 40% -29% -12% 18%; opacity: .76; } .portal { width: 88vw; left: 24%; top: 36%; } .environment { background-position: 62% center; } .connect { min-height: 52px; padding: 12px 26px; gap: 56px; font-size: 18px; } .bottom { inset-inline: 22px; bottom: 16px; font-size: 8px; letter-spacing: 1px; } .bottom span { gap: 8px; } .bottom i { width: 15px; } .bottom a { font-size: 9px; } .direct { margin-top: 12px; } }
-@media (max-height: 650px) and (min-width: 601px) { .gate { min-height: 520px; } .copy { padding-top: 120px; } .title { font-size: clamp(52px, 7vw, 88px); } .subline { margin-bottom: 18px; } }
-@media (max-width: 900px) { .copy.welcome { width: 100%; } }
-@media (max-width: 600px) { .copy.welcome { padding: 142px 18px 105px; } .welcome .title { font-size: clamp(43px, 13.2vw, 78px); } .welcome .subline { max-width: 290px; line-height: 1.8; } .welcome .connect { min-width: 230px; justify-content: space-between; } .gate[data-phase="greeting"] .copy { padding-top: 153px; } }
+.gate {
+  position: relative;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--void);
+}
+.environment {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 42%, color-mix(in srgb, var(--sky) 78%, white), transparent 58%),
+    var(--void);
+}
+.environment img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+.copy {
+  position: relative;
+  z-index: 2;
+}
+.welcome {
+  width: 100%;
+  min-height: 100svh;
+  padding: 116px 24px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.greeting {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: end;
+  padding: 108px 32px 28px;
+  pointer-events: none;
+  text-align: left;
+  background: linear-gradient(transparent 72%, color-mix(in srgb, var(--void) 70%, transparent));
+}
+.title {
+  margin: 0;
+  font: 700 clamp(56px, 8vw, 120px)/0.92 "Segoe UI", "Arial Narrow", sans-serif;
+  letter-spacing: -0.04em;
+}
+.greeting .title {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.25em;
+  font-size: clamp(24px, 3vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-shadow: 0 10px 28px color-mix(in srgb, var(--void) 45%, transparent);
+}
+.title span {
+  display: block;
+}
+.accent {
+  color: var(--primary);
+}
+.subline {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.greeting .subline {
+  margin-top: 10px;
+  color: var(--ink);
+  text-shadow: 0 6px 18px color-mix(in srgb, var(--void) 40%, transparent);
+}
+.gate [data-greeting-source="sheet"] [data-greeting-figure] {
+  top: 46%;
+  width: min(66vw, 78vh, 760px);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 16%, #000 84%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 12%, #000 99%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 16%, #000 84%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 12%, #000 99%, transparent 100%);
+}
+@media (max-width: 700px) {
+  .gate [data-greeting-source="sheet"] [data-greeting-figure] {
+    top: 44%;
+    width: min(100vw, 64vh, 460px);
+  }
+}
+@media (max-width: 360px) {
+  .gate [data-greeting-source="sheet"] [data-greeting-figure] {
+    top: 47%;
+    width: min(98vw, 60vh, 380px);
+  }
+}
+.connect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 220px;
+  min-height: 56px;
+  margin-top: 28px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font: 700 18px/1 "Segoe UI", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.08em;
+  animation: connectPulse 2.4s ease-in-out infinite;
+}
+.connect:hover,
+.connect:focus-visible {
+  animation: none;
+  filter: brightness(1.08);
+}
+@keyframes connectPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 18%, transparent); }
+  50% { opacity: 0.72; box-shadow: 0 12px 36px color-mix(in srgb, var(--primary) 42%, transparent); }
+}
+.direct {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+.skip {
+  pointer-events: auto;
+  min-width: 96px;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  color: var(--ink);
+  font: 600 15px/1 "Microsoft YaHei", sans-serif;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+.bottom {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  z-index: 3;
+}
+.bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13px;
+}
+.connect:focus-visible,
+.skip:focus-visible,
+.direct:focus-visible,
+.bottom a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .connect { animation: none; }
+}
+@media (max-width: 600px) {
+  .gate { min-height: 100svh; }
+  .welcome { padding: 128px 18px 88px; }
+  .title { font-size: clamp(42px, 12vw, 72px); }
+  .greeting { padding: 102px 16px 20px; gap: 12px; }
+  .greeting .title { font-size: clamp(16px, 4.8vw, 22px); }
+  .subline { font-size: 13px; }
+  .connect { min-width: 200px; }
+  .bottom { right: 12px; bottom: 12px; }
+}
+@media (max-height: 650px) and (min-width: 601px) {
+  .gate { min-height: 100svh; }
+  .welcome { padding-top: 96px; }
+  .title { font-size: clamp(48px, 7vw, 84px); }
+}

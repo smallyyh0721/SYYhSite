@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build --webpack && node scripts/normalize-static-prefetch.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
     "tokens": "node scripts/tokens-to-css.mjs design/tokens.json design/tokens.css",

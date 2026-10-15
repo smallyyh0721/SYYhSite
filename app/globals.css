@@ -40,8 +40,11 @@ a {
   text-underline-offset: 5px;
 }
 button:disabled {
-  cursor: wait;
+  cursor: not-allowed;
   opacity: 0.65;
+}
+button:disabled[aria-busy="true"] {
+  cursor: wait;
 }
 ::selection {
   background: var(--primary);
@@ -66,22 +69,20 @@ img {
 }
 .display {
   overflow-wrap: anywhere;
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
   font-size: clamp(54px, 7.3vw, 112px);
   margin-bottom: 24px;
 }
 .eyebrow {
-  font:
-    11px/1.7 ui-monospace,
-    Consolas,
-    monospace;
-  letter-spacing: 2px;
-  color: var(--primary);
-  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 .muted {
   color: var(--muted);
@@ -90,36 +91,44 @@ img {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  min-width: 44px;
   min-height: 48px;
-  gap: 16px;
+  gap: 8px;
   background: var(--primary);
   color: var(--on-primary);
-  border: 1px solid var(--primary);
-  padding: 12px 24px;
-  font: 12px/1.5 monospace;
-  letter-spacing: 1px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font: 600 15px/1.2 "Segoe UI", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0;
   text-decoration: none;
+  box-shadow: 0 10px 24px rgb(10 10 14 / 14%);
 }
 .button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.06);
 }
 .button.secondary {
-  background: transparent;
+  background: var(--raised);
   color: var(--ink);
-  border-color: var(--border);
+  box-shadow: none;
 }
 .panel {
-  border: 1px solid var(--hairline);
+  border: 0;
+  border-radius: 1.75rem;
   background: var(--surface);
   padding: 28px;
+  box-shadow: 0 16px 40px rgb(20 52 83 / 8%);
+}
+:root[data-theme="night"] .panel {
+  box-shadow: 0 16px 40px rgb(0 0 0 / 28%);
 }
 .pageHeading {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 24px;
-  border-bottom: 1px solid var(--hairline);
-  padding: 24px 0 28px;
+  gap: 28px 48px;
+  border: 0;
+  padding: 12px 0 8px;
   margin-bottom: 36px;
 }
 .pageHeading h1 {
@@ -140,13 +149,14 @@ img {
 }
 input,
 textarea {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--raised);
+  border: 0;
   color: var(--ink);
-  border-radius: 0;
+  border-radius: 1.25rem;
   min-height: 52px;
-  padding: 12px 16px;
+  padding: 14px 18px;
   width: 100%;
+  box-shadow: 0 8px 24px rgb(10 10 14 / 6%);
 }
 input::placeholder,
 textarea::placeholder {
@@ -154,9 +164,9 @@ textarea::placeholder {
 }
 label {
   display: block;
-  font: 12px/1.7 monospace;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  font: 600 15px/1.5 "Segoe UI", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0;
+  margin-bottom: 8px;
 }
 small {
   font-size: 12px;
@@ -167,7 +177,31 @@ h2 {
 }
 hr {
   border: 0;
-  border-top: 1px solid var(--hairline);
+  height: 0;
+  margin: 0;
+}
+.softPage {
+  max-width: 820px;
+}
+.softActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.softList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.softList li {
+  margin: 0;
+}
+/* StoryProgress.tsx is outside this module and still prints a terminal label. */
+[aria-label="故事阅读进度"] {
+  display: none !important;
 }
 @media (max-width: 900px) {
   .display {
@@ -186,10 +220,10 @@ hr {
   }
   .pageHeading {
     display: block;
-    padding-top: 12px;
+    padding-top: 8px;
   }
   .pageHeading p {
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .panel {
     padding: 20px;

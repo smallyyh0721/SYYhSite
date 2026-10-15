@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { useTheme } from "@/state/Theme";
+import { IconMoon, IconSun } from "@/components/Icons";
 import styles from "./Shell.module.css";
 const links = [
   ["/hub/", "探索"],
@@ -17,13 +18,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   const immersive = path === "/" || path === "/hub/" || path === "/hub";
   const workCollection = path === "/works/" || /^\/works\/themes\/[^/]+\/?$/.test(path);
   const main = useRef<HTMLElement>(null);
-  const first = useRef(true);
   const previous = useRef(path);
   useEffect(() => {
-    if (first.current) {
-      first.current = false;
-      return;
-    }
+    if (previous.current === path) return;
     const from = previous.current;
     previous.current = path;
     if (workCollection && /^\/works\/(?!themes\/)[^/]+/.test(from)) {
@@ -55,11 +52,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         跳到内容
       </a>
       <header className={styles.header}>
-        <Link className={styles.logo} href="/" aria-label="SYYH Signal 首页">
-          SYYH<span>●</span>
+        <Link className={styles.logo} href="/" aria-label="SYYH 首页">
+          SYYH
         </Link>
-        <span className={styles.signal}>SIGNAL / PERSONAL BROADCAST</span>
-        <nav aria-label="频道导航">
+        <span className={styles.signal}>个人频道</span>
+        <nav aria-label="页面">
           {links.map(([href, label]) => (
             <Link
               key={href}
@@ -74,10 +71,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           {(["day", "night"] as const).map((t) => (
             <button
               key={t}
+              type="button"
               onClick={() => setTheme(t)}
               aria-pressed={theme === t}
             >
-              {t === "day" ? "☀ DAY" : "◐ NIGHT"}
+              {t === "day" ? <IconSun /> : <IconMoon />}
+              {t === "day" ? "日间" : "夜间"}
             </button>
           ))}
         </div>
@@ -110,11 +109,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       >
         {children}
       </main>
-      {!immersive && <footer className={styles.footer}>
-        <span>PERSONAL BROADCAST / EST. 2026</span>
-        <Link href="/draft/">DRAFT V1 · 素材与完成状态 ↗</Link>
-        <span>SYYH — SIGNAL RECEIVED</span>
-      </footer>}
+      {!immersive && (
+        <footer className={styles.footer}>
+          <span>SYYH 个人频道</span>
+          <Link href="/draft/">查看第二版进度</Link>
+        </footer>
+      )}
     </div>
   );
 }

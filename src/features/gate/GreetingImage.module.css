@@ -1,0 +1,210 @@
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wash {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(70vw, 80vh, 740px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  filter: blur(28px) saturate(1.08);
+  opacity: 0.86;
+  pointer-events: none;
+}
+
+.skyWash {
+  width: min(118vw, 132vh, 1280px);
+  filter: none;
+  opacity: 0.82;
+  -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 42%, #000 18%, transparent 68%);
+  mask-image: radial-gradient(ellipse 70% 62% at 50% 42%, #000 18%, transparent 68%);
+}
+
+.wash .crop,
+.wash .zoom,
+.wash .skyZoom,
+.fallbackWash {
+  width: 100%;
+  height: 100%;
+}
+
+.fallbackWash {
+  object-fit: cover;
+  object-position: center 18%;
+  transform: scale(1.16);
+  max-width: none;
+}
+
+.figure {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(48vw, 58vh, 520px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 2.5%, #000 99%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 2.5%, #000 99%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.stack,
+.ken,
+.still {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.stack {
+  display: grid;
+}
+
+.crop {
+  grid-area: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.crop[data-pose="cold"] {
+  opacity: 1;
+}
+
+.zoom {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.015);
+  transform-origin: center center;
+}
+
+.skyZoom {
+  width: 100%;
+  height: 100%;
+  transform: scale(2.45);
+  transform-origin: 97% 5%;
+  filter: blur(52px) saturate(1.12);
+}
+
+.sheet {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 200%;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.ken {
+  transform-origin: 50% 48%;
+  animation: push 3.5s ease-out forwards;
+}
+
+.still {
+  transform: none;
+  animation: none;
+}
+
+.stage[data-paused="true"] .ken {
+  animation-play-state: paused;
+}
+
+.fallbackFigure {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(34vw, 70vh, 380px);
+  aspect-ratio: 2 / 3;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 5%, #000 92%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 5%, #000 92%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center 8%;
+}
+
+@keyframes push {
+  from { transform: scale(1); }
+  to { transform: scale(1.01); }
+}
+
+@media (max-width: 700px) {
+  .fallbackFigure {
+    top: 44%;
+    width: min(58vw, 68vh, 280px);
+  }
+  .wash {
+    top: 42%;
+    width: min(108vw, 66vh, 500px);
+  }
+  .skyWash {
+    top: 42%;
+    width: min(170vw, 118vh, 860px);
+  }
+  .figure {
+    top: 42%;
+    width: min(86vw, 50vh, 380px);
+  }
+}
+
+@media (max-width: 360px) {
+  .wash {
+    top: 44%;
+    width: min(104vw, 58vh, 340px);
+  }
+  .skyWash {
+    top: 44%;
+    width: min(160vw, 110vh, 640px);
+  }
+  .figure {
+    top: 44%;
+    width: min(84vw, 44vh, 250px);
+  }
+}
+
+@media (max-height: 600px) and (min-width: 701px) {
+  .skyWash {
+    width: min(96vw, 125vh, 920px);
+  }
+  .figure {
+    top: 46%;
+    width: min(42vw, 54vh, 440px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken {
+    animation: none;
+  }
+}

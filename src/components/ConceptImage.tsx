@@ -12,28 +12,25 @@ export default function ConceptImage({
   className?: string;
   priority?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState(!src);
+  const [ready, setReady] = useState(false);
   return (
     <div className={`${styles.window} ${className}`}>
       {failed ? (
-        <div
-          style={{ padding: 24, color: "var(--muted)" }}
-          role="img"
-          aria-label={alt}
-        >
-          画面暂未接通
-          <br />
-          <small>{alt}</small>
+        <div className={styles.fallback}>
+          <strong>这张图还没有放进来</strong>
+          <span>{alt}</span>
         </div>
       ) : (
         <img
-          className={styles.image}
+          className={ready ? styles.image : styles.holding}
           src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           width="1200"
           height="800"
+          onLoad={() => setReady(true)}
           onError={() => setFailed(true)}
         />
       )}

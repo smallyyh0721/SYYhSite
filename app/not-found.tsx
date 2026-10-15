@@ -1,22 +1,22 @@
 import Link from "next/link";
+import { IconBack } from "@/components/Icons";
+
 export default function NotFound() {
   return (
-    <section style={{ padding: "80px 0" }}>
-      <div className="eyebrow">404 / LOST TRANSMISSION</div>
+    <section className="softPage">
       <h1 tabIndex={-1} className="display">
-        NO SIGNAL.
+        这一页不存在
       </h1>
-      <p className="muted">这个频道还没有接通。</p>
-      <Link className="button" href="/hub/">
-        返回探索 ↗
-      </Link>
-      <Link
-        className="button secondary"
-        style={{ marginLeft: 16 }}
-        href="/works/"
-      >
-        查看作品
-      </Link>
+      <p className="muted">没有这个地址。可以回到四座岛，或者去看作品。</p>
+      <div className="softActions">
+        <Link className="button" href="/hub/">
+          <IconBack />
+          回到四座岛
+        </Link>
+        <Link className="button secondary" href="/works/">
+          看作品
+        </Link>
+      </div>
     </section>
   );
 }

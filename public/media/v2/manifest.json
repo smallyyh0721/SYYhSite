@@ -1,0 +1,266 @@
+{
+  "version": 3,
+  "scope": "approved v2 source artwork with runtime environment budget encoding",
+  "assets": [
+    {
+      "id": "island-sky",
+      "master": "assets/source/v2/v001/sky-day.png",
+      "path": "/media/v2/islands/sky-day.webp",
+      "bytes": 560028,
+      "sha256": "ab9c2f1664d74db7b93f198d2f445ce1cf37a1b2215e5ffa513e398c85baef94",
+      "sourceSha256": "22b489e1bffb5c0876634d9099bafa74999b3207260eb33e33d5d8731edabe09",
+      "width": 1254,
+      "height": 1254,
+      "sourceApproval": "review-feedback-before-v003.md",
+      "provenance": "ChatGPT built-in imagegen"
+    },
+    {
+      "id": "island-ancient",
+      "master": "assets/source/v2/v001/ancient-day.png",
+      "path": "/media/v2/islands/ancient-day.webp",
+      "bytes": 545804,
+      "sha256": "f8472fc125d3283a10569867604b6125f99d495f8254580720ae17b86a9488e0",
+      "sourceSha256": "d1755e40ea7699d29f97a328a795e24c6b8e766779a64201a2eefe33829187d9",
+      "width": 1254,
+      "height": 1254,
+      "sourceApproval": "review-feedback-before-v003.md",
+      "provenance": "ChatGPT built-in imagegen"
+    },
+    {
+      "id": "island-apocalypse",
+      "master": "assets/source/v2/v001/apocalypse-day.png",
+      "path": "/media/v2/islands/apocalypse-day.webp",
+      "bytes": 580936,
+      "sha256": "b5b418c1a1b3d0540d4f86e17e1ac7f63eb50da69b490492823a5bc2ed3ded7b",
+      "sourceSha256": "ef735ad2bd2cca84efa510b9ee13b3af39861d8474a21be4505949bbc22a7bd0",
+      "width": 1254,
+      "height": 1254,
+      "sourceApproval": "review-feedback-before-v003.md",
+      "provenance": "ChatGPT built-in imagegen"
+    },
+    {
+      "id": "island-home",
+      "master": "assets/source/v2/v001/home-day.png",
+      "path": "/media/v2/islands/home-day.webp",
+      "bytes": 488356,
+      "sha256": "ace5236465470a2010c3593828327b7ec47f6333685cc30897e751926bacf945",
+      "sourceSha256": "4f51361fb5767ee96f6c6814ac1463048b5436ba11fe67b2a295b144e6d763af",
+      "width": 1254,
+      "height": 1254,
+      "sourceApproval": "User chat: 通过，按 v003 制作并接入",
+      "provenance": "ChatGPT built-in imagegen"
+    },
+    {
+      "id": "environment-day",
+      "master": "assets/source/v2/v001/environment-day.png",
+      "path": "/media/v2/environment/day.webp",
+      "bytes": 137552,
+      "sha256": "03ccfa959edf0a8691c29157e94e99dfb6bd75e43b54c824bcfa903bc03ab91d",
+      "sourceSha256": "122337bfcb444b93110e534834a30673889c243f915ccf83c60b0fb9343e0918",
+      "width": 1672,
+      "height": 940,
+      "sourceApproval": "review-feedback-before-v003.md",
+      "provenance": "ChatGPT built-in imagegen",
+      "encoding": {
+        "format": "webp",
+        "quality": 86,
+        "alphaQuality": 90,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "environment-night",
+      "master": "assets/source/v2/v001/environment-night.png",
+      "path": "/media/v2/environment/night.webp",
+      "bytes": 127566,
+      "sha256": "cfb1d0a7a3f34dc253343dbefc5885b6d5d00b5a46a598a772ad4b2ccf752fa5",
+      "sourceSha256": "8feacc4f73da945a17785977cc6165d0b0e3ee27a5ffb431a123b15a78a90160",
+      "width": 1672,
+      "height": 940,
+      "sourceApproval": "review-feedback-before-v003.md",
+      "provenance": "ChatGPT built-in imagegen",
+      "encoding": {
+        "format": "webp",
+        "quality": 86,
+        "alphaQuality": 90,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "sky-night",
+      "master": "assets/source/v2/v001/sky-night.png",
+      "path": "/media/v2/islands/sky-night.webp",
+      "width": 1254,
+      "height": 1254,
+      "hasTransparency": true,
+      "bytes": 390900,
+      "sha256": "8f311963c47be8646dec7d4b3c4535bb7ae835917846d3a738bf8b9c6ead9f6a",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-58d42791-37d6-4b26-b371-31d7a39f9d14.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/night-generation.json",
+      "role": "islands"
+    },
+    {
+      "id": "ancient-night",
+      "master": "assets/source/v2/v001/ancient-night.png",
+      "path": "/media/v2/islands/ancient-night.webp",
+      "width": 1254,
+      "height": 1254,
+      "hasTransparency": true,
+      "bytes": 422992,
+      "sha256": "928bab8bff96110e757b6c273f7fffdc5485974e0ea3a87d2335c12857f04edd",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-83426931-064a-46b2-96e0-cb8e9874325c.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/night-generation.json",
+      "role": "islands"
+    },
+    {
+      "id": "apocalypse-night",
+      "master": "assets/source/v2/v001/apocalypse-night.png",
+      "path": "/media/v2/islands/apocalypse-night.webp",
+      "width": 1254,
+      "height": 1254,
+      "hasTransparency": true,
+      "bytes": 416780,
+      "sha256": "72c7208546f2a4d5602b8256359047808c9a17bf3ad5f7cc04911fa2de63ea6c",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-299dc191-c51f-49c7-836b-6deafdb1cb8c.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/night-generation.json",
+      "role": "islands"
+    },
+    {
+      "id": "home-night",
+      "master": "assets/source/v2/v001/home-night.png",
+      "path": "/media/v2/islands/home-night.webp",
+      "width": 1254,
+      "height": 1254,
+      "hasTransparency": true,
+      "bytes": 362576,
+      "sha256": "40977206fa26eb0f8acf3269e07b7622c0c9a4f1e55f7de310e55736e3e4dd92",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-ad326fcd-f78a-4a9f-bd67-00c94ddae890.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/night-generation.json",
+      "role": "islands"
+    },
+    {
+      "id": "day-portrait",
+      "master": "assets/source/v2/v001/day-portrait.png",
+      "path": "/media/v2/environment/day-portrait.webp",
+      "width": 941,
+      "height": 1672,
+      "hasTransparency": false,
+      "bytes": 133564,
+      "sha256": "70bcb1d0add7333a77ae5abbd2a23f192edae8ad849b1af7fb5dbb98c8dfa217",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-d40cd2e1-16d6-48c4-a861-c4dc7378912c.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/environment-generation.json",
+      "role": "environment",
+      "encoding": {
+        "format": "webp",
+        "quality": 82,
+        "alphaQuality": 90,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "night-portrait",
+      "master": "assets/source/v2/v001/night-portrait.png",
+      "path": "/media/v2/environment/night-portrait.webp",
+      "width": 941,
+      "height": 1672,
+      "hasTransparency": false,
+      "bytes": 142930,
+      "sha256": "440c3e623fa6313812040a2788910699bdad814a9c1c6a8fffc8d5bb6d6cbf14",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-1f0866cc-0c0a-466d-a967-434c61ed2cf5.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/environment-generation.json",
+      "role": "environment",
+      "encoding": {
+        "format": "webp",
+        "quality": 86,
+        "alphaQuality": 90,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "cloud-near-day",
+      "master": "assets/source/v2/v001/cloud-near-day.png",
+      "path": "/media/v2/environment/cloud-near-day.webp",
+      "width": 1536,
+      "height": 768,
+      "hasTransparency": true,
+      "bytes": 114414,
+      "sha256": "8fa937ed52bd5cadcce72ad80609fe49a5bf4e764494ca9eb5e56cc5e28a9e43",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-2f3f40dc-6475-4b6e-909d-479971ebca89.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/environment-generation.json",
+      "role": "environment",
+      "encoding": {
+        "format": "webp",
+        "quality": 74,
+        "alphaQuality": 70,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "cloud-far-day",
+      "master": "assets/source/v2/v001/cloud-far-day.png",
+      "path": "/media/v2/environment/cloud-far-day.webp",
+      "width": 1536,
+      "height": 768,
+      "hasTransparency": true,
+      "bytes": 71438,
+      "sha256": "2e245de05c699395cb813dd55f8d0e9f9b76f04dcbb6b7b0ee8aaa18352df67a",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-1e6189b5-cf4d-4857-bcd6-d145dd977ec4.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/environment-generation.json",
+      "role": "environment",
+      "encoding": {
+        "format": "webp",
+        "quality": 86,
+        "alphaQuality": 70,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "cloud-near-night",
+      "master": "assets/source/v2/v001/cloud-near-night.png",
+      "path": "/media/v2/environment/cloud-near-night.webp",
+      "width": 1536,
+      "height": 768,
+      "hasTransparency": true,
+      "bytes": 97886,
+      "sha256": "a734da07561ee3b1d343f9c693ebbcdfbe30e27eab0ed2563384b107b8c9fd80",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-c52a3531-7d93-49d1-8d4a-ee41a450b016.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/cloud-night-generation.json",
+      "role": "environment",
+      "encoding": {
+        "format": "webp",
+        "quality": 86,
+        "alphaQuality": 70,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    },
+    {
+      "id": "cloud-far-night",
+      "master": "assets/source/v2/v001/cloud-far-night.png",
+      "path": "/media/v2/environment/cloud-far-night.webp",
+      "width": 1536,
+      "height": 768,
+      "hasTransparency": true,
+      "bytes": 58208,
+      "sha256": "e2d7c611ed21fb2bc57c8d28418a1b686e3a6d05d5ccef6c0dabb2bc16972115",
+      "source": "C:\\Users\\yonghao.yu\\.codex\\generated_images\\01a13814-2e73-7901-91d5-ec3cb66b5fe8\\exec-df693706-c7c6-49d1-b0e3-a29dda1fe0e7.png",
+      "provenance": "ChatGPT built-in imagegen",
+      "promptRecord": "assets/source/v2/v001/cloud-night-generation.json",
+      "role": "environment",
+      "encoding": {
+        "format": "webp",
+        "quality": 86,
+        "alphaQuality": 70,
+        "method": "technical encoding; original composition and GPT master unchanged"
+      }
+    }
+  ]
+}

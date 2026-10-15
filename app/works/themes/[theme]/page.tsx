@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import ThemeWorks from "@/features/content/ThemeWorks";
+import { formalTheme } from "@/features/content/galleryModel";
 import { workThemes } from "@/lib/contracts";
 export function generateStaticParams() { return workThemes.map((theme) => ({ theme: theme.id })); }
 export async function generateMetadata({ params }: { params: Promise<{ theme: string }> }) {
   const { theme } = await params;
   const selected = workThemes.find((item) => item.id === theme);
-  return { title: selected ? selected.title + " · 主题作品" : "主题不存在" };
+  return { title: selected ? formalTheme(selected.id).label + " · 主题作品" : "主题不存在" };
 }
 export default async function Page({ params }: { params: Promise<{ theme: string }> }) {
   const { theme } = await params;

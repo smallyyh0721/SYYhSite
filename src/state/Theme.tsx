@@ -11,6 +11,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setValue(
       document.documentElement.dataset.theme === "day" ? "day" : "night",
     );
+    document.documentElement.dataset.clientReady = "true";
+    return () => { delete document.documentElement.dataset.clientReady; };
   }, []);
   const setTheme = (value: Theme) => {
     document.documentElement.dataset.theme = value;

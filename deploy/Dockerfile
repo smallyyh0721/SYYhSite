@@ -14,6 +14,7 @@ COPY src ./src
 COPY public ./public
 COPY design/tokens.css ./design/tokens.css
 COPY next.config.ts tsconfig.json ./
+COPY scripts/normalize-static-prefetch.mjs ./scripts/normalize-static-prefetch.mjs
 RUN pnpm build
 FROM ${NGINX_IMAGE} AS web
 ARG VCS_REF=unknown

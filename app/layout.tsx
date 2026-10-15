@@ -3,8 +3,8 @@ import { ThemeProvider } from "@/state/Theme";
 import Shell from "@/components/Shell";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: { default: "SYYH / SIGNAL", template: "%s — SYYH Signal" },
-  description: "接通信号，探索四座悬浮岛。SYYH 个人频道的第一版设计 draft。",
+  title: { default: "SYYH", template: "%s — SYYH" },
+  description: "SYYH 的个人网站。可以看看四座岛上的作品，也可以留言。",
   robots: { index: false, follow: false },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };

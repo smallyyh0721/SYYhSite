@@ -1,123 +1,261 @@
 "use client";
 import { Component, useEffect, useRef, useState, type RefObject } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { MeshoptDecoder } from "three/addons/libs/meshopt_decoder.module.js";
 import {
-  Euler,
+  Box3,
+  NoToneMapping,
+  PerspectiveCamera,
   Quaternion,
-  type Object3D,
-  type Bone,
+  SRGBColorSpace,
   type Mesh,
-  type Material,
+  type Object3D,
 } from "three";
 import { useTheme } from "@/state/Theme";
+import { avatarArt } from "@/lib/v2-assets";
 import { damp } from "@/lib/motion.mjs";
+import {
+  FOLLOW_RATE,
+  LOOK,
+  SMILE,
+  blinkWeight,
+  breathPitch,
+  captureBone,
+  composeLocalLook,
+  createLookScratch,
+  describeMorphs,
+  findRig,
+  frameBust,
+} from "./rig.mjs";
+import { disposeScene } from "./disposeScene.mjs";
+import PosterFallback, { type PosterPhase } from "./PosterFallback";
+import styles from "./Avatar.module.css";
+
 type Pointer = { x: number; y: number };
-function dispose(scene: Object3D) {
-  scene.traverse((o) => {
-    const m = o as Mesh;
-    if (m.isMesh) {
-      m.geometry.dispose();
-      const materials = Array.isArray(m.material) ? m.material : [m.material];
-      materials.forEach((v: Material) => v.dispose());
-    }
-  });
+export type AvatarView = "loading" | "live" | "poster" | "empty";
+type Motion = { still: boolean; follow: boolean };
+type LoadedInfo = { bones: number; morphs: string; clips: number };
+
+function canUseWebGL() {
+  try {
+    const canvas = document.createElement("canvas");
+    const gl = canvas.getContext("webgl2") || canvas.getContext("webgl");
+    if (!gl) return false;
+    gl.getExtension("WEBGL_lose_context")?.loseContext();
+    return true;
+  } catch {
+    return false;
+  }
 }
+
+function Lights({ theme }: { theme: "day" | "night" }) {
+  if (theme === "day") {
+    return (
+      <>
+        <hemisphereLight color="#f4f8fc" groundColor="#d7e4f3" intensity={1.1} />
+        <directionalLight position={[1.8, 2.5, 2.6]} intensity={2.4} color="#f7fbff" />
+        <directionalLight position={[-1.7, 1.3, 1.9]} intensity={0.7} color="#c9daf0" />
+      </>
+    );
+  }
+  return (
+    <>
+      <hemisphereLight color="#8ca7c6" groundColor="#263547" intensity={0.55} />
+      <directionalLight position={[-1.5, 2.8, 1.8]} intensity={1.45} color="#bdd3ec" />
+      <directionalLight position={[1.55, 1.05, 2.15]} intensity={0.7} color="#f6d9ba" />
+    </>
+  );
+}
+
 function Model({
+  url,
   pointer,
-  still,
-  follow,
-  onReady,
+  motion,
+  onLoaded,
   onFail,
+  onPresented,
 }: {
+  url: string;
   pointer: RefObject<Pointer>;
-  still: boolean;
-  follow: boolean;
-  onReady: () => void;
+  motion: RefObject<Motion>;
+  onLoaded: (info: LoadedInfo) => void;
   onFail: () => void;
+  onPresented: () => void;
 }) {
+  const camera = useThree((state) => state.camera);
+  const invalidate = useThree((state) => state.invalidate);
+  const size = useThree((state) => state.size);
+  const cameraRef = useRef(camera);
+  const invalidateRef = useRef(invalidate);
+  cameraRef.current = camera;
+  invalidateRef.current = invalidate;
   const [scene, setScene] = useState<Object3D | null>(null);
   const rig = useRef<{
-    head: Bone;
-    spine: Bone;
-    eyes: Bone[];
-    rest: Quaternion[];
+    head: ReturnType<typeof captureBone>;
+    spine: ReturnType<typeof captureBone>;
+    eyes: ReturnType<typeof captureBone>[];
+    body: Mesh;
+    blink: number;
+    smile: number;
+    bones: number;
   } | null>(null);
+  const restBox = useRef<Box3 | null>(null);
   const pose = useRef({ x: 0, y: 0 });
   const eyePose = useRef({ x: 0, y: 0 });
-  const scratch = useRef(new Quaternion());
+  const scratch = useRef(createLookScratch());
+  const target = useRef(new Quaternion());
+  const sizeRef = useRef(size);
+  sizeRef.current = size;
+
   useEffect(() => {
-    let cancelled = false;
+    const ac = new AbortController();
+    let dropped = false;
     let owned: Object3D | null = null;
-    new GLTFLoader().load(
-      "/media/avatar-proxy.glb",
-      (gltf) => {
-        owned = gltf.scene;
-        if (cancelled) {
-          dispose(owned);
-          return;
-        }
-        const head = owned.getObjectByName("Head") as Bone;
-        const spine = owned.getObjectByName("Spine") as Bone;
-        const eyes = ["L", "R"].map(
-          (side) =>
-            (owned!.getObjectByName("Eye" + side) ||
-              owned!.getObjectByName("Eye." + side)) as Bone,
-        );
-        if (!head || !spine || eyes.some((e) => !e)) {
-          onFail();
-          dispose(owned);
-          owned = null;
-          return;
-        }
-        rig.current = {
-          head,
-          spine,
-          eyes,
-          rest: [
-            head.quaternion.clone(),
-            spine.quaternion.clone(),
-            ...eyes.map((e) => e.quaternion.clone()),
-          ],
-        };
-        setScene(owned);
-        onReady();
-      },
-      undefined,
-      onFail,
-    );
+    const fail = () => {
+      if (dropped) return;
+      onFail();
+    };
+    const finish = (next: Object3D | null) => {
+      if (owned && owned !== next) disposeScene(owned);
+      owned = next;
+    };
+    void (async () => {
+      try {
+        const absolute = new URL(url, window.location.origin).href;
+        const response = await fetch(absolute, { signal: ac.signal });
+        if (!response.ok) throw new Error(String(response.status));
+        const buffer = await response.arrayBuffer();
+        if (dropped) return;
+        const base = absolute.slice(0, absolute.lastIndexOf("/") + 1);
+        await new Promise<void>((resolve) => {
+          new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).parse(
+            buffer,
+            base,
+            (gltf) => {
+              if (dropped) {
+                disposeScene(gltf.scene);
+                resolve();
+                return;
+              }
+              gltf.scene.updateMatrixWorld(true);
+              const found = findRig(gltf.scene);
+              if (!found) {
+                disposeScene(gltf.scene);
+                fail();
+                resolve();
+                return;
+              }
+              const body = found.body as Mesh;
+              const morphs = describeMorphs(body);
+              const box = new Box3().setFromObject(gltf.scene);
+              restBox.current = box.clone();
+              const view = sizeRef.current;
+              const aspect = view.width > 0 && view.height > 0 ? view.width / view.height : 1;
+              const activeCamera = cameraRef.current;
+              if (activeCamera instanceof PerspectiveCamera) frameBust(activeCamera, box, aspect);
+              const dictionary = body.morphTargetDictionary;
+              rig.current = {
+                head: captureBone(found.bones.Head),
+                spine: captureBone(found.bones.Spine),
+                eyes: [captureBone(found.bones.EyeL), captureBone(found.bones.EyeR)],
+                body,
+                blink: morphs.Blink === "ok" && dictionary ? dictionary.Blink : -1,
+                smile: morphs.Smile === "ok" && dictionary ? dictionary.Smile : -1,
+                bones: found.boneCount,
+              };
+              body.onAfterRender = () => {
+                if (dropped) return;
+                body.onAfterRender = () => {};
+                onPresented();
+              };
+              finish(gltf.scene);
+              setScene(gltf.scene);
+              invalidateRef.current();
+              onLoaded({
+                bones: found.boneCount,
+                morphs: `blink:${morphs.Blink},smile:${morphs.Smile}`,
+                clips: gltf.animations.length,
+              });
+              resolve();
+            },
+            () => {
+              fail();
+              resolve();
+            },
+          );
+        });
+      } catch {
+        fail();
+      }
+    })();
     return () => {
-      cancelled = true;
+      dropped = true;
+      ac.abort();
       rig.current = null;
-      if (owned) dispose(owned);
+      restBox.current = null;
+      finish(null);
     };
-  }, [onReady, onFail]);
+  }, [onFail, onLoaded, onPresented, url]);
+
+  useEffect(() => {
+    if (!restBox.current || !(camera instanceof PerspectiveCamera)) return;
+    const aspect = size.width > 0 && size.height > 0 ? size.width / size.height : 1;
+    frameBust(camera, restBox.current, aspect);
+  }, [camera, size.width, size.height]);
+
   useFrame(({ clock, gl }, dt) => {
-    const r = rig.current;
-    if (!r) return;
-    const p = pose.current;
-    p.x = still || !follow ? 0 : damp(p.x, pointer.current.x, 6, dt);
-    p.y = still || !follow ? 0 : damp(p.y, pointer.current.y, 6, dt);
-    const ep = eyePose.current;
-    ep.x = still || !follow ? 0 : damp(ep.x, pointer.current.x, 12, dt);
-    ep.y = still || !follow ? 0 : damp(ep.y, pointer.current.y, 12, dt);
-    const apply = (bone: Bone, base: Quaternion, x: number, y: number) => {
-      scratch.current.setFromEuler(new Euler(x, y, 0, "YXZ"));
-      bone.quaternion.copy(base).multiply(scratch.current);
+    const current = rig.current;
+    if (!current) return;
+    const flags = motion.current;
+    const hold = flags.still || !flags.follow;
+    const aim = hold ? { x: 0, y: 0 } : pointer.current;
+    if (flags.still) {
+      pose.current.x = 0;
+      pose.current.y = 0;
+      eyePose.current.x = 0;
+      eyePose.current.y = 0;
+    } else {
+      pose.current.x = damp(pose.current.x, aim.x, FOLLOW_RATE.head, dt);
+      pose.current.y = damp(pose.current.y, aim.y, FOLLOW_RATE.head, dt);
+      eyePose.current.x = damp(eyePose.current.x, aim.x, FOLLOW_RATE.eye, dt);
+      eyePose.current.y = damp(eyePose.current.y, aim.y, FOLLOW_RATE.eye, dt);
+    }
+    const time = clock.getElapsedTime();
+    const apply = (
+      bone: ReturnType<typeof captureBone>,
+      yaw: number,
+      pitch: number,
+    ) => {
+      composeLocalLook(bone.parentWorld, bone.rest, yaw, pitch, target.current, scratch.current);
+      bone.bone.quaternion.copy(target.current);
     };
-    apply(r.head, r.rest[0], p.y * 0.175, p.x * 0.314);
-    apply(r.spine, r.rest[1], p.y * 0.035, p.x * 0.07);
-    const t = clock.elapsedTime;
-    const blink = still ? 1 : t % 4.7 < 0.14 ? 0.18 : 1;
-    r.eyes.forEach((eye, i) => {
-      apply(eye, r.rest[i + 2], ep.y * 0.065, ep.x * 0.09);
-      eye.scale.y = blink;
+    apply(current.head, pose.current.x * LOOK.head.yaw, pose.current.y * LOOK.head.pitch);
+    apply(
+      current.spine,
+      pose.current.x * LOOK.spine.yaw,
+      pose.current.y * LOOK.spine.pitch + breathPitch(time, flags.still),
+    );
+    current.eyes.forEach((eye) => {
+      apply(eye, eyePose.current.x * LOOK.eye.yaw, eyePose.current.y * LOOK.eye.pitch);
     });
-    if (scene) scene.position.y = still ? 0 : Math.sin(t * 1.4) * 0.012;
-    gl.domElement.dataset.pose = `${p.x.toFixed(3)},${p.y.toFixed(3)}`;
+    const influences = current.body?.morphTargetInfluences;
+    if (influences) {
+      if (current.blink >= 0) influences[current.blink] = blinkWeight(time, flags.still);
+      if (current.smile >= 0) influences[current.smile] = SMILE;
+    }
+    const el = gl.domElement;
+    el.dataset.pose = `${pose.current.x.toFixed(3)},${pose.current.y.toFixed(3)}`;
+    el.dataset.follow = `${pose.current.x.toFixed(3)},${eyePose.current.x.toFixed(3)}`;
+    el.dataset.blink = current.blink >= 0 && influences ? influences[current.blink].toFixed(3) : "missing";
+    el.dataset.smile = current.smile >= 0 && influences ? influences[current.smile].toFixed(3) : "missing";
+    el.dataset.breath = breathPitch(time, flags.still).toFixed(4);
+    el.dataset.eyeScale = current.eyes.map((eye) => eye.bone.scale.y.toFixed(3)).join(",");
   });
+
   return scene ? <primitive object={scene} /> : null;
 }
+
 class Boundary extends Component<
   { children: React.ReactNode; onFail: () => void },
   { failed: boolean }
@@ -133,120 +271,135 @@ class Boundary extends Component<
     return this.state.failed ? null : this.props.children;
   }
 }
-export default function Avatar({ pointer, pointerTracking = false }: { pointer: RefObject<Pointer>; pointerTracking?: boolean }) {
+
+const LABELS: Record<AvatarView, string> = {
+  live: "实时人物半身",
+  poster: "人物海报，不是实时三维",
+  empty: "人物画面还没放进来",
+  loading: "人物画面载入中",
+};
+
+export default function Avatar({
+  pointer,
+  pointerTracking = false,
+  onView,
+}: {
+  pointer: RefObject<Pointer>;
+  pointerTracking?: boolean;
+  onView?: (view: AvatarView) => void;
+}) {
   const { theme } = useTheme();
-  const [ready, setReady] = useState(false);
+  const [webgl] = useState(canUseWebGL);
+  const [loaded, setLoaded] = useState(false);
+  const [presented, setPresented] = useState(false);
   const [failed, setFailed] = useState(false);
   const [still, setStill] = useState(true);
-  const [follow, setFollow] = useState(false);
+  const [coarse, setCoarse] = useState(false);
   const [visible, setVisible] = useState(true);
-  const callbacks = useRef({
-    ready: () => setReady(true),
+  const [posterPhase, setPosterPhase] = useState<PosterPhase>("loading");
+  const [meta, setMeta] = useState<LoadedInfo>({ bones: 0, morphs: "untested", clips: 0 });
+  const motion = useRef<Motion>({ still: true, follow: false });
+  const onPosterPhase = useRef(setPosterPhase);
+  onPosterPhase.current = setPosterPhase;
+  const handlers = useRef({
+    loaded: (info: LoadedInfo) => {
+      setMeta(info);
+      setLoaded(true);
+    },
+    presented: () => setPresented(true),
     fail: () => setFailed(true),
   }).current;
+  motion.current = { still, follow: pointerTracking && !coarse };
   useEffect(() => {
-    const motion = matchMedia("(prefers-reduced-motion: reduce)"),
-      touch = matchMedia("(pointer: coarse)");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    const touch = matchMedia("(pointer: coarse)");
     const update = () => {
-      setStill(motion.matches);
-      setFollow(!touch.matches);
+      setStill(reduce.matches);
+      setCoarse(touch.matches);
     };
     update();
-    motion.addEventListener("change", update);
+    reduce.addEventListener("change", update);
     touch.addEventListener("change", update);
-    const change = () => setVisible(!document.hidden);
-    document.addEventListener("visibilitychange", change);
+    const onVisibility = () => setVisible(!document.hidden);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
-      motion.removeEventListener("change", update);
+      reduce.removeEventListener("change", update);
       touch.removeEventListener("change", update);
-      document.removeEventListener("visibilitychange", change);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
+  const live = presented && !failed && webgl;
+  const view: AvatarView = live
+    ? "live"
+    : (failed || !webgl) && posterPhase === "poster"
+      ? "poster"
+      : failed || !webgl
+        ? posterPhase === "loading"
+          ? "loading"
+          : "empty"
+        : posterPhase === "poster"
+          ? "poster"
+          : "loading";
+  useEffect(() => {
+    onView?.(view);
+  }, [onView, view]);
+  const mode = still ? "still" : coarse || !pointerTracking ? "coarse" : "pointer";
   return (
     <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-        pointerEvents: "none",
-      }}
-      aria-label={pointerTracking ? "3D代理人物：随鼠标转动头部，正式形象待设计" : "3D代理人物，正式形象待设计"}
-      data-avatar-mode={pointerTracking ? "pointer" : "idle"}
-      data-avatar-ready={ready && !failed}
+      className={styles.root}
+      aria-label={LABELS[view]}
+      data-avatar-mode={mode}
+      data-avatar-theme={theme}
+      data-avatar-model={avatarArt.model}
+      data-avatar-loaded={loaded && !failed ? "true" : "false"}
+      data-avatar-ready={live ? "true" : "false"}
+      data-avatar-view={view}
+      data-avatar-visible={visible ? "true" : "false"}
+      data-avatar-morphs={loaded ? meta.morphs : "untested"}
+      data-avatar-bones={loaded ? String(meta.bones) : "0"}
+      data-avatar-clips={loaded ? String(meta.clips) : "0"}
       role="img"
     >
-      {(!ready || failed) && (
-        <img
-          src="/media/avatar-poster.png"
-          alt="中性代理人物海报"
-          style={{
-            height: "100%",
-            width: "100%",
-            objectFit: "contain",
-            position: "absolute",
-            inset: 0,
-          }}
+      <div className={live ? `${styles.poster} ${styles.parked}` : styles.poster}>
+        <PosterFallback
+          pending={!failed && webgl && !presented}
+          onPhase={(phase) => onPosterPhase.current(phase)}
         />
-      )}
-      {!failed && (
-        <Boundary onFail={callbacks.fail}>
+      </div>
+      {webgl && !failed && (
+        <Boundary onFail={handlers.fail}>
           <Canvas
             dpr={[1, 1.5]}
             frameloop={visible ? (still ? "demand" : "always") : "never"}
-            camera={{ position: [0, 1.9, 5.2], fov: 37 }}
-            gl={{ alpha: true, antialias: true }}
-            style={{ opacity: ready ? 1 : 0 }}
+            camera={{ position: [0, 1.27, 2.4], fov: 28, near: 0.05, far: 30 }}
+            gl={{ alpha: true, antialias: true, toneMapping: NoToneMapping }}
+            style={{ position: "absolute", inset: 0, opacity: live ? 1 : 0 }}
             onCreated={({ camera, gl }) => {
-              camera.lookAt(0, 1.55, 0);
+              gl.outputColorSpace = SRGBColorSpace;
+              camera.lookAt(0, 1.27, 0);
               gl.domElement.setAttribute("aria-hidden", "true");
               gl.domElement.addEventListener(
                 "webglcontextlost",
-                callbacks.fail,
+                (event) => {
+                  event.preventDefault();
+                  handlers.fail();
+                },
                 { once: true },
               );
             }}
           >
-            <ambientLight intensity={theme === "day" ? 1.5 : 0.9} />
-            <directionalLight
-              position={[3, 4, 4]}
-              intensity={theme === "day" ? 3 : 2}
-              color={theme === "day" ? "#eef8ff" : "#b4cdff"}
-            />
-            <pointLight
-              position={[-3, 2, 2]}
-              intensity={12}
-              color={theme === "day" ? "#badcff" : "#d6ff9d"}
-            />
-            <directionalLight
-              position={[0, 4, -3]}
-              intensity={4}
-              color="#3375ff"
-            />
+            <Lights theme={theme} />
             <Model
+              url={avatarArt.model}
               pointer={pointer}
-              still={still}
-              follow={pointerTracking && follow}
-              onReady={callbacks.ready}
-              onFail={callbacks.fail}
+              motion={motion}
+              onLoaded={handlers.loaded}
+              onFail={handlers.fail}
+              onPresented={handlers.presented}
             />
           </Canvas>
         </Boundary>
       )}
-      <span
-        style={{
-          position: "absolute",
-          bottom: 12,
-          left: 16,
-          font: "10px monospace",
-          color: "var(--muted)",
-        }}
-      >
-        {failed
-          ? "轻量海报模式"
-          : ready
-            ? "3D PROXY / IDENTITY PENDING"
-            : "连接人物信号…"}
-      </span>
     </div>
   );
 }
