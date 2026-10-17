@@ -7,6 +7,7 @@ const results=[];
 for(const path of ['/','/hub/','/works/','/works/themes/ancient/','/works/themes/apocalypse/','/about/','/story/','/board/','/owner/']) {
  const r=await fetch(origin+path,{signal:AbortSignal.timeout(15000)});assert.equal(r.status,200,path);
  const html=await r.text(),csp=r.headers.get('content-security-policy')||'';
+ assert.ok(!/<a\b[^>]*href=["']\/draft\/["']/i.test(html),path+' exposes an internal draft link');
  const nonce=/script-src 'self' 'nonce-([^']+)'/.exec(csp)?.[1];assert.ok(nonce,path+' missing nonce');
  assert.ok(!/script-src[^;]*'unsafe-(?:inline|eval)'/.test(csp),path+' unsafe scripts');
  const scripts=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(([,attrs])=>!attrs.includes('src='));

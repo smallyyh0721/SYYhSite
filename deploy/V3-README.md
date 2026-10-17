@@ -22,6 +22,7 @@ node scripts/check-v3-http-security.mjs http://localhost:18980
 - 受信任 IP 证书在 `/etc/letsencrypt/live/syyh-ip`，edge 只读副本在 `/opt/website/syyh/tls/edge`。续期 timer 每6小时检查，auth/cleanup/deploy hook 在主机；不用自签证书或关闭 TLS 验证。
 - SFTP inbox `/var/lib/syyh-sftp/inbox`，UID/GID11002；worker 只读绑定并加入该组。
 - 保留当前 V2 SHA `9f9764d7970999e6749ec0780e0b5b6794ef89f9` 的 Web/API 镜像、旧 env 和原留言卷。不得清理卷或使用 system prune。
+- 本次从 V2 首次迁入 V3 才创建新的内容/上传卷。V3 后续更新必须继续使用当前 CONTENT_VOLUME / UPLOAD_VOLUME；不能因镜像 SHA 变化就改成空的新卷。
 
 生产 env 放 checkout 外并限制权限，不写密钥。示例中的 SHA 是待替换字段：
 

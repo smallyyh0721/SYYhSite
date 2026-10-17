@@ -15,6 +15,7 @@ Grok `grok-4.7-build` / high，session `01a144bb-6ddf-72d2-8755-e933d94e0346`。
 - Linux amd64 四镜像构建与四容器健康通过，隔离项目名 `syyh-v3-qa`，端口 localhost:18980，专用数据卷；未触碰历史本地或生产卷。
 - `node scripts/check-v3-local-content.mjs`：10 个完整 HTTP 场景通过，含真正图片/MP4、预览、无需重建的新 URL、海报/HEAD/Range、草稿不覆盖快照、存储断开、撤下、退出。见 `linux-http.json`。
 - `node scripts/check-v3-http-security.mjs http://localhost:18980`：13 路由/受限路径与 nonce/308 检查通过，见 `http-security.json`。生产构建 About 不显示范围滑块或序列审核控制器。
+- 最后入口检查发现 Welcome/Hub 两个“素材状态”链接仍在（Codex 清理遗漏，不归 Grok 模块缺陷）。已删除，重新构建 frontend，并扩展真实 HTML 检查为全部页面无 `/draft/` 锚点，13 路由检查通过。CUA 原画全屏欢迎和自动进入四岛通过，见 `welcome-current.jpg`；早期 Hub 截图保留为问题证据。
 - CUA 真实浏览器：登录、新建、双文件上传、封面、草稿预览、发布、失败 MP4 重试；视频 readyState=4、duration=2，原生键盘播放后 currentTime=2/ended=true，无播放错误。大图下一张/Escape关闭，焦点回到原触发按钮；草稿预览地址保持 owner。
 - CUA 320px：Story 三图均解码，管理编辑无横向溢出，About 人物载入且无审核控制器；日夜主题切换、全设备退出成功。见截图。
 - SQLite 备份从 Linux 在线库生成，含内容/留言副本及资产清单；拷贝到本机独立位置，三个数据库 integrity_check 均 ok，恢复副本撤销会话而备份源保留会话。又用一个无网络、只读根的新容器将独立副本恢复到 tmpfs，实际 GET 作品/媒体/留言成功、管理必须认证。该备份验证数据为 2 个联调作品、4 个资产，先于真实 20 图导入，不能冒充生产数据备份。见 `backup-restore.json`。

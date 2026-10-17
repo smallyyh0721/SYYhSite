@@ -84,11 +84,6 @@ export default function Gate() {
           <Link className={styles.direct} href="/works/">直接看作品</Link>
         </div>
       )}
-      {!connecting && (
-        <div className={styles.bottom}>
-          <Link href="/draft/">素材状态</Link>
-        </div>
-      )}
     </section>
   );
 }

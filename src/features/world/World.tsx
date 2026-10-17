@@ -214,7 +214,6 @@ export default function World() {
         </nav>
         <div className={styles.utility}>
           <button type="button" aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? "恢复动态" : "暂停动态"}</button>
-          <Link href="/draft/">素材状态</Link>
         </div>
       </div>
       <nav className={styles.accessibleNav} aria-label="直接查看主题作品">{islands.map((i) => <Link key={i.id} href={i.href} onClick={save}>{i.name}</Link>)}</nav>
