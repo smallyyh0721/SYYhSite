@@ -18,3 +18,5 @@ test-results
 **/*.db*
 *.log
 playwright-report
+.local
+public/media/v3/works

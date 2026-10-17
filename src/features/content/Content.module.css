@@ -34,6 +34,11 @@
   padding: 12px 12px 16px;
   box-shadow: 0 16px 40px rgb(20 52 83 / 8%);
 }
+.page[data-about="true"] .poster {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
 :global([data-theme="night"]) .poster {
   box-shadow: 0 16px 40px rgb(0 0 0 / 28%);
 }
@@ -50,6 +55,12 @@
   overflow: hidden;
   border-radius: 1.25rem;
   background: var(--sky);
+}
+.page[data-about="true"] .avatarStage {
+  height: auto;
+  aspect-ratio: 1;
+  max-height: min(56svh, 480px);
+  background: #e8edf1;
 }
 .avatarStage img {
   aspect-ratio: auto;
@@ -188,6 +199,7 @@
 @media (max-width: 600px) {
   .page[data-about="true"] .poster {
     order: 1;
+    width: 100%;
   }
   .page[data-about="true"] .heroCopy {
     order: 2;

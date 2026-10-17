@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import ThemeWorks from "@/features/content/ThemeWorks";
+import Gallery from "@/features/content/Gallery";
 import { formalTheme } from "@/features/content/galleryModel";
 import { workThemes } from "@/lib/contracts";
-export function generateStaticParams() { return workThemes.map((theme) => ({ theme: theme.id })); }
+import { getPublishedWorks } from "@/lib/content.server";
 export async function generateMetadata({ params }: { params: Promise<{ theme: string }> }) {
   const { theme } = await params;
   const selected = workThemes.find((item) => item.id === theme);
@@ -12,5 +12,5 @@ export default async function Page({ params }: { params: Promise<{ theme: string
   const { theme } = await params;
   const selected = workThemes.find((item) => item.id === theme);
   if (!selected) notFound();
-  return <ThemeWorks themeId={selected.id} />;
+  return <Gallery initialThemeId={selected.id} works={await getPublishedWorks()} />;
 }

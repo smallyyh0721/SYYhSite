@@ -107,9 +107,10 @@
   .island[data-slot="back"] { left: 50%; top: 10%; width: 26vw; height: 26vw; }
   .island[data-slot="right"] { left: 84%; top: 30%; }
   .label { font-size: 11px; }
-  .caption { bottom: 132px; }
+  .caption { bottom: 184px; }
   .caption h2 { font-size: 22px; }
   .bottom { bottom: 12px; }
+  .channels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; max-width: 360px; }
 }
 @media (max-height: 650px) and (min-width: 601px) {
   .world { min-height: 540px; }

@@ -1,10 +1,9 @@
 "use client";
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { workThemes, type WorkThemeId } from "@/lib/contracts";
-import { useTheme } from "@/state/Theme";
+import { works as seedWorks, workThemes, type Work, type WorkThemeId } from "@/lib/contracts";
 import GalleryMedia from "./GalleryMedia";
 import styles from "./Gallery.module.css";
 import {
@@ -18,17 +17,21 @@ import {
 } from "./galleryHistory";
 import {
   FILTERS,
-  featuredWork,
+  coverAlt,
+  emptyCopy,
   formalTheme,
   galleryItems,
   isFilterId,
-  layoutCopy,
+  listIntro,
+  processNote,
+  shouldOpenFromClick,
+  sortLabel,
+  stillNote,
   themeRecord,
   visibleItems,
   workArt,
   workHref,
   type FilterId,
-  type GalleryItem,
 } from "./galleryModel";
 
 const focusableSelector =
@@ -44,14 +47,12 @@ function focusables(root: HTMLElement) {
   );
 }
 
-export default function Gallery({ initialThemeId }: { initialThemeId?: WorkThemeId }) {
+export default function Gallery({ initialThemeId, works = seedWorks }: { initialThemeId?: WorkThemeId; works?: Work[] }) {
   const pathname = usePathname();
-  const { theme } = useTheme();
   const listPath = useRef(listPathFrom(pathname));
-  const items = useMemo(() => galleryItems(), []);
+  const items = useMemo(() => galleryItems(works), [works]);
   const [filter, setFilter] = useState<FilterId>(initialThemeId ?? "all");
-  const [dialogIndex, setDialogIndex] = useState<number | null>(null);
-  const [explainOpen, setExplainOpen] = useState(false);
+  const [dialogId, setDialogId] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const triggerRef = useRef<HTMLElement | null>(null);
@@ -60,10 +61,8 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastNavRef = useRef<"prev" | "next" | "close">("close");
   const visible = useMemo(() => visibleItems(filter, items), [filter, items]);
-  const featured = featuredWork(filter);
-  const featuredItem =
-    featured &&
-    visible.find((item) => item.work.slug === featured.slug && item.crop.key === "wide");
+  const current = dialogId ? visible.find((item) => item.id === dialogId) ?? null : null;
+  const dialogPosition = current ? visible.findIndex((item) => item.id === current.id) : -1;
 
   useEffect(() => {
     const saved = readSnapshot();
@@ -97,8 +96,7 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
   const hideDialog = useCallback(() => {
     const trigger = triggerRef.current;
     const y = scrollRef.current;
-    setDialogIndex(null);
-    setExplainOpen(false);
+    setDialogId(null);
     document.body.style.overflow = "";
     document.getElementById("main")?.removeAttribute("inert");
     window.scrollTo({ top: y, behavior: "instant" });
@@ -117,10 +115,10 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
       if (overlay?.open && overlay.itemId) {
         const nextFilter = isFilterId(overlay.filter) ? overlay.filter : filter;
         const group = visibleItems(nextFilter, items);
-        const index = group.findIndex((item) => item.id === overlay.itemId);
-        if (index >= 0) {
+        const item = group.find((entry) => entry.id === overlay.itemId);
+        if (item) {
           setFilter(nextFilter);
-          setDialogIndex(index);
+          setDialogId(item.id);
           document.body.style.overflow = "hidden";
           return;
         }
@@ -131,15 +129,15 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
   );
 
   const openDialog = useCallback(
-    (index: number, trigger?: HTMLElement | null) => {
-      const item = visible[index];
+    (id: string, trigger?: HTMLElement | null) => {
+      const item = visible.find((entry) => entry.id === id);
       if (!item) return;
       triggerRef.current = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
       scrollRef.current = window.scrollY;
       lastNavRef.current = "close";
-      setExplainOpen(false);
-      setDialogIndex(index);
+      setDialogId(item.id);
       document.body.style.overflow = "hidden";
+      const index = visible.findIndex((entry) => entry.id === item.id);
       persist({ href: workHref(item.work.slug), itemId: item.id, index, scroll: scrollRef.current });
       replaceHistory(listPath.current, {
         v: 1,
@@ -172,23 +170,30 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
 
   const moveDialog = useCallback(
     (step: number) => {
-      if (dialogIndex == null || visible.length < 2) return;
-      const next = (dialogIndex + step + visible.length) % visible.length;
-      const item = visible[next];
+      if (!dialogId || visible.length < 2) return;
+      const index = visible.findIndex((item) => item.id === dialogId);
+      if (index < 0) return;
+      const next = visible[(index + step + visible.length) % visible.length];
       lastNavRef.current = step < 0 ? "prev" : "next";
-      setDialogIndex(next);
-      persist({ href: workHref(item.work.slug), itemId: item.id, index: next, scroll: scrollRef.current });
-      replaceHistory(workHref(item.work.slug), {
+      setDialogId(next.id);
+      persist({ href: workHref(next.work.slug), itemId: next.id, index: (index + step + visible.length) % visible.length, scroll: scrollRef.current });
+      replaceHistory(workHref(next.work.slug), {
         v: 1,
         open: true,
         filter,
         listPath: listPath.current,
-        itemId: item.id,
-        slug: item.work.slug,
+        itemId: next.id,
+        slug: next.work.slug,
       });
     },
-    [dialogIndex, filter, persist, visible],
+    [dialogId, filter, persist, visible],
   );
+
+  useEffect(() => {
+    if (!hydrated || !dialogId) return;
+    if (visible.some((item) => item.id === dialogId)) return;
+    requestClose();
+  }, [dialogId, hydrated, requestClose, visible]);
 
   useEffect(() => {
     const onPop = () => {
@@ -201,7 +206,7 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
   }, [applyOverlay]);
 
   useEffect(() => {
-    if (dialogIndex == null) return;
+    if (!current) return;
     const dialog = dialogRef.current;
     if (!dialog) return;
     const nodes = focusables(dialog);
@@ -211,10 +216,10 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
     if (lastNavRef.current === "prev" && prev) prev.focus();
     else if (lastNavRef.current === "next" && next) next.focus();
     else close?.focus();
-  }, [dialogIndex]);
+  }, [current]);
 
   useEffect(() => {
-    if (dialogIndex == null) return;
+    if (!current) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
@@ -249,72 +254,39 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [dialogIndex, moveDialog, requestClose]);
+  }, [current, moveDialog, requestClose]);
 
   useEffect(() => {
     const main = document.getElementById("main");
-    if (dialogIndex != null) main?.setAttribute("inert", "");
+    if (current) main?.setAttribute("inert", "");
     else main?.removeAttribute("inert");
     return () => main?.removeAttribute("inert");
-  }, [dialogIndex]);
+  }, [current]);
 
-  const current = dialogIndex != null ? visible[dialogIndex] : null;
-  const themeMeta = initialThemeId ? formalTheme(initialThemeId) : null;
-  const themeCopy = initialThemeId ? themeRecord(initialThemeId) : null;
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+      document.getElementById("main")?.removeAttribute("inert");
+    };
+  }, []);
 
-  const onTileActivate = (item: GalleryItem, index: number, event: { currentTarget: EventTarget | null; preventDefault: () => void }) => {
-    event.preventDefault();
-    const target = event.currentTarget instanceof HTMLElement ? event.currentTarget : null;
-    openDialog(index, target);
-  };
+  const activeRecord = filter === "all" ? null : themeRecord(filter);
 
   return (
-    <article className={styles.page} data-gallery="works" data-filter={filter}>
+    <article className={styles.page} data-gallery="works" data-filter={filter} data-count={visible.length}>
       <header className={styles.heading}>
         <div>
-          <p className={styles.eyebrow}>{initialThemeId ? themeCopy?.subtitle ?? "THEME WORKS" : "CH-01 / SELECTED WORKS"}</p>
-          <h1 tabIndex={-1}>{initialThemeId ? themeMeta?.label ?? initialThemeId : "WORKS"}</h1>
+          <p className={styles.eyebrow}>{filter === "all" ? "CH-01 / SELECTED WORKS" : activeRecord?.subtitle ?? "THEME WORKS"}</p>
+          <h1 tabIndex={-1}>{filter === "all" ? "WORKS" : formalTheme(filter).label}</h1>
         </div>
-        <p>
-          {initialThemeId
-            ? `${themeMeta?.usage ?? ""}。当前用本站概念图做布局占位，不是这个分类的真实个人作品。`
-            : "作品展示先看位置和交互。当前四张概念图做成每主题横、竖、方三种布局占位，共 12 格，不是 12 件作品。"}
-        </p>
+        <p>{listIntro(filter, works)}</p>
       </header>
 
-      <div className={styles.banner}>
-        <p>
-          布局占位 · 同一素材的三种安全裁切，用来看错落排布。没有日期、客户、点赞或热度。精选是目前唯一的顺序。
-        </p>
-      </div>
-
-      <section className={styles.heroCard} aria-labelledby="gallery-hero">
-        <GalleryMedia
-          className={styles.heroStage}
-          src={featured ? workArt(featured, theme) : ""}
-          alt={featured ? `${formalTheme(featured.themeId).label} 精选主视觉，布局占位` : "精选主视觉"}
-          fit="contain"
-          priority
-          openLabel={featuredItem ? `打开大图：${featuredItem.label} 横幅布局占位` : undefined}
-          onOpen={
-            featuredItem
-              ? (stage) => {
-                  const index = visible.findIndex((item) => item.id === featuredItem.id);
-                  if (index >= 0) openDialog(index, stage);
-                }
-              : undefined
-          }
-        />
-        <div className={styles.heroCopy}>
-          <h2 id="gallery-hero">精选主视觉</h2>
-          <p className={styles.hint}>
-            {featured
-              ? `当前用 ${formalTheme(featured.themeId).label} 的概念图占这个位置。同一张图，不是另一件作品。`
-              : "这个分类还没有可展示的概念图。"}
-          </p>
-          {featured ? <span className={styles.mark}>布局占位</span> : null}
+      {visible.length ? (
+        <div className={styles.banner}>
+          <p>点开封面查看大图，从标题进入这件作品。</p>
         </div>
-      </section>
+      ) : null}
 
       <div className={styles.toolbar}>
         <div className={styles.filters} role="group" aria-label="作品主题">
@@ -332,7 +304,7 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
         </div>
         <div className={styles.sorts} role="group" aria-label="排序">
           <button type="button" className={styles.chip} aria-pressed="true">
-            精选
+            {sortLabel}
           </button>
         </div>
       </div>
@@ -340,49 +312,32 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
       {visible.length ? (
         <div className={styles.gallery}>
           {visible.map((item, index) => (
-            <article
-              key={item.id}
-              className={styles.card}
-              data-theme={item.label}
-              data-crop={item.crop.key}
-            >
-              <a
-                className={styles.cardLink}
-                href={workHref(item.work.slug)}
-                data-gallery-id={item.id}
-                aria-label={`打开大图：${item.label} ${item.crop.hint}布局占位`}
-                onClick={(event) => {
-                  if ((event.target as HTMLElement).closest("button")) return;
-                  onTileActivate(item, index, event);
-                }}
-                onKeyDown={(event: ReactKeyboardEvent<HTMLAnchorElement>) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    onTileActivate(item, index, event);
-                  }
-                }}
-              >
-                <GalleryMedia
-                  className={styles.workStage}
-                  src={workArt(item.work, theme)}
-                  alt={`${item.label} 布局占位，同一张概念图的${item.crop.hint}`}
-                  fit="cover"
-                  position={item.crop.position}
-                  ratio={item.crop.key}
-                />
-                <div className={styles.meta}>
-                  <span className={styles.mark}>布局占位</span>
-                  <h3>{item.label}</h3>
-                  <p className={styles.hint}>同一张概念图的{item.crop.hint}，用来看排布。</p>
-                </div>
-              </a>
+            <article key={item.id} className={styles.card} data-work={item.work.slug} data-theme={item.themeId}>
+              <GalleryMedia
+                className={styles.workStage}
+                src={workArt(item.work)}
+                alt={coverAlt(item.work)}
+                fit="contain"
+                priority={index === 0}
+                fallbackLabel={item.work.title}
+                openLabel={`查看封面大图：${item.work.title}`}
+                onOpen={(stage) => openDialog(item.id, stage)}
+              />
+              <div className={styles.meta}>
+                <span className={styles.mark}>{item.work.category}</span>
+                <h3>
+                  <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
+                    {item.work.title}
+                  </a>
+                </h3>
+                <p className={styles.hint}>{item.work.subtitle}</p>
+              </div>
             </article>
           ))}
         </div>
       ) : (
-        <p className={styles.empty}>
-          {filter === "all"
-            ? "这个布局还在等概念图进入。主题筛选和三列错落会留在这里。"
-            : `${FILTERS.find((item) => item.id === filter)?.label ?? filter} 还没有概念图。筛选位置会留着。`}
+        <p className={styles.empty} data-empty={filter}>
+          {emptyCopy(filter)}
         </p>
       )}
 
@@ -418,10 +373,11 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
                 <div className={styles.chrome}>
                   <div>
                     <h2 id="gallery-dialog-title" className={styles.dialogTitle} aria-live="polite">
-                      {current.label} · {current.crop.hint}布局占位
+                      {current.work.title}
                     </h2>
+                    <p className={styles.hint}>{current.work.category}</p>
                     <p className={styles.hint}>
-                      {dialogIndex! + 1} / {visible.length}
+                      {dialogPosition + 1} / {visible.length}
                     </p>
                   </div>
                   <button type="button" className={styles.closeBtn} onClick={requestClose}>
@@ -430,35 +386,30 @@ export default function Gallery({ initialThemeId }: { initialThemeId?: WorkTheme
                 </div>
                 <GalleryMedia
                   className={styles.dialogStage}
-                  src={workArt(current.work, theme)}
-                  alt={`${current.label} 全图，布局占位`}
+                  src={workArt(current.work)}
+                  alt={coverAlt(current.work)}
                   fit="contain"
                   priority
+                  fallbackLabel={current.work.title}
                 />
                 <div className={styles.dialogNav}>
                   <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(-1)}>
                     上一件
                   </button>
-                  <button
-                    type="button"
-                    className={styles.explainToggle}
-                    aria-expanded={explainOpen}
-                    aria-controls="gallery-dialog-explain"
-                    onClick={() => setExplainOpen((open) => !open)}
-                  >
-                    {explainOpen ? "收起说明" : "展开说明"}
-                  </button>
                   <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(1)}>
                     下一件
                   </button>
                 </div>
-                <div id="gallery-dialog-explain" className={styles.explain} hidden={!explainOpen}>
-                  <p>{layoutCopy(current)}</p>
-                  <p className={styles.hint}>过程图尚未提供。当前只有这一张概念图。</p>
+                <div className={styles.explain}>
+                  <p>{current.work.subtitle}</p>
+                  <p>{current.work.description}</p>
+                  {stillNote(current.work) ? <p>{stillNote(current.work)}</p> : null}
+                  {processNote(current.work) ? <p>{processNote(current.work)}</p> : null}
                   <Link
                     className={styles.detailLink}
                     href={workHref(current.work.slug)}
                     onClick={(event) => {
+                      if (!shouldOpenFromClick(event)) return;
                       persist({
                         href: workHref(current.work.slug),
                         itemId: current.id,

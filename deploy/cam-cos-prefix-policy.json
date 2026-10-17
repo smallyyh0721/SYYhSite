@@ -1,0 +1,45 @@
+{
+  "version": "2.0",
+  "statement": [
+    {
+      "effect": "allow",
+      "action": ["name/cos:HeadBucket"],
+      "resource": ["qcs::cos:ap-shanghai:uid/1396243701:works-1396243701/*"],
+      "condition": {"bool_equal": {"cos:secure-transport": "true"}}
+    },
+    {
+      "effect": "allow",
+      "action": ["name/cos:GetBucket"],
+      "resource": ["qcs::cos:ap-shanghai:uid/1396243701:works-1396243701/*"],
+      "condition": {
+        "bool_equal": {"cos:secure-transport": "true"},
+        "string_like": {"cos:prefix": ["syyh-site%2F*"]}
+      }
+    },
+    {
+      "effect": "allow",
+      "action": [
+        "name/cos:GetObject", "name/cos:HeadObject", "name/cos:DeleteObject",
+        "name/cos:UploadPart", "name/cos:CompleteMultipartUpload",
+        "name/cos:AbortMultipartUpload", "name/cos:ListParts"
+      ],
+      "resource": [
+        "qcs::cos:ap-shanghai:uid/1396243701:works-1396243701/syyh-site",
+        "qcs::cos:ap-shanghai:uid/1396243701:works-1396243701/syyh-site/*"
+      ],
+      "condition": {"bool_equal": {"cos:secure-transport": "true"}}
+    },
+    {
+      "effect": "allow",
+      "action": ["name/cos:PutObject", "name/cos:InitiateMultipartUpload"],
+      "resource": [
+        "qcs::cos:ap-shanghai:uid/1396243701:works-1396243701/syyh-site",
+        "qcs::cos:ap-shanghai:uid/1396243701:works-1396243701/syyh-site/*"
+      ],
+      "condition": {
+        "bool_equal": {"cos:secure-transport": "true"},
+        "string_equal": {"cos:x-cos-acl": "private"}
+      }
+    }
+  ]
+}

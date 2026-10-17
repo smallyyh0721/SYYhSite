@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, type KeyboardEvent, type MouseEvent } from "react";
+import { noscriptImageMarkup, shouldOpenFromClick, shouldOpenFromKey } from "./galleryModel";
 import styles from "./Gallery.module.css";
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
   ratio?: "portrait" | "wide" | "square";
   priority?: boolean;
   openLabel?: string;
+  fallbackLabel?: string;
   onOpen?: (stage: HTMLElement) => void;
 };
 
@@ -23,9 +25,10 @@ export default function GalleryMedia({
   priority = false,
   ratio,
   openLabel,
+  fallbackLabel,
   onOpen,
 }: Props) {
-  const [status, setStatus] = useState<"loading" | "loaded" | "fail">("loading");
+  const [status, setStatus] = useState<"pending" | "loading" | "loaded" | "fail">("pending");
   const [nonce, setNonce] = useState(0);
   const url = nonce ? `${src}${src.includes("?") ? "&" : "?"}r=${nonce}` : src;
 
@@ -58,11 +61,9 @@ export default function GalleryMedia({
   };
 
   const onKey = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (!canOpen) return;
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      open(event.currentTarget);
-    }
+    if (!shouldOpenFromKey(event) || !canOpen) return;
+    event.preventDefault();
+    open(event.currentTarget);
   };
 
   const retry = (event: MouseEvent<HTMLButtonElement>) => {
@@ -80,11 +81,12 @@ export default function GalleryMedia({
       tabIndex={canOpen ? 0 : undefined}
       aria-label={canOpen ? openLabel : undefined}
       onClick={(event) => {
-        if ((event.target as HTMLElement).closest("button")) return;
+        if (!shouldOpenFromClick(event) || !canOpen) return;
         open(event.currentTarget);
       }}
       onKeyDown={onKey}
     >
+      <noscript dangerouslySetInnerHTML={{ __html: noscriptImageMarkup(src, alt) }} />
       {status === "loaded" ? (
         <img
           src={url}
@@ -97,7 +99,9 @@ export default function GalleryMedia({
       {status === "loading" ? <p className={styles.stageCopy}>正在载入。</p> : null}
       {status === "fail" ? (
         <>
-          <p className={styles.stageCopy}>这张图还没有载入成功。</p>
+          <p className={styles.stageCopy}>
+            {fallbackLabel ? `${fallbackLabel}。这张图还没有载入成功。` : "这张图还没有载入成功。"}
+          </p>
           <button type="button" className={styles.retry} onClick={retry}>
             重新加载
           </button>

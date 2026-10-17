@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    "D:/social_impact/luqing/基准图/白T三视图.png",
+    "D:/social_impact/jiao/人物形象基准库_v1/01_身份基准/原始人物三视图.png"
+  ],
+  "assets": [
+    {
+      "source": "01-rivals-hero.png",
+      "sourceSha256": "99d2aed19bff64daa09f9c52ba9b566fab14cfcd66af61b4ded39ef458c7870a",
+      "publicPath": "/media/v3/story/01-rivals-hero.webp",
+      "bytes": 118874,
+      "publicSha256": "aa19d9107b2ceed3338c7b014c97325941cbc9dc8c42354257386f1abbef23a8"
+    },
+    {
+      "source": "02-one-lamp.png",
+      "sourceSha256": "dc0bbef87ffbcaaa4680e7427a4544066ac24e773fa6520b8fa12b9b6aeee3dc",
+      "publicPath": "/media/v3/story/02-one-lamp.webp",
+      "bytes": 134410,
+      "publicSha256": "36b6d60dee83b1749abb5d6940e84605242e2d03af06b03940fa60f3624c0389"
+    },
+    {
+      "source": "03-next-dawn.png",
+      "sourceSha256": "ef85fb0da7fb9c310f5abf3ca830ca6890ee5304e39240a01d55111414c46a28",
+      "publicPath": "/media/v3/story/03-next-dawn.webp",
+      "bytes": 133294,
+      "publicSha256": "5ca4154a6f790d0958be357b6ed2339f0e2dd5f29ccd729b9487cef0f51e5a7e"
+    }
+  ]
+}

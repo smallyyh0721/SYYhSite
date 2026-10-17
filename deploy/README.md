@@ -1,5 +1,7 @@
 # Draft v1 Docker / 运维
 
+2026-10-16：以下是 V1/V2 历史操作，当前源码已切换 V3 四容器。新操作见 [V3 运维](V3-README.md)，不要用本页旧 `cloud-release.sh` 直接发布 V3；脚本现已拒绝该用法。生产尚未切换，仍是已发布 V2。
+
 目标为 Linux/amd64，开发系统是 Windows；生产环境全部在Linux容器中构建和运行。`Dockerfile`固定基础镜像digest，pnpm依赖用同一lockfile安装。Web为Next静态导出的Nginx镜像，API为Fastify/Node24内置SQLite，API端口不公开。
 
 ## 本机

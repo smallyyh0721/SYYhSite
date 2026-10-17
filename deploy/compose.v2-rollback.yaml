@@ -1,0 +1,67 @@
+# Retain the V3 TLS edge, use the fixed V2 static/API images, preserve the original guestbook volume.
+# Stop the V3 worker explicitly before using this file; never remove content/uploads volumes.
+name: syyh-draft
+x-runtime: &runtime
+  platform: linux/amd64
+  restart: unless-stopped
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  logging:
+    driver: json-file
+    options: {max-size: 10m, max-file: '3'}
+services:
+  web:
+    <<: *runtime
+    image: syyh-web:${EDGE_RELEASE:?Set the tested V3 edge image SHA}
+    environment: {SYYH_TLS: '${SYYH_TLS:-on}'}
+    ports:
+      - '${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:8080'
+      - '${BIND_ADDRESS:-127.0.0.1}:${HTTPS_PORT:-8443}:8443'
+    volumes:
+      - type: bind
+        source: ${TLS_EDGE_ROOT:?Configure TLS_EDGE_ROOT}
+        target: /run/tls
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${ACME_ROOT:?Configure ACME_ROOT}
+        target: /srv/acme
+        read_only: true
+        bind: {create_host_path: false}
+    tmpfs: ['/tmp:size=67108864,mode=1777']
+    mem_limit: 128m
+    networks: [backend, edge]
+    depends_on:
+      frontend: {condition: service_healthy}
+      api: {condition: service_healthy}
+  frontend:
+    <<: *runtime
+    image: syyh-web:${ROLLBACK_RELEASE:?Set the fixed V2 image SHA}
+    user: '101:101'
+    entrypoint: ['nginx', '-c', '/etc/nginx/v2-rollback.conf', '-g', 'daemon off;']
+    volumes:
+      - type: bind
+        source: ${ROLLBACK_NGINX_CONFIG:?Generate from the exact V2 image HTML}
+        target: /etc/nginx/v2-rollback.conf
+        read_only: true
+        bind: {create_host_path: false}
+    tmpfs: ['/tmp:size=67108864,mode=1777']
+    mem_limit: 128m
+    networks: [backend]
+    healthcheck:
+      test: ['CMD', 'wget', '-q', '-O', '/dev/null', 'http://127.0.0.1:3000/health']
+      interval: 20s
+      timeout: 3s
+  api:
+    <<: *runtime
+    image: syyh-api:${ROLLBACK_RELEASE:?Set the fixed V2 API SHA}
+    volumes: ['guestbook:/data']
+    tmpfs: ['/tmp:size=67108864,mode=1777']
+    mem_limit: 256m
+    networks: [backend]
+volumes:
+  guestbook: {name: '${DATA_VOLUME:?Preserve the original guestbook volume}'}
+networks:
+  backend: {internal: true}
+  edge: {}

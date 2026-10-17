@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-17T01:56:33.465Z",
+  "origin": "http://localhost:18980",
+  "slug": "qa-api-mvbqws53",
+  "evidence": [
+    {
+      "name": "create private draft",
+      "passed": true
+    },
+    {
+      "name": "upload and process fixture.png",
+      "passed": true
+    },
+    {
+      "name": "upload and process fixture.mp4",
+      "passed": true
+    },
+    {
+      "name": "save and authenticated preview",
+      "passed": true
+    },
+    {
+      "name": "publish without rebuilding frontend",
+      "passed": true
+    },
+    {
+      "name": "MP4 poster, HEAD and single byte range",
+      "passed": true
+    },
+    {
+      "name": "draft edit leaves published snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "storage outage blocks upload and publish, permits text edit and unpublish",
+      "passed": true
+    },
+    {
+      "name": "production seed originals have no public bypass",
+      "passed": true
+    },
+    {
+      "name": "logout revokes session",
+      "passed": true
+    }
+  ]
+}

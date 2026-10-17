@@ -1,0 +1,21 @@
+[Unit]
+Description=Authenticated HTTPS private SYYH COS prefix mount
+Wants=network-online.target syyh-cos-credentials.timer syyh-cos-credentials.service
+After=network-online.target syyh-cos-credentials.service
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=root
+UMask=0027
+ExecStartPre=/usr/bin/test -d /datastore/syyh-site
+ExecStartPre=/usr/bin/python3 /opt/website/syyh/storage/cvm-cos-credentials.py
+ExecStart=/usr/local/bin/cosfs works-1396243701:/syyh-site /datastore/syyh-site -f -ourl=https://cos.ap-shanghai.myqcloud.com -ocam_role=sts -opasswd_file=/run/syyh-cos/credentials -odefault_acl=private -oallow_other -odefault_permissions -ouid=1000 -ogid=1000 -oumask=0027 -omp_umask=0027 -oensure_diskfree=1024 -oconnect_timeout=10 -oreadwrite_timeout=30 -ostat_cache_expire=30 -oparallel_count=2 -omultireq_max=5 -odbglevel=crit
+ExecStop=/usr/bin/fusermount -u /datastore/syyh-site
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=45
+
+[Install]
+WantedBy=multi-user.target

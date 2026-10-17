@@ -63,7 +63,7 @@ export default function Gate() {
   }, [connecting]);
   return (
     <section ref={root} className={styles.gate} data-phase={connecting ? "greeting" : "welcome"}>
-      <GateSky />
+      {!connecting && <GateSky />}
       {connecting && <GreetingImage onComplete={enter} onNote={setNote} />}
       {connecting ? (
         <div className={`${styles.copy} ${styles.greeting}`}>

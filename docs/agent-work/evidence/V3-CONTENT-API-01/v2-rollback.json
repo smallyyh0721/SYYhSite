@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-17T02:00:30.098Z",
+  "v2SourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+  "environment": "isolated local HTTP stack, V3 edge and fixed V2 static/API images",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/hub/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/story/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/board/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/draft/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/themes/sky/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/themes/ancient/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/themes/apocalypse/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/themes/home/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/sky-city/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/ancient-landform/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/apocalypse/",
+      "status": 200,
+      "scriptHashesMatch": true
+    },
+    {
+      "path": "/works/anime-home/",
+      "status": 200,
+      "scriptHashesMatch": true
+    }
+  ],
+  "guestbookRead": true,
+  "newOwnerApiDisabled": true,
+  "publicTLSNotTested": true
+}

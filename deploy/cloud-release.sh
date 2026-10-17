@@ -30,6 +30,11 @@ if ! git -C "$task_repo" cat-file -e "$task_sha^{commit}" 2>/dev/null; then
 fi
 git -C "$task_repo" checkout --detach "$task_sha"
 [[ "$(git -C "$task_repo" rev-parse HEAD)" == "$task_sha" ]]
+# This historical helper cannot safely promote the four-service V3 topology.
+if grep -q 'CONTENT_DB_PATH' "$task_repo/deploy/Dockerfile"; then
+  echo 'V3 requires the private COS/TLS candidate, backup and rollback workflow in deploy/V3-README.md; no containers changed.'
+  exit 1
+fi
 task_env=$task_root/releases/$task_sha.env
 cat > "$task_env" <<EOF
 RELEASE=$task_sha

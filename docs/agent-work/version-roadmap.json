@@ -1,0 +1,58 @@
+{
+  "updatedAt": "2026-10-17",
+  "currentDeliveredVersion": "v2",
+  "versions": [
+    {
+      "id": "v2",
+      "status": "complete",
+      "completionAuthority": "User explicitly confirmed second version complete on 2026-10-15",
+      "productionUrl": "http://124.220.190.120/",
+      "runtimeSourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+      "releaseReport": "docs/agent-work/reports/P4-06.md",
+      "localMaintenance": {
+        "status": "complete",
+        "date": "2026-10-15",
+        "report": "docs/agent-work/reports/v2-local-docker-cleanup-20261015.md",
+        "oldImageTagsRemoved": 14,
+        "retiredLocalContainersRemoved": 2,
+        "projectBuildCacheReclaimed": "4.006GB reported by Docker",
+        "allLocalVolumesRetained": true,
+        "cloudTouched": false
+      }
+    },
+    {
+      "id": "v3",
+      "status": "in_progress",
+      "implementationAuthorized": true,
+      "startedAt": "2026-10-16",
+      "startAuthority": "User approved About design and instructed continuing v3 development on 2026-10-16",
+      "progressDocument": "docs/agent-work/v3-progress.md",
+      "goalDocument": "docs/agent-work/v3-goals.md",
+      "taskBreakdownDocument": "docs/agent-work/v3-task-breakdown.md",
+      "storageUploadSecurityPlan": "docs/agent-work/v3-storage-upload-security-plan.md",
+      "securityHardeningRequiredForRelease": true,
+      "scopedAboutChange": {
+        "authorizedAt": "2026-10-16",
+        "status": "complete_local_not_deployed",
+        "approvedArtwork": "about-sequence/v002",
+        "frameCount": 9,
+        "formalReleaseControls": "not_rendered_in_production_build",
+        "designReview": "approved_by_user_2026-10-16",
+        "report": "docs/agent-work/reports/about-sequence-integration.md",
+        "startsWholeVersion": false
+      },
+      "objectives": [
+        "Complete overall style and every subpage design; replace remaining public placeholders with real materials and content",
+        "Provide owner work upload and management using private Tencent Cloud COS mounted at /datastore via verified cosfs; plan HTTPS uploads and SFTP draft import through the complete workflow",
+        "Remove visitor-facing draft traces, complete security hardening, and deliver the formal release"
+      ],
+      "publicReleaseAuthorized": true,
+      "releaseAuthority": "User instructed building the website and pushing to production after completion on 2026-10-16",
+      "releaseConditions": "Fixed candidate, real content and owner workflow, security validation, backup/restore and rollback; production About review controls absent",
+      "activeGrokAssignment": null,
+      "localValidation": "Linux Docker owner workflow, valid MP4, private publication/unpublish, fault, restart, independent backup restoration passed; 31 engineering tests",
+      "releaseBlocker": "COS uses HTTP public_bucket=1; anonymous root HTTP200, CVM role endpoint404; user chose restricted CAM role; awaiting completed binding and private bucket permissions",
+      "productionDeployed": false
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "newFrontendIP": "172.19.0.5",
+  "privateNetworkOnly": true,
+  "edgeContainerUnchanged": true,
+  "oldFrontendIP": "172.19.0.3"
+}

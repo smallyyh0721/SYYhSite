@@ -74,18 +74,15 @@ function PoseCrop({
   src,
   frame,
   row,
-  pan = "figure",
 }: {
   src: string;
   frame: Frame;
   row: 0 | 1;
-  pan?: "figure" | "sky";
 }) {
   const col = FRAMES.indexOf(frame);
-  const zoomClass = pan === "sky" ? styles.skyZoom : styles.zoom;
   return (
     <div className={styles.crop} data-pose={frame}>
-      <div className={zoomClass}>
+      <div className={styles.zoom}>
         <img
           className={styles.sheet}
           src={src}
@@ -312,32 +309,22 @@ export default function GreetingImage({
       aria-hidden="true"
     >
       {showSheet && (
-        <>
-          <div className={`${styles.wash} ${styles.skyWash}`} data-greeting-wash>
-            <PoseCrop src={sheet} frame="cold" row={row} pan="sky" />
-          </div>
-          <div className={styles.figure} data-greeting-figure data-portrait={snapshot.portrait ? "true" : "false"}>
-            <div className={motionOff ? styles.still : styles.ken}>
-              <div className={styles.stack}>
-                {FRAMES.map((name) => (
-                  <PoseCrop key={name} src={sheet} frame={name} row={row} />
-                ))}
-              </div>
+        <div className={styles.figure} data-greeting-figure data-portrait={snapshot.portrait ? "true" : "false"}>
+          <div className={motionOff ? styles.still : styles.ken}>
+            <div className={styles.stack}>
+              {FRAMES.map((name) => (
+                <PoseCrop key={name} src={sheet} frame={name} row={row} />
+              ))}
             </div>
           </div>
-        </>
+        </div>
       )}
       {showFallback && (
-        <>
-          <div className={styles.wash} data-greeting-wash>
-            <img className={styles.fallbackWash} src={fallback} alt="" draggable={false} decoding="async" />
+        <div className={styles.fallbackFigure} data-greeting-figure data-portrait={snapshot.portrait ? "true" : "false"}>
+          <div className={motionOff ? styles.still : styles.ken}>
+            <img className={styles.fallback} src={fallback} alt="" draggable={false} decoding="async" />
           </div>
-          <div className={styles.fallbackFigure} data-greeting-figure data-portrait={snapshot.portrait ? "true" : "false"}>
-            <div className={motionOff ? styles.still : styles.ken}>
-              <img className={styles.fallback} src={fallback} alt="" draggable={false} decoding="async" />
-            </div>
-          </div>
-        </>
+        </div>
       )}
     </div>
   );

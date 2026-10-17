@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { useTheme } from "@/state/Theme";
 import { IconMoon, IconSun } from "@/components/Icons";
 import styles from "./Shell.module.css";
+import { siteName, xiaohongshuUrl } from "@/lib/site";
 const links = [
   ["/hub/", "探索"],
   ["/works/", "作品"],
@@ -111,8 +112,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       </main>
       {!immersive && (
         <footer className={styles.footer}>
-          <span>SYYH 个人频道</span>
-          <Link href="/draft/">查看第二版进度</Link>
+          <span>{siteName}</span>
+          <div className={styles.footerLinks}>
+            <a href={xiaohongshuUrl} target="_blank" rel="noopener noreferrer">小红书 ↗</a>
+            <Link href="/owner/">站主管理</Link>
+          </div>
         </footer>
       )}
     </div>

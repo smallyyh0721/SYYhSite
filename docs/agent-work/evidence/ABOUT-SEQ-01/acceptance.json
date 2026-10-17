@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-16",
+  "status": "accepted-local",
+  "previewUrl": "http://localhost:8896/about/",
+  "build": {
+    "directory": "D:\\dev\\yyh_server\\SYYhSite\\docs\\agent-work\\logs\\production-check-1792123745304",
+    "result": "pnpm build passed incl TypeScript, 17 pages and 15 static prefetch aliases",
+    "sourceMatches": [
+      {
+        "file": "src/features/avatar/CharacterSequence.tsx",
+        "sha256": "1bcf2aeafeb279856091f15a4e692cb8e934133d4bb889987d01d932a2e26e68",
+        "matchesBuild": true
+      },
+      {
+        "file": "src/features/avatar/CharacterSequence.module.css",
+        "sha256": "21a225209f8811dfa29287a0fb8657bbde8557dd5cd0a213f39be57f756a2201",
+        "matchesBuild": true
+      },
+      {
+        "file": "src/features/content/About.tsx",
+        "sha256": "39308df17a6a82c65465d829469b9e10fc30a421fb112f3823bb9e386b7b5c18",
+        "matchesBuild": true
+      },
+      {
+        "file": "src/features/content/Content.module.css",
+        "sha256": "85e9aa4243fb9351b9e1f9a8d07b24d1e58895eb03795f73b3340bb235b2b1fd",
+        "matchesBuild": true
+      }
+    ]
+  },
+  "scope": {
+    "changedExistingFiles": [
+      "src/features/content/About.tsx",
+      "src/features/content/Content.module.css",
+      "public/media/v3/about-sequence/v002/manifest.json"
+    ],
+    "unexpectedExistingFileChanges": [],
+    "welcomeAndOtherExistingAssetsRetained": true,
+    "publicDeployment": false
+  },
+  "approvedFrames": [
+    {
+      "index": 0,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 1,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 2,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 3,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 4,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 5,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 6,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 7,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "index": 8,
+      "matchesApproved": true,
+      "matchesServed": true,
+      "status": 200
+    }
+  ],
+  "browserObservations": [
+    {
+      "case": "default",
+      "frame": "4",
+      "frameCount": "9",
+      "playing": "false",
+      "state": "ready"
+    },
+    {
+      "case": "night-preserves-frame",
+      "frame": "8",
+      "state": "ready",
+      "theme": "night"
+    },
+    {
+      "case": "paper-preserves-frame",
+      "frame": "8",
+      "paper": "on",
+      "state": "ready"
+    },
+    {
+      "case": "keyboard-home",
+      "frame": "0"
+    },
+    {
+      "case": "autoplay-start",
+      "frame": "0",
+      "playing": "true"
+    },
+    {
+      "case": "autoplay-progress",
+      "frame": "1",
+      "playing": "true"
+    },
+    {
+      "case": "manual-stops-play",
+      "frame": "8",
+      "playing": "false"
+    },
+    {
+      "case": "partial-frames-failure",
+      "canvasVisible": "visible",
+      "disabled": true,
+      "frame": "4",
+      "state": "poster",
+      "text": "其余朝向暂不可用。指针 / 拖动随滚动自动播放左转右转"
+    },
+    {
+      "case": "all-frames-failure",
+      "disabled": true,
+      "state": "empty",
+      "text": "人物画面暂不可用。人物画面暂不可用。指针 / 拖动随滚动自动播放左转右转"
+    },
+    {
+      "case": "reduced-event-stops-and-disables-auto",
+      "manualEnabled": true,
+      "playDisabled": true,
+      "playing": "false"
+    },
+    {
+      "case": "reduced-event-manual-frame",
+      "frame": "8"
+    },
+    {
+      "case": "restore-motion-stays-paused",
+      "playing": "false"
+    },
+    {
+      "case": "no-js-centre-image",
+      "complete": true,
+      "src": "/media/v3/about-sequence/v002/frames/frame-005.webp",
+      "visibility": "visible",
+      "width": 418
+    },
+    {
+      "case": "canvas-unavailable-image-fallback",
+      "complete": true,
+      "src": "/media/v3/about-sequence/v002/frames/frame-005.webp",
+      "visibility": "visible",
+      "width": 418
+    },
+    {
+      "case": "mobile-390-drag",
+      "frame": "8",
+      "scrollWidth": 375,
+      "viewportWidth": 390
+    },
+    {
+      "case": "final-scroll-settled",
+      "frame": "7",
+      "mode": "scroll",
+      "scrollY": 907.5
+    }
+  ],
+  "verificationLimits": [
+    "390px layout and pointer drag verified; requested 320px override did not apply to the target tab, so no 320px pass is claimed",
+    "Reduced motion change tested with local MediaQueryList event fixture, not an OS accessibility setting or real touch device",
+    "Modified-key guard verified in final source; native range Ctrl+Home/End may apply browser-native range behavior; no assertion that it always scrolls the page",
+    "Desktop screenshots use two adjacent original-coordinate captures because the full-width IAB screenshot failed; initial desktop screenshots predate the copy/keyboard repair; final-about-mobile.jpg uses the final build",
+    "No Safari/Firefox/real-device, hung-network timeout, or production guestbook API test in this scope"
+  ],
+  "requestAudit": {
+    "fixtureRequests": 230,
+    "writeRequests": 0,
+    "oldModelRequests": 0
+  },
+  "ok": true
+}

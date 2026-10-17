@@ -1,13 +1,34 @@
 import Fastify from "fastify";
 import { openStore } from "./store.mjs";
 import { fileURLToPath } from "node:url";
+import { resolveContentConfig } from "./content-config.mjs";
+import { registerContent } from "./content-routes.mjs";
 export function createServer({
   dbPath = process.env.DB_PATH || "./data/guestbook.sqlite",
   logger = false,
   rateLimit = 5,
   rateWindowMs = 600000,
+  content,
 } = {}) {
-  const app = Fastify({ logger, bodyLimit: 4096, trustProxy: 1 });
+  const contentConfig = resolveContentConfig(content);
+  const app = Fastify({
+    logger: logger
+      ? {
+          level: "info",
+          redact: {
+            paths: [
+              "req.headers.cookie",
+              "req.headers.authorization",
+              "req.body.password",
+              "res.headers.set-cookie",
+            ],
+            censor: "[redacted]",
+          },
+        }
+      : false,
+    bodyLimit: 4096,
+    trustProxy: 1,
+  });
   const db = openStore(dbPath);
   const attempts = new Map();
   app.addHook("onClose", async () => db.close());
@@ -95,22 +116,35 @@ export function createServer({
       .code(201)
       .send({ id: Number(result.lastInsertRowid), status: "pending" });
   });
+  if (contentConfig) registerContent(app, contentConfig);
   app.setErrorHandler((error, req, reply) => {
+    if (error?.name === "ContentError" && error.statusCode) {
+      reply.header("Cache-Control", "no-store");
+      if (error.retryAfter) reply.header("Retry-After", String(error.retryAfter));
+      const body = { error: error.message };
+      if (error.code) body.code = error.code;
+      return reply.code(error.statusCode).send(body);
+    }
     req.log.error(error);
-    reply
-      .code(
-        error.statusCode >= 400 && error.statusCode < 500
-          ? error.statusCode
-          : 500,
-      )
-      .send({
-        error:
-          error.statusCode === 413
-            ? "留言过长。"
-            : error.statusCode === 400
-              ? "请求格式无效。"
-              : "服务暂时不可用，请稍后重试。",
-      });
+    const status =
+      error.statusCode >= 400 && error.statusCode < 500 ? error.statusCode : 500;
+    const guestbook =
+      !contentConfig ||
+      !req.url ||
+      req.url.startsWith("/api/messages") ||
+      req.url.startsWith("/api/health");
+    const message = guestbook
+      ? error.statusCode === 413
+        ? "留言过长。"
+        : error.statusCode === 400
+          ? "请求格式无效。"
+          : "服务暂时不可用，请稍后重试。"
+      : error.statusCode === 413
+        ? "文件超过大小上限。"
+        : error.statusCode === 400 || error.statusCode === 415
+          ? "请求格式无效。"
+          : "服务暂时不可用，请稍后重试。";
+    reply.code(status).send({ error: message });
   });
   return app;
 }

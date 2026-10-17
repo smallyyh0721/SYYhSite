@@ -1,44 +1,19 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
+import { useState } from "react";
 import Link from "next/link";
-import PosterFallback from "@/features/avatar/PosterFallback";
+import CharacterSequence, { type SequenceView } from "@/features/avatar/CharacterSequence";
 import styles from "./Content.module.css";
-type FigureView = "loading" | "live" | "poster" | "empty";
-const FIGURE: Record<FigureView, string> = {
-  loading: "人物画面载入中。",
-  live: "移动指针，目光会轻轻跟随。",
-  poster: "人物静帧。",
+
+const FIGURE: Record<SequenceView, string> = {
+  loading: "人物肖像。",
+  ready: "人物肖像。",
+  poster: "人物静帧。其余朝向暂不可用。",
   empty: "人物画面暂不可用。",
 };
-const Avatar = dynamic(() => import("@/features/avatar/Avatar"), {
-  ssr: false,
-  loading: () => <PosterFallback pending />,
-});
 
 export default function About() {
   const [paper, setPaper] = useState(false);
-  const [figure, setFigure] = useState<FigureView>("loading");
-  const pointer = useRef({ x: 0, y: 0 });
-  useEffect(() => {
-    const reset = () => { pointer.current = { x: 0, y: 0 }; };
-    const move = (event: PointerEvent) => {
-      if (event.pointerType === "touch") return;
-      pointer.current = {
-        x: Math.max(-1, Math.min(1, (event.clientX / innerWidth - .5) * 2)),
-        y: Math.max(-1, Math.min(1, (event.clientY / innerHeight - .5) * 2)),
-      };
-    };
-    const leave = (event: PointerEvent) => { if (!event.relatedTarget) reset(); };
-    window.addEventListener("pointermove", move);
-    window.addEventListener("pointerout", leave);
-    window.addEventListener("blur", reset);
-    return () => {
-      window.removeEventListener("pointermove", move);
-      window.removeEventListener("pointerout", leave);
-      window.removeEventListener("blur", reset);
-    };
-  }, []);
+  const [figure, setFigure] = useState<SequenceView>("loading");
   return (
     <article
       className={`${styles.page} ${paper ? styles.paper : ""}`}
@@ -51,14 +26,14 @@ export default function About() {
             关于
           </h1>
         </div>
-        <p>自我介绍、兴趣与经历待补充。</p>
       </header>
 
       <section className="grid2">
         <div className={styles.heroCopy}>
           <p className="muted">
-            个人简介待补充。
+            I人，有点意思但不多。
           </p>
+          <p className="muted">穿越到异世界过上了天天躺平的日子。</p>
           <div className={styles.actions}>
             <button
               type="button"
@@ -74,7 +49,10 @@ export default function About() {
           </div>
         </div>
         <figure className={styles.poster}>
-          <div className={styles.avatarStage} aria-hidden="true"><Avatar pointer={pointer} pointerTracking onView={setFigure} /></div>
+          <CharacterSequence
+            onView={setFigure}
+            showReviewControls={process.env.NODE_ENV !== "production"}
+          />
           <figcaption>{FIGURE[figure]}</figcaption>
         </figure>
       </section>
@@ -82,15 +60,15 @@ export default function About() {
       <div className={styles.trio}>
         <section className="panel">
           <h2>兴趣</h2>
-          <p className="muted">还没有提供。</p>
+          <p className="muted">动漫喜欢但是没空看。</p>
         </section>
         <section className="panel">
           <h2>工具</h2>
-          <p className="muted">还没有提供。</p>
+          <p className="muted">AIGC/Agent技术懂点也不通。</p>
         </section>
         <section className="panel">
-          <h2>经历</h2>
-          <p className="muted">还没有提供。</p>
+          <h2>别处见</h2>
+          <p><a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">去小红书看看 ↗</a></p>
         </section>
       </div>
     </article>

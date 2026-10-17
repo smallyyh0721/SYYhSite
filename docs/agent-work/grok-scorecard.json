@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-16",
   "scale": "Codex evidence-based reviewer ratings 0-5, not measured code-accuracy percent",
   "weights": {
     "correctness": 35,
@@ -10,16 +10,16 @@
     "communication": 10
   },
   "delegation": {
-    "level": 2,
-    "name": "standard",
-    "modulesPerBatch": 2,
+    "level": 1,
+    "name": "focused",
+    "modulesPerBatch": 1,
     "concurrentCliDefault": 1,
     "rollingWindow": 3,
     "meaningfulDelta": 3,
     "raiseMinimum": 85,
     "reduceBelow": 75,
-    "availability": "No active task; recent feedback CLI exited successfully",
-    "lastDecision": "Keep initial standard level: only one provisional coding-module baseline; no valid rolling trend yet"
+    "availability": "No active Grok CLI; both V3 modules locally accepted, production pending private COS identity.",
+    "lastDecision": "Keep level 1 / one complete module and one CLI. Initial auth/storage defects and two repair rounds plus one Codex Linux patch preclude increasing scope. This complex auth/storage API starts its own difficulty group; do not manufacture a rolling trend against presentation modules. Efficiency remains unmeasured; global skill unqualified."
   },
   "globalSkill": {
     "status": "project-trial",
@@ -72,7 +72,7 @@
         "communication": 4
       },
       "coverageWeight": 50,
-      "score": 84.0,
+      "score": 84,
       "trendEligible": false,
       "scoreStatus": "communication-only, not programming evidence",
       "firstSubmissionAccepted": false,
@@ -82,6 +82,319 @@
         "feedback/P2-10-round-1.md"
       ],
       "rationale": "Correctly read globals and distinguished HEAD/runtime SHA; one feedback round removed unnecessary stop conditions and clarified historical report corrections. No website code or efficiency measurement."
+    },
+    {
+      "taskId": "P3-08",
+      "kind": "programming-module",
+      "module": "Static material review and works layout preview",
+      "model": "grok-4.6-build",
+      "reasoningEffort": null,
+      "sessionId": "01a13850-f1e3-75b3-bc0e-d31da9fce6cb",
+      "reviewedAt": "2026-10-14",
+      "retrospective": false,
+      "ratings": {
+        "correctness": 5,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 4,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 90.59,
+      "trendEligible": true,
+      "firstSubmissionAccepted": true,
+      "repairRounds": 0,
+      "scoreStatus": "Independent actual-asset browser validation complete; effective coding time and exact effort not measured",
+      "evidence": [
+        "reports/P3-08.md",
+        "reports/P3-preview-v001.md",
+        "evidence/P3-preview/ui/checks.json"
+      ],
+      "rationale": "All 8 real concepts load; renamed filters, dialog arrows/focus/close, persisted themes, 320/390 and reduced motion pass. Review interface is usable; visual styling remains an initial user-review proposal. Raw CLI identifies grok-4.6-build; report uses family name and self-reported times, so precise CLI metadata needs normalization. No code repairs. Efficiency not inferred from elapsed wall time."
+    },
+    {
+      "taskId": "P4-08",
+      "kind": "programming-module",
+      "module": "Runtime gallery and shareable image viewer",
+      "model": "grok-4.6-build",
+      "reasoningEffort": null,
+      "sessionId": "01a139e9-0b6f-7432-83bb-efd56f85f252",
+      "reviewedAt": "2026-10-14",
+      "retrospective": false,
+      "ratings": {
+        "correctness": 5,
+        "understanding": 5,
+        "efficiency": null,
+        "cliWorkflow": 4,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 97.65,
+      "trendEligible": true,
+      "firstSubmissionAccepted": true,
+      "repairRounds": 0,
+      "wallClockSeconds": 1683,
+      "effectiveCodingSeconds": null,
+      "budgetSeconds": 1500,
+      "scoreStatus": "Actual-asset browser review complete; wall time includes testing/waits; effort unverified",
+      "evidence": [
+        "reports/P4-08.md",
+        "evidence/P4-08/acceptance.md",
+        "evidence/P4-08/lead-live/checks.json"
+      ],
+      "rationale": "Nine real-art browser checks passed including visible Forward restoration and refresh/detail/list context; no lead implementation patch. Test stale-asset assumption, lead script syntax and hydration timing excluded. Exact model from CLI end; report metadata incomplete."
+    },
+    {
+      "taskId": "P4-09",
+      "kind": "programming-module",
+      "module": "Layered world and single-play greeting player",
+      "model": "grok-4.7-build",
+      "reasoningEffort": null,
+      "sessionId": "01a13a3c-ff9f-76d0-ab86-bc2c92ff8346",
+      "reviewedAt": "2026-10-14",
+      "retrospective": false,
+      "ratings": {
+        "correctness": 5,
+        "understanding": 5,
+        "efficiency": null,
+        "cliWorkflow": 4,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 97.65,
+      "trendEligible": true,
+      "firstSubmissionAccepted": true,
+      "repairRounds": 0,
+      "wallClockSeconds": 3883,
+      "effectiveCodingSeconds": null,
+      "budgetSeconds": 1500,
+      "evidence": [
+        "reports/P4-09.md",
+        "evidence/P4-09/acceptance.md",
+        "evidence/P4-09/lead/checks.json"
+      ],
+      "rationale": "22 independent current-art engineering checks pass; real character films still missing and not claimed complete; no lead implementation patch; exact effort unverified"
+    },
+    {
+      "taskId": "P4-10",
+      "kind": "programming-module",
+      "module": "Full-site rounded visual and honest content states",
+      "model": "grok-4.7-build",
+      "reasoningEffort": null,
+      "sessionId": "01a13a7f-f1bc-7c12-8c27-580c5dc35523",
+      "reviewedAt": "2026-10-14",
+      "retrospective": false,
+      "ratings": {
+        "correctness": 5,
+        "understanding": 5,
+        "efficiency": null,
+        "cliWorkflow": 4,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 97.65,
+      "trendEligible": true,
+      "firstSubmissionAccepted": true,
+      "repairRounds": 0,
+      "selfTestIterations": 8,
+      "effectiveCodingSeconds": null,
+      "evidence": [
+        "reports/P4-10.md",
+        "evidence/P4-10/acceptance.md",
+        "evidence/P4-10/lead/checks.json"
+      ],
+      "rationale": "14 independent browser checks and typecheck pass; self-test script and product repairs documented before first external submission; actual API/production still pending; exact effort and effective time unverified"
+    },
+    {
+      "taskId": "P4-11",
+      "kind": "programming-module",
+      "module": "Real avatar consumer and truthful fallback",
+      "model": "grok-4.7-build",
+      "reasoningEffort": null,
+      "sessionId": "01a13b0b-ebce-7db0-813c-ebc90c0d0178",
+      "reviewedAt": "2026-10-15",
+      "retrospective": false,
+      "ratings": {
+        "correctness": 4,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 84.71,
+      "trendEligible": true,
+      "firstSubmissionAccepted": false,
+      "repairRounds": 1,
+      "effectiveCodingSeconds": null,
+      "budgetSeconds": 1500,
+      "evidence": [
+        "reports/P4-11.md",
+        "evidence/P4-11/acceptance.md",
+        "evidence/P4-11/lead/checks.json"
+      ],
+      "rationale": "30 independent fixture/fallback browser checks,9 unit tests,typecheck pass; framing required one local repair. Actual character art acceptance remains separate; no lead product patch."
+    },
+    {
+      "taskId": "P4-12",
+      "kind": "programming-module",
+      "module": "Real media validation and production browser regression tools",
+      "model": "grok-4.7-build",
+      "reasoningEffort": null,
+      "sessionId": "01a13bbd-8363-7552-abf6-70e824d6d9e5",
+      "reviewedAt": "2026-10-15",
+      "ratings": {
+        "correctness": 4,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 84.71,
+      "trendEligible": true,
+      "firstSubmissionAccepted": false,
+      "repairRounds": 2,
+      "effectiveCodingSeconds": null,
+      "budgetSeconds": 1800,
+      "leadIntegrationPatches": 1,
+      "evidence": [
+        "reports/P4-12.md",
+        "evidence/P4-12/acceptance.md",
+        "evidence/P4-12/lead-final-v037-assets-r1.json",
+        "evidence/P4-12/lead-final-windows-v037/checks.json",
+        "evidence/P4-12/lead-final-linux-v037/checks.json"
+      ],
+      "rationale": "Two review repairs preserve original shortcomings: ffprobe-only gate/API noted classification; production hydration/decode waits and four-real-film matrix. Final 31 asset and Windows/Linux31 checks pass. Codex corrected budget table selection after adding progress prose; counted as lead integration patch. Effective time unknown; no public writes or deployment."
+    },
+    {
+      "taskId": "P5-06",
+      "kind": "programming-module",
+      "module": "Approved original artwork greeting instead of 3D film",
+      "model": "grok-4.6-build",
+      "reasoningEffort": null,
+      "reviewedAt": "2026-10-15",
+      "ratings": {
+        "correctness": 4,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 84.71,
+      "trendEligible": true,
+      "scoreStatus": "Final engineering accepted; user visual review pending, efficiency unmeasured",
+      "firstSubmissionAccepted": false,
+      "grokRepairRounds": 1,
+      "session": "01a13d05-8e46-7283-b074-acac9590fb63",
+      "baseline": "7bb7b9e9048f79977a620743a2d1aaa5eef46345",
+      "evidence": [
+        "docs/agent-work/reports/P5-06.md",
+        "docs/agent-work/feedback/P5-06-round-1.md",
+        "docs/agent-work/evidence/P5-06-lead/acceptance.md"
+      ],
+      "findings": [
+        "First submission hid the original reaching hand with zoom and masking; one concrete feedback round corrected framing and stable screenshot timing.",
+        "Codex supplied exact approved original art and technical encoding/shared asset contract, updated stale draft status, and performed independent production checks.",
+        "Codex additionally adjusted page-owned Gate.module.css foreground size and top/side masks after an isolated visual probe; this layout polish is not Grok independent work. No module takeover; About and public deployment unchanged."
+      ],
+      "effectiveCodingMinutes": null,
+      "efficiencyBudgetMinutes": 15,
+      "availability": "Initial and resumed CLI exited0; telemetry warnings did not block artifact work"
+    },
+    {
+      "taskId": "ABOUT-SEQ-01",
+      "kind": "programming-module",
+      "module": "Approved V-neck nine-frame About character integration",
+      "model": "grok-4.6-build",
+      "reasoningEffort": "high",
+      "sessionId": "01a1428d-fab0-7913-853f-16634efffc36",
+      "reviewedAt": "2026-10-16",
+      "ratings": {
+        "correctness": 4,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 84.71,
+      "trendEligible": true,
+      "firstSubmissionAccepted": false,
+      "repairRounds": 1,
+      "effectiveCodingMinutes": null,
+      "efficiencyBudgetMinutes": 15,
+      "leadIntegrationPatches": 0,
+      "evidence": [
+        "reports/about-sequence-integration.md",
+        "feedback/ABOUT-SEQ-01-round-1.md",
+        "evidence/ABOUT-SEQ-01/acceptance.json"
+      ],
+      "rationale": "One repair addressed missing modifier guard, duplicate intro and perpetual no-JS loading text. Final production build and approved asset/source hash checks passed. Codex used CUA for UI and local HTTP/media-event fixtures; 390px verified, 320px override failed and is explicitly not passed; no real touch/OS setting/Safari/Firefox or public deployment. Native range modifier behavior not overclaimed."
+    },
+    {
+      "taskId": "V3-WORKS-01",
+      "kind": "programming-module",
+      "module": "Real first-release works gallery, detail and lightbox",
+      "model": "grok-4.7-build",
+      "reasoningEffort": "high",
+      "sessionId": "01a143ad-f4d6-7411-8e8b-7f9a929ea1f0",
+      "reviewedAt": "2026-10-16",
+      "ratings": {
+        "correctness": 4,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 4,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 82.35,
+      "trendEligible": true,
+      "firstSubmissionAccepted": false,
+      "repairRounds": 1,
+      "effectiveCodingMinutes": null,
+      "efficiencyBudgetMinutes": 55,
+      "leadIntegrationPatches": 0,
+      "evidence": [
+        "assignments/V3-WORKS-01.md",
+        "feedback/V3-WORKS-01-round-1.md",
+        "reports/V3-WORKS-01.md",
+        "evidence/V3-WORKS-01/acceptance.md"
+      ],
+      "rationale": "One repair fixed modifier handling, nested retry semantics and product wording; added no-JS fallback was new clarified scope. Independent isolated production build, CUA keyboard/focus, real HTTP media failure/retry and 320px width passed. Main out lock was environmental, but manually clearing locked output was an artifact-handling concern corrected by feedback. No takeover. No real-device or disabled-JS browser claim."
+    },
+    {
+      "taskId": "V3-CONTENT-API-01",
+      "kind": "programming-module",
+      "module": "Owner authentication, private content storage, upload/worker and publication API",
+      "model": "grok-4.7-build",
+      "reasoningEffort": "high",
+      "sessionId": "01a144bb-6ddf-72d2-8755-e933d94e0346",
+      "reviewedAt": "2026-10-16",
+      "ratings": {
+        "correctness": 3,
+        "understanding": 4,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 76.47,
+      "trendEligible": true,
+      "trendGroup": "complex-auth-storage-api",
+      "firstSubmissionAccepted": false,
+      "repairRounds": 2,
+      "finalStatus": "accepted locally with one Codex Linux ffprobe parameter patch; real COS and production pending",
+      "evidence": [
+        "evidence/V3-CONTENT-API-01/acceptance.md",
+        "evidence/V3-CONTENT-API-01/linux-http.json",
+        "evidence/V3-CONTENT-API-01/http-security.json",
+        "evidence/V3-CONTENT-API-01/backup-restore.json",
+        "evidence/V3-CONTENT-API-01/restart.json"
+      ],
+      "rationale": "Initial concurrent auth throttling, development cookie, upload pre-auth/body cap, worker lease and streaming defects repaired by Grok; second repair fixes snapshot manifest race. Codex subsequently removed unsupported ffprobe -nostdin after actual Linux valid MP4 failure. 31 engineering checks, 10 Linux HTTP scenarios, 13 security route checks, CUA video playback/UI/mobile and independent backup restoration passed. No measured effective efficiency. Different difficulty from visual modules; no forced cross-difficulty rolling comparison.",
+      "codexIntervention": "One content-media.mjs ffprobe option removal; runtime/Docker/UI integration owned separately by Codex. No network-failure takeover; transient optional MCP transport errors excluded from quality score."
     }
   ],
   "takeovers": []

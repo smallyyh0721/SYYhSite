@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-17T01:56:34.068Z",
+  "origin": "http://localhost:18980",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/hub/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/works/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/works/themes/ancient/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/works/themes/apocalypse/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/story/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/board/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/owner/",
+      "status": 200,
+      "nonce": true,
+      "inlineScripts": 3
+    },
+    {
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    },
+    {
+      "path": "/api/owner/works",
+      "status": 401
+    },
+    {
+      "path": "/media/v3/works/private.webp",
+      "status": 404
+    }
+  ]
+}

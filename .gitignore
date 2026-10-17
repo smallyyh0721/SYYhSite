@@ -22,3 +22,6 @@ design/review-v1/references/
 docs/agent-work/logs/
 grok-p1-local.log
 *.local.md
+.local/
+__pycache__/
+*.pyc

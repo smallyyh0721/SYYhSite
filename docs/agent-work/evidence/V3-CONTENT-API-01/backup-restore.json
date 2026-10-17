@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-16T15:27:29.291Z",
+  "environment": "isolated Linux Docker backup, independent Windows local copy",
+  "integrity": [
+    "ok",
+    "ok",
+    "ok"
+  ],
+  "works": 2,
+  "assets": 4,
+  "restoredSessionsRevoked": true,
+  "sourceSessionsPreserved": true,
+  "productionUntouched": true,
+  "independentContainerRestoration": "passed: network none, read-only root, copied backup into tmpfs, public work/media and guestbook readable, owner authentication required"
+}

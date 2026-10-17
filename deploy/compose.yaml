@@ -1,40 +1,111 @@
 name: syyh-draft
+x-runtime: &runtime
+  platform: linux/amd64
+  restart: unless-stopped
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  logging:
+    driver: json-file
+    options: {max-size: 10m, max-file: '3'}
 services:
   web:
-    image: syyh-web:${RELEASE:-draft-v1}
-    build:
-      context: ..
-      dockerfile: deploy/Dockerfile
-      target: web
-      args:
-        VCS_REF: ${VCS_REF:-unknown}
-    platform: linux/amd64
+    <<: *runtime
+    image: syyh-web:${RELEASE:-v3-local}
+    build: {context: .., dockerfile: deploy/Dockerfile, target: web, args: {VCS_REF: '${VCS_REF:-unknown}'}}
+    environment: {SYYH_TLS: '${SYYH_TLS:-on}'}
     ports:
-      - "${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:80"
-    depends_on:
-      api:
-        condition: service_healthy
-    restart: unless-stopped
+      - '${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:8080'
+      - '${BIND_ADDRESS:-127.0.0.1}:${HTTPS_PORT:-8443}:8443'
+    volumes:
+      - type: bind
+        source: ${TLS_EDGE_ROOT:?Configure TLS_EDGE_ROOT}
+        target: /run/tls
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${ACME_ROOT:?Configure ACME_ROOT}
+        target: /srv/acme
+        read_only: true
+        bind: {create_host_path: false}
+    tmpfs: ['/tmp:size=67108864,mode=1777']
     mem_limit: 128m
-    logging:
-      driver: json-file
-      options: {max-size: 10m, max-file: '3'}
+    networks: [backend, edge]
+    depends_on:
+      frontend: {condition: service_healthy}
+      api: {condition: service_healthy}
+  frontend:
+    <<: *runtime
+    image: syyh-frontend:${RELEASE:-v3-local}
+    build: {context: .., dockerfile: deploy/Dockerfile, target: frontend, args: {VCS_REF: '${VCS_REF:-unknown}'}}
+    environment:
+      CONTENT_API_URL: http://api:3001
+      SITE_URL: ${PUBLIC_ORIGIN:?Configure PUBLIC_ORIGIN}
+    tmpfs: ['/tmp:size=67108864,mode=1777']
+    mem_limit: 384m
+    networks: [backend]
+    depends_on:
+      api: {condition: service_healthy}
   api:
-    image: syyh-api:${RELEASE:-draft-v1}
-    build:
-      context: ..
-      dockerfile: deploy/Dockerfile
-      target: api
-      args:
-        VCS_REF: ${VCS_REF:-unknown}
-    platform: linux/amd64
+    <<: *runtime
+    image: syyh-api:${RELEASE:-v3-local}
+    build: {context: .., dockerfile: deploy/Dockerfile, target: api, args: {VCS_REF: '${VCS_REF:-unknown}'}}
+    environment:
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Configure PUBLIC_ORIGIN}
+      STORE_ID: ${STORE_ID:?Configure STORE_ID}
+      ALLOW_INSECURE_DEV: ${ALLOW_INSECURE_DEV:-false}
     volumes:
       - guestbook:/data
-    restart: unless-stopped
-    mem_limit: 256m
-    logging:
-      driver: json-file
-      options: {max-size: 10m, max-file: '3'}
+      - content:/content
+      - uploads:/uploads
+      - type: bind
+        source: ${COS_SITE_ROOT:?Configure COS_SITE_ROOT}/derived
+        target: /media
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${OWNER_SECRET_FILE:?Configure OWNER_SECRET_FILE}
+        target: /run/secrets/owner-password.json
+        read_only: true
+        bind: {create_host_path: false}
+    tmpfs: ['/tmp:size=67108864,mode=1777']
+    mem_limit: 512m
+    networks: [backend]
+  worker:
+    <<: *runtime
+    image: syyh-worker:${RELEASE:-v3-local}
+    build: {context: .., dockerfile: deploy/Dockerfile, target: worker, args: {VCS_REF: '${VCS_REF:-unknown}'}}
+    environment:
+      STORE_ID: ${STORE_ID:?Configure STORE_ID}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Configure PUBLIC_ORIGIN}
+      ALLOW_INSECURE_DEV: ${ALLOW_INSECURE_DEV:-0}
+    tmpfs: ['/tmp:size=134217728,mode=1777']
+    mem_limit: 768m
+    cpus: 1.0
+    network_mode: none
+    group_add: ['11002']
+    volumes:
+      - content:/content
+      - uploads:/uploads
+      - type: bind
+        source: ${COS_SITE_ROOT:?Configure COS_SITE_ROOT}
+        target: /store
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${SFTP_INBOX_ROOT:?Configure SFTP_INBOX_ROOT}
+        target: /inbox
+        read_only: true
+        bind: {create_host_path: false}
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: ['CMD', 'node', '-e', 'const f=require("node:fs");if(f.readFileSync("/store/.syyh-store-id","utf8").trim()!==process.env.STORE_ID)process.exit(1)']
+      interval: 30s
+      timeout: 5s
 volumes:
-  guestbook:
-    name: ${DATA_VOLUME:-syyh-draft-local-guestbook}
+  guestbook: {name: '${DATA_VOLUME:-syyh-draft-local-guestbook}'}
+  content: {name: '${CONTENT_VOLUME:-syyh-v3-local-content}'}
+  uploads: {name: '${UPLOAD_VOLUME:-syyh-v3-local-uploads}'}
+networks:
+  backend: {internal: true}
+  edge: {}

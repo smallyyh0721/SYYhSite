@@ -1,0 +1,16 @@
+[Unit]
+Description=Renew SYYH short-lived IP TLS certificate
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/website/syyh/tls/certbot-venv/bin/certbot renew --cert-name syyh-ip --quiet --no-random-sleep-on-renew
+User=root
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ReadWritePaths=/etc/letsencrypt /var/log/letsencrypt /var/lib/letsencrypt /opt/website/syyh/tls/acme
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6

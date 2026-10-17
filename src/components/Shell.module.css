@@ -135,6 +135,8 @@
   color: var(--ink);
   text-decoration: none;
 }
+.footerLinks { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer > span { max-width: 36rem; }
 .skip {
   position: absolute;
   top: -100px;
