@@ -1,6 +1,6 @@
 # SYYH Signal agent 入口
 
-- 2026-10-17 最新：V3 主体已在隔离 Linux Docker 完成管理/真实作品导入发布/MP4/撤下/故障/重启/独立备份恢复验证；31 工程检查通过。云端仍 V2，V3 尚未部署，固定源码候选以本轮 Git HEAD 核验。COS 实查是 HTTP + public_bucket=1 匿名挂载，桶根匿名200、私有marker403，CAM角色元数据404；用户已选择 CAM 角色；需关闭匿名权限并完成绑定，待回复“已绑定”，不在聊天索取密钥。SFTP 20原图上传/hash与IP证书/续期设施完成，443未启用。先读 docs/agent-work/v3-progress.md 与 v3-cos-access-setup.md。Grok 两模块已结束，后端两轮返修和 Codex ffprobe 修正必须如实记录；默认1完整模块/1CLI。用户已授权完成后生产发布，无需再次请求授权。全部既有 dirty/源图继续保留。
+- 2026-10-17 最新：V3 主体已在隔离 Linux Docker 完成管理/真实作品导入发布/MP4/撤下/故障/重启/独立备份恢复验证；全套38工程检查通过。候选e4d11c0ef52740a3c8d9ff21612b70a86873fedd已推送，云端四镜像构建97秒、隔离带音轨视频处理通过；尚未创建/切换V3应用容器，云端仍V2。COS实查HTTP+public_bucket=1匿名挂载，桶根匿名200、私有marker403，CAM角色元数据404；用户已选择CAM角色，需关闭匿名权限并完成绑定，待回复“已绑定”，不在聊天索取密钥。SFTP20原图上传/hash与IP证书/续期设施完成，443未启用。先读docs/agent-work/reports/v3-candidate-20261017.md、v3-progress.md与v3-cos-access-setup.md。Grok两模块已结束，后端两轮返修和Codex ffprobe修正如实记录；默认1完整模块/1CLI。已授权完工后生产发布，无需再次请求授权。全部既有dirty/源图保留。
 
 - 2026-10-16当前执行授权：用户提供仪玄与《雾尽之处》两组首发作品、Luqing/Jiao三视图与“虚拟人物，闺蜜+对手”的Story创作方向、完整小红书主页链接，并明确“开始网站制作，完成后推送到生产环境”。已授权第三版主体开发及完成验收后的正式部署，覆盖下方旧的未获发布授权记录；不省略安全、备份、固定候选和公网复核。用户再次要求编码与Grok CLI协作，遵守既有规则。V3-WORKS-01于本轮派给一个Grok CLI，文件归属见assignment；Codex负责素材、共享契约、架构、安全与发布统筹。Story原创三张配图在assets/source/story-luqing-jiao/v001，正文在src/lib/story-content.ts；均尚待页面接入和完整审核。没有域名，正在验证IP受信任TLS方案；不得在公网HTTP开放口令管理。
 

@@ -1,0 +1,45 @@
+{
+  "candidateSourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+  "applicationDeployed": false,
+  "images": [
+    {
+      "name": "syyh-web:e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "id": "sha256:16207115bd96811c1c2b23216201d9e141923fbeefc1aab2a88dd0f2eb181811",
+      "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+    },
+    {
+      "name": "syyh-frontend:e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "id": "sha256:f1f4c7032bb856c6d472f5ccf7adeb7342ee3ce44721494a342659a3613bfb92",
+      "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+    },
+    {
+      "name": "syyh-api:e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "id": "sha256:3e00d8f6879fca3393a88b2a5968e17564913d7a69baa7f399897dce3e491698",
+      "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+    },
+    {
+      "name": "syyh-worker:e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "id": "sha256:e14d1b7636d3e6fc01a91b6712c715a393e0875e1d54d3aae7536c01fc6ff4f7",
+      "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+    }
+  ],
+  "production": [
+    {
+      "name": "syyh-draft-web-1",
+      "sourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+      "healthy": true
+    },
+    {
+      "name": "syyh-draft-api-1",
+      "sourceSha": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+      "healthy": true
+    }
+  ],
+  "roleEndpointHttp": 404,
+  "anonymousBucketRootHttp": 200,
+  "buildSeconds": 97,
+  "minimumObservedMemAvailableKiB": 1789852,
+  "workerSyntheticAudioVideoSmokePassed": true,
+  "productionStaticSeedBypassAbsent": true,
+  "bundleSha256": "acaf595fc4a043c2dbb118d0c6f98f85fe257205dc7c527ddf3c6eeeb9752ef9"
+}

@@ -52,7 +52,15 @@
       "activeGrokAssignment": null,
       "localValidation": "Linux Docker owner workflow, valid MP4, private publication/unpublish, fault, restart, independent backup restoration passed; 31 engineering tests",
       "releaseBlocker": "COS uses HTTP public_bucket=1; anonymous root HTTP200, CVM role endpoint404; user chose restricted CAM role; awaiting completed binding and private bucket permissions",
-      "productionDeployed": false
+      "productionDeployed": false,
+      "candidateSourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "cloudBuild": {
+        "status": "complete_images_only",
+        "seconds": 97,
+        "syntheticAudioVideoSmoke": "passed",
+        "applicationContainersStarted": false,
+        "receipt": "docs/agent-work/evidence/V3-CONTENT-API-01/cloud-build.json"
+      }
     }
   ]
 }
