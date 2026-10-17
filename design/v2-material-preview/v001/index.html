@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="night" data-view="materials" data-filter="all">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第二版素材预览</title>
+  <meta name="description" content="本地概念预览，用来审核第二版美术方向和作品展示布局。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到内容</a>
+
+  <header class="top">
+    <div class="brand">
+      <p class="eyebrow">第二版 · 概念预览</p>
+      <h1 class="page-title">素材与作品布局</h1>
+    </div>
+    <div class="top-controls">
+      <div class="segment" role="tablist" aria-label="预览视图">
+        <button type="button" id="view-materials" role="tab" aria-controls="main" aria-selected="true">素材预览</button>
+        <button type="button" id="view-works" role="tab" aria-controls="main" aria-selected="false">作品布局</button>
+      </div>
+      <div class="segment" role="group" aria-label="日夜外观">
+        <button type="button" id="theme-day" aria-pressed="false">Day</button>
+        <button type="button" id="theme-night" aria-pressed="true">Night</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <p id="boot-status" class="lead">正在读取预览清单。</p>
+  </main>
+
+  <div id="dialog-root"></div>
+
+  <script src="preview.js" defer></script>
+</body>
+</html>

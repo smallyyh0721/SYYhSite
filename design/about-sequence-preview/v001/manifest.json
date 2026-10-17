@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "created": "2026-10-16",
+  "purpose": "Independent original-image sequence review; not integrated into website",
+  "generator": "built-in image_gen",
+  "source": "assets/source/about-sequence/v001/keyframes-original.png",
+  "sourceSha256": "75e26a981b05f9d44f15c063c6c290c94839454a4a6afb62a5c3a475123577c9",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceReference": "Owned approved greeting-image/v001/character.png; face identity reference only",
+  "frameCount": 9,
+  "totalBytes": 264280,
+  "interpolation": "none; discrete original keyframes only",
+  "limitations": [
+    "Nine AI-generated keyframes; not a production-ready continuous 300-frame render",
+    "Identity, hair, pose and light may drift between generated views",
+    "Yaw values are prompt targets, not calibrated camera measurements"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "url": "./frames/frame-001.webp",
+      "yawTargetDegrees": -24,
+      "width": 418,
+      "height": 418,
+      "bytes": 30516,
+      "sha256": "4ed97e7117097d4ccb0fdd3c492dae4bd3cf403c41470a2eb718b82cd3a0577e"
+    },
+    {
+      "index": 1,
+      "url": "./frames/frame-002.webp",
+      "yawTargetDegrees": -18,
+      "width": 418,
+      "height": 418,
+      "bytes": 29562,
+      "sha256": "9ec6ad33e5b78d3d0e09a02fc8b75ba804d9fa3ed61e91692510bd2fa1fe7a13"
+    },
+    {
+      "index": 2,
+      "url": "./frames/frame-003.webp",
+      "yawTargetDegrees": -12,
+      "width": 418,
+      "height": 418,
+      "bytes": 29062,
+      "sha256": "299455d6de49d089a2a7f344999000ea77963a381bf2a677bb52fccbb076eac6"
+    },
+    {
+      "index": 3,
+      "url": "./frames/frame-004.webp",
+      "yawTargetDegrees": -6,
+      "width": 418,
+      "height": 418,
+      "bytes": 28984,
+      "sha256": "9d9fd2ccd32530d99b555c8368c3a0798578b3c0b26119fd0c82e7337478073c"
+    },
+    {
+      "index": 4,
+      "url": "./frames/frame-005.webp",
+      "yawTargetDegrees": 0,
+      "width": 418,
+      "height": 418,
+      "bytes": 28032,
+      "sha256": "8f0188a54f60bfe5f6aa11d4900df3c331fa14938d31dbcba81a2a07dd6113e3"
+    },
+    {
+      "index": 5,
+      "url": "./frames/frame-006.webp",
+      "yawTargetDegrees": 6,
+      "width": 418,
+      "height": 418,
+      "bytes": 28346,
+      "sha256": "0b1ad5b9c6306d1ca6f370c502a0bf1246ea7d473abff1a437491f3e8ac52638"
+    },
+    {
+      "index": 6,
+      "url": "./frames/frame-007.webp",
+      "yawTargetDegrees": 12,
+      "width": 418,
+      "height": 418,
+      "bytes": 30402,
+      "sha256": "0cd2d2ab3bf84fdf2479f82ef2c7a679b5908b9bcc46abaf740666cbe9962166"
+    },
+    {
+      "index": 7,
+      "url": "./frames/frame-008.webp",
+      "yawTargetDegrees": 18,
+      "width": 418,
+      "height": 418,
+      "bytes": 30250,
+      "sha256": "c8b814d432a6de9f926009e7ac60c6101a7ecba15a9fa332635112c30fc7b804"
+    },
+    {
+      "index": 8,
+      "url": "./frames/frame-009.webp",
+      "yawTargetDegrees": 24,
+      "width": 418,
+      "height": 418,
+      "bytes": 29126,
+      "sha256": "193a259f66e5db45e45e84ae4dd5d6dce6a1f826b7da5692690889df156511f3"
+    }
+  ]
+}

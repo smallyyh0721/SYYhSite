@@ -167,5 +167,11 @@
     "url": "http://124.220.190.120/",
     "status": "deployed-and-verified",
     "reportPath": "docs/agent-work/reports/P4-06.md"
+  },
+  "versionRoadmapReference": "docs/agent-work/version-roadmap.json",
+  "versionStatus": {
+    "v2": "complete per user confirmation",
+    "v3": "planned_not_started",
+    "v3ImplementationAuthorized": false
   }
 }

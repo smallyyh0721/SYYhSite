@@ -1,7 +1,7 @@
 {
   "version": "handoff-v2",
-  "updatedAt": "2026-10-14",
-  "scope": "P2-final-draft-adjustments",
+  "updatedAt": "2026-10-15",
+  "scope": "approved-v2-implementation-ready-for-local-review",
   "productionImplementationStarted": true,
   "requirements": [
     {
@@ -32,11 +32,11 @@
       "id": "visitor-avatar",
       "status": "user-required",
       "value": {
-        "location": "About: real 3D pointer gaze. Welcome: no avatar. CONNECT -> HELLO STRANGER: idle proxy now, prerecorded reaching clip in next asset version.",
+        "location": "Welcome no avatar; CONNECT fixed native v037 film; About realtime v034 half-body pointer gaze",
         "true3D": true,
         "pointerFollow": "Only About, eyes/head/subtle-upper-body; disabled for greeting and coarse pointer/reduced motion",
-        "identity": "pending-design",
-        "greetingVideo": "planned-for-next-assets; no pointer following; reference design/review-v3/01-entrance-storyboard.png lower frame"
+        "identity": "approved adult concept, native v034 available for final review",
+        "greetingVideo": "v037 actual3.5s day/night landscape/portrait MP4+WebM; no pointer follow"
       }
     },
     {
@@ -154,6 +154,45 @@
         "takeover": "Codex takes over when Grok cannot respond or continue, preserves existing work and avoids concurrent writes",
         "globalSkill": "Evaluate after demonstrated accuracy, understanding, efficiency and smooth CLI/communication; current project trial only"
       }
+    },
+    {
+      "id": "v2-user-authored-asset-directions-2026-10-14",
+      "status": "user-required",
+      "value": {
+        "sourceDocument": "docs/agent-work/v2-asset-instructions-fill-in.md",
+        "sourceSha256": "cc3d3f036f7877a06fa38762ad76412e001241f069b6a373e2230891a07bd053",
+        "artDirection": "Japanese anime cinematic; preserve Day blue-white/Night dark; remove rigid decorative hairlines and square frames",
+        "avatar": "Explicitly adult 20-25 woman; black long straight hair; mature proportions; dark swimwear and light cover-up; beach holiday",
+        "greeting": "Centered fixed visitor POV half-body; cool expression becomes smile; lean and offer hand; dawn/night beach",
+        "islands": {
+          "sky": "Her / virtual character / sky architecture",
+          "ancient": "ZZZ / dream world / Atlantis",
+          "apocalypse": "FFF / mecha battle / Transformers-like ruined metal planet and robot/ship debris",
+          "home": "COS / COSPLAY / approved v003 half-cutaway floating Infinity Castle; formal runtime use authorized"
+        },
+        "worldRenderer": "2.5D confirmed; retain existing camera/scale",
+        "works": "RyuSe1-style browsing; layout placeholders only, no real works yet",
+        "releaseGate": "User accepts corresponding concept preview before formal assets or website integration",
+        "latestSteering": "design/v2-material-preview/v001/review-feedback-before-v003.md",
+        "acceptedConcepts": [
+          "character",
+          "island-sky",
+          "island-ancient",
+          "island-apocalypse",
+          "island-home",
+          "greeting-storyboard",
+          "environment-day",
+          "environment-night"
+        ],
+        "acceptedLayout": [
+          "works-layout-day-night",
+          "mobile-and-image-dialog"
+        ],
+        "formalIntegrationStarted": true,
+        "formalIntegrationComplete": true,
+        "reviewDocument": "docs/agent-work/v2-integration-review.md",
+        "completionEvidence": "docs/agent-work/reports/v2-integration-complete.md"
+      }
     }
   ],
   "recommendations": [
@@ -191,19 +230,16 @@
   "openDecisions": [
     {
       "id": "avatar-identity",
-      "status": "pending-design",
-      "blocks": [
-        "P3-01",
-        "P3-02",
-        "final-avatar-in-P4-01"
-      ],
+      "status": "concept-approved-by-user-2026-10-14",
+      "blocks": [],
       "doesNotBlock": [
         "P1-02",
         "P1-04",
         "P1-05",
         "P1-03",
         "draft-fixes-in-P2"
-      ]
+      ],
+      "value": "Character appearance, clothing, half-body greeting composition/expression and reaching pose approved; formal assets still to produce"
     },
     {
       "id": "island-channel-binding",
@@ -216,8 +252,8 @@
     },
     {
       "id": "world-renderer",
-      "status": "pending-selection",
-      "value": null,
+      "status": "resolved-by-user-2026-10-14",
+      "value": "2.5D",
       "alternatives": [
         "2.5D",
         "full3D"
@@ -284,5 +320,5 @@
   },
   "phasePlanPath": "docs/agent-handoff/07-phased-plan.md",
   "phaseStatePath": "docs/agent-handoff/phases.json",
-  "executionScope": "Complete six requested changes to first-version draft;GitHub/localLinuxDocker/cloud update;formal asset stages unchanged"
+  "executionScope": "Complete approved second-version artwork, necessary model/animation and runtime integration; user missing content remains blank/placeholders. Continuous P3/P4 authorized by active goal."
 }

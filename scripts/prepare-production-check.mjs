@@ -1,0 +1,10 @@
+import {cp,mkdir,symlink,writeFile,readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+const root=process.cwd();const destination=resolve(root,'docs/agent-work/logs/production-check-'+Date.now());
+await mkdir(destination,{recursive:false});
+for(const name of ['app','src','public','services','package.json','pnpm-lock.yaml','pnpm-workspace.yaml','next.config.ts','proxy.ts','tsconfig.json','next-env.d.ts'])await cp(resolve(root,name),resolve(destination,name),{recursive:true,filter:(source)=>!source.split(/[\\/]/).includes('node_modules')});
+await mkdir(resolve(destination,'design'));await cp(resolve(root,'design/tokens.css'),resolve(destination,'design/tokens.css'));
+await mkdir(resolve(destination,'scripts'));await cp(resolve(root,'scripts/normalize-static-prefetch.mjs'),resolve(destination,'scripts/normalize-static-prefetch.mjs'));
+await symlink(resolve(root,'node_modules'),resolve(destination,'node_modules'),'junction');
+await writeFile('docs/agent-work/logs/current-production-check.json',JSON.stringify({directory:destination,source:'current worktree; not a deployed commit',preparedAt:new Date().toISOString(),modelSha256:createHash('sha256').update(await readFile('public/media/v2/avatar/visitor.glb')).digest('hex')},null,2));console.log(destination);

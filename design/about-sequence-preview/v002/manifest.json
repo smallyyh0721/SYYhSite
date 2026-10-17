@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "created": "2026-10-16",
+  "purpose": "Independent V-neck wardrobe edit review; not integrated into website",
+  "generator": "built-in image_gen edit",
+  "source": "assets/source/about-sequence/v002/keyframes-original.png",
+  "sourceSha256": "5f29c2f72043d1d1cff588592614961077d9d58835451846f6e8134af09310ec",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceReference": "assets/source/about-sequence/v001/keyframes-original.png; edit neckline only, preserve character and all nine poses",
+  "requestedChange": "Ivory opaque open V-neck inner top; keep navy blazer, identity, hair, lighting, framing and background",
+  "frameCount": 9,
+  "totalBytes": 235988,
+  "interpolation": "none; discrete original keyframes only",
+  "limitations": [
+    "Nine AI-generated keyframes; not a production-ready continuous 300-frame render",
+    "Identity, hair, pose and light may drift between generated views",
+    "Yaw values are prompt targets, not calibrated camera measurements"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "url": "./frames/frame-001.webp",
+      "yawTargetDegrees": -24,
+      "width": 418,
+      "height": 418,
+      "bytes": 27454,
+      "sha256": "26fb3d6fe8f924ca256089f8da9b713b8e6264e206257db48da41bd50f5ce246"
+    },
+    {
+      "index": 1,
+      "url": "./frames/frame-002.webp",
+      "yawTargetDegrees": -18,
+      "width": 418,
+      "height": 418,
+      "bytes": 26676,
+      "sha256": "15849d0ba40287d5cae3572385376d1dadae353711ed0745d77db3dacd355aec"
+    },
+    {
+      "index": 2,
+      "url": "./frames/frame-003.webp",
+      "yawTargetDegrees": -12,
+      "width": 418,
+      "height": 418,
+      "bytes": 26006,
+      "sha256": "3f736503c48d67e5d8748a6a3c9266530117ab71a124adc87757b26500330d0c"
+    },
+    {
+      "index": 3,
+      "url": "./frames/frame-004.webp",
+      "yawTargetDegrees": -6,
+      "width": 418,
+      "height": 418,
+      "bytes": 26548,
+      "sha256": "a7e51b218a67ad72a797d7ce00c8b70966492317965b6a83d33eb8a7e27713f3"
+    },
+    {
+      "index": 4,
+      "url": "./frames/frame-005.webp",
+      "yawTargetDegrees": 0,
+      "width": 418,
+      "height": 418,
+      "bytes": 25306,
+      "sha256": "58bfda4f490c3acb140e1dc7853a017178fc2c61e152b84676c4fe69df667d70"
+    },
+    {
+      "index": 5,
+      "url": "./frames/frame-006.webp",
+      "yawTargetDegrees": 6,
+      "width": 418,
+      "height": 418,
+      "bytes": 25714,
+      "sha256": "2a47cbc0361c7acfde567a146c5f690bd2a25e98a690b1eef1626b8c65c85817"
+    },
+    {
+      "index": 6,
+      "url": "./frames/frame-007.webp",
+      "yawTargetDegrees": 12,
+      "width": 418,
+      "height": 418,
+      "bytes": 25880,
+      "sha256": "1bb35eb5ce2cf6b87a778d16f6d5c48f5da528d87a3986e56a559fc0f7853c08"
+    },
+    {
+      "index": 7,
+      "url": "./frames/frame-008.webp",
+      "yawTargetDegrees": 18,
+      "width": 418,
+      "height": 418,
+      "bytes": 26762,
+      "sha256": "cee471c0f46492e35df5328f066333844d50b3c94f0071c4b75b74ccda6ccc05"
+    },
+    {
+      "index": 8,
+      "url": "./frames/frame-009.webp",
+      "yawTargetDegrees": 24,
+      "width": 418,
+      "height": 418,
+      "bytes": 25642,
+      "sha256": "5ccc7328f68a1abbca16c17d72a831accd41fb56cc8b3ecee20e696bc9f0a8c9"
+    }
+  ]
+}

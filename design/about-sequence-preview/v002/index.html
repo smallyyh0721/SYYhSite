@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>About · V领人物预览</title>
+  <link rel="stylesheet" href="./preview.css">
+  <script type="module" src="./preview.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="#top" aria-label="返回预览顶部"><span class="signal-dot"></span>SYYH <span class="wordmark-muted">/ ABOUT</span></a>
+    <span class="edition">人物序列实验 <span>02 / 2026</span></span>
+    <a class="original-link" href="http://localhost:8896/about/" target="_blank" rel="noopener">查看现有 About ↗</a>
+  </header>
+  <main id="top">
+    <section class="scroll-track" aria-labelledby="intro-title">
+      <div class="scene">
+        <div class="intro">
+          <p class="eyebrow"><span>01</span> SOMEWHERE BETWEEN REAL & IMAGINED</p>
+          <h1 id="intro-title">I人，<br>有点意思<br><span>但不多。</span></h1>
+          <p class="bio">动漫喜欢但是没空看。<br>AIGC / Agent 技术懂点也不通。</p>
+          <div class="interaction-hint"><span class="hint-line"></span><p id="hint">将指针移到人物上，左右移动。<br>手机可以左右拖动，也可使用下方进度条。</p></div>
+          <div class="source-note"><span class="live-dot"></span>V领修订 · 独立预览</div>
+        </div>
+        <div class="portrait-column">
+          <div class="portrait" id="portrait">
+            <div class="portrait-meta"><span>PORTRAIT / 002</span><span id="loading" role="status">正在加载人物帧…</span></div>
+            <canvas id="character" role="img" aria-label="原创人物连续转头预览，可使用进度条选择人物朝向"></canvas>
+            <div class="portrait-bottom"><span>STILL IMAGES.<br>A LITTLE MOTION.</span><span class="frame-display"><b id="frame-label">05</b><i> / 09</i></span></div>
+          </div>
+          <div class="transport">
+            <div class="controls">
+              <div class="modes" role="group" aria-label="播放方式">
+                <button type="button" data-mode="pointer" aria-pressed="true">指针 / 拖动</button>
+                <button type="button" data-mode="scroll" aria-pressed="false">随滚动</button>
+              </div>
+              <button type="button" id="play" aria-pressed="false"><span aria-hidden="true">▷</span> 自动播放</button>
+            </div>
+            <label class="scrubber"><span>左转</span><input id="progress" type="range" min="0" max="8" step="1" value="4" aria-label="人物帧，左转至右转"><span>右转</span></label>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#notes"><span>SCROLL TO EXPLORE</span> ↓</a>
+      </div>
+    </section>
+    <section class="notes" id="notes" aria-labelledby="notes-title">
+      <div><p class="eyebrow">HOW IT WORKS</p><h2 id="notes-title">画面是静止的，<br>顺序让它动起来。</h2></div>
+      <div class="notes-copy"><p>每个角度都是一张图片。Canvas 根据指针、拖动或滚动位置，显示对应的人物帧。发丝、皮肤和服装的精细度来自图片本身。</p><p>这次先用 <strong>9 张原创关键帧</strong>验证观感与交互，直接切换真实帧，没有用缩放或扭曲伪造转头。帧数较少，转头会有步进；AI 生成的细节也可能变化。</p><p>参考站使用 300 帧。要达到它的连续感，需要先制作身份、光照和动作一致的连续素材，再交给这个播放器；增加帧数本身不会改善画质。</p><a href="https://cyberfiction-five.vercel.app/script.js" target="_blank" rel="noopener">查看参考站公开实现 ↗</a></div>
+    </section>
+  </main>
+  <footer><span>SYYH / MOTION STUDY 02</span><span>仅供人物与交互评审 · 未接入现有网站</span></footer>
+</body>
+</html>
