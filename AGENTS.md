@@ -1,5 +1,7 @@
 # SYYH Signal agent 入口
 
+- 2026-10-17 最新正式发布：用户回复“已放行443”，公网受信任TLS验证后第三版已切生产 https://124.220.190.120/，HTTP自动跳转。四容器实际revision均e4d11c0ef52740a3c8d9ff21612b70a86873fedd、healthy；主机启动保护源码4ac028a，已enable并实际重建生产成功。首发2件20资产，20图公网GET/HEAD/SHA和18组检查通过；About无审核控制器。原留言卷syyh-draft-cloud-guestbook保留，内容/上传继续复用e4d命名卷，后续升级不得创建空新卷。最终独立备份及恢复/TLS回退均有证据；current.env/current-release已更新。无需再等CAM或443，不重复部署旧V2。见docs/agent-work/reports/v3-production-20261017.md和v3-progress.md。CUA新公网截图超时，未整机重启；站主独立操作待用户体验。既有dirty/美术源保留，任何源码后续修改继续Grok CLI规则。
+
 - 2026-10-17 最新执行：用户已 review 并明确继续，验证后直接使用现有 /datastore。已纠正桶内映射为 datastore/syyh-site/（旧探测漏了 datastore/）；容器UID1000读写、COS独立SHA读回、两次新挂载重连通过。服务器可匿名访问但本机外部桶/42对象均403，呈来源限制，不能再据服务器200断言全网公开。保留原桶/目录/访问机制，仅已验证后将现有rc.local挂载URL改HTTPS并显式default_acl=private；未启用CAM。首发2件20资产已导入、发布到隔离云候选；HTTPS上传/撤下、真实独立备份恢复、15项TLS V2回滚通过。Grok V3-HOST-BOOT-01完成，Win/Linux18测试及真实candidate启动保护重建通过；没有全机重启。当前生产仍V2；443预检容器已监听且本机受信任TLS200，但外部TCP443超时，控制台读页连续超时，已异步请用户在轻量服务器云防火墙放行TCP443，等待回复。勿把HTTP重定向到尚不可达HTTPS，先验证公网443再切生产。候选应用仍e4d11c0，主机模块是另外的运维源码。后续以docs/agent-work/v3-progress.md和evidence/V3-DEPLOY-20261017为准，下面“仅review/CAM等待”是历史。
 
 - 2026-10-17 用户最新决定：服务器为轻量应用服务器，沿用现有 COS 私有桶文件挂载；取消 CAM/CVM 角色绑定路线，不再等待“已绑定”，不启用已准备的角色凭据刷新/新挂载服务，不要求用户更改桶权限。当前用户要求先列剩余步骤 review，本轮只更新计划，不执行服务器变更或生产切换。后续按现有挂载验证真实持久化、重连、容器目录权限和私有素材边界；历史匿名列举/对象拒绝记录保留为待解释证据，不预判整个桶公开或已验收。最新清单见 docs/agent-work/v3-remaining-review.md，覆盖下方 CAM 前置记录。

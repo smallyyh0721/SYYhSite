@@ -1,0 +1,22 @@
+{
+  "contentBackup": "content-2026-10-17T11-47-53.767Z.sqlite",
+  "guestbookBackup": "guestbook-2026-10-17T11-47-53.767Z.sqlite",
+  "manifest": "content-2026-10-17T11-47-53.767Z.manifest.json",
+  "quota": {
+    "daily": 1,
+    "dailyMax": 7,
+    "weekly": 1,
+    "weeklyMax": 4,
+    "exceeded": false,
+    "deleted": false
+  },
+  "path": "/opt/website/syyh/backups/v3-final-20261017T114753Z",
+  "productionGuestbookBackup": "production-guestbook.sqlite",
+  "productionGuestbookSha256": "276137088cbcc8f89c3b50b3c42dd662ab3f68f184761d28f8434823761a1376",
+  "mediaArchiveSha256": "1fa117e9428c868e1dc8aafaaa4efabee9a4f4e654d2e365dd1df3650f827531",
+  "realAssets": 20,
+  "realWorks": 2,
+  "transferSha256": "b2dc94f1e91f8a42dfce68f205f73410df2a48c2b56a570adbc7e02a041af4ec",
+  "independentCopySha256": "b2dc94f1e91f8a42dfce68f205f73410df2a48c2b56a570adbc7e02a041af4ec",
+  "independentCopyVerified": true
+}

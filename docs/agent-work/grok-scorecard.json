@@ -18,7 +18,7 @@
     "meaningfulDelta": 3,
     "raiseMinimum": 85,
     "reduceBelow": 75,
-    "availability": "No active Grok CLI. Existing COS mount validated; production awaiting public TCP443 firewall opening.",
+    "availability": "No active Grok CLI. V3 deployed to production; independent owner walkthrough and public visual review pending user experience.",
     "lastDecision": "Keep level 1 / one complete module and one CLI. V3-HOST-BOOT-01 first submission accepted; a new host-operations difficulty group has insufficient comparable samples to raise scope. Effective efficiency remains unmeasured."
   },
   "globalSkill": {
@@ -385,7 +385,7 @@
       "trendGroup": "complex-auth-storage-api",
       "firstSubmissionAccepted": false,
       "repairRounds": 2,
-      "finalStatus": "accepted locally with one Codex Linux ffprobe parameter patch; real COS and production pending",
+      "finalStatus": "Accepted locally with one Codex Linux ffprobe patch; Codex real COS, candidate and production validation subsequently passed on 2026-10-17. Ratings unchanged.",
       "evidence": [
         "evidence/V3-CONTENT-API-01/acceptance.md",
         "evidence/V3-CONTENT-API-01/linux-http.json",
@@ -426,7 +426,8 @@
         "reports/V3-HOST-BOOT-01.md",
         "evidence/V3-DEPLOY-20261017/host-boot-acceptance.md"
       ],
-      "rationale": "Read-only marker/findmnt guard, bounded wait, ordinary directory/symlink/different mount rejection; independent Windows18/Linux18 checks, systemd validation, actual candidate force-recreate healthy. No full host reboot. Codex corrected host install command to create missing libexec directory, not a module code defect. No measured effective coding efficiency."
+      "rationale": "Read-only marker/findmnt guard, bounded wait, ordinary directory/symlink/different mount rejection; independent Windows18/Linux18 checks, systemd validation, actual candidate force-recreate healthy. No full host reboot. Codex corrected host install command to create missing libexec directory, not a module code defect. No measured effective coding efficiency.",
+      "finalStatus": "First submission accepted; Codex installed and enabled on production, candidate and production recreation passed; full host reboot not performed."
     }
   ],
   "takeovers": []

@@ -1,8 +1,8 @@
 # V3 Docker / 发布与恢复
 
-> 2026-10-17 最新决定：用户取消 CAM 角色路线，沿用轻量应用服务器和现有 COS 私有桶挂载。下文存储前置须按[剩余步骤评审清单](../docs/agent-work/v3-remaining-review.md)调整：核验现有挂载，不自行启用角色/替换挂载服务，也不把角色绑定作为上线条件。用户当前要求计划 review，尚不执行本文件的服务器变更或生产切换。
+> 2026-10-17：V3已正式发布，公网HTTPS、HTTP跳转、两组作品及管理入口通过检查。应用镜像e4d11c0，主机启动保护模块4ac028a；见[发布记录](../docs/agent-work/reports/v3-production-20261017.md)。沿用现有COS挂载，无需CAM。以下切换命令是维护参考，不应因读到本文件而重复部署。
 
-当前生产仍为 V2；此文件说明 V3 操作。先看 [进度](../docs/agent-work/v3-progress.md) 和 [站主操作](../docs/agent-work/v3-owner-guide.md)。用户已授权继续及完工后部署。现有 COS 挂载已通过真实读写/独立SHA/新挂载重连验证，沿用现有来源访问机制，不依赖 CAM；URL 已改 HTTPS、默认写入 ACL 已显式 private。服务器外部42对象均403。当前剩余外部条件为公网TCP443可达，勿在其不可达时把HTTP入口重定向到HTTPS。
+当前生产为V3，正式地址 https://124.220.190.120/ 。先看[进度](../docs/agent-work/v3-progress.md)和[站主操作](../docs/agent-work/v3-owner-guide.md)。现有COS挂载通过真实读写/独立SHA/新挂载重连验证，沿用来源访问机制，不依赖CAM；URL已改HTTPS、默认写入ACL显式private，服务器外部直接访问被拒绝。TCP443已由用户放行，公网受信任TLS验证通过。
 
 ## 本机隔离联调
 
@@ -76,7 +76,7 @@ ROLLBACK_RELEASE=9f9764d7970999e6749ec0780e0b5b6794ef89f9
 ROLLBACK_NGINX_CONFIG=/opt/website/syyh/releases/PRIVATE_FIXED_V2_CONFIG.conf
 ```
 
-切换前撤销 V3 全部会话并停 worker；使用同一生产项目名启动 rollback compose 的 web/frontend/api，禁止 `down -v`。确认旧站深链/脚本/留言正常、受信任 443 和证书续期保持、V3 原件/草稿仍不可匿名访问。恢复 V3 时复用其保留的内容/上传卷与 marker，再做回归。当前本地隔离 HTTP 三容器、15 深链及旧模型解码已通过，云端 TLS 回滚仍须实际测试后才能写为通过。
+切换前撤销V3全部会话并停worker；使用同一生产项目名启动rollback compose的web/frontend/api，禁止 `down -v`。确认旧站深链/脚本/留言正常、受信任443和证书续期保持、V3原件/草稿仍不可匿名访问。恢复V3时复用保留的内容/上传卷与marker，再做回归。隔离云端TLS回滚15路由/模型/留言已通过，见发布证据。回退时同步 `/opt/website/syyh/current.env` 与 `/etc/syyh/site-runtime.conf` 中的compose文件路径，避免开机启动保护重新启动错误版本。
 
 ## 备份与运维
 

@@ -1,0 +1,120 @@
+{
+  "promotedAt": "2026-10-17T11:50:21.703407+00:00",
+  "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+  "hostOpsSourceSha": "4ac028a",
+  "productionEnv": "/opt/website/syyh/releases/v3-production-e4d11c0ef52740a3c8d9ff21612b70a86873fedd.env",
+  "guestbookVolume": "syyh-draft-cloud-guestbook",
+  "contentVolume": "syyh-v3-content-e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+  "uploadVolume": "syyh-v3-uploads-e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+  "containers": [
+    {
+      "name": "/syyh-draft-web-1",
+      "imageId": "sha256:16207115bd96811c1c2b23216201d9e141923fbeefc1aab2a88dd0f2eb181811",
+      "revision": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "healthy": true,
+      "user": "11001:11001",
+      "readOnlyRoot": true,
+      "capDropAll": true,
+      "mounts": [
+        {
+          "destination": "/run/tls",
+          "readOnly": true,
+          "volume": null
+        },
+        {
+          "destination": "/srv/acme",
+          "readOnly": true,
+          "volume": null
+        }
+      ]
+    },
+    {
+      "name": "/syyh-draft-frontend-1",
+      "imageId": "sha256:f1f4c7032bb856c6d472f5ccf7adeb7342ee3ce44721494a342659a3613bfb92",
+      "revision": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "healthy": true,
+      "user": "node",
+      "readOnlyRoot": true,
+      "capDropAll": true,
+      "mounts": []
+    },
+    {
+      "name": "/syyh-draft-api-1",
+      "imageId": "sha256:3e00d8f6879fca3393a88b2a5968e17564913d7a69baa7f399897dce3e491698",
+      "revision": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "healthy": true,
+      "user": "node",
+      "readOnlyRoot": true,
+      "capDropAll": true,
+      "mounts": [
+        {
+          "destination": "/run/secrets/owner-password.json",
+          "readOnly": true,
+          "volume": null
+        },
+        {
+          "destination": "/data",
+          "readOnly": false,
+          "volume": "syyh-draft-cloud-guestbook"
+        },
+        {
+          "destination": "/content",
+          "readOnly": false,
+          "volume": "syyh-v3-content-e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+        },
+        {
+          "destination": "/uploads",
+          "readOnly": false,
+          "volume": "syyh-v3-uploads-e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+        },
+        {
+          "destination": "/media",
+          "readOnly": true,
+          "volume": null
+        }
+      ]
+    },
+    {
+      "name": "/syyh-draft-worker-1",
+      "imageId": "sha256:e14d1b7636d3e6fc01a91b6712c715a393e0875e1d54d3aae7536c01fc6ff4f7",
+      "revision": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "healthy": true,
+      "user": "node",
+      "readOnlyRoot": true,
+      "capDropAll": true,
+      "mounts": [
+        {
+          "destination": "/content",
+          "readOnly": false,
+          "volume": "syyh-v3-content-e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+        },
+        {
+          "destination": "/uploads",
+          "readOnly": false,
+          "volume": "syyh-v3-uploads-e4d11c0ef52740a3c8d9ff21612b70a86873fedd"
+        },
+        {
+          "destination": "/store",
+          "readOnly": false,
+          "volume": null
+        },
+        {
+          "destination": "/inbox",
+          "readOnly": true,
+          "volume": null
+        }
+      ]
+    }
+  ],
+  "publicRegressionPending": false,
+  "publicRegression": "18 checks from Windows external client passed",
+  "publicOrigin": "https://124.220.190.120",
+  "httpRedirect": true,
+  "bootUnitEnabled": true,
+  "renewTimerEnabled": true,
+  "candidateContainers": "stopped; volumes retained",
+  "backupPath": "/opt/website/syyh/backups/v3-final-20261017T114753Z",
+  "browserPublicVisual": "CUA tab/snapshot request timed out; local candidate UI previously validated, no new public screenshot claim",
+  "hostRebootTested": false,
+  "productionMarkedAt": "2026-10-17T11:55:46.401402+00:00"
+}

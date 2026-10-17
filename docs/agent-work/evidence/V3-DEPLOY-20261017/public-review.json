@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-17T11:54:14.812894+00:00",
+  "origin": "https://124.220.190.120",
+  "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+  "checks": [
+    "TLS/CSP/page /",
+    "TLS/CSP/page /hub/",
+    "TLS/CSP/page /works/",
+    "TLS/CSP/page /works/themes/sky/",
+    "TLS/CSP/page /works/themes/ancient/",
+    "TLS/CSP/page /works/themes/apocalypse/",
+    "TLS/CSP/page /works/themes/home/",
+    "TLS/CSP/page /about/",
+    "TLS/CSP/page /story/",
+    "TLS/CSP/page /board/",
+    "TLS/CSP/page /owner/",
+    "per-request nonce",
+    "private paths, real404 and draft redirect",
+    "HTTP redirects to trusted HTTPS",
+    "two real works, 20 public derivative hashes and HEAD",
+    "existing guestbook GET",
+    "owner login, secure cookie, storage ready, CSRF/Origin rejection and logout",
+    "direct COS original and derivative access denied outside server"
+  ],
+  "publicWorks": 2,
+  "publicImages": 20,
+  "trustedTls": true,
+  "httpRedirect": true,
+  "ownerSessionRevoked": true
+}

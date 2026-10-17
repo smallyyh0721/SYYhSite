@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-10-17",
-  "currentDeliveredVersion": "v2",
+  "currentDeliveredVersion": "v3",
   "versions": [
     {
       "id": "v2",
@@ -22,7 +22,7 @@
     },
     {
       "id": "v3",
-      "status": "in_progress",
+      "status": "deployed_awaiting_owner_review",
       "implementationAuthorized": true,
       "startedAt": "2026-10-16",
       "startAuthority": "User approved About design and instructed continuing v3 development on 2026-10-16",
@@ -33,7 +33,7 @@
       "securityHardeningRequiredForRelease": true,
       "scopedAboutChange": {
         "authorizedAt": "2026-10-16",
-        "status": "complete_local_not_deployed",
+        "status": "deployed_production_without_review_controls",
         "approvedArtwork": "about-sequence/v002",
         "frameCount": 9,
         "formalReleaseControls": "not_rendered_in_production_build",
@@ -50,17 +50,28 @@
       "releaseAuthority": "User instructed building the website and pushing to production after completion on 2026-10-16",
       "releaseConditions": "Fixed candidate, real content and owner workflow, security validation, backup/restore and rollback; production About review controls absent",
       "activeGrokAssignment": null,
-      "localValidation": "Linux Docker owner workflow, valid MP4, private publication/unpublish, fault, restart, independent backup restoration passed; 31 engineering tests",
-      "releaseBlocker": "COS uses HTTP public_bucket=1; anonymous root HTTP200, CVM role endpoint404; user chose restricted CAM role; awaiting completed binding and private bucket permissions",
-      "productionDeployed": false,
+      "localValidation": "Same application candidate: full38 engineering checks and prior Linux/UI/MP4/fault/restart/restoration passed. Host boot guard Windows18/Linux18 passed.",
+      "releaseBlocker": null,
+      "productionDeployed": true,
       "candidateSourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
       "cloudBuild": {
-        "status": "complete_images_only",
+        "status": "deployed_exact_images",
         "seconds": 97,
         "syntheticAudioVideoSmoke": "passed",
-        "applicationContainersStarted": false,
-        "receipt": "docs/agent-work/evidence/V3-CONTENT-API-01/cloud-build.json"
-      }
+        "applicationContainersStarted": true,
+        "receipt": "docs/agent-work/evidence/V3-CONTENT-API-01/cloud-build.json",
+        "productionHealthyContainers": 4
+      },
+      "productionUrl": "https://124.220.190.120/",
+      "runtimeSourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+      "hostOpsSourceSha": "4ac028a",
+      "releaseReport": "docs/agent-work/reports/v3-production-20261017.md",
+      "publicValidation": "18 production groups passed, including trustedTLS, HTTP redirect, real2works/20images/hash, owner auth/storage, CSRF/Origin/logout and COS external denials.",
+      "remainingUserReview": [
+        "Owner independently completes upload/preview/publish/unpublish",
+        "Public visual review; new CUA screenshot timed out"
+      ],
+      "hostRebootTested": false
     }
   ]
 }

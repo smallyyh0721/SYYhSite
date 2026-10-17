@@ -17,5 +17,6 @@
   },
   "runtimeServiceCandidateRecreate": "Result=success; ActiveState=active",
   "hostRebootTested": false,
-  "public443": "Host listener and trusted loopback HTTPS200; external TCP timeout; awaiting cloud firewall rule."
+  "public443": "User opened cloud firewall TCP443; public trusted TLS and production regression passed.",
+  "runtimeServiceProductionRecreate": "Result=success; ActiveState=active; enabled"
 }
