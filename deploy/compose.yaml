@@ -74,7 +74,7 @@ services:
   worker:
     <<: *runtime
     image: syyh-worker:${RELEASE:-v3-local}
-    build: {context: .., dockerfile: deploy/Dockerfile, target: worker, args: {VCS_REF: '${VCS_REF:-unknown}'}}
+    build: {context: .., dockerfile: deploy/Dockerfile, target: worker, args: {VCS_REF: '${VCS_REF:-unknown}', DEBIAN_MIRROR: '${DEBIAN_MIRROR:-https://deb.debian.org}'}}
     environment:
       STORE_ID: ${STORE_ID:?Configure STORE_ID}
       PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Configure PUBLIC_ORIGIN}

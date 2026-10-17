@@ -23,6 +23,7 @@ node scripts/check-v3-http-security.mjs http://localhost:18980
 - SFTP inbox `/var/lib/syyh-sftp/inbox`，UID/GID11002；worker 只读绑定并加入该组。
 - 保留当前 V2 SHA `9f9764d7970999e6749ec0780e0b5b6794ef89f9` 的 Web/API 镜像、旧 env 和原留言卷。不得清理卷或使用 system prune。
 - 本次从 V2 首次迁入 V3 才创建新的内容/上传卷。V3 后续更新必须继续使用当前 CONTENT_VOLUME / UPLOAD_VOLUME；不能因镜像 SHA 变化就改成空的新卷。
+- worker 构建默认使用 Debian 官方 HTTPS 源。云端网络较慢时可在构建 env 设置 `DEBIAN_MIRROR=https://mirrors.cloud.tencent.com`；APT 的 Debian 签名校验保留，HTTPS 信任从固定 Node 基础镜像自带 CA 引导，再安装系统 CA 包。禁止 trusted=yes 或关闭证书校验。
 
 生产 env 放 checkout 外并限制权限，不写密钥。示例中的 SHA 是待替换字段：
 

@@ -24,6 +24,7 @@ Grok `grok-4.7-build` / high，session `01a144bb-6ddf-72d2-8755-e933d94e0346`。
 - 代理增加 Docker DNS 重新解析，强制把 frontend 原 IP 用隔离占位容器占住后重建 frontend，确认新 IP 不同，edge 容器未重启/替换仍恢复真实作品页；测试占位容器已移除，见 `docker-dns.json`。代理修改后 10 个 Linux HTTP 和 13 路由安全检查再次通过。
 - 固定 V2 SHA 的 Web/API 镜像本地重建成功，配合 V3 edge 的回滚 compose 三容器健康。15 个旧版路由、精确内联脚本 SHA 白名单、留言只读、禁用新 owner API 通过，见 `v2-rollback.json`。旧 3D 的 WebAssembly 解码和 blob 纹理需特定 CSP 项，已在回滚配置中限定放行（JS eval 仍禁止）；修正后无 CSP/纹理错误，保留一条既有 THREE.Clock 弃用警告。此为隔离 HTTP 演练，**尚未执行云端受信任 TLS 的真实回滚**。
 - `pnpm audit --prod`：当前零已知漏洞；未做完整镜像 CVE 扫描。
+- 云端国际 Debian 下载慢后，worker 增加可选 HTTPS 镜像和有界重试；精简 Node 镜像缺少系统 CA，使用固定 Node 二进制内置根证书引导 APT HTTPS，保留 Debian 包签名验证，再安装系统 CA。腾讯云镜像的本机构建通过；新镜像在无网络、只读根/临时 tmpfs 中生成 2 秒带音轨图案并走真实 enqueue/worker：h264+aac、海报、原件 SHA、暂存清理全部通过。命令入口 `scripts/check-v3-worker-image.mjs`，不接触真实 COS。
 
 ## 限制与发布条件
 

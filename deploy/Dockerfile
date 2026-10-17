@@ -59,7 +59,14 @@ HEALTHCHECK --interval=20s --timeout=3s CMD node -e "fetch('http://127.0.0.1:300
 CMD ["node","server.mjs"]
 FROM api AS worker
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -rf /var/lib/apt/lists/*
+ARG DEBIAN_MIRROR=https://deb.debian.org
+# The slim runtime has no OS CA bundle. Bootstrap HTTPS trust from the pinned Node
+# binary's built-in Mozilla roots; APT also keeps its Debian signature verification.
+RUN node -e 'require("node:fs").writeFileSync("/tmp/syyh-build-ca.pem",require("node:tls").rootCertificates.join("\n"))' \
+    && sed -i "s|http://deb.debian.org|${DEBIAN_MIRROR}|g" /etc/apt/sources.list.d/debian.sources \
+    && apt-get -o Acquire::https::CaInfo=/tmp/syyh-build-ca.pem -o Acquire::https::Timeout=30 -o Acquire::Retries=2 update \
+    && apt-get -o Acquire::https::CaInfo=/tmp/syyh-build-ca.pem -o Acquire::https::Timeout=30 -o Acquire::Retries=2 install -y --no-install-recommends ca-certificates ffmpeg \
+    && rm -rf /var/lib/apt/lists/* /tmp/syyh-build-ca.pem
 USER node
 ENV COS_SITE_ROOT=/store DERIVED_ROOT=/store/derived FFMPEG_PATH=/usr/bin/ffmpeg FFPROBE_PATH=/usr/bin/ffprobe
 HEALTHCHECK NONE
