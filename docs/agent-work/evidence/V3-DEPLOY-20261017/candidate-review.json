@@ -1,0 +1,27 @@
+{
+  "sourceSha": "e4d11c0ef52740a3c8d9ff21612b70a86873fedd",
+  "candidatePort": 18443,
+  "checks": [
+    "TLS, CSP and page /",
+    "TLS, CSP and page /hub/",
+    "TLS, CSP and page /works/",
+    "TLS, CSP and page /works/themes/ancient/",
+    "TLS, CSP and page /works/themes/apocalypse/",
+    "TLS, CSP and page /about/",
+    "TLS, CSP and page /story/",
+    "TLS, CSP and page /board/",
+    "TLS, CSP and page /owner/",
+    "nonce varies per request",
+    "restricted paths and draft redirect",
+    "owner login and secure cookie",
+    "two real works, private draft and preview",
+    "20 real assets ready",
+    "publish with CSRF and Origin enforcement; 20 public derivatives",
+    "HTTPS upload, worker, draft, publish and unpublish isolation",
+    "logout revokes session"
+  ],
+  "realWorks": 2,
+  "realAssets": 20,
+  "testDraftUnpublished": true,
+  "tlsVerified": true
+}

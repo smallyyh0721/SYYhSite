@@ -1,0 +1,17 @@
+[Unit]
+Description=Recreate SYYH site runtime after existing COS mount is verified
+Requires=docker.service
+Wants=network-online.target
+After=docker.service network-online.target rc-local.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=root
+EnvironmentFile=/etc/syyh/site-runtime.conf
+ExecStartPre=/usr/local/libexec/syyh-existing-store-guard.py --root ${SYYH_SITE_ROOT} --store-id ${SYYH_STORE_ID} --wait-seconds 120
+ExecStart=/usr/bin/docker compose --env-file ${SYYH_RELEASE_ENV} -f ${SYYH_COMPOSE_FILE} -p ${SYYH_PROJECT} up -d --no-build --force-recreate --wait
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target

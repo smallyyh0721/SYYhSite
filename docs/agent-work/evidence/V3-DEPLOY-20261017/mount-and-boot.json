@@ -1,0 +1,21 @@
+{
+  "bucket": "works-1396243701",
+  "bucketPrefix": "datastore/syyh-site/",
+  "hostPath": "/datastore/syyh-site",
+  "mountRoot": "/datastore",
+  "sameMountAndExistingAccessMethod": true,
+  "transportAfterVerification": "HTTPS",
+  "defaultAcl": "private",
+  "uid1000ContainerWriteRead": true,
+  "freshHttpsReadOnlyMountCycles": 2,
+  "outsideServerAnonymousRequests": 403,
+  "serverAnonymousRequests": 200,
+  "policyMechanism": "Not inspected; no CAM role or access keys added. Source-dependent access observed.",
+  "bootGuardTests": {
+    "windows": 18,
+    "linux": 18
+  },
+  "runtimeServiceCandidateRecreate": "Result=success; ActiveState=active",
+  "hostRebootTested": false,
+  "public443": "Host listener and trusted loopback HTTPS200; external TCP timeout; awaiting cloud firewall rule."
+}

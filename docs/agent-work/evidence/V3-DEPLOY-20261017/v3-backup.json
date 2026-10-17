@@ -1,0 +1,16 @@
+{
+  "contentBackup": "content-2026-10-17T10-58-09.677Z.sqlite",
+  "guestbookBackup": "guestbook-2026-10-17T10-58-09.677Z.sqlite",
+  "manifest": "content-2026-10-17T10-58-09.677Z.manifest.json",
+  "quota": {
+    "daily": 1,
+    "dailyMax": 7,
+    "weekly": 1,
+    "weeklyMax": 4,
+    "exceeded": false,
+    "deleted": false
+  },
+  "path": "/opt/website/syyh/backups/v3-release-20261017T105809Z",
+  "mediaArchiveSha256": "6cb4185a9149fa7cdca025ae9834c6ae27b66ee4a48a5b44d205843797747c46",
+  "mediaArchiveBytes": 54619164
+}

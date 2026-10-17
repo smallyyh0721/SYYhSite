@@ -1,6 +1,6 @@
 # 第三版站主操作说明
 
-状态：本地 Linux Docker 联调中，生产管理入口尚未启用。公网仍是第二版。
+状态（2026-10-17）：本地及云端 HTTPS 候选流程已验收，首发两件作品已入 COS。独立备份恢复与 HTTPS 回滚已通过；生产管理入口待公网 TCP443 放行后切换。当前 HTTP 公网仍是第二版。
 
 ## 日常浏览器上传
 
@@ -23,11 +23,13 @@
 - `/inbox/yixuan-football`：8 张正文 + 2 张参考/过程。
 - `/inbox/mist-exit-ten-shots`：10 镜静帧；不冒充已完成视频。
 
-导入命令在受控 worker 中运行（部署 env/Compose 由运维指定）：
+导入命令在受控 worker 中运行（部署 env/Compose 由运维指定）。先停止后台 worker，避免它与导入器竞争处理租约；导入成功或失败后都要重新启动后台 worker。批次目录权限应为 0750、文件 0640，所属组为 syyh-upload，使 worker 的附加组11002可读：
 
 ```sh
-docker compose --env-file RELEASE.env -f deploy/compose.yaml exec -T worker \
+docker compose --env-file RELEASE.env -f deploy/compose.yaml stop worker
+docker compose --env-file RELEASE.env -f deploy/compose.yaml run --rm --no-deps -T worker \
   node content-cli.mjs import --inbox /inbox/BATCH --manifest manifest.json
+docker compose --env-file RELEASE.env -f deploy/compose.yaml up -d worker
 ```
 
 导入仍需同样校验，只生成草稿；相同 slug 重复导入会拒绝，不覆盖既有作品。之后从管理界面预览并发布。SFTP 文件不会因为传到服务器就自动公开。

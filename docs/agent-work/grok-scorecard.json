@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16",
+  "updatedAt": "2026-10-17",
   "scale": "Codex evidence-based reviewer ratings 0-5, not measured code-accuracy percent",
   "weights": {
     "correctness": 35,
@@ -18,8 +18,8 @@
     "meaningfulDelta": 3,
     "raiseMinimum": 85,
     "reduceBelow": 75,
-    "availability": "No active Grok CLI; both V3 modules locally accepted, production pending private COS identity.",
-    "lastDecision": "Keep level 1 / one complete module and one CLI. Initial auth/storage defects and two repair rounds plus one Codex Linux patch preclude increasing scope. This complex auth/storage API starts its own difficulty group; do not manufacture a rolling trend against presentation modules. Efficiency remains unmeasured; global skill unqualified."
+    "availability": "No active Grok CLI. Existing COS mount validated; production awaiting public TCP443 firewall opening.",
+    "lastDecision": "Keep level 1 / one complete module and one CLI. V3-HOST-BOOT-01 first submission accepted; a new host-operations difficulty group has insufficient comparable samples to raise scope. Effective efficiency remains unmeasured."
   },
   "globalSkill": {
     "status": "project-trial",
@@ -395,6 +395,38 @@
       ],
       "rationale": "Initial concurrent auth throttling, development cookie, upload pre-auth/body cap, worker lease and streaming defects repaired by Grok; second repair fixes snapshot manifest race. Codex subsequently removed unsupported ffprobe -nostdin after actual Linux valid MP4 failure. 31 engineering checks, 10 Linux HTTP scenarios, 13 security route checks, CUA video playback/UI/mobile and independent backup restoration passed. No measured effective efficiency. Different difficulty from visual modules; no forced cross-difficulty rolling comparison.",
       "codexIntervention": "One content-media.mjs ffprobe option removal; runtime/Docker/UI integration owned separately by Codex. No network-failure takeover; transient optional MCP transport errors excluded from quality score."
+    },
+    {
+      "taskId": "V3-HOST-BOOT-01",
+      "kind": "programming-module",
+      "module": "Existing COS mount guard and host boot runtime recreation",
+      "model": "grok-4.6",
+      "reasoningEffort": "high",
+      "sessionId": "01a1497b-295c-77d1-9312-ca2413506547",
+      "reviewedAt": "2026-10-17",
+      "ratings": {
+        "correctness": 5,
+        "understanding": 5,
+        "efficiency": null,
+        "cliWorkflow": 5,
+        "communication": 5
+      },
+      "coverageWeight": 85,
+      "score": 100,
+      "trendEligible": true,
+      "trendGroup": "host-operations-boot-guard",
+      "firstSubmissionAccepted": true,
+      "repairRounds": 0,
+      "effectiveCodingMinutes": null,
+      "observedWallClockSeconds": 666,
+      "efficiencyBudgetMinutes": 30,
+      "leadIntegrationPatches": 0,
+      "evidence": [
+        "assignments/V3-HOST-BOOT-01.md",
+        "reports/V3-HOST-BOOT-01.md",
+        "evidence/V3-DEPLOY-20261017/host-boot-acceptance.md"
+      ],
+      "rationale": "Read-only marker/findmnt guard, bounded wait, ordinary directory/symlink/different mount rejection; independent Windows18/Linux18 checks, systemd validation, actual candidate force-recreate healthy. No full host reboot. Codex corrected host install command to create missing libexec directory, not a module code defect. No measured effective coding efficiency."
     }
   ],
   "takeovers": []

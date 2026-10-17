@@ -1,0 +1,298 @@
+{
+  "objects": [
+    {
+      "assetId": "e1e7b8602f546da0c22d484925e74eac",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/e1e7b8602f546da0c22d484925e74eac/1c4415ff6d54916dc6bd7f205a296d0e.png",
+      "sha256": "34a1f993c060cca8d9498ea1eadc5b794621d369db4e36222e7470c9c863c4a6",
+      "bytes": 2330591
+    },
+    {
+      "assetId": "e1e7b8602f546da0c22d484925e74eac",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/e1e7b8602f546da0c22d484925e74eac/7cbf1d77527da2c797e2bd229ce2d787.webp",
+      "sha256": "f11d1dd60f23ef56560f7083ed1c6dc7feba4849fb2ff4982f24d5ff06bbfd1c",
+      "bytes": 160284
+    },
+    {
+      "assetId": "6d97164c34ee3fa551b78e603c6c2e76",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/6d97164c34ee3fa551b78e603c6c2e76/0e18aba6fbd1af1381aac3abacb065a7.png",
+      "sha256": "85b45643d4fa2d1a66ad1f1278920b2016d6c2ab4438e1e2d87c833a45f056e2",
+      "bytes": 2388713
+    },
+    {
+      "assetId": "6d97164c34ee3fa551b78e603c6c2e76",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/6d97164c34ee3fa551b78e603c6c2e76/493c6a9acc1161a1e7c5baf3a252f886.webp",
+      "sha256": "9f90a4a82d355a24aa169ba77e14d00b39678f74ac51de5e456f3d279bed11d7",
+      "bytes": 179848
+    },
+    {
+      "assetId": "5c63a355a99deadf522e840546521ce3",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/5c63a355a99deadf522e840546521ce3/a3bc486422000ba47467cb3666fe6642.png",
+      "sha256": "1ed3df5e8eeaaf7da60e273d273a8f25f369238f835d14972efaf4666da88962",
+      "bytes": 2364037
+    },
+    {
+      "assetId": "5c63a355a99deadf522e840546521ce3",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/5c63a355a99deadf522e840546521ce3/36fca0602bd94626c2f1c931b3aef869.webp",
+      "sha256": "c8bf044f0599b57aa8dbe98fe8dc401e6a9ac0b6e866b4002632a343459452df",
+      "bytes": 174972
+    },
+    {
+      "assetId": "79d33a9b33e8ad9afbbae97fa115399f",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/79d33a9b33e8ad9afbbae97fa115399f/a1d4522c607330b7dd052c81ff59da39.png",
+      "sha256": "24bcfd22ea67d186c892682d6a10113d770f87d0739611d2336a020373cad83a",
+      "bytes": 2282330
+    },
+    {
+      "assetId": "79d33a9b33e8ad9afbbae97fa115399f",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/79d33a9b33e8ad9afbbae97fa115399f/51b17d2e2881d56385c8dddbe439f526.webp",
+      "sha256": "458aa5056fef41a81bd43ca7dbeee2101cd520646d9cf4473f9d22dd1ac43d35",
+      "bytes": 176104
+    },
+    {
+      "assetId": "2b6e2d08c82b175461e22b6742a3e69f",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/2b6e2d08c82b175461e22b6742a3e69f/2e967c6f564ec1d798aca76a640dbf60.png",
+      "sha256": "fa199b9624f0b0142ae6e9f5aa0541dd95e591fe54780d0cd1cfb58391dbf353",
+      "bytes": 2308222
+    },
+    {
+      "assetId": "2b6e2d08c82b175461e22b6742a3e69f",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/2b6e2d08c82b175461e22b6742a3e69f/283565b1375d4760e2e6558ea4ea5eed.webp",
+      "sha256": "0f4151e57eb1fc5c4ba5a43b3e3627d5f0ea70c99feed862a47eddd8eab7be57",
+      "bytes": 170014
+    },
+    {
+      "assetId": "6548f1f3c00334526faa04a7b004ff47",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/6548f1f3c00334526faa04a7b004ff47/4dcc62bb762ed429dd654f76364cc4bd.png",
+      "sha256": "5f9fe1b366f8e03363ab2a00abdc937b305cf9120b010c55acf990f968ae9e7a",
+      "bytes": 2152353
+    },
+    {
+      "assetId": "6548f1f3c00334526faa04a7b004ff47",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/6548f1f3c00334526faa04a7b004ff47/cf23024926caa813caf9beed60bf7d04.webp",
+      "sha256": "c04613f1b4f455b948965ca33f31174acfffc6e3964971650ffd9cac1e442c6f",
+      "bytes": 153632
+    },
+    {
+      "assetId": "03d7ed25f195422478894b7e25ab78cd",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/03d7ed25f195422478894b7e25ab78cd/70fcf66f930e178368d753e591b961cc.png",
+      "sha256": "7ab49755a31ab67b29bd053f1ece03a530f5c8a8be4e637a0e6c140d777203f7",
+      "bytes": 2284400
+    },
+    {
+      "assetId": "03d7ed25f195422478894b7e25ab78cd",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/03d7ed25f195422478894b7e25ab78cd/af0c5c966f963ba1b3c01b373b96c127.webp",
+      "sha256": "485abf668ec479758eec492d13b9eea15e70f1910f42176b92b12c1493b08484",
+      "bytes": 175240
+    },
+    {
+      "assetId": "d33b7ed0b61470097db96053f8e97b43",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/d33b7ed0b61470097db96053f8e97b43/63cc37a7ffd538bbfcbbd09e6c512bc4.png",
+      "sha256": "39344d824f72939c0aab000a5d3fbc200ff9051714e17fea0f1301e5a6af88fd",
+      "bytes": 2229440
+    },
+    {
+      "assetId": "d33b7ed0b61470097db96053f8e97b43",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/d33b7ed0b61470097db96053f8e97b43/4678a19c08508e838037a3e83bf39244.webp",
+      "sha256": "786d61ab07aa6a273d71cd36049127278da843079ae86eb6dccda40b9cfc3af3",
+      "bytes": 170962
+    },
+    {
+      "assetId": "ce7a7ee0843b4880b62f682514419c9a",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/ce7a7ee0843b4880b62f682514419c9a/8f96620ce881d342224bf6bc033eff92.png",
+      "sha256": "fe6f56afdf6a7f983dfdb753b99716acf12c02b790c5dcc88b158ed208da221b",
+      "bytes": 3472706
+    },
+    {
+      "assetId": "ce7a7ee0843b4880b62f682514419c9a",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/ce7a7ee0843b4880b62f682514419c9a/ab43e98adb36edca1d46b98d6402d066.webp",
+      "sha256": "28ac60d4ba3b62dd2c991833ce7fa1f38738138b47195b66012c17740d815f58",
+      "bytes": 212686
+    },
+    {
+      "assetId": "943d0e76665ece5d64e560305aa82c43",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/943d0e76665ece5d64e560305aa82c43/b377258cd65f6e8b6d20f19c1e5e47f2.png",
+      "sha256": "5975fdc388a35a794f2dc9855fcfc22f0503814161b8b59c276e4f64943a6cbc",
+      "bytes": 2760881
+    },
+    {
+      "assetId": "943d0e76665ece5d64e560305aa82c43",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/943d0e76665ece5d64e560305aa82c43/5b16f204ac1bf65cc7438dee16b8a11b.webp",
+      "sha256": "ed15ebee4e042a3f2066dd1a5dcdcb3ee0af02580657a413eb784873b39fbe86",
+      "bytes": 249042
+    },
+    {
+      "assetId": "f09cc40b03a1f0b702eed022a3b73bf3",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/f09cc40b03a1f0b702eed022a3b73bf3/f9da6a2dad8ed97a29d49207fc253458.png",
+      "sha256": "2052abfb4ce5a8ab00321804382278d694b50213e13383e1b182362ce17633fc",
+      "bytes": 3217150
+    },
+    {
+      "assetId": "f09cc40b03a1f0b702eed022a3b73bf3",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/f09cc40b03a1f0b702eed022a3b73bf3/9933d55a1bf1901d3b79724ae9823546.webp",
+      "sha256": "aa64adca7a4ea82bd7539238a10c506c99f9f7f8357038d893b630aa33b82c76",
+      "bytes": 364408
+    },
+    {
+      "assetId": "6efc51f7c70c539291ee8705d90b826b",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/6efc51f7c70c539291ee8705d90b826b/464681c5b1e12d3d12ed66a6f277673d.png",
+      "sha256": "738c0a299525cf85f75a7225fc0df62c33b4aef4e785c7e949592bb13cf2cbe8",
+      "bytes": 2338345
+    },
+    {
+      "assetId": "6efc51f7c70c539291ee8705d90b826b",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/6efc51f7c70c539291ee8705d90b826b/ec1d2944f5ffd257eda3c80a55c44058.webp",
+      "sha256": "bb8b25291668abd0b96c745c876ae184423b8050d724ef2b97f155e2f2c64639",
+      "bytes": 137762
+    },
+    {
+      "assetId": "aa5d2e1d1365290691fe7d1b23f2e4ca",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/aa5d2e1d1365290691fe7d1b23f2e4ca/c33e11dcfc5ea662fa5f28672d3ad0bc.png",
+      "sha256": "eb5090bad5b53d57515c6ef2b7d361902c1c3e14af39b0888821ce711da40ad5",
+      "bytes": 2896869
+    },
+    {
+      "assetId": "aa5d2e1d1365290691fe7d1b23f2e4ca",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/aa5d2e1d1365290691fe7d1b23f2e4ca/bd61376f7692f4fbd811bafdc83e3261.webp",
+      "sha256": "56c1709e75122a32297591dcbf330043bae0ab184475a879a5487e5fb50d4858",
+      "bytes": 271570
+    },
+    {
+      "assetId": "cddaa37519e0fb4de2401e11e4587008",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/cddaa37519e0fb4de2401e11e4587008/66ee616c7173b993f04f05c59a9723e4.png",
+      "sha256": "050fefeeb7c82222bd1ddcd7bf1c8f565b2e8cf1ff6b1654d71d8a7b7f8c6ac2",
+      "bytes": 2656155
+    },
+    {
+      "assetId": "cddaa37519e0fb4de2401e11e4587008",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/cddaa37519e0fb4de2401e11e4587008/d8cdc9af6b587416673849b1def224a2.webp",
+      "sha256": "9b5ae786546c1a215e0865f5b46f20544dcd0824a51b6787c848ffd86480d729",
+      "bytes": 230140
+    },
+    {
+      "assetId": "1a446a58ae1e490d23d40297f25565aa",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/1a446a58ae1e490d23d40297f25565aa/1876ee54c78295ff029550464a04cfe1.png",
+      "sha256": "955a7800a428fa10d213a8315e528c87ff3371fb122d7b5dbff0b09485d136ce",
+      "bytes": 2335544
+    },
+    {
+      "assetId": "1a446a58ae1e490d23d40297f25565aa",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/1a446a58ae1e490d23d40297f25565aa/63e35f617acdb4f8594d08e0ec0b688c.webp",
+      "sha256": "362304e50dbf34c283ab29fab56b2d4cf7a87839482964d2be898843e83e690d",
+      "bytes": 146948
+    },
+    {
+      "assetId": "dba6962807832141a405ef2e86121029",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/dba6962807832141a405ef2e86121029/37f194ced13ed52834cfc693ef08a161.png",
+      "sha256": "68cec592d8b05381abfce573401ba6af8c7562e119b09112439997c3bc01d9c7",
+      "bytes": 2665536
+    },
+    {
+      "assetId": "dba6962807832141a405ef2e86121029",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/dba6962807832141a405ef2e86121029/e81c94b28e5228add9368a64a951a94b.webp",
+      "sha256": "f00ecd88008aad9ffddad130fa0c7ce19c5ab50b1718175d76b61c9319a237ac",
+      "bytes": 231966
+    },
+    {
+      "assetId": "1f2f9ea44bbecac15bcdcd1c47ebc38a",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/1f2f9ea44bbecac15bcdcd1c47ebc38a/06df8227117bba1d103084424005db00.png",
+      "sha256": "53fe7186847c530c99ae75bcefda93e82f9d29d73effa681dcf6ea23d64255b4",
+      "bytes": 2684750
+    },
+    {
+      "assetId": "1f2f9ea44bbecac15bcdcd1c47ebc38a",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/1f2f9ea44bbecac15bcdcd1c47ebc38a/68c8902c3d5a8de6a90f9ba047a7820e.webp",
+      "sha256": "5bdb7825d4f2811997ae0879c238a84f7a2d5f120867f14094ae21c319db84b1",
+      "bytes": 202888
+    },
+    {
+      "assetId": "78ada37db7f44e195472da4be8fa75ad",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/78ada37db7f44e195472da4be8fa75ad/251c411976a3298bacb58234b2e29be5.png",
+      "sha256": "784ab4eb114cf8463953ba3f8ea32055d1b8254af0c5b15a7258200889ef8a99",
+      "bytes": 2311330
+    },
+    {
+      "assetId": "78ada37db7f44e195472da4be8fa75ad",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/78ada37db7f44e195472da4be8fa75ad/f331a4c1ff1f5cf05cd0ffbc2d1fc350.webp",
+      "sha256": "a6a59e53e2ef3b60b80b4afa109f16c9130d3822071c8c2e28a89ea0770a32d2",
+      "bytes": 157950
+    },
+    {
+      "assetId": "f8060459c153593ea6b839f62132675e",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/f8060459c153593ea6b839f62132675e/d50a5ad910b73e111cf0d67ea3b0bbe4.png",
+      "sha256": "4bac1a784655b09721fa73c84552ab14e21286a1355641139b7ffb630a241e91",
+      "bytes": 2589775
+    },
+    {
+      "assetId": "f8060459c153593ea6b839f62132675e",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/f8060459c153593ea6b839f62132675e/879a363f516158110e96efab6e25757c.webp",
+      "sha256": "8491786130cba3178caf89972a6a68070cea10846508b95419005e542b54fb30",
+      "bytes": 217302
+    },
+    {
+      "assetId": "02d8305d76e9c4e09b963c3ca27a1799",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/02d8305d76e9c4e09b963c3ca27a1799/dd6681962ffd014b63f6f1ae7c7d1a93.png",
+      "sha256": "0b7797e26a65ff8e964ce6a51cb0d655aca3a02912bf536caf3ed91e2ea44c83",
+      "bytes": 2622984
+    },
+    {
+      "assetId": "02d8305d76e9c4e09b963c3ca27a1799",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/02d8305d76e9c4e09b963c3ca27a1799/3138c90f480c084db7341175b22ba7d1.webp",
+      "sha256": "614bee9c5a9d3232b6219c9e57488ded32689f67cc42a8fef5a6460180832ba5",
+      "bytes": 225002
+    },
+    {
+      "assetId": "cd35323a7ccfca4e0ed5a43418e986a2",
+      "kind": "original",
+      "key": "datastore/syyh-site/originals/cd35323a7ccfca4e0ed5a43418e986a2/cdd1fe48bf3ead544ac49cb2576e3e00.png",
+      "sha256": "2d6709f2d90f9544c626a6060e503d1e3a4c5967affe4ba5a92eaac644df848c",
+      "bytes": 99
+    },
+    {
+      "assetId": "cd35323a7ccfca4e0ed5a43418e986a2",
+      "kind": "derived",
+      "key": "datastore/syyh-site/derived/cd35323a7ccfca4e0ed5a43418e986a2/850d47ea5b24795915f22df0f59cb0ef.webp",
+      "sha256": "bffc2cb07da0500a2e89403b9f19cfa9d563b77252769241f1861ac5c3e06129",
+      "bytes": 76
+    }
+  ]
+}

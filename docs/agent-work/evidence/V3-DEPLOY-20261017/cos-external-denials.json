@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "assetId": "e1e7b8602f546da0c22d484925e74eac",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "e1e7b8602f546da0c22d484925e74eac",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "6d97164c34ee3fa551b78e603c6c2e76",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "6d97164c34ee3fa551b78e603c6c2e76",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "5c63a355a99deadf522e840546521ce3",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "5c63a355a99deadf522e840546521ce3",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "79d33a9b33e8ad9afbbae97fa115399f",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "79d33a9b33e8ad9afbbae97fa115399f",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "2b6e2d08c82b175461e22b6742a3e69f",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "2b6e2d08c82b175461e22b6742a3e69f",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "6548f1f3c00334526faa04a7b004ff47",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "6548f1f3c00334526faa04a7b004ff47",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "03d7ed25f195422478894b7e25ab78cd",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "03d7ed25f195422478894b7e25ab78cd",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "d33b7ed0b61470097db96053f8e97b43",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "d33b7ed0b61470097db96053f8e97b43",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "ce7a7ee0843b4880b62f682514419c9a",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "ce7a7ee0843b4880b62f682514419c9a",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "943d0e76665ece5d64e560305aa82c43",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "943d0e76665ece5d64e560305aa82c43",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "f09cc40b03a1f0b702eed022a3b73bf3",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "f09cc40b03a1f0b702eed022a3b73bf3",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "6efc51f7c70c539291ee8705d90b826b",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "6efc51f7c70c539291ee8705d90b826b",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "aa5d2e1d1365290691fe7d1b23f2e4ca",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "aa5d2e1d1365290691fe7d1b23f2e4ca",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "cddaa37519e0fb4de2401e11e4587008",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "cddaa37519e0fb4de2401e11e4587008",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "1a446a58ae1e490d23d40297f25565aa",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "1a446a58ae1e490d23d40297f25565aa",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "dba6962807832141a405ef2e86121029",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "dba6962807832141a405ef2e86121029",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "1f2f9ea44bbecac15bcdcd1c47ebc38a",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "1f2f9ea44bbecac15bcdcd1c47ebc38a",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "78ada37db7f44e195472da4be8fa75ad",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "78ada37db7f44e195472da4be8fa75ad",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "f8060459c153593ea6b839f62132675e",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "f8060459c153593ea6b839f62132675e",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "02d8305d76e9c4e09b963c3ca27a1799",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "02d8305d76e9c4e09b963c3ca27a1799",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "cd35323a7ccfca4e0ed5a43418e986a2",
+      "kind": "original",
+      "outsideServerHttp": 403
+    },
+    {
+      "assetId": "cd35323a7ccfca4e0ed5a43418e986a2",
+      "kind": "derived",
+      "outsideServerHttp": 403
+    }
+  ],
+  "note": "Anonymous requests from this Windows machine; bucket policy mechanism not inspected."
+}

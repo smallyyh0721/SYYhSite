@@ -1,5 +1,7 @@
 # Grok表现评分与委派台账
 
+2026-10-17最新：V3-HOST-BOOT-01 首轮接受，Grok grok-4.6/high，session 01a1497b-295c-77d1-9312-ca2413506547；A5/B5/C未测/D5/E5=100 / 85%权重。Windows18/Linux18、真实挂载guard和systemd候选重建通过，未全机重启。Codex宿主安装目录修正单独归因。新运维难度组样本不足，保持1模块/1CLI，不升档。见[evidence/V3-DEPLOY-20261017/host-boot-acceptance.md](evidence/V3-DEPLOY-20261017/host-boot-acceptance.md)。无活跃Grok。
+
 2026-10-16最新：V3-CONTENT-API-01 本地接受，Grok 两轮返修，Codex 另修正 Linux ffprobe 不支持的参数一处。A3/B4/C未测/D5/E5 = **76.47 / 85%权重**，证据见 [独立验收](evidence/V3-CONTENT-API-01/acceptance.md)。31 工程、10 Linux HTTP、13 安全路由、浏览器视频/手机及独立备份恢复通过；真实 COS 与生产待验。初验安全缺陷不因最终通过而抹去。身份/存储模块难度不同，不硬拼此前展示模块滚动分；保持最低 1 档、每批 1 完整模块、默认 1 CLI。当前无活跃 Grok，全局 skill 仍未达标。下文“最新/下一项”为历史。
 
 2026-10-16最新：V3-WORKS-01本地接受，一轮返修，A4/B4/C未测/D4/E5，**82.35 / 85%权重**。实际grok-4.7-build/high，独立生产构建、键盘/焦点、真实媒体503重试和320宽度通过，见[evidence/V3-WORKS-01/acceptance.md](evidence/V3-WORKS-01/acceptance.md)。首轮修饰键/嵌套重试/文案有局部缺陷；锁定out被清空的产物处理已反馈。无代码接管。相同模型最新3项P4-11/P4-12/V3-WORKS-01=83.92，前窗P4-10/P4-11/P4-12=89.02，下降5.10；**2档→1档，每批最多1完整模块，默认1CLI**。下一项V3-CONTENT-API-01；有效效率未测，全局skill仍不达标。下方旧档位记录为历史。

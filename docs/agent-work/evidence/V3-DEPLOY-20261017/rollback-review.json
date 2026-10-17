@@ -1,0 +1,82 @@
+{
+  "tlsVerified": true,
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 8184
+    },
+    {
+      "path": "/hub/",
+      "status": 200,
+      "bytes": 13474
+    },
+    {
+      "path": "/works/",
+      "status": 200,
+      "bytes": 17528
+    },
+    {
+      "path": "/works/themes/sky/",
+      "status": 200,
+      "bytes": 12860
+    },
+    {
+      "path": "/works/themes/ancient/",
+      "status": 200,
+      "bytes": 12924
+    },
+    {
+      "path": "/works/themes/apocalypse/",
+      "status": 200,
+      "bytes": 12900
+    },
+    {
+      "path": "/works/themes/home/",
+      "status": 200,
+      "bytes": 12871
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "bytes": 9164
+    },
+    {
+      "path": "/story/",
+      "status": 200,
+      "bytes": 10891
+    },
+    {
+      "path": "/board/",
+      "status": 200,
+      "bytes": 9652
+    },
+    {
+      "path": "/draft/",
+      "status": 200,
+      "bytes": 10965
+    },
+    {
+      "path": "/api/messages",
+      "status": 200,
+      "bytes": 14
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "bytes": 15
+    },
+    {
+      "path": "/works/anime-home/",
+      "status": 200,
+      "bytes": 10923
+    },
+    {
+      "path": "/media/avatar-proxy.glb",
+      "status": 200,
+      "bytes": 727424
+    }
+  ],
+  "fixedV2": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+  "originalProductionUntouched": true
+}

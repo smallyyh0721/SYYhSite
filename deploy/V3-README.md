@@ -1,6 +1,8 @@
 # V3 Docker / 发布与恢复
 
-当前生产仍为 V2；此文件说明 V3 操作。先看 [进度](../docs/agent-work/v3-progress.md)、[COS 前置配置](../docs/agent-work/v3-cos-access-setup.md) 和 [站主操作](../docs/agent-work/v3-owner-guide.md)。用户已授权完工后部署。现有匿名 HTTP COS 挂载未满足上线条件，不能跳过。
+> 2026-10-17 最新决定：用户取消 CAM 角色路线，沿用轻量应用服务器和现有 COS 私有桶挂载。下文存储前置须按[剩余步骤评审清单](../docs/agent-work/v3-remaining-review.md)调整：核验现有挂载，不自行启用角色/替换挂载服务，也不把角色绑定作为上线条件。用户当前要求计划 review，尚不执行本文件的服务器变更或生产切换。
+
+当前生产仍为 V2；此文件说明 V3 操作。先看 [进度](../docs/agent-work/v3-progress.md) 和 [站主操作](../docs/agent-work/v3-owner-guide.md)。用户已授权继续及完工后部署。现有 COS 挂载已通过真实读写/独立SHA/新挂载重连验证，沿用现有来源访问机制，不依赖 CAM；URL 已改 HTTPS、默认写入 ACL 已显式 private。服务器外部42对象均403。当前剩余外部条件为公网TCP443可达，勿在其不可达时把HTTP入口重定向到HTTPS。
 
 ## 本机隔离联调
 
@@ -17,7 +19,7 @@ node scripts/check-v3-http-security.mjs http://localhost:18980
 
 ## 生产前置条件
 
-- COS 私有权限、受限身份、经过认证的 HTTPS 前缀挂载、真实对象持久化与重连核验。主机挂载目录 `/datastore/syyh-site`，marker `syyh-site-20261016-01a144bb`。COSfs 身份只在主机，不进入容器。
+- 沿用现有 COS 挂载及其访问机制；真实对象持久化、重连、HTTPS传输、外部访问拒绝已验证。主机目录 `/datastore/syyh-site` 对应桶内 `datastore/syyh-site/`，marker `syyh-site-20261016-01a144bb`。无需 CAM 或向容器传 COS 密钥；不把 `public_bucket=1` 单独当作全网公开的证据。
 - `/opt/website/syyh/secrets/owner-password.hash` root:1000/640；正式哈希已配置，明文仅在本机 `.local/production-owner-credentials.txt`，不要打印/复制到日志。
 - 受信任 IP 证书在 `/etc/letsencrypt/live/syyh-ip`，edge 只读副本在 `/opt/website/syyh/tls/edge`。续期 timer 每6小时检查，auth/cleanup/deploy hook 在主机；不用自签证书或关闭 TLS 验证。
 - SFTP inbox `/var/lib/syyh-sftp/inbox`，UID/GID11002；worker 只读绑定并加入该组。

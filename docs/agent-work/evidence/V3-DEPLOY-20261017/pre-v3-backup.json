@@ -1,0 +1,21 @@
+{
+  "createdAt": "20261017T105004Z",
+  "path": "/opt/website/syyh/backups/pre-v3-20261017T105004Z",
+  "guestbookSha256": "276137088cbcc8f89c3b50b3c42dd662ab3f68f184761d28f8434823761a1376",
+  "runtime": [
+    {
+      "name": "/syyh-draft-web-1",
+      "imageId": "sha256:139bdf23a7535c30aed909822b183bd81c1cc37bbe41aecb2d21e7df862fd10a",
+      "revision": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+      "mounts": []
+    },
+    {
+      "name": "/syyh-draft-api-1",
+      "imageId": "sha256:69a48434123ac54b06d610c6f3cb3679aa52e64e667208bd7e6116a52806c565",
+      "revision": "9f9764d7970999e6749ec0780e0b5b6794ef89f9",
+      "mounts": [
+        "/data"
+      ]
+    }
+  ]
+}

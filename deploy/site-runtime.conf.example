@@ -1,0 +1,9 @@
+# Public replaceable example for /etc/syyh/site-runtime.conf.
+# Official host paths must be confirmed by Codex during deploy.
+# This module does not claim a host reboot has passed.
+
+SYYH_SITE_ROOT=/datastore/syyh-site
+SYYH_STORE_ID=syyh-site-20261016-01a144bb
+SYYH_RELEASE_ENV=/opt/website/syyh/current.env
+SYYH_COMPOSE_FILE=/opt/website/syyh/repository/deploy/compose.yaml
+SYYH_PROJECT=syyh-draft
