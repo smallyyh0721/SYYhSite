@@ -22,10 +22,8 @@ import {
   formalTheme,
   galleryItems,
   isFilterId,
-  listIntro,
   processNote,
   shouldOpenFromClick,
-  sortLabel,
   stillNote,
   visibleItems,
   workArt,
@@ -272,17 +270,8 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
   return (
     <article className={styles.page} data-gallery="works" data-filter={filter} data-count={visible.length}>
       <header className={styles.heading}>
-        <div>
-          <h1 tabIndex={-1}>{filter === "all" ? "WORKS" : formalTheme(filter).label}</h1>
-        </div>
-        <p>{listIntro(filter, works)}</p>
+        <h1 tabIndex={-1}>{filter === "all" ? "作品" : formalTheme(filter).label}</h1>
       </header>
-
-      {visible.length ? (
-        <div className={styles.banner}>
-          <p>点开封面查看大图，从标题进入这件作品。</p>
-        </div>
-      ) : null}
 
       <div className={styles.toolbar}>
         <div className={styles.filters} role="group" aria-label="作品主题">
@@ -297,11 +286,6 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
               {item.label}
             </button>
           ))}
-        </div>
-        <div className={styles.sorts} role="group" aria-label="排序">
-          <button type="button" className={styles.chip} aria-pressed="true">
-            {sortLabel}
-          </button>
         </div>
       </div>
 
@@ -319,15 +303,11 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                 openLabel={`查看封面大图：${item.work.title}`}
                 onOpen={(stage) => openDialog(item.id, stage)}
               />
-              <div className={styles.meta}>
-                <span className={styles.mark}>{item.work.category}</span>
-                <h3>
-                  <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
-                    {item.work.title}
-                  </a>
-                </h3>
-                <p className={styles.hint}>{item.work.subtitle}</p>
-              </div>
+              <h3 className={styles.meta}>
+                <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
+                  {item.work.title}
+                </a>
+              </h3>
             </article>
           ))}
         </div>
@@ -371,7 +351,6 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                     <h2 id="gallery-dialog-title" className={styles.dialogTitle} aria-live="polite">
                       {current.work.title}
                     </h2>
-                    <p className={styles.hint}>{current.work.category}</p>
                     <p className={styles.hint}>
                       {dialogPosition + 1} / {visible.length}
                     </p>
@@ -397,7 +376,6 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                   </button>
                 </div>
                 <div className={styles.explain}>
-                  <p>{current.work.subtitle}</p>
                   <p>{current.work.description}</p>
                   {stillNote(current.work) ? <p>{stillNote(current.work)}</p> : null}
                   {processNote(current.work) ? <p>{processNote(current.work)}</p> : null}

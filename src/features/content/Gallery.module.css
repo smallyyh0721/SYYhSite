@@ -34,12 +34,10 @@
 
 .heading h1 {
   margin: 0;
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-style: italic;
-  font-weight: 800;
-  font-size: clamp(2.3rem, 7vw, 4.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
 }
 
 .eyebrow {
@@ -166,15 +164,18 @@
 }
 
 .gallery {
+  --thumb: 11.25rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
-  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fill, var(--thumb));
+  gap: 1.5rem 1.1rem;
+  justify-content: start;
   align-items: start;
 }
 
 .card {
-  display: block;
-  width: 100%;
+  display: grid;
+  gap: 0.55rem;
+  width: var(--thumb);
   margin: 0;
   min-width: 0;
 }
@@ -193,9 +194,11 @@
 }
 
 .meta {
-  display: grid;
-  gap: 0.28rem;
-  padding: 0.8rem 0.15rem 0.2rem;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
 }
 
 .meta h3,
@@ -515,6 +518,16 @@
 @media (max-width: 900px) {
   .detailGrid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    width: 100%;
   }
 }
 

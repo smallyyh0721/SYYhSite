@@ -1,4 +1,5 @@
-import Gate from "@/features/gate/Gate";
+import World from "@/features/world/World";
+
 export default function Page() {
-  return <Gate />;
+  return <World />;
 }

@@ -6,7 +6,7 @@ import { getPublishedWorks } from "@/lib/content.server";
 export async function generateMetadata({ params }: { params: Promise<{ theme: string }> }) {
   const { theme } = await params;
   const selected = workThemes.find((item) => item.id === theme);
-  return { title: selected ? formalTheme(selected.id).label + " · 主题作品" : "主题不存在" };
+  return { title: selected ? formalTheme(selected.id).label : "主题不存在" };
 }
 export default async function Page({ params }: { params: Promise<{ theme: string }> }) {
   const { theme } = await params;

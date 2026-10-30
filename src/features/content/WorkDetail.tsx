@@ -72,7 +72,6 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
   const pushedRef = useRef(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastNavRef = useRef<"prev" | "next" | "close">("close");
-  const label = formalTheme(work.themeId).label;
   const index = relatedWorks.findIndex((item) => item.slug === work.slug);
   const prev = index > 0 ? relatedWorks[index - 1] : null;
   const next = index >= 0 && index < relatedWorks.length - 1 ? relatedWorks[index + 1] : null;
@@ -271,11 +270,7 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
       </Link>
 
       <header className={styles.heading}>
-        <div>
-          <p className={styles.eyebrow}>{label}</p>
-          <h1 tabIndex={-1}>{work.title}</h1>
-        </div>
-        <p>{work.description}</p>
+        <h1 tabIndex={-1}>{work.title}</h1>
       </header>
 
       <nav className={styles.themes} aria-label="四个主题作品">
@@ -303,12 +298,9 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
             openLabel={`放大查看：${coverCaption(work)}`}
             onOpen={openCover}
           />
-          <figcaption className={styles.caption}>封面 · {coverCaption(work)}</figcaption>
         </figure>
         <div className={styles.detailCopy}>
-          <span className={styles.mark}>{work.category}</span>
-          <p className={styles.detailBody}>{work.subtitle}</p>
-          <p className={styles.hint}>{label}</p>
+          {work.description ? <p className={styles.detailBody}>{work.description}</p> : null}
         </div>
       </div>
 
