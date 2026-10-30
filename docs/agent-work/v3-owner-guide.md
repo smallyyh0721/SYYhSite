@@ -22,6 +22,56 @@
 
 - `/inbox/yixuan-football`：8 张正文 + 2 张参考/过程。
 - `/inbox/mist-exit-ten-shots`：10 镜静帧；不冒充已完成视频。
+- `/inbox/zzz-cos-x-picks-2026`：25 张绝区零 cos 正文图。主题用 `home`（COS 次元冲突，说明是 COSPLAY）。见下文。
+
+### 绝区零 cos 批次 `zzz-cos-x-picks-2026`
+
+导入器已经能收多图作品，并给每张图写入 `alt` 和 `caption`（各最长 300 字）。没有单独的署名栏；原作者和帖子地址放进 `caption`，详情页图注会原样显示。本包最长的一条署名是 89 字，不需要改校验。
+
+压缩包里的 `manifest.json` 是照片数组（`file` / `author` / `source` / `replies`），不是导入清单。直接把它当作 `--manifest` 会因缺少 `draft` 被拒绝。`replies` 没有对应字段，不入库。`urls.txt` 不要放进批次目录。
+
+批次目录里只放 25 张 jpg 和下面这份导入清单，文件名与压缩包一致，不要分子目录：
+
+```text
+/inbox/zzz-cos-x-picks-2026/
+  manifest.json
+  01_sixtutu622_2114951763308781754.jpg
+  …
+  25_Rooh0728_2116040311260754180.jpg
+```
+
+目录 0750，文件 0640，组 `syyh-upload`。每张 jpg 的大小和 mtime 稳定后即可导入；只有文件还在写入时才需要同名的 `文件名.complete`。完整清单在 `docs/agent-work/inbox-examples/zzz-cos-x-picks-2026.manifest.json`。形状如下，`cover: true` 只标一张，并且必须是 jpg/png/webp：
+
+```json
+{
+  "draft": {
+    "slug": "zzz-cos-x-picks-2026",
+    "themeId": "home",
+    "title": "绝区零｜Cos 精选",
+    "subtitle": "2026 · 二十五帧",
+    "category": "COSPLAY · 非官方",
+    "description": "2026 年从 X 整理的 25 张绝区零 cos 照片。图注写明画面标题、原作者和帖子地址。本组是同人摄影整理，与游戏官方无关。",
+    "sortOrder": 3
+  },
+  "files": [
+    {
+      "filename": "01_sixtutu622_2114951763308781754.jpg",
+      "role": "media",
+      "alt": "六二二同学 · ZZZ cos（@sixtutu622）",
+      "caption": "六二二同学 · ZZZ cos · @sixtutu622 · https://x.com/sixtutu622/status/2114951763308781754",
+      "cover": true
+    }
+  ]
+}
+```
+
+`sortOrder` 为 3 时排在现有两件作品之后；发布前可以在管理页改。导入命令仍是：
+
+```sh
+node content-cli.mjs import --inbox /inbox/zzz-cos-x-picks-2026 --manifest manifest.json
+```
+
+导入只生成草稿，不发布。相同 slug 再导入会被拒绝。
 
 导入命令在受控 worker 中运行（部署 env/Compose 由运维指定）。先停止后台 worker，避免它与导入器竞争处理租约；导入成功或失败后都要重新启动后台 worker。批次目录权限应为 0750、文件 0640，所属组为 syyh-upload，使 worker 的附加组11002可读：
 
