@@ -68,7 +68,7 @@ export default function About() {
         </section>
         <section className="panel">
           <h2>别处见</h2>
-          <p><a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">去小红书看看 ↗</a></p>
+          <p><a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">去小红书看看</a></p>
         </section>
       </div>
     </article>

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { works as seedWorks, workThemes, type Work, type WorkThemeId } from "@/lib/contracts";
+import { works as seedWorks, type Work, type WorkThemeId } from "@/lib/contracts";
 import GalleryMedia from "./GalleryMedia";
 import styles from "./Gallery.module.css";
 import {
@@ -22,9 +22,7 @@ import {
   formalTheme,
   galleryItems,
   isFilterId,
-  processNote,
   shouldOpenFromClick,
-  stillNote,
   visibleItems,
   workArt,
   workHref,
@@ -322,19 +320,11 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
           <Link className={styles.softBtn} href="/hub/">
             返回四岛
           </Link>
-          <Link className={styles.detailLink} href="/works/">
-            全部作品
+          <Link className={styles.softBtn} href="/works/">
+            作品
           </Link>
         </nav>
-      ) : (
-        <nav className={styles.themes} aria-label="四个主题作品">
-          {workThemes.map((item) => (
-            <Link key={item.id} className={styles.chip} href={item.href}>
-              {formalTheme(item.id).label}
-            </Link>
-          ))}
-        </nav>
-      )}
+      ) : null}
 
       {mounted && current
         ? createPortal(
@@ -371,14 +361,6 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                   <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(-1)}>
                     上一件
                   </button>
-                  <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(1)}>
-                    下一件
-                  </button>
-                </div>
-                <div className={styles.explain}>
-                  <p>{current.work.description}</p>
-                  {stillNote(current.work) ? <p>{stillNote(current.work)}</p> : null}
-                  {processNote(current.work) ? <p>{processNote(current.work)}</p> : null}
                   <Link
                     className={styles.detailLink}
                     href={workHref(current.work.slug)}
@@ -400,8 +382,11 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                       }
                     }}
                   >
-                    完整详情
+                    查看
                   </Link>
+                  <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(1)}>
+                    下一件
+                  </button>
                 </div>
               </div>
             </div>,

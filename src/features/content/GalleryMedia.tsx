@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, type KeyboardEvent, type MouseEvent } from "react";
+import { useState, type KeyboardEvent, type MouseEvent } from "react";
 import { noscriptImageMarkup, shouldOpenFromClick, shouldOpenFromKey } from "./galleryModel";
 import styles from "./Gallery.module.css";
 
@@ -28,13 +28,15 @@ export default function GalleryMedia({
   fallbackLabel,
   onOpen,
 }: Props) {
-  const [status, setStatus] = useState<"pending" | "loaded" | "fail">(src ? "pending" : "fail");
   const [nonce, setNonce] = useState(0);
-  const url = nonce ? `${src}${src.includes("?") ? "&" : "?"}r=${nonce}` : src;
-
-  useEffect(() => {
+  const sourceKey = `${src}#${nonce}`;
+  const [tracked, setTracked] = useState(sourceKey);
+  const [status, setStatus] = useState<"pending" | "loaded" | "fail">(src ? "pending" : "fail");
+  if (tracked !== sourceKey) {
+    setTracked(sourceKey);
     setStatus(src ? "pending" : "fail");
-  }, [src, nonce]);
+  }
+  const url = nonce ? `${src}${src.includes("?") ? "&" : "?"}r=${nonce}` : src;
 
   const canOpen = Boolean(onOpen) && status === "loaded";
 

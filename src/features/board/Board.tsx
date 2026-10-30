@@ -110,7 +110,7 @@ export default function Board() {
           <p className="muted">作品之外，也可以在小红书遇见我。</p>
           <div className={styles.contact}>
             <span>小红书</span>
-            <a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">打开主页 ↗</a>
+            <a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">打开主页</a>
           </div>
           <p className={styles.small}>请不要在留言里写下自己的私人联系方式。</p>
         </aside>

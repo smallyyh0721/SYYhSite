@@ -38,7 +38,7 @@
 .fallback strong {
   color: var(--ink);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .fallback span {
   overflow-wrap: anywhere;

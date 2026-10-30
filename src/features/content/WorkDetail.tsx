@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { works, workThemes, type Work, type WorkMedia } from "@/lib/contracts";
+import { works, type Work, type WorkMedia } from "@/lib/contracts";
 import GalleryMedia from "./GalleryMedia";
 import WorkVideo from "./WorkVideo";
 import styles from "./Gallery.module.css";
@@ -10,7 +10,6 @@ import { overlayFromState, pushHistory, readSnapshot, replaceHistory } from "./g
 import {
   coverAlt,
   coverCaption,
-  formalTheme,
   isStillStoryboard,
   mediaHeading,
   processHeading,
@@ -273,19 +272,6 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
         <h1 tabIndex={-1}>{work.title}</h1>
       </header>
 
-      <nav className={styles.themes} aria-label="四个主题作品">
-        {workThemes.map((item) => (
-          <Link
-            key={item.id}
-            className={styles.chip}
-            href={item.href}
-            aria-current={item.id === work.themeId ? "page" : undefined}
-          >
-            {formalTheme(item.id).label}
-          </Link>
-        ))}
-      </nav>
-
       <div className={styles.detailGrid}>
         <figure className={styles.figure}>
           <GalleryMedia
@@ -307,7 +293,6 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
       <section className={styles.sequence} aria-labelledby="media-title">
         <h2 id="media-title">{mediaHeading(work)}</h2>
         {stillNote(work) ? <p className={styles.note}>{stillNote(work)}</p> : null}
-        <p className={styles.hint}>点开单张可以放大查看，左右方向键或按钮会在这一组里切换。页面向下滚动可以看完全部图片。</p>
         <ol className={styles.mediaList}>
           {work.media.map((item, frameIndex) => (
             <li key={item.src}>

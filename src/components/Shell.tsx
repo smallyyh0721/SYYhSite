@@ -56,7 +56,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <Link className={styles.logo} href="/" aria-label="SYYH 首页">
           SYYH
         </Link>
-        <span className={styles.signal}>个人频道</span>
         <nav aria-label="页面">
           {links.map(([href, label]) => (
             <Link
@@ -114,7 +113,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <footer className={styles.footer}>
           <span>{siteName}</span>
           <div className={styles.footerLinks}>
-            <a href={xiaohongshuUrl} target="_blank" rel="noopener noreferrer">小红书 ↗</a>
+            <a href={xiaohongshuUrl} target="_blank" rel="noopener noreferrer">小红书</a>
             <Link href="/owner/">站主管理</Link>
           </div>
         </footer>

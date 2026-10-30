@@ -1,5 +1,5 @@
-import World from "@/features/world/World";
+import Opening from "@/features/world/Opening";
 
 export default function Page() {
-  return <World />;
+  return <Opening />;
 }
