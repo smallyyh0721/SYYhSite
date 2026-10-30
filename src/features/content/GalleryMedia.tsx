@@ -1,5 +1,5 @@
 "use client";
-import { useState, type KeyboardEvent, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { noscriptImageMarkup, shouldOpenFromClick, shouldOpenFromKey } from "./galleryModel";
 import styles from "./Gallery.module.css";
 
@@ -37,8 +37,16 @@ export default function GalleryMedia({
     setStatus(src ? "pending" : "fail");
   }
   const url = nonce ? `${src}${src.includes("?") ? "&" : "?"}r=${nonce}` : src;
+  const imgRef = useRef<HTMLImageElement>(null);
 
-  const canOpen = Boolean(onOpen) && status === "loaded";
+  useEffect(() => {
+    const node = imgRef.current;
+    if (!node) return;
+    if (node.complete && node.naturalWidth > 0) setStatus("loaded");
+    else if (node.complete && node.naturalWidth === 0 && src) setStatus("fail");
+  }, [src, url]);
+
+  const canOpen = Boolean(onOpen) && Boolean(src) && status !== "fail";
 
   const open = (stage: HTMLElement) => {
     if (canOpen) onOpen?.(stage);
@@ -78,6 +86,7 @@ export default function GalleryMedia({
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           style={{ objectFit: fit, objectPosition: fit === "contain" ? "center" : position || "center" }}
+          ref={imgRef}
           onLoad={() => setStatus("loaded")}
           onError={() => setStatus("fail")}
         />

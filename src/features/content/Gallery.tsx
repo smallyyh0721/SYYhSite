@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { works as seedWorks, type Work, type WorkThemeId } from "@/lib/contracts";
+import { works as seedWorks, workThemes, type Work, type WorkThemeId } from "@/lib/contracts";
 import GalleryMedia from "./GalleryMedia";
 import styles from "./Gallery.module.css";
 import {
@@ -16,7 +16,6 @@ import {
   type OverlayHistory,
 } from "./galleryHistory";
 import {
-  FILTERS,
   coverAlt,
   emptyCopy,
   formalTheme,
@@ -56,6 +55,16 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastNavRef = useRef<"prev" | "next" | "close">("close");
   const visible = useMemo(() => visibleItems(filter, items), [filter, items]);
+  const groups = useMemo(() => {
+    const themes = initialThemeId ? workThemes.filter((theme) => theme.id === initialThemeId) : workThemes;
+    return themes
+      .map((theme) => ({
+        id: theme.id,
+        label: theme.name,
+        items: visible.filter((item) => item.themeId === theme.id),
+      }))
+      .filter((group) => group.items.length > 0);
+  }, [initialThemeId, visible]);
   const current = dialogId ? visible.find((item) => item.id === dialogId) ?? null : null;
   const dialogPosition = current ? visible.findIndex((item) => item.id === current.id) : -1;
 
@@ -271,42 +280,33 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
         <h1 tabIndex={-1}>{filter === "all" ? "作品" : formalTheme(filter).label}</h1>
       </header>
 
-      <div className={styles.toolbar}>
-        <div className={styles.filters} role="group" aria-label="作品主题">
-          {FILTERS.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className={styles.chip}
-              aria-pressed={filter === item.id}
-              onClick={() => setFilter(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {visible.length ? (
-        <div className={styles.gallery}>
-          {visible.map((item, index) => (
-            <article key={item.id} className={styles.card} data-work={item.work.slug} data-theme={item.themeId}>
-              <GalleryMedia
-                className={styles.workStage}
-                src={workArt(item.work)}
-                alt={coverAlt(item.work)}
-                fit="cover"
-                priority={index === 0}
-                fallbackLabel={item.work.title}
-                openLabel={`查看封面大图：${item.work.title}`}
-                onOpen={(stage) => openDialog(item.id, stage)}
-              />
-              <h3 className={styles.meta}>
-                <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
-                  {item.work.title}
-                </a>
-              </h3>
-            </article>
+      {groups.length ? (
+        <div className={styles.seriesList}>
+          {groups.map((group) => (
+            <section key={group.id} className={styles.series} aria-label={group.label}>
+              {filter === "all" ? <h2 className={styles.seriesName}>{group.label}</h2> : null}
+              <div className={styles.plates}>
+                {group.items.map((item, index) => (
+                  <article key={item.id} className={styles.plate} data-work={item.work.slug} data-theme={item.themeId}>
+                    <GalleryMedia
+                      className={styles.quietStage}
+                      src={workArt(item.work)}
+                      alt={coverAlt(item.work)}
+                      fit="contain"
+                      priority={index === 0}
+                      fallbackLabel={item.work.title}
+                      openLabel={`查看大图：${item.work.title}`}
+                      onOpen={(stage) => openDialog(item.id, stage)}
+                    />
+                    <h3 className={styles.plateTitle}>
+                      <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
+                        {item.work.title}
+                      </a>
+                    </h3>
+                  </article>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       ) : (
@@ -317,10 +317,7 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
 
       {initialThemeId ? (
         <nav className={styles.returns} aria-label="返回">
-          <Link className={styles.softBtn} href="/hub/">
-            返回四岛
-          </Link>
-          <Link className={styles.softBtn} href="/works/">
+          <Link className={styles.textBack} href="/works/">
             作品
           </Link>
         </nav>

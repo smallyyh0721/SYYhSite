@@ -22,17 +22,29 @@ test("home opens with a CONNECT animation instead of the welcome gate", () => {
   assert.match(opening, /<World/);
 });
 
-test("works grid is uniform thumbs with a single title", () => {
+test("works are grouped by series with the picture on the page", () => {
   const gallery = read("src/features/content/Gallery.tsx");
   const css = read("src/features/content/Gallery.module.css");
-  assert.match(css, /grid-template-columns:\s*repeat\(auto-fill,\s*var\(--thumb\)\)/);
+  assert.match(gallery, /seriesList/);
+  assert.match(gallery, /group\.label/);
+  assert.match(css, /\.seriesList/);
   assert.equal(gallery.includes("item.work.subtitle"), false);
   assert.equal(gallery.includes("item.work.category"), false);
-  assert.equal(gallery.includes("listIntro"), false);
-  assert.equal(gallery.includes("sortLabel"), false);
+  assert.equal(gallery.includes("FILTERS"), false);
   assert.match(gallery, /\{item\.work\.title\}/);
-  const media = read("src/features/content/GalleryMedia.tsx");
-  assert.match(media, /<img/);
+  assert.match(read("src/features/content/GalleryMedia.tsx"), /<img/);
+});
+
+test("islands use mythic names and the board page is gone", () => {
+  const contracts = read("src/lib/contracts.ts");
+  assert.match(contracts, /name: "蓬莱"/);
+  assert.match(contracts, /name: "瀛洲"/);
+  assert.match(contracts, /name: "方壶"/);
+  assert.match(contracts, /name: "岱舆"/);
+  assert.equal(contracts.includes('id: "sky"'), true);
+  assert.equal(read("src/components/Shell.tsx").includes("留言"), false);
+  assert.equal(existsSync(path.join(root, "app/board/page.tsx")), false);
+  assert.match(read("src/lib/fonts.ts"), /lxgw-wenkai/);
 });
 
 test("island labels are a single name", () => {

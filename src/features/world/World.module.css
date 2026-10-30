@@ -14,10 +14,10 @@
 :global([data-theme="day"]) .island[data-active="false"] .subject { opacity: 0.7; }
 .island[data-active="true"] .subject { opacity: 1; transition: opacity .65s ease; }
 .hit:focus-visible { outline: 3px solid var(--primary); outline-offset: 6px; border-radius: 32%; }
-.label { position: absolute; left: 50%; top: calc(100% + 8px); transform: translateX(-50%); white-space: nowrap; font-weight: 500; font-size: 13px; line-height: 1; letter-spacing: 0.14em; color: var(--muted); pointer-events: none; }
+.label { position: absolute; left: 50%; top: calc(100% + 8px); transform: translateX(-50%); white-space: nowrap; font-weight: 400; font-size: 14px; line-height: 1; letter-spacing: 0.18em; color: var(--muted); pointer-events: none; }
 .island[data-active="true"] .label { opacity: 0; }
 .caption { position: absolute; left: 50%; bottom: 118px; transform: translateX(-50%); width: min(92vw, 520px); text-align: center; pointer-events: none; z-index: 6; }
-.caption h2 { margin: 0; font-weight: 500; font-size: 1.35rem; line-height: 1.2; letter-spacing: 0.18em; }
+.caption h2 { margin: 0; font-weight: 400; font-size: 1.35rem; line-height: 1.2; letter-spacing: 0.28em; }
 .bottom { position: absolute; left: 0; right: 0; bottom: 16px; z-index: 7; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 16px; padding-inline: 16px; }
 .channels { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .channels button, .utility a, .utility button {

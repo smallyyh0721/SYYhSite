@@ -11,7 +11,6 @@ const links = [
   ["/works/", "作品"],
   ["/about/", "关于"],
   ["/story/", "故事"],
-  ["/board/", "留言"],
 ];
 export default function Shell({ children }: { children: React.ReactNode }) {
   const { theme, setTheme } = useTheme();

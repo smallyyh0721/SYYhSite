@@ -26,18 +26,19 @@
 .heading {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   gap: 1.25rem 1.5rem;
-  margin: 0 0 1.5rem;
+  margin: 1.5rem 0 4.5rem;
 }
 
 .heading h1 {
   margin: 0;
-  font-weight: 500;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  line-height: 1.2;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1.4;
+  letter-spacing: 0.28em;
+  text-align: center;
 }
 
 .eyebrow {
@@ -161,6 +162,56 @@
 .detailLink {
   background: var(--primary);
   color: var(--on-primary);
+}
+
+.seriesList {
+  display: grid;
+  gap: 8.5rem;
+  width: min(100%, 42rem);
+  margin: 0 auto;
+}
+
+.seriesName {
+  margin: 0 0 2.75rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-align: center;
+  text-indent: 0.22em;
+}
+
+.plates {
+  display: grid;
+  gap: 5.5rem;
+}
+
+.plate {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  margin: 0;
+}
+
+.plateTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.quietStage {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+}
+
+.quietStage img {
+  position: static;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
 }
 
 .gallery {
@@ -301,9 +352,14 @@
 
 .returns {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 2.4rem;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.textBack {
+  color: var(--muted);
+  letter-spacing: 0.16em;
+  text-decoration: none;
 }
 
 .dialogRoot {
@@ -377,11 +433,22 @@
   padding: 0.8rem 0 0.3rem;
 }
 
+.dialog .navBtn,
+.dialog .closeBtn,
+.dialog .detailLink {
+  background: transparent;
+  color: var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  letter-spacing: 0.14em;
+}
+
 .navBtn,
 .explainToggle {
   min-height: 3rem;
   min-width: 6.5rem;
-  box-shadow: 0 18px 40px color-mix(in srgb, var(--void) 35%, transparent);
+  box-shadow: none;
 }
 
 .navBtn:disabled {

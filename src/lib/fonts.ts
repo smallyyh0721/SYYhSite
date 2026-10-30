@@ -1,13 +1,13 @@
 import localFont from "next/font/local";
 
-// next/font/google's Noto Serif SC build only ships Latin subsets.
-// This simplified-Chinese file also covers the site's Latin, so one face stays consistent.
+// LXGW WenKai, weight 500, subset to Latin, punctuation, and GB2312.
+// The full face is about 7MB; this cut is the readable handwritten text for the site.
 export const siteFont = localFont({
-  src: "../../node_modules/@fontsource/noto-serif-sc/files/noto-serif-sc-chinese-simplified-400-normal.woff2",
-  weight: "400",
+  src: "../fonts/lxgw-wenkai-500.woff2",
+  weight: "500",
   style: "normal",
   display: "swap",
   adjustFontFallback: false,
-  fallback: ["Songti SC", "Source Han Serif SC", "serif"],
+  fallback: ["Kaiti SC", "KaiTi", "STKaiti", "serif"],
   preload: true,
 });
