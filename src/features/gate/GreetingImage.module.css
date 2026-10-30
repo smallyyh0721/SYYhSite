@@ -8,15 +8,15 @@
   user-select: none;
 }
 
-/* One opaque artwork fills the greeting, including its original environment.
-   Cover the viewport with a square sprite cell without stretching the figure. */
+/* Each storyboard cell is square. Fit the whole cell in the stage (letterbox)
+   so the greeting composition stays visible above the header and caption. */
 .figure {
   position: absolute;
   left: 50%;
-  top: 35%;
-  width: max(100vw, 100svh);
+  top: 50%;
+  width: min(92vw, calc(100svh - 12rem));
   aspect-ratio: 1;
-  transform: translate(-50%, -35%);
+  transform: translate(-50%, -50%);
   overflow: hidden;
 }
 
@@ -47,8 +47,7 @@
 .zoom {
   width: 100%;
   height: 100%;
-  transform: scale(1.015);
-  transform-origin: center center;
+  transform: none;
 }
 
 .sheet {
@@ -65,7 +64,7 @@
 }
 
 .ken {
-  transform-origin: 50% 35%;
+  transform-origin: center center;
 }
 
 .still {
@@ -74,7 +73,11 @@
 
 .fallbackFigure {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 50%;
+  width: min(92vw, calc(100svh - 12rem));
+  height: min(92vw, calc(100svh - 12rem));
+  transform: translate(-50%, -50%);
   overflow: hidden;
 }
 
@@ -82,16 +85,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center top;
-}
-
-@media (orientation: portrait) {
-  .fallback {
-    transform: scale(2.6);
-    transform-origin: center top;
-  }
+  object-fit: contain;
+  object-position: center center;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -27,7 +27,6 @@ import {
   shouldOpenFromClick,
   sortLabel,
   stillNote,
-  themeRecord,
   visibleItems,
   workArt,
   workHref,
@@ -270,13 +269,10 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
     };
   }, []);
 
-  const activeRecord = filter === "all" ? null : themeRecord(filter);
-
   return (
     <article className={styles.page} data-gallery="works" data-filter={filter} data-count={visible.length}>
       <header className={styles.heading}>
         <div>
-          <p className={styles.eyebrow}>{filter === "all" ? "CH-01 / SELECTED WORKS" : activeRecord?.subtitle ?? "THEME WORKS"}</p>
           <h1 tabIndex={-1}>{filter === "all" ? "WORKS" : formalTheme(filter).label}</h1>
         </div>
         <p>{listIntro(filter, works)}</p>
@@ -317,7 +313,7 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                 className={styles.workStage}
                 src={workArt(item.work)}
                 alt={coverAlt(item.work)}
-                fit="contain"
+                fit="cover"
                 priority={index === 0}
                 fallbackLabel={item.work.title}
                 openLabel={`查看封面大图：${item.work.title}`}
