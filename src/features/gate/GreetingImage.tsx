@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import { greetingImageArt } from "@/lib/v2-assets";
 import {
   DEGRADE_HOLD_MS,
@@ -23,14 +24,6 @@ const SMILE_AT = 900;
 const SMILE_FADE = 450;
 const REACH_AT = 2000;
 const REACH_FADE = 500;
-function opacitiesAt(elapsed: number): Mix {
-  return {
-    cold: 1,
-    smile: Math.min(1, Math.max(0, (elapsed - SMILE_AT) / SMILE_FADE)),
-    reach: Math.min(1, Math.max(0, (elapsed - REACH_AT) / REACH_FADE)),
-  };
-}
-
 function frameAt(elapsed: number): Frame {
   if (elapsed >= REACH_AT + REACH_FADE) return "reach";
   if (elapsed >= SMILE_AT + SMILE_FADE) return "smile";
@@ -99,16 +92,21 @@ function PoseCrop({
 export default function GreetingImage({
   onComplete,
   onNote,
+  onReady,
 }: {
   onComplete: (reason: GreetingReason) => void;
   onNote?: (note: string) => void;
+  onReady?: () => void;
 }) {
   const onCompleteRef = useRef(onComplete);
   const onNoteRef = useRef(onNote);
+  const onReadyRef = useRef(onReady);
   onCompleteRef.current = onComplete;
   onNoteRef.current = onNote;
+  onReadyRef.current = onReady;
   const stageRef = useRef<HTMLDivElement>(null);
   const mixRef = useRef<Mix>({ cold: 1, smile: 0, reach: 0 });
+  const motionRef = useRef<gsap.core.Timeline | null>(null);
   const [snapshot] = useState<Snapshot>(() => ({
     theme: typeof window === "undefined" ? "night" : readTheme(),
     portrait: typeof window === "undefined" ? false : readPortrait(),
@@ -132,6 +130,7 @@ export default function GreetingImage({
   };
 
   useLayoutEffect(() => {
+    if (motionRef.current) return;
     paint(mixRef.current);
   });
 
@@ -147,14 +146,26 @@ export default function GreetingImage({
     let mode: "load" | "play" | "reduced" | "degrade" = "load";
     let using: Source = "none";
     let wantReduced = reduced || reducedQuery.matches;
-    let elapsed = 0;
-    let last = 0;
     let holdLeft = REDUCED_HOLD_MS;
     let holdMark = 0;
     const clearTimers = () => {
       window.clearTimeout(timeout);
       window.clearTimeout(hold);
       cancelAnimationFrame(raf);
+    };
+    const stopMotion = () => {
+      motionRef.current?.kill();
+      motionRef.current = null;
+    };
+    const signalReady = () => {
+      if (stopped || settled) return;
+      onReadyRef.current?.();
+    };
+    const afterPaint = (fn: () => void) => {
+      raf = requestAnimationFrame(() => {
+        if (stopped || settled) return;
+        fn();
+      });
     };
     const complete = (next: GreetingReason) => {
       if (stopped || settled) return;
@@ -176,10 +187,47 @@ export default function GreetingImage({
       holdMark = performance.now();
       hold = window.setTimeout(() => complete(next), remaining);
     };
+    const beginMotion = () => {
+      if (motionRef.current || stopped || settled || mode !== "play") return;
+      const root = stageRef.current;
+      const figure = root?.querySelector("[data-greeting-figure]");
+      if (!root || !figure) return;
+      const clock = { t: 0 };
+      const tl = gsap.timeline({
+        paused: document.hidden,
+        onUpdate: () => {
+          if (using !== "sheet") return;
+          const nextFrame = frameAt(tl.time() * 1000);
+          setFrame((current) => (current === nextFrame ? current : nextFrame));
+        },
+        onComplete: () => complete("ended"),
+      });
+      if (using === "sheet") {
+        tl.to(
+          root.querySelectorAll('[data-pose="smile"]'),
+          { opacity: 1, duration: SMILE_FADE / 1000, ease: "power2.inOut" },
+          SMILE_AT / 1000,
+        );
+        tl.to(
+          root.querySelectorAll('[data-pose="reach"]'),
+          { opacity: 1, duration: REACH_FADE / 1000, ease: "power2.inOut" },
+          REACH_AT / 1000,
+        );
+      }
+      const ken = root.querySelector("[data-ken]");
+      if (ken) {
+        tl.fromTo(ken, { scale: 1 }, { scale: 1.01, duration: PLAY_MS / 1000, ease: "power1.out" }, 0);
+      }
+      tl.to(clock, { t: 1, duration: PLAY_MS / 1000, ease: "none" }, 0);
+      motionRef.current = tl;
+    };
     const goReduced = () => {
       if (stopped || settled || mode === "reduced") return;
       mode = "reduced";
       cancelAnimationFrame(raf);
+      const ken = stageRef.current?.querySelector<HTMLElement>("[data-ken]");
+      stopMotion();
+      if (ken) gsap.set(ken, { clearProps: "transform" });
       paint({ cold: 1, smile: 1, reach: 1 });
       setFrame("reach");
       setPhase("reduced");
@@ -187,23 +235,6 @@ export default function GreetingImage({
       onNoteRef.current?.("很高兴遇见你。");
       holdLeft = REDUCED_HOLD_MS;
       armHold("reduced", holdLeft);
-    };
-    const tick = (now: number) => {
-      if (stopped || settled || mode !== "play") return;
-      if (!document.hidden) {
-        elapsed += now - last;
-        if (using === "sheet") {
-          paint(opacitiesAt(elapsed));
-          const nextFrame = frameAt(elapsed);
-          setFrame((current) => (current === nextFrame ? current : nextFrame));
-        }
-        if (elapsed >= PLAY_MS) {
-          complete("ended");
-          return;
-        }
-      }
-      last = now;
-      raf = requestAnimationFrame(tick);
     };
     const startPlay = (next: Source) => {
       if (stopped || settled) return;
@@ -214,6 +245,7 @@ export default function GreetingImage({
         paint({ cold: 1, smile: 1, reach: 1 });
         setFrame("reach");
         goReduced();
+        afterPaint(signalReady);
         return;
       }
       mode = "play";
@@ -226,13 +258,23 @@ export default function GreetingImage({
         setFrame("cold");
       }
       onNoteRef.current?.("很高兴遇见你。");
-      last = performance.now();
-      raf = requestAnimationFrame(tick);
+      afterPaint(() => {
+        if (!stageRef.current?.querySelector("[data-greeting-figure]")) {
+          afterPaint(() => {
+            beginMotion();
+            signalReady();
+          });
+          return;
+        }
+        beginMotion();
+        signalReady();
+      });
     };
     const onVis = () => {
       if (stopped || settled) return;
       if (document.hidden) {
         setPaused(true);
+        motionRef.current?.pause();
         if (mode === "reduced" || mode === "degrade") {
           if (holdMark) holdLeft = Math.max(0, holdLeft - (performance.now() - holdMark));
           window.clearTimeout(hold);
@@ -241,7 +283,7 @@ export default function GreetingImage({
         return;
       }
       setPaused(false);
-      last = performance.now();
+      if (mode === "play") motionRef.current?.play();
       if (mode === "reduced") armHold("reduced", holdLeft);
       if (mode === "degrade") armHold("error", holdLeft);
     };
@@ -272,6 +314,7 @@ export default function GreetingImage({
           onNoteRef.current?.("画面还在准备。");
           holdLeft = DEGRADE_HOLD_MS;
           armHold("error", holdLeft);
+          afterPaint(signalReady);
         }
       }
     })();
@@ -280,6 +323,7 @@ export default function GreetingImage({
       stopped = true;
       abort.abort();
       clearTimers();
+      stopMotion();
       reducedQuery.removeEventListener("change", onReduced);
       document.removeEventListener("visibilitychange", onVis);
     };
@@ -310,7 +354,7 @@ export default function GreetingImage({
     >
       {showSheet && (
         <div className={styles.figure} data-greeting-figure data-portrait={snapshot.portrait ? "true" : "false"}>
-          <div className={motionOff ? styles.still : styles.ken}>
+            <div className={motionOff ? styles.still : styles.ken} data-ken={motionOff ? undefined : ""}>
             <div className={styles.stack}>
               {FRAMES.map((name) => (
                 <PoseCrop key={name} src={sheet} frame={name} row={row} />
@@ -321,7 +365,7 @@ export default function GreetingImage({
       )}
       {showFallback && (
         <div className={styles.fallbackFigure} data-greeting-figure data-portrait={snapshot.portrait ? "true" : "false"}>
-          <div className={motionOff ? styles.still : styles.ken}>
+            <div className={motionOff ? styles.still : styles.ken} data-ken={motionOff ? undefined : ""}>
             <img className={styles.fallback} src={fallback} alt="" draggable={false} decoding="async" />
           </div>
         </div>

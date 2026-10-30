@@ -66,16 +66,10 @@
 
 .ken {
   transform-origin: 50% 35%;
-  animation: push 3.5s ease-out forwards;
 }
 
 .still {
   transform: none;
-  animation: none;
-}
-
-.stage[data-paused="true"] .ken {
-  animation-play-state: paused;
 }
 
 .fallbackFigure {
@@ -100,13 +94,8 @@
   }
 }
 
-@keyframes push {
-  from { transform: scale(1); }
-  to { transform: scale(1.01); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .ken {
-    animation: none;
+    transform: none;
   }
 }
