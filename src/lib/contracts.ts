@@ -1,10 +1,10 @@
 export type Theme = "night" | "day";
 export type WorkThemeId = "sky" | "ancient" | "apocalypse" | "home";
 export const workThemes = [
-  { id: "sky", title: "Her", name: "Her", subtitle: "Her", description: "虚拟人物", href: "/works/themes/sky/" },
-  { id: "ancient", title: "ZZZ", name: "ZZZ", subtitle: "ZZZ", description: "梦幻世界", href: "/works/themes/ancient/" },
-  { id: "apocalypse", title: "FFF", name: "FFF", subtitle: "FFF", description: "机甲战斗", href: "/works/themes/apocalypse/" },
-  { id: "home", title: "COS", name: "COS", subtitle: "COS", description: "COSPLAY", href: "/works/themes/home/" },
+  { id: "sky", title: "蓬莱", name: "蓬莱", subtitle: "蓬莱", description: "虚拟人物", href: "/works/themes/sky/" },
+  { id: "ancient", title: "瀛洲", name: "瀛洲", subtitle: "瀛洲", description: "梦幻世界", href: "/works/themes/ancient/" },
+  { id: "apocalypse", title: "方壶", name: "方壶", subtitle: "方壶", description: "机甲战斗", href: "/works/themes/apocalypse/" },
+  { id: "home", title: "岱舆", name: "岱舆", subtitle: "岱舆", description: "COSPLAY", href: "/works/themes/home/" },
 ] satisfies { id: WorkThemeId; title: string; name: string; subtitle: string; description: string; href: string }[];
 export type Work = {
   themeId: WorkThemeId;
@@ -78,8 +78,8 @@ export const islands: Island[] = [
   {
     id: "sky",
     themeId: "sky",
-    name: "Her",
-    channel: "Her",
+    name: "蓬莱",
+    channel: "蓬莱",
     href: "/works/themes/sky/",
     image: "/media/v2/islands/sky-day.webp",
     x: -390,
@@ -89,8 +89,8 @@ export const islands: Island[] = [
   {
     id: "ancient",
     themeId: "ancient",
-    name: "ZZZ",
-    channel: "ZZZ",
+    name: "瀛洲",
+    channel: "瀛洲",
     href: "/works/themes/ancient/",
     image: "/media/v2/islands/ancient-day.webp",
     x: 400,
@@ -100,8 +100,8 @@ export const islands: Island[] = [
   {
     id: "apocalypse",
     themeId: "apocalypse",
-    name: "FFF",
-    channel: "FFF",
+    name: "方壶",
+    channel: "方壶",
     href: "/works/themes/apocalypse/",
     image: "/media/v2/islands/apocalypse-day.webp",
     x: -380,
@@ -111,8 +111,8 @@ export const islands: Island[] = [
   {
     id: "home",
     themeId: "home",
-    name: "COS",
-    channel: "COS",
+    name: "岱舆",
+    channel: "岱舆",
     href: "/works/themes/home/",
     image: "/media/v2/islands/home-day.webp",
     x: 390,

@@ -15,11 +15,9 @@ body {
   margin: 0;
   background: var(--void);
   color: var(--ink);
-  font:
-    16px/1.75 "Noto Sans SC",
-    "Microsoft YaHei",
-    system-ui,
-    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
 }
 button,
 input,
@@ -59,6 +57,10 @@ h2,
 h3,
 p {
   margin-top: 0;
+  font-weight: 500;
+}
+p {
+  font-weight: 400;
 }
 h1:focus {
   outline: none;
@@ -69,13 +71,12 @@ img {
 }
 .display {
   overflow-wrap: anywhere;
-  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  font-size: clamp(54px, 7.3vw, 112px);
-  margin-bottom: 24px;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  margin-bottom: 16px;
 }
 .eyebrow {
   font-size: 14px;
@@ -99,8 +100,10 @@ img {
   border: 0;
   border-radius: 999px;
   padding: 12px 22px;
-  font: 600 15px/1.2 "Segoe UI", "Microsoft YaHei", sans-serif;
-  letter-spacing: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
   text-decoration: none;
   box-shadow: 0 10px 24px rgb(10 10 14 / 14%);
 }
@@ -164,16 +167,19 @@ textarea::placeholder {
 }
 label {
   display: block;
-  font: 600 15px/1.5 "Segoe UI", "Microsoft YaHei", sans-serif;
-  letter-spacing: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 small {
   font-size: 12px;
 }
 h2 {
-  font-size: clamp(26px, 4vw, 48px);
-  line-height: 1.2;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.35;
+  letter-spacing: 0.04em;
 }
 hr {
   border: 0;
@@ -199,21 +205,7 @@ hr {
 .softList li {
   margin: 0;
 }
-/* StoryProgress.tsx is outside this module and still prints a terminal label. */
-[aria-label="故事阅读进度"] {
-  display: none !important;
-}
-@media (max-width: 900px) {
-  .display {
-    overflow-wrap: anywhere;
-    font-size: clamp(48px, 10vw, 88px);
-  }
-}
 @media (max-width: 600px) {
-  .display {
-    overflow-wrap: anywhere;
-    font-size: clamp(42px, 12.7vw, 68px);
-  }
   .grid2 {
     grid-template-columns: 1fr;
     gap: 24px;

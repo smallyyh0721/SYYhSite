@@ -26,20 +26,19 @@
 .heading {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   gap: 1.25rem 1.5rem;
-  margin: 0 0 1.5rem;
+  margin: 1.5rem 0 4.5rem;
 }
 
 .heading h1 {
   margin: 0;
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-style: italic;
-  font-weight: 800;
-  font-size: clamp(2.3rem, 7vw, 4.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1.4;
+  letter-spacing: 0.28em;
+  text-align: center;
 }
 
 .eyebrow {
@@ -165,16 +164,69 @@
   color: var(--on-primary);
 }
 
-.gallery {
+.seriesList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
-  gap: 1.1rem;
+  gap: 8.5rem;
+  width: min(100%, 42rem);
+  margin: 0 auto;
+}
+
+.seriesName {
+  margin: 0 0 2.75rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-align: center;
+  text-indent: 0.22em;
+}
+
+.plates {
+  display: grid;
+  gap: 5.5rem;
+}
+
+.plate {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  margin: 0;
+}
+
+.plateTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.quietStage {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+}
+
+.quietStage img {
+  position: static;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.gallery {
+  --thumb: 11.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--thumb));
+  gap: 1.5rem 1.1rem;
+  justify-content: start;
   align-items: start;
 }
 
 .card {
-  display: block;
-  width: 100%;
+  display: grid;
+  gap: 0.55rem;
+  width: var(--thumb);
   margin: 0;
   min-width: 0;
 }
@@ -188,14 +240,16 @@
 
 .workStage {
   aspect-ratio: 1;
-  border-radius: 1.4rem;
-  background: linear-gradient(165deg, var(--raised), var(--void));
+  border-radius: 0.4rem;
+  background: var(--raised);
 }
 
 .meta {
-  display: grid;
-  gap: 0.28rem;
-  padding: 0.8rem 0.15rem 0.2rem;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
 }
 
 .meta h3,
@@ -298,9 +352,14 @@
 
 .returns {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 2.4rem;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.textBack {
+  color: var(--muted);
+  letter-spacing: 0.16em;
+  text-decoration: none;
 }
 
 .dialogRoot {
@@ -313,7 +372,7 @@
   position: fixed;
   inset: 0;
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   height: 100svh;
   max-height: 100svh;
   padding: 0.75rem;
@@ -374,11 +433,22 @@
   padding: 0.8rem 0 0.3rem;
 }
 
+.dialog .navBtn,
+.dialog .closeBtn,
+.dialog .detailLink {
+  background: transparent;
+  color: var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  letter-spacing: 0.14em;
+}
+
 .navBtn,
 .explainToggle {
   min-height: 3rem;
   min-width: 6.5rem;
-  box-shadow: 0 18px 40px color-mix(in srgb, var(--void) 35%, transparent);
+  box-shadow: none;
 }
 
 .navBtn:disabled {
@@ -409,9 +479,9 @@
 
 .detailMedia {
   aspect-ratio: 1;
-  width: min(100%, 18rem);
+  width: min(100%, 16rem);
   justify-self: start;
-  border-radius: 2rem;
+  border-radius: 0.4rem;
   background:
     radial-gradient(ellipse at 50% 80%, color-mix(in srgb, var(--primary) 14%, transparent) 0%, transparent 58%),
     linear-gradient(180deg, var(--raised), var(--void));
@@ -473,8 +543,9 @@
   margin: 0.9rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, 9.25rem);
+  justify-content: start;
+  gap: 0.85rem 0.75rem;
   min-width: 0;
 }
 
@@ -499,7 +570,7 @@
 
 .frameStage {
   aspect-ratio: 1;
-  border-radius: 1.4rem;
+  border-radius: 0.4rem;
   background:
     radial-gradient(ellipse at 50% 80%, color-mix(in srgb, var(--primary) 14%, transparent) 0%, transparent 58%),
     linear-gradient(180deg, var(--raised), var(--void));
@@ -515,6 +586,18 @@
 @media (max-width: 900px) {
   .detailGrid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery,
+  .mediaList,
+  .processGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    width: 100%;
   }
 }
 

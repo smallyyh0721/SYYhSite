@@ -139,8 +139,7 @@
   order: 2;
 }
 .chapterTitle {
-  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   letter-spacing: -0.03em;
   line-height: 1.15;

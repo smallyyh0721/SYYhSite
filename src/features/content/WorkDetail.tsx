@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { works, workThemes, type Work, type WorkMedia } from "@/lib/contracts";
+import { works, type Work, type WorkMedia } from "@/lib/contracts";
 import GalleryMedia from "./GalleryMedia";
 import WorkVideo from "./WorkVideo";
 import styles from "./Gallery.module.css";
@@ -10,7 +10,6 @@ import { overlayFromState, pushHistory, readSnapshot, replaceHistory } from "./g
 import {
   coverAlt,
   coverCaption,
-  formalTheme,
   isStillStoryboard,
   mediaHeading,
   processHeading,
@@ -72,7 +71,6 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
   const pushedRef = useRef(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastNavRef = useRef<"prev" | "next" | "close">("close");
-  const label = formalTheme(work.themeId).label;
   const index = relatedWorks.findIndex((item) => item.slug === work.slug);
   const prev = index > 0 ? relatedWorks[index - 1] : null;
   const next = index >= 0 && index < relatedWorks.length - 1 ? relatedWorks[index + 1] : null;
@@ -271,25 +269,8 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
       </Link>
 
       <header className={styles.heading}>
-        <div>
-          <p className={styles.eyebrow}>{label}</p>
-          <h1 tabIndex={-1}>{work.title}</h1>
-        </div>
-        <p>{work.description}</p>
+        <h1 tabIndex={-1}>{work.title}</h1>
       </header>
-
-      <nav className={styles.themes} aria-label="四个主题作品">
-        {workThemes.map((item) => (
-          <Link
-            key={item.id}
-            className={styles.chip}
-            href={item.href}
-            aria-current={item.id === work.themeId ? "page" : undefined}
-          >
-            {formalTheme(item.id).label}
-          </Link>
-        ))}
-      </nav>
 
       <div className={styles.detailGrid}>
         <figure className={styles.figure}>
@@ -303,19 +284,15 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
             openLabel={`放大查看：${coverCaption(work)}`}
             onOpen={openCover}
           />
-          <figcaption className={styles.caption}>封面 · {coverCaption(work)}</figcaption>
         </figure>
         <div className={styles.detailCopy}>
-          <span className={styles.mark}>{work.category}</span>
-          <p className={styles.detailBody}>{work.subtitle}</p>
-          <p className={styles.hint}>{label}</p>
+          {work.description ? <p className={styles.detailBody}>{work.description}</p> : null}
         </div>
       </div>
 
       <section className={styles.sequence} aria-labelledby="media-title">
         <h2 id="media-title">{mediaHeading(work)}</h2>
         {stillNote(work) ? <p className={styles.note}>{stillNote(work)}</p> : null}
-        <p className={styles.hint}>点开单张可以放大查看，左右方向键或按钮会在这一组里切换。页面向下滚动可以看完全部图片。</p>
         <ol className={styles.mediaList}>
           {work.media.map((item, frameIndex) => (
             <li key={item.src}>

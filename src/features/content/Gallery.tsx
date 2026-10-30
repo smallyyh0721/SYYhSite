@@ -16,17 +16,12 @@ import {
   type OverlayHistory,
 } from "./galleryHistory";
 import {
-  FILTERS,
   coverAlt,
   emptyCopy,
   formalTheme,
   galleryItems,
   isFilterId,
-  listIntro,
-  processNote,
   shouldOpenFromClick,
-  sortLabel,
-  stillNote,
   visibleItems,
   workArt,
   workHref,
@@ -60,6 +55,16 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastNavRef = useRef<"prev" | "next" | "close">("close");
   const visible = useMemo(() => visibleItems(filter, items), [filter, items]);
+  const groups = useMemo(() => {
+    const themes = initialThemeId ? workThemes.filter((theme) => theme.id === initialThemeId) : workThemes;
+    return themes
+      .map((theme) => ({
+        id: theme.id,
+        label: theme.name,
+        items: visible.filter((item) => item.themeId === theme.id),
+      }))
+      .filter((group) => group.items.length > 0);
+  }, [initialThemeId, visible]);
   const current = dialogId ? visible.find((item) => item.id === dialogId) ?? null : null;
   const dialogPosition = current ? visible.findIndex((item) => item.id === current.id) : -1;
 
@@ -272,63 +277,36 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
   return (
     <article className={styles.page} data-gallery="works" data-filter={filter} data-count={visible.length}>
       <header className={styles.heading}>
-        <div>
-          <h1 tabIndex={-1}>{filter === "all" ? "WORKS" : formalTheme(filter).label}</h1>
-        </div>
-        <p>{listIntro(filter, works)}</p>
+        <h1 tabIndex={-1}>{filter === "all" ? "作品" : formalTheme(filter).label}</h1>
       </header>
 
-      {visible.length ? (
-        <div className={styles.banner}>
-          <p>点开封面查看大图，从标题进入这件作品。</p>
-        </div>
-      ) : null}
-
-      <div className={styles.toolbar}>
-        <div className={styles.filters} role="group" aria-label="作品主题">
-          {FILTERS.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className={styles.chip}
-              aria-pressed={filter === item.id}
-              onClick={() => setFilter(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-        <div className={styles.sorts} role="group" aria-label="排序">
-          <button type="button" className={styles.chip} aria-pressed="true">
-            {sortLabel}
-          </button>
-        </div>
-      </div>
-
-      {visible.length ? (
-        <div className={styles.gallery}>
-          {visible.map((item, index) => (
-            <article key={item.id} className={styles.card} data-work={item.work.slug} data-theme={item.themeId}>
-              <GalleryMedia
-                className={styles.workStage}
-                src={workArt(item.work)}
-                alt={coverAlt(item.work)}
-                fit="cover"
-                priority={index === 0}
-                fallbackLabel={item.work.title}
-                openLabel={`查看封面大图：${item.work.title}`}
-                onOpen={(stage) => openDialog(item.id, stage)}
-              />
-              <div className={styles.meta}>
-                <span className={styles.mark}>{item.work.category}</span>
-                <h3>
-                  <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
-                    {item.work.title}
-                  </a>
-                </h3>
-                <p className={styles.hint}>{item.work.subtitle}</p>
+      {groups.length ? (
+        <div className={styles.seriesList}>
+          {groups.map((group) => (
+            <section key={group.id} className={styles.series} aria-label={group.label}>
+              {filter === "all" ? <h2 className={styles.seriesName}>{group.label}</h2> : null}
+              <div className={styles.plates}>
+                {group.items.map((item, index) => (
+                  <article key={item.id} className={styles.plate} data-work={item.work.slug} data-theme={item.themeId}>
+                    <GalleryMedia
+                      className={styles.quietStage}
+                      src={workArt(item.work)}
+                      alt={coverAlt(item.work)}
+                      fit="contain"
+                      priority={index === 0}
+                      fallbackLabel={item.work.title}
+                      openLabel={`查看大图：${item.work.title}`}
+                      onOpen={(stage) => openDialog(item.id, stage)}
+                    />
+                    <h3 className={styles.plateTitle}>
+                      <a className={styles.cardLink} href={workHref(item.work.slug)} data-gallery-id={item.id}>
+                        {item.work.title}
+                      </a>
+                    </h3>
+                  </article>
+                ))}
               </div>
-            </article>
+            </section>
           ))}
         </div>
       ) : (
@@ -339,22 +317,11 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
 
       {initialThemeId ? (
         <nav className={styles.returns} aria-label="返回">
-          <Link className={styles.softBtn} href="/hub/">
-            返回四岛
-          </Link>
-          <Link className={styles.detailLink} href="/works/">
-            全部作品
+          <Link className={styles.textBack} href="/works/">
+            作品
           </Link>
         </nav>
-      ) : (
-        <nav className={styles.themes} aria-label="四个主题作品">
-          {workThemes.map((item) => (
-            <Link key={item.id} className={styles.chip} href={item.href}>
-              {formalTheme(item.id).label}
-            </Link>
-          ))}
-        </nav>
-      )}
+      ) : null}
 
       {mounted && current
         ? createPortal(
@@ -371,7 +338,6 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                     <h2 id="gallery-dialog-title" className={styles.dialogTitle} aria-live="polite">
                       {current.work.title}
                     </h2>
-                    <p className={styles.hint}>{current.work.category}</p>
                     <p className={styles.hint}>
                       {dialogPosition + 1} / {visible.length}
                     </p>
@@ -392,15 +358,6 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                   <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(-1)}>
                     上一件
                   </button>
-                  <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(1)}>
-                    下一件
-                  </button>
-                </div>
-                <div className={styles.explain}>
-                  <p>{current.work.subtitle}</p>
-                  <p>{current.work.description}</p>
-                  {stillNote(current.work) ? <p>{stillNote(current.work)}</p> : null}
-                  {processNote(current.work) ? <p>{processNote(current.work)}</p> : null}
                   <Link
                     className={styles.detailLink}
                     href={workHref(current.work.slug)}
@@ -422,8 +379,11 @@ export default function Gallery({ initialThemeId, works = seedWorks }: { initial
                       }
                     }}
                   >
-                    完整详情
+                    查看
                   </Link>
+                  <button type="button" className={styles.navBtn} disabled={visible.length < 2} onClick={() => moveDialog(1)}>
+                    下一件
+                  </button>
                 </div>
               </div>
             </div>,
