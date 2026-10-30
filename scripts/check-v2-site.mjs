@@ -26,10 +26,10 @@ import { chromium, devices } from "@playwright/test";
 import sharp from "sharp";
 
 const THEMES = {
-  sky: "Her 她的故事",
-  ancient: "ZZZ 绝区零二",
-  apocalypse: "FFF 关于未来",
-  home: "COS 次元冲突",
+  sky: "Her",
+  ancient: "ZZZ",
+  apocalypse: "FFF",
+  home: "COS",
 };
 const RUNTIME_IMAGES = [
   "/media/v2/islands/sky-day.webp",
@@ -683,7 +683,7 @@ async function main() {
         if (sources.length !== 4 || sources.some((item) => !item.art?.includes("-night.webp") || item.width < 64)) throw new Error(JSON.stringify(sources));
         const layers = await page.locator("[data-dynamic-background] img").evaluateAll((nodes) => nodes.map((node) => ({ src: node.currentSrc || node.getAttribute("src"), width: node.naturalWidth, ready: node.dataset.ready || "" })));
         if (layers.length < 3 || layers.some((item) => item.width < 1 || item.ready !== "true" || !String(item.src).includes("night"))) throw new Error("hub background source does not match theme " + JSON.stringify(layers));
-        await page.getByRole("button", { name: "聚焦Her 她的故事", exact: true }).focus();
+        await page.getByRole("button", { name: "聚焦Her", exact: true }).focus();
         await page.keyboard.press("ArrowRight");
         await page.waitForFunction(() => document.querySelector("[data-focused-island]")?.getAttribute("data-focused-island") === "ancient");
         await page.keyboard.press("ArrowLeft");
@@ -717,7 +717,7 @@ async function main() {
       await step("gallery filter, real url, back and forward, contain", async () => {
         await openPage(page, origin + "/works/");
         await setTheme(page, "night");
-        await page.getByRole("button", { name: "COS 次元冲突", exact: true }).click();
+        await page.getByRole("button", { name: "COS", exact: true }).click();
         await page.waitForFunction(() => document.documentElement.dataset.clientReady === "true" && document.querySelector("[data-gallery='works']")?.getAttribute("data-filter") === "home");
         await waitForGalleryReady(page, "/media/v2/islands/home-night.webp");
         const filtered = await page.locator("article[data-crop]").count();

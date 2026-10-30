@@ -214,10 +214,6 @@ export default function GreetingImage({
           REACH_AT / 1000,
         );
       }
-      const ken = root.querySelector("[data-ken]");
-      if (ken) {
-        tl.fromTo(ken, { scale: 1 }, { scale: 1.01, duration: PLAY_MS / 1000, ease: "power1.out" }, 0);
-      }
       tl.to(clock, { t: 1, duration: PLAY_MS / 1000, ease: "none" }, 0);
       motionRef.current = tl;
     };

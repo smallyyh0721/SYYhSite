@@ -297,7 +297,7 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
             className={styles.detailMedia}
             src={workArt(work)}
             alt={coverAlt(work)}
-            fit="contain"
+            fit="cover"
             priority
             fallbackLabel={`封面 · ${coverCaption(work)}`}
             openLabel={`放大查看：${coverCaption(work)}`}
@@ -324,7 +324,7 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
                   className={styles.frameStage}
                   src={item.src}
                   alt={item.alt}
-                  fit="contain"
+                  fit="cover"
                   priority={frameIndex === 0}
                   fallbackLabel={item.caption}
                   openLabel={`放大查看：${item.caption || item.alt || work.title}`}
@@ -349,7 +349,7 @@ export default function WorkDetail({ work, relatedWorks = works, preview = false
                     className={styles.frameStage}
                     src={item.src}
                     alt={item.alt}
-                    fit="contain"
+                    fit="cover"
                     fallbackLabel={item.caption}
                     openLabel={`放大查看：${item.caption || item.alt || work.title}`}
                     onOpen={(stage) => openViewer("process", frameIndex, stage)}

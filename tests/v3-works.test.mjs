@@ -90,10 +90,12 @@ test("covers use prepared work files for both day and night lookups", () => {
 });
 
 test("empty themes and source notes stay factual", () => {
-  assert.match(model.emptyCopy("sky"), /Her 她的故事/);
-  assert.match(model.emptyCopy("sky"), /还没有作品/);
-  assert.match(model.emptyCopy("apocalypse"), /FFF 关于未来/);
-  assert.match(model.emptyCopy("apocalypse"), /还没有作品/);
+  assert.equal(model.emptyCopy("sky"), "Her 还没有作品。");
+  assert.equal(model.emptyCopy("apocalypse"), "FFF 还没有作品。");
+  assert.equal(model.formalTheme("sky").label, "Her");
+  assert.equal(model.formalTheme("ancient").label, "ZZZ");
+  assert.equal(model.formalTheme("apocalypse").label, "FFF");
+  assert.equal(model.formalTheme("home").label, "COS");
   const [yixuan, mist] = contracts.works;
   assert.equal(model.isStillStoryboard(yixuan), false);
   assert.equal(model.stillNote(yixuan), null);
