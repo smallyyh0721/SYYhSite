@@ -93,7 +93,9 @@
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 86%, var(--ink) 6%);
   color: var(--muted);
-  font: 600 13px/1 "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
 }
 
 .control[aria-pressed="true"] {

@@ -1,0 +1,68 @@
+.home {
+  position: relative;
+  min-height: 100svh;
+}
+
+.connect {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  pointer-events: none;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.8vw, 2rem);
+  letter-spacing: 0.48em;
+  text-indent: 0.48em;
+}
+
+.reveal {
+  min-height: 100svh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .connect {
+    animation: connect 2.6s ease forwards;
+  }
+
+  .reveal {
+    opacity: 0;
+    animation: reveal 2.6s ease forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .connect {
+    display: none;
+  }
+}
+
+@keyframes connect {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.72em;
+  }
+  24% {
+    opacity: 1;
+    letter-spacing: 0.48em;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    letter-spacing: 0.28em;
+  }
+}
+
+@keyframes reveal {
+  0%,
+  46% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, type KeyboardEvent, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { noscriptImageMarkup, shouldOpenFromClick, shouldOpenFromKey } from "./galleryModel";
 import styles from "./Gallery.module.css";
 
@@ -28,33 +28,25 @@ export default function GalleryMedia({
   fallbackLabel,
   onOpen,
 }: Props) {
-  const [status, setStatus] = useState<"pending" | "loading" | "loaded" | "fail">("pending");
   const [nonce, setNonce] = useState(0);
+  const sourceKey = `${src}#${nonce}`;
+  const [tracked, setTracked] = useState(sourceKey);
+  const [status, setStatus] = useState<"pending" | "loaded" | "fail">(src ? "pending" : "fail");
+  if (tracked !== sourceKey) {
+    setTracked(sourceKey);
+    setStatus(src ? "pending" : "fail");
+  }
   const url = nonce ? `${src}${src.includes("?") ? "&" : "?"}r=${nonce}` : src;
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    let cancelled = false;
-    setStatus("loading");
-    if (!src) {
-      setStatus("fail");
-      return;
-    }
-    const probe = new Image();
-    probe.onload = () => {
-      if (!cancelled) setStatus("loaded");
-    };
-    probe.onerror = () => {
-      if (!cancelled) setStatus("fail");
-    };
-    probe.src = url;
-    return () => {
-      cancelled = true;
-      probe.onload = null;
-      probe.onerror = null;
-    };
+    const node = imgRef.current;
+    if (!node) return;
+    if (node.complete && node.naturalWidth > 0) setStatus("loaded");
+    else if (node.complete && node.naturalWidth === 0 && src) setStatus("fail");
   }, [src, url]);
 
-  const canOpen = Boolean(onOpen) && status === "loaded";
+  const canOpen = Boolean(onOpen) && Boolean(src) && status !== "fail";
 
   const open = (stage: HTMLElement) => {
     if (canOpen) onOpen?.(stage);
@@ -75,7 +67,7 @@ export default function GalleryMedia({
   return (
     <div
       className={`${styles.stage} ${className}`}
-      data-image-state={status}
+      data-image-state={status === "fail" ? "fail" : "loaded"}
       data-ratio={ratio}
       role={canOpen ? "button" : undefined}
       tabIndex={canOpen ? 0 : undefined}
@@ -87,17 +79,18 @@ export default function GalleryMedia({
       onKeyDown={onKey}
     >
       <noscript dangerouslySetInnerHTML={{ __html: noscriptImageMarkup(src, alt) }} />
-      {status === "loaded" ? (
+      {status !== "fail" ? (
         <img
           src={url}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           style={{ objectFit: fit, objectPosition: fit === "contain" ? "center" : position || "center" }}
+          ref={imgRef}
+          onLoad={() => setStatus("loaded")}
+          onError={() => setStatus("fail")}
         />
-      ) : null}
-      {status === "loading" ? <p className={styles.stageCopy}>正在载入。</p> : null}
-      {status === "fail" ? (
+      ) : (
         <>
           <p className={styles.stageCopy}>
             {fallbackLabel ? `${fallbackLabel}。这张图还没有载入成功。` : "这张图还没有载入成功。"}
@@ -106,7 +99,7 @@ export default function GalleryMedia({
             重新加载
           </button>
         </>
-      ) : null}
+      )}
     </div>
   );
 }

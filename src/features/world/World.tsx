@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { islands, workThemes } from "@/lib/contracts";
+import { islands } from "@/lib/contracts";
 import { islandArt } from "@/lib/v2-assets";
 import { isFreshPointer } from "@/lib/world-focus.mjs";
 import { diamondTargets, HOVER_DELAY_MS, orbitPoint, slotFor, touchDecision, TRAVEL_SECONDS } from "@/lib/world-orbit.mjs";
@@ -144,7 +144,6 @@ export default function World() {
     routeTimer.current = setTimeout(() => router.push(island.href), window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 420);
   };
   const selected = islands.find((i) => i.id === focus)!;
-  const selectedTheme = workThemes.find((i) => i.id === selected.themeId)!;
   const focusedIndex = islands.findIndex((i) => i.id === focus);
   const frozen = paused || hidden || reduced;
   const markFailed = (key: string) => setFailedImages((old) => (old.includes(key) ? old : [...old, key]));
@@ -162,7 +161,6 @@ export default function World() {
           const artSrc = islandArt(island.themeId, theme);
           const failed = failedImages.includes(artKey);
           const imageState = failed ? "fail" : readyImages.includes(artKey) ? "ready" : "loading";
-          const description = workThemes.find((item) => item.id === island.themeId)?.description;
           return <div key={island.id} ref={(el) => { nodes.current[island.id] = el; }} className={styles.island} data-slot={slotFor(i, focusedIndex)} data-active={active} data-image-state={imageState} style={{ "--delay": String(i * -1.7) + "s" } as React.CSSProperties}>
             <button className={styles.hit} type="button" data-island={island.id} data-art={artSrc} aria-label={island.name + "，聚焦或查看主题作品"}
               onPointerEnter={(e) => hover(island.id, e)}
@@ -186,7 +184,7 @@ export default function World() {
               onPointerCancel={() => { pressed.current = null; }} onLostPointerCapture={() => { pressed.current = null; }}
               onFocus={() => { if (!pressed.current) { clearHover(); select(island.id); } }}
               onClick={(e) => { if (e.detail === 0 && performance.now() - touchTime.current > 600) enter(island.id); }} disabled={leaving}>
-              {failed ? <span className={styles.imageFallback}><strong>{island.name}</strong><small>{description}</small></span> : (
+              {failed ? <span className={styles.imageFallback}><strong>{island.name}</strong></span> : (
                 <span className={styles.art}>
                   {active && <img className={styles.glow} src={artSrc} alt="" aria-hidden="true" draggable={false} />}
                   <img className={styles.subject} data-subject src={artSrc} width={1254} height={1254} alt={island.name} draggable={false} decoding="async" ref={(node) => { if (!node?.complete) return; queueMicrotask(() => (node.naturalWidth > 0 ? markReady(artKey) : markFailed(artKey))); }} onLoad={() => markReady(artKey)} onError={() => markFailed(artKey)} />
@@ -199,8 +197,6 @@ export default function World() {
       </div>
       <div className={styles.caption} aria-live="polite">
         <h2>{selected.name}</h2>
-        <p>{selectedTheme.description}</p>
-        <p className={styles.mobileHint}>{moving ? "正在移到中央" : touchArmed === focus ? "再点一次，进入这个主题" : "先点选一座岛"}</p>
       </div>
       <div className={styles.bottom}>
         <nav className={styles.channels} aria-label="切换聚焦岛屿">

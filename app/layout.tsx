@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import { ThemeProvider } from "@/state/Theme";
 import Shell from "@/components/Shell";
+import { siteFont } from "@/lib/fonts";
 import { siteName, siteDescription, siteUrl } from "@/lib/site";
 import "./globals.css";
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default async function RootLayout({
 }) {
   const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
-    <html lang="zh-CN" data-theme="night" suppressHydrationWarning>
+    <html lang="zh-CN" className={siteFont.className} data-theme="night" suppressHydrationWarning>
       <head>
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>

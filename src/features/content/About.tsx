@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import CharacterSequence, { type SequenceView } from "@/features/avatar/CharacterSequence";
 import styles from "./Content.module.css";
 
@@ -43,9 +42,6 @@ export default function About() {
             >
               {paper ? "退出纸页" : "纸页阅读"}
             </button>
-            <Link className="button" href="/board/">
-              去留言
-            </Link>
           </div>
         </div>
         <figure className={styles.poster}>
@@ -68,7 +64,7 @@ export default function About() {
         </section>
         <section className="panel">
           <h2>别处见</h2>
-          <p><a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">去小红书看看 ↗</a></p>
+          <p><a href="https://www.xiaohongshu.com/user/profile/69aa2b070000000033033a92" target="_blank" rel="noopener noreferrer">去小红书看看</a></p>
         </section>
       </div>
     </article>
